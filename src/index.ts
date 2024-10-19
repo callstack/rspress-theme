@@ -1,0 +1,1 @@
+export { callstackThemePlugin } from "./plugin";
