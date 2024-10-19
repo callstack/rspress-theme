@@ -5,8 +5,12 @@
   "author": "Jakub Romańczyk <jakub.romanczyk@callstack.com>",
   "license": "MIT",
   "packageManager": "pnpm@9.12.2",
+  "scripts": {
+    "build": "tsc"
+  },
   "devDependencies": {
     "@rspress/shared": "^1.34.1",
+    "@types/node": "^22.7.7",
     "typescript": "^5.6.3"
   }
 }
