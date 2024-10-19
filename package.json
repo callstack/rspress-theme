@@ -5,6 +5,10 @@
   "author": "Jakub Romańczyk <jakub.romanczyk@callstack.com>",
   "license": "MIT",
   "packageManager": "pnpm@9.12.2",
+  "files": [
+    "dist",
+    "styles"
+  ],
   "scripts": {
     "build": "tsc"
   },
