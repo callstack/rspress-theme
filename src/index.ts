@@ -4,7 +4,7 @@ import { RspressPlugin } from '@rspress/shared'
 
 const dirname = path.dirname(fileURLToPath(import.meta.url))
 
-export function themePlugin(): RspressPlugin {
+export function pluginCallstackTheme(): RspressPlugin {
   return {
     name: 'callstack-rspress-theme',
     globalStyles: path.join(dirname, '..', 'styles', 'theme.css'),
