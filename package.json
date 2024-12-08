@@ -32,7 +32,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "build": "rslib build"
+    "build": "rslib build",
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "react": "^18.3.1"
