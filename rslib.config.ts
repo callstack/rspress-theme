@@ -11,6 +11,9 @@ const pluginConfig: LibConfig = {
 }
 
 const themeConfig: LibConfig = {
+  banner: {
+    js: ['// inject component styles', 'import "./index.css"'].join('\n'),
+  },
   syntax: 'es2021',
   source: {
     entry: { index: './src/theme/index.ts' },
@@ -30,11 +33,6 @@ export default defineConfig({
       id: 'theme-esm',
       format: 'esm',
       dts: { bundle: true },
-    },
-    {
-      ...themeConfig,
-      id: 'theme-cjs',
-      format: 'cjs',
     },
     {
       ...pluginConfig,
