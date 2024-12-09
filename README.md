@@ -2,15 +2,17 @@
 
 ## Installation
 
-To install the `@callstack/rspress-theme` package, use your package manager of choice. For example, with npm:
+To install the `@callstack/rspress-theme` package, use your package manager of choice.
 
-```sh
+For example, with npm:
+
+```bash
 npm install @callstack/rspress-theme
 ```
 
 Or with yarn:
 
-```sh
+```bash
 yarn add @callstack/rspress-theme
 ```
 
