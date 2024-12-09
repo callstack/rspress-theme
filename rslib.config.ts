@@ -9,6 +9,7 @@ const pluginConfig: LibConfig = {
     tsconfigPath: './tsconfig.plugin.json',
   },
   output: {
+    copy: [{ from: './src/plugin/styles.css', to: './styles.css' }],
     distPath: { root: './dist/plugin' },
     target: 'node',
   },

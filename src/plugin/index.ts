@@ -7,6 +7,6 @@ const dirname = path.dirname(fileURLToPath(import.meta.url))
 export function pluginCallstackTheme(): RspressPlugin {
   return {
     name: 'plugin-callstack-theme',
-    globalStyles: path.join(dirname, '..', 'styles', 'theme.css'),
+    globalStyles: path.join(dirname, 'styles.css'),
   }
 }
