@@ -5,8 +5,12 @@ import { pluginSass } from '@rsbuild/plugin-sass'
 const pluginConfig: LibConfig = {
   syntax: 'es2021',
   source: {
-    entry: { index: './src/index.ts' },
+    entry: { index: './src/plugin/index.ts' },
     tsconfigPath: './tsconfig.plugin.json',
+  },
+  output: {
+    distPath: { root: './dist/plugin' },
+    target: 'node',
   },
 }
 
@@ -20,7 +24,7 @@ const themeConfig: LibConfig = {
     tsconfigPath: './tsconfig.theme.json',
   },
   output: {
-    distPath: { root: './dist/theme' },
+    distPath: { root: './dist' },
     target: 'web',
   },
   plugins: [pluginReact(), pluginSass()],

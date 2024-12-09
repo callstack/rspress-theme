@@ -1,1 +1,0 @@
-export { pluginCallstackTheme } from './plugin'
