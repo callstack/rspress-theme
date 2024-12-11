@@ -2,6 +2,8 @@ import { defineConfig, LibConfig } from '@rslib/core'
 import { pluginReact } from '@rsbuild/plugin-react'
 import { pluginSass } from '@rsbuild/plugin-sass'
 
+const isDev = process.env.NODE_ENV === 'development'
+
 const pluginConfig: LibConfig = {
   syntax: 'es2021',
   source: {
@@ -9,7 +11,7 @@ const pluginConfig: LibConfig = {
     tsconfigPath: './tsconfig.plugin.json',
   },
   output: {
-    copy: [{ from: './src/plugin/styles.css', to: './styles.css' }],
+    cleanDistPath: !isDev,
     distPath: { root: './dist/plugin' },
     target: 'node',
   },
@@ -25,6 +27,7 @@ const themeConfig: LibConfig = {
     tsconfigPath: './tsconfig.theme.json',
   },
   output: {
+    cleanDistPath: !isDev,
     distPath: { root: './dist' },
     target: 'web',
   },
