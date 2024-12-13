@@ -1,0 +1,4 @@
+'release: feature':
+  - '/^feat/'
+'release: bug fix':
+  - '/^fix/'
