@@ -7,7 +7,7 @@ const Layout = () => (
       <Announcement
         href="./guide"
         message="Announcement Test"
-        localStorageKey="announcement"
+        localStorageKey=""
       />
     }
   />
