@@ -2,6 +2,8 @@ import { useState } from 'react';
 import IconCloseCircle from './close';
 import styles from './index.module.scss';
 
+// based on https://github.com/rspack-contrib/rstack-doc-ui/blob/main/src/announcement/index.tsx
+
 export function Announcement({
   href,
   message,
