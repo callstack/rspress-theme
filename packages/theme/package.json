@@ -23,10 +23,18 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "keywords": [
+    "rspress",
+    "theme",
+    "callstack",
+    "documentation",
+    "react",
+    "typescript"
+  ],
   "packageManager": "pnpm@9.12.2",
   "scripts": {
     "build": "rslib build",
-    "dev": "NODE_ENV=development rslib build --watch",
+    "dev": "rslib build --watch",
     "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
