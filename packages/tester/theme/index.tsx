@@ -1,5 +1,5 @@
-import { Announcement } from '@callstack/rspress-theme'
-import Theme from 'rspress/theme'
+import { Announcement } from '@callstack/rspress-theme';
+import Theme from 'rspress/theme';
 
 const Layout = () => (
   <Theme.Layout
@@ -11,11 +11,11 @@ const Layout = () => (
       />
     }
   />
-)
+);
 
 export default {
   ...Theme,
   Layout,
-}
+};
 
-export * from 'rspress/theme'
+export * from 'rspress/theme';

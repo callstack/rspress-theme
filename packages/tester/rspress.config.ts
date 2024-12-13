@@ -1,5 +1,5 @@
-import * as path from 'node:path'
-import { defineConfig } from 'rspress/config'
+import * as path from 'node:path';
+import { defineConfig } from 'rspress/config';
 
 export default defineConfig({
   root: path.join(__dirname, 'docs'),
@@ -20,4 +20,4 @@ export default defineConfig({
   },
   // for the purpose of development, it's easier to override the styles directly
   globalStyles: path.resolve(__dirname, '..', 'theme', 'static', 'styles.css'),
-})
+});

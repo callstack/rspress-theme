@@ -1,8 +1,8 @@
-import { defineConfig, LibConfig } from '@rslib/core'
-import { pluginReact } from '@rsbuild/plugin-react'
-import { pluginSass } from '@rsbuild/plugin-sass'
+import { pluginReact } from '@rsbuild/plugin-react';
+import { pluginSass } from '@rsbuild/plugin-sass';
+import { type LibConfig, defineConfig } from '@rslib/core';
 
-const isDev = process.env.NODE_ENV === 'development'
+const isDev = process.env.NODE_ENV === 'development';
 
 const pluginConfig: LibConfig = {
   syntax: 'es2021',
@@ -15,7 +15,7 @@ const pluginConfig: LibConfig = {
     distPath: { root: './dist/plugin' },
     target: 'node',
   },
-}
+};
 
 const themeConfig: LibConfig = {
   banner: {
@@ -32,7 +32,7 @@ const themeConfig: LibConfig = {
     target: 'web',
   },
   plugins: [pluginReact(), pluginSass()],
-}
+};
 
 export default defineConfig({
   lib: [
@@ -54,4 +54,4 @@ export default defineConfig({
       format: 'cjs',
     },
   ],
-})
+});

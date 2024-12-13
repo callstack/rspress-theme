@@ -1,6 +1,6 @@
-import { useState } from 'react'
-import IconCloseCircle from './close'
-import styles from './index.module.scss'
+import { useState } from 'react';
+import IconCloseCircle from './close';
+import styles from './index.module.scss';
 
 export function Announcement({
   href,
@@ -8,20 +8,20 @@ export function Announcement({
   localStorageKey,
   display = true,
 }: {
-  href: string
-  message: string
-  localStorageKey: string
-  display?: boolean
+  href: string;
+  message: string;
+  localStorageKey: string;
+  display?: boolean;
 }) {
   if (!display) {
-    return null
+    return null;
   }
   const [disable, setDisable] = useState(
     window.localStorage.getItem(localStorageKey) ?? false
-  )
+  );
 
   if (disable) {
-    return null
+    return null;
   }
 
   return (
@@ -31,11 +31,11 @@ export function Announcement({
       </a>
       <IconCloseCircle
         onClick={() => {
-          setDisable(true)
-          window.localStorage.setItem(localStorageKey, 'true')
+          setDisable(true);
+          window.localStorage.setItem(localStorageKey, 'true');
         }}
         className={styles.close}
       />
     </div>
-  )
+  );
 }

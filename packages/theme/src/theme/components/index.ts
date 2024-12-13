@@ -1,1 +1,1 @@
-export { Announcement } from './announcement'
+export { Announcement } from './announcement';
