@@ -23,6 +23,12 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
+  "homepage": "https://github.com/callstack/rspress-theme/tree/main/packages/theme#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callstack/rspress-theme.git",
+    "directory": "packages/theme"
+  },
   "keywords": [
     "rspress",
     "theme",

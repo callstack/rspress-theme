@@ -8,6 +8,10 @@ on:
       - opened
       - edited
 
+permissions:
+  issues: write
+  contents: read
+
 jobs:
   lint-pr-title:
     name: Validate PR title
