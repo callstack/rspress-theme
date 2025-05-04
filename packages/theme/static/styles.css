@@ -169,6 +169,11 @@
   margin-bottom: 1.5rem;
 }
 
+/* Overview page */
+.overview-index {
+  padding-top: var(--rp-content-padding-y) !important;
+}
+
 div:has(> p.rspress-home-hero-text) {
   align-items: stretch;
 }
