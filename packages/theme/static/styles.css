@@ -71,12 +71,6 @@
   --rp-code-title-bg: var(--rp-c-bg-mute);
 }
 
-.badge_99dcf.info_99dcf {
-  color: var(--rp-container-info-text);
-  background-color: var(--rp-container-info-bg);
-  @apply h-6;
-}
-
 /* Home background gradient */
 :root {
   --rp-home-mask-background-image: conic-gradient(
@@ -173,6 +167,11 @@
   width: 100%;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+}
+
+/* Overview page */
+.overview-index {
+  padding-top: var(--rp-content-padding-y) !important;
 }
 
 div:has(> p.rspress-home-hero-text) {
