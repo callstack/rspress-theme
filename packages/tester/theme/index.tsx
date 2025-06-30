@@ -1,8 +1,8 @@
 import { Announcement } from '@callstack/rspress-theme';
-import Theme from 'rspress/theme';
+import { Layout as RspressLayout } from 'rspress/theme';
 
 const Layout = () => (
-  <Theme.Layout
+  <RspressLayout
     beforeNav={
       <Announcement
         href="./guide"
@@ -13,9 +13,6 @@ const Layout = () => (
   />
 );
 
-export default {
-  ...Theme,
-  Layout,
-};
+export { Layout };
 
 export * from 'rspress/theme';
