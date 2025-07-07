@@ -91,7 +91,7 @@
   /* rspress colors */
   --rp-c-bg: var(--ck-background-primary) !important;
   --rp-c-bg-soft: var(--ck-foreground-secondary) !important;
-  --rp-c-bg-mute: var(--ck-foreground-secondary) !important;
+  --rp-c-bg-mute: var(--ck-foreground-primary) !important;
   --rp-c-divider: var(--ck-border-primary) !important;
   --rp-c-divider-light: var(--ck-border-secondary) !important;
   --rp-c-text-1: var(--ck-text-primary) !important;
@@ -123,7 +123,7 @@
 
 .dark {
   --rp-c-bg: var(--ck-background-primary) !important;
-  --rp-c-bg-soft: var(--ck-foreground-secondary) !important;
+  --rp-c-bg-soft: var(--ck-foreground-primary) !important;
   --rp-c-bg-mute: var(--ck-foreground-secondary) !important;
   --rp-c-divider-light: var(--ck-border-secondary) !important;
   --rp-c-text-1: var(--ck-text-primary) !important;
@@ -491,4 +491,70 @@ input#api-filter::-webkit-search-cancel-button {
   width: 16px;
   background: url("close.svg") no-repeat center center / contain;
   cursor: pointer;
+}
+
+/* SEARCH */
+div#search-container div[class^="mask_"] {
+  background: rgba(21, 20, 21, 0.5);
+  backdrop-filter: blur(2px);
+}
+
+div#search-container div[class^="modal_"] {
+  background: var(--ck-background-primary);
+  border: 1px solid var(--ck-border-primary);
+  border-radius: 4px;
+  font-family: var(--ck-font-family);
+  padding: 0px !important;
+  box-shadow: 0px 40px 40px -20px rgba(32, 31, 36, 0.3);
+}
+
+div#search-container div[class^="inputForm_"] {
+  border: none !important;
+}
+
+div#search-container div[class^="searchHits"] {
+  border-top: 1px solid var(--ck-border-primary) !important;
+}
+
+li[class*="suggestItem_"] > a {
+  padding: 0 16px 0 16px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  margin-left: 2px !important;
+  letter-spacing: -0.32px;
+  color: var(--rp-c-text-1) !important;
+}
+
+li[class*="suggestItem_"] > a span[class^="mark_"] {
+  text-decoration: underline !important;
+  color: var(--rp-c-text-1) !important;
+}
+
+li[class*="suggestItem_"][class*="current_"] > a {
+  color: var(--rp-c-text-1) !important;
+  text-decoration: none !important;
+  background-color: var(--rp-c-bg-soft) !important;
+}
+
+li[class*="suggestItem_"][class*="current_"] > a p[class^="titleForContent_"] {
+  color: var(--rp-c-text-2) !important;
+}
+
+li[class*="suggestItem_"][class*="current_"] > a span[class^="mark_"] {
+  background-color: var(--rp-c-bg-soft) !important;
+}
+
+li[class*="suggestItem_"] > a > div[class^="suggestItemContainer_"] > div > svg {
+  display: none !important;
+}
+
+li[class*="suggestItem_"] > a > div[class^="suggestItemContainer_"] > div[class^="contentWrapper_"] {
+  padding: 0 !important;
+}
+
+input.rspress-search-panel-input::placeholder {
+  color: var(--ck-text-secondary);
+  font-family: var(--ck-font-family);
+  font-size: 16px;
+  font-weight: 400;
 }
