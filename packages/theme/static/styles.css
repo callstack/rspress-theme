@@ -1,8 +1,8 @@
 :root {
   --rp-sidebar-width: 320px !important;
   --rp-aside-width: 268px !important;
-  --rp-c-bg: #ffffff !important;
-  --rp-c-bg-soft: #f9f8fd !important;
+  --rp-c-bg: rgba(255, 255, 255, 1) !important;
+  --rp-c-bg-soft: rgba(21, 20, 21, 0.05) !important;
   --rp-c-bg-mute: #e9e7ee !important;
   --rp-c-divider: #cfced5 !important;
   --rp-c-divider-light: #e9e7ee !important;
@@ -34,6 +34,8 @@
   --rp-radius-large: 8px !important;
   --rp-font-family: "Switzer Variable", sans-serif !important;
   --rp-nav-height: 48px !important;
+  --rp-code-title-bg: rgba(233, 231, 238, 1) !important;
+  --rp-code-block-bg: rgba(249, 248, 253, 1) !important;
 }
 
 body {
@@ -43,8 +45,8 @@ body {
 }
 
 .dark {
-  --rp-c-bg: #201f24 !important;
-  --rp-c-bg-soft: #201f24 !important;
+  --rp-c-bg: rgba(32, 31, 36, 1) !important;
+  --rp-c-bg-soft: rgba(255, 255, 255, 0.2) !important;
   --rp-c-bg-mute: rgba(255, 255, 255, 0.05) !important;
   --rp-c-divider-light: #ffffff4d !important;
   --rp-c-text-1: #ffffff !important;
@@ -52,6 +54,8 @@ body {
   --rp-c-text-3: #bcbbc2 !important;
   --rp-c-text-4: #bcbbc2 !important;
   --rp-c-text-code: var(--rp-c-brand-light) !important;
+  --rp-code-title-bg: rgba(54, 53, 57, 1) !important;
+  --rp-code-block-bg: rgba(43, 42, 47, 1) !important;
 }
 
 /* Code blocks */
@@ -203,6 +207,8 @@ p.rspress-home-hero-text {
   }
 }
 
+/* NAV */
+
 .rspress-nav {
   padding: 8px 16px !important;
 }
@@ -213,6 +219,37 @@ p.rspress-home-hero-text {
   border-radius: 2px !important;
   border: 1px solid var(--rp-c-divider-light) !important;
 }
+
+.rspress-nav-appearance > div.rp-border {
+  color: var(--rp-c-text-1) !important;
+  background: var(--rp-c-bg-soft) !important;
+  border: none !important;
+  border-radius: 2px !important;
+  padding: 4px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: background 0.15s;
+}
+
+div[class^="social-links-icon"] {
+  color: var(--rp-c-text-1) !important;
+  margin: 0 !important;
+}
+
+div[class^="social-links-icon"] > div {
+  background: var(--rp-c-bg-soft) !important;
+  border: none !important;
+  border-radius: 2px !important;
+  padding: 6px !important;
+  margin: -4px !important;
+  cursor: pointer !important;
+  transition: background 0.15s;
+}
+
+/* CONTAINERS */
 
 .rspress-directive {
   background: none !important;
@@ -284,4 +321,9 @@ p.rspress-home-hero-text {
 .rspress-directive.details .rspress-directive-title::before {
   content: "";
   background: url("arrow-bar-right.svg") no-repeat center center / contain;
+}
+
+/* CODE BLOCKS */
+.rspress-code-title {
+  font-family: "Fira Code", monospace !important;
 }
