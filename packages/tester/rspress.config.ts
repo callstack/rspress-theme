@@ -13,6 +13,8 @@ export default defineConfig({
     overview: {
       filterNameText: '',
     },
+    searchNoResultsText: 'No results found, try something different than',
+    searchSuggestedQueryText: '',
     socialLinks: [
       {
         icon: 'github',
