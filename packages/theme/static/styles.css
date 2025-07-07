@@ -49,6 +49,8 @@
   --ck-border-primary: #ffffff4d;
   /* Callstack/Border/Secondary */
   --ck-border-secondary: #ffffff4d;
+  /* Callstack/Foreground/Primary */
+  --ck-foreground-primary: #2b2a2f;
   /* Callstack/Foreground/Secondary */
   --ck-foreground-secondary: #838289;
   /* Callstack/Text/Primary */
@@ -443,6 +445,7 @@ h6 {
 
 div[class^="overview-group_"] {
   background-color: var(--ck-foreground-primary) !important;
+  transition: none !important;
 }
 
 div[class^="overview-group_"] h3 > a {
