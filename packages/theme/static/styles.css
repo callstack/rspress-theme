@@ -33,6 +33,7 @@
   --rp-radius-small: 2px !important;
   --rp-radius-large: 8px !important;
   --rp-font-family: "Switzer Variable", sans-serif !important;
+  --rp-nav-height: 48px !important;
 }
 
 body {
@@ -115,6 +116,10 @@ body {
   }
 }
 
+h2 {
+  margin: 0px !important;
+}
+
 /* Sidebar section headers */
 .rspress-scrollbar > nav > section > div:first-child,
 .rspress-scrollbar > nav > a > div:first-child {
@@ -146,7 +151,15 @@ body {
 /* Table of Contents */
 #aside-container {
   border-left: 1px solid var(--rp-c-divider-light) !important;
-  padding-left: 1rem;
+  margin: -48px 0 0 0 !important;
+  padding: 16px 0 16px 0 !important;
+}
+
+.aside-link.aside-active {
+  color: var(--rp-c-text-1) !important;
+  background-color: transparent !important;
+  border-left: 1px solid var(--rp-c-text-1) !important;
+  border-radius: 0 !important;
 }
 
 .home-hero-name-img {
@@ -188,6 +201,17 @@ p.rspress-home-hero-text {
   p.rspress-home-hero-text {
     font-size: 3rem;
   }
+}
+
+.rspress-nav {
+  padding: 8px 16px !important;
+}
+
+.rspress-nav-search-button {
+  height: 30px !important;
+  padding: 4px !important;
+  border-radius: 2px !important;
+  border: 1px solid var(--rp-c-divider-light) !important;
 }
 
 .rspress-directive {
