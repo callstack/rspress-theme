@@ -424,3 +424,21 @@ h5,
 h6 {
   font-family: var(--ck-header-font-family) !important;
 }
+
+/* OVERVIEW */
+.overview-index div > h2 {
+  border-top: none !important;
+  margin-bottom: 16px !important;
+}
+
+div[class^="overview-group_"] {
+  background-color: var(--ck-foreground-primary) !important;
+}
+
+div[class^="overview-group_"] h3 > a {
+  font-size: 16px !important;
+}
+
+div[class^="overview-group_"] a {
+  color: var(--rp-c-text-1) !important;
+}
