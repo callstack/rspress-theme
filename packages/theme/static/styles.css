@@ -431,6 +431,16 @@ h6 {
   margin-bottom: 16px !important;
 }
 
+/* no results */
+.overview-index div {
+  border-top: none !important;
+  color: var(--rp-c-text-1) !important;
+  font-family: var(--ck-font-family) !important;
+  font-weight: 400 !important;
+  font-size: 16px !important;
+  gap: 0 !important;
+}
+
 div[class^="overview-group_"] {
   background-color: var(--ck-foreground-primary) !important;
 }
@@ -441,4 +451,41 @@ div[class^="overview-group_"] h3 > a {
 
 div[class^="overview-group_"] a {
   color: var(--rp-c-text-1) !important;
+}
+
+div[class^="overview-group_"] a:hover {
+  color: var(--rp-c-brand) !important;
+}
+
+input#api-filter {
+  background: var(--ck-background-primary) url("search.svg") no-repeat 12px center / 16px 16px;
+  border: 1px solid var(--ck-border-primary);
+  color: var(--ck-text-secondary);
+  border-radius: 2px;
+  font-family: var(--ck-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 10px 12px 10px 36px;
+  box-sizing: border-box;
+  outline: none;
+  min-width: 300px;
+}
+
+input#api-filter::placeholder {
+  color: var(--ck-text-tertiary);
+  opacity: 1;
+  font-family: var(--ck-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: -0.32px;
+}
+
+input#api-filter::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  background: url("close.svg") no-repeat center center / contain;
+  cursor: pointer;
 }
