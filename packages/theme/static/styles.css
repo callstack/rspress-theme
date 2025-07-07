@@ -1,4 +1,80 @@
 :root {
+  /* Callstack/Background/Primary */
+  --ck-background-primary: #ffffff;
+  /* Callstack/Border/Primary */
+  --ck-border-primary: #cfced5;
+  /* Callstack/Border/Secondary */
+  --ck-border-secondary: #e9e7ee;
+  /* Callstack/Foreground/Primary */
+  --ck-foreground-primary: #f9f8fd;
+  /* Callstack/Foreground/Secondary */
+  --ck-foreground-secondary: #e9e7ee;
+  /* Callstack/Text/Primary */
+  --ck-text-primary: #201f24;
+  /* Callstack/Text/Secondary */
+  --ck-text-secondary: #838289;
+  /* Callstack/Text/Tertiary */
+  --ck-text-tertiary: #bcbbc2;
+  /* Callstack/Accent */
+  --ck-accent: #8232ff;
+  /* Callstack/Button/Primary/Label */
+  --ck-button-primary-label: #ffffff;
+  /* Callstack/Button/Primary/Icon */
+  --ck-button-primary-icon: #ffffff33;
+  /* Callstack/Button/Primary/Background */
+  --ck-button-primary-background: #201f24;
+  /* Callstack/Button/Secondary/Label */
+  --ck-button-secondary-label: #201f24;
+  /* Callstack/Button/Secondary/Icon */
+  --ck-button-secondary-icon: #1514150d;
+  /* Callstack/Button/Secondary/Border */
+  --ck-button-secondary-border: #15141526;
+  /* Coding/Coffee */
+  --ck-coding-coffee: #ffb14c;
+  /* Coding/Live Stream */
+  --ck-coding-live-stream: #fa7171;
+  /* Color/Neutral Darkest */
+  --ck-neutral-darkest: #201f24;
+  /* Color/Neutral Lighter */
+  --ck-neutral-lighter: #e9e7ee;
+}
+
+.dark {
+  /* Callstack/Background/Primary */
+  --ck-background-primary: #201f24;
+  /* Callstack/Border/Primary */
+  --ck-border-primary: #ffffff4d;
+  /* Callstack/Border/Secondary */
+  --ck-border-secondary: #ffffff4d;
+  /* Callstack/Foreground/Secondary */
+  --ck-foreground-secondary: #838289;
+  /* Callstack/Text/Primary */
+  --ck-text-primary: #ffffff;
+  /* Callstack/Text/Secondary */
+  --ck-text-secondary: #cfced5;
+  /* Callstack/Text/Tertiary */
+  --ck-text-tertiary: #bcbbc2;
+  /* Callstack/Accent */
+  --ck-accent: #8232ff;
+  /* Callstack/Button/Primary/Label */
+  --ck-button-primary-label: #201f24;
+  /* Callstack/Button/Primary/Icon */
+  --ck-button-primary-icon: #1514151a;
+  /* Callstack/Button/Primary/Background */
+  --ck-button-primary-background: #ffffff;
+  /* Callstack/Button/Secondary/Label */
+  --ck-button-secondary-label: #ffffff;
+  /* Callstack/Button/Secondary/Icon */
+  --ck-button-secondary-icon: #ffffff33;
+  /* Callstack/Button/Secondary/Border */
+  --ck-button-secondary-border: #ffffff4d;
+  /* Color/Neutral Darkest */
+  --ck-neutral-darkest: #201f24;
+  /* Color/White */
+  --ck-white: #ffffff;
+}
+
+:root {
   --rp-sidebar-width: 320px !important;
   --rp-aside-width: 268px !important;
   --rp-c-bg: rgba(255, 255, 255, 1) !important;
