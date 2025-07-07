@@ -75,8 +75,15 @@
 }
 
 :root {
+  /* rspress vars */
   --rp-sidebar-width: 320px !important;
   --rp-aside-width: 268px !important;
+  --rp-radius: 4px !important;
+  --rp-radius-small: 2px !important;
+  --rp-radius-large: 8px !important;
+  --rp-font-family: "Switzer Variable", sans-serif !important;
+  --rp-nav-height: 48px !important;
+  /* rspress colors */
   --rp-c-bg: var(--ck-background-primary) !important;
   --rp-c-bg-soft: var(--ck-foreground-secondary) !important;
   --rp-c-bg-mute: var(--ck-foreground-secondary) !important;
@@ -105,19 +112,8 @@
   --rp-c-dark-light-3: var(--ck-neutral-darkest) !important;
   --rp-c-dark-light-4: var(--ck-neutral-darkest) !important;
   --rp-c-dark-light-5: var(--ck-neutral-darkest) !important;
-  --rp-radius: 4px !important;
-  --rp-radius-small: 2px !important;
-  --rp-radius-large: 8px !important;
-  --rp-font-family: "Switzer Variable", sans-serif !important;
-  --rp-nav-height: 48px !important;
   --rp-code-title-bg: rgba(233, 231, 238, 1) !important;
   --rp-code-block-bg: rgba(249, 248, 253, 1) !important;
-}
-
-body {
-  background: var(--rp-c-bg) !important;
-  color: var(--rp-c-text-1) !important;
-  font-family: var(--rp-font-family) !important;
 }
 
 .dark {
@@ -132,6 +128,12 @@ body {
   --rp-c-text-code: var(--rp-c-brand-light) !important;
   --rp-code-title-bg: rgba(54, 53, 57, 1) !important;
   --rp-code-block-bg: rgba(43, 42, 47, 1) !important;
+}
+
+body {
+  background: var(--rp-c-bg) !important;
+  color: var(--rp-c-text-1) !important;
+  font-family: var(--rp-font-family) !important;
 }
 
 /* Code blocks */
