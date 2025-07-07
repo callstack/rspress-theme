@@ -1,4 +1,7 @@
 :root {
+  /* Fonts */
+  --ck-font-family: "Switzer Variable", Arial, sans-serif;
+  --ck-header-font-family: "Alliance No. 2", Arial, sans-serif;
   /* Callstack/Background/Primary */
   --ck-background-primary: #ffffff;
   /* Callstack/Border/Primary */
@@ -81,7 +84,7 @@
   --rp-radius: 4px !important;
   --rp-radius-small: 2px !important;
   --rp-radius-large: 8px !important;
-  --rp-font-family: "Switzer Variable", sans-serif !important;
+  --rp-font-family: var(--ck-font-family) !important;
   --rp-nav-height: 48px !important;
   /* rspress colors */
   --rp-c-bg: var(--ck-background-primary) !important;
@@ -402,4 +405,22 @@ div[class^="social-links-icon"] > div {
 /* CODE BLOCKS */
 .rspress-code-title {
   font-family: "Fira Code", monospace !important;
+}
+
+@font-face {
+  font-family: "Alliance No. 2";
+  src: url("https://cdn.prod.website-files.com/67e6b7885e182e1054b556db/67e6b8ee4fb44f39145cf744_AllianceNo2-Regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ck-header-font-family) !important;
 }
