@@ -286,7 +286,6 @@ p.rspress-home-hero-text {
 }
 
 /* NAV */
-
 .rspress-nav {
   padding: 8px 16px !important;
 }
@@ -328,7 +327,6 @@ div[class^="social-links-icon"] > div {
 }
 
 /* CONTAINERS */
-
 .rspress-directive {
   background: none !important;
   border: none !important;
