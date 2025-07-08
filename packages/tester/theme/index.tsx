@@ -1,4 +1,4 @@
-import { Announcement } from '@callstack/rspress-theme';
+import { Announcement, OutlineCTA } from '@callstack/rspress-theme';
 import { Layout as RspressLayout } from 'rspress/theme';
 
 const Layout = () => (
@@ -10,6 +10,7 @@ const Layout = () => (
         localStorageKey=""
       />
     }
+    afterOutline={<OutlineCTA />}
   />
 );
 
