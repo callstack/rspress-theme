@@ -608,3 +608,9 @@ li[class*="suggestItem_"] > a > div[class^="suggestItemContainer_"] > div > svg 
 li[class*="suggestItem_"] > a > div[class^="suggestItemContainer_"] > div[class^="contentWrapper_"] {
   padding: 0 !important;
 }
+
+/* Logo */
+img#logo {
+  width: 102px;
+  height: 16px;
+}

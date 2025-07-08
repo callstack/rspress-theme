@@ -6,8 +6,8 @@ export default defineConfig({
   title: 'My Site',
   icon: '/rspress-icon.png',
   logo: {
-    light: '/rspress-light-logo.png',
-    dark: '/rspress-dark-logo.png',
+    light: '/logo-light.png',
+    dark: '/logo-dark.png',
   },
   themeConfig: {
     overview: {
