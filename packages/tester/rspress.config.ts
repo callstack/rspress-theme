@@ -13,6 +13,7 @@ export default defineConfig({
     overview: {
       filterNameText: '',
     },
+    outlineTitle: 'Contents',
     searchNoResultsText: 'No results found, try something different than',
     searchSuggestedQueryText: '',
     socialLinks: [
