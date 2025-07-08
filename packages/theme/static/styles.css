@@ -390,7 +390,7 @@ p.rspress-home-hero-text {
 .rspress-nav-search-button {
   height: 30px !important;
   padding: 4px !important;
-  border-radius: 2px !important;
+  border-radius: var(--rp-radius-small) !important;
   border: 1px solid var(--rp-c-divider-light) !important;
   background-color: var(--rp-c-bg) !important;
   transition: none !important;
@@ -404,7 +404,7 @@ p.rspress-home-hero-text {
   color: var(--rp-c-text-1) !important;
   background: var(--rp-c-divider-light) !important;
   border: none !important;
-  border-radius: 2px !important;
+  border-radius: var(--rp-radius-small) !important;
   padding: 4px !important;
   display: flex !important;
   flex-direction: row !important;
@@ -422,7 +422,7 @@ div[class^="social-links-icon"] {
 div[class^="social-links-icon"] > div {
   background: var(--rp-c-divider-light) !important;
   border: none !important;
-  border-radius: 2px !important;
+  border-radius: var(--rp-radius-small) !important;
   padding: 6px !important;
   margin: -4px !important;
   cursor: pointer !important;
@@ -568,7 +568,7 @@ input#api-filter {
   background: var(--ck-background-primary) url("search.svg") no-repeat 12px center / 16px 16px;
   border: 1px solid var(--ck-border-primary);
   color: var(--ck-text-secondary);
-  border-radius: 2px;
+  border-radius: var(--rp-radius-small);
   font-family: var(--ck-font-family);
   font-size: 16px;
   font-weight: 400;
@@ -608,7 +608,7 @@ div#search-container div[class^="mask_"] {
 div#search-container div[class^="modal_"] {
   background: var(--ck-background-primary);
   border: 1px solid var(--ck-border-primary);
-  border-radius: 4px;
+  border-radius: var(--rp-radius);
   font-family: var(--ck-font-family);
   padding: 0px !important;
   box-shadow: 0px 40px 40px -20px rgba(32, 31, 36, 0.3);
@@ -707,4 +707,14 @@ li[class*="suggestItem_"] > a > div[class^="suggestItemContainer_"] > div[class^
 img#logo {
   width: 102px;
   height: 16px;
+}
+
+/* Table header */
+tr > th {
+  background-color: var(--rp-c-bg-soft);
+}
+
+/* Table - don't color even rows */
+tr.rp-border {
+  background-color: var(--rp-c-bg) !important;
 }
