@@ -1,13 +1,13 @@
 [
   {
-    "text": "Guide",
-    "link": "/guide/",
-    "activeMatch": "/guide/"
+    "text": "Nav",
+    "link": "/nav/",
+    "activeMatch": "/nav/"
   },
   {
-    "text": "Hello World",
-    "link": "/hello/",
-    "activeMatch": "/hello/"
+    "text": "Test",
+    "link": "/test/",
+    "activeMatch": "/test/"
   },
   {
     "text": "API",

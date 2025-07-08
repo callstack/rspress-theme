@@ -1,0 +1,27 @@
+[
+  {
+    "type": "dir",
+    "name": "section-a",
+    "label": "Section A",
+    "collapsible": true,
+    "collapsed": false
+  },
+  {
+    "type": "dir",
+    "name": "section-b",
+    "label": "Section B (MDX)",
+    "collapsible": true,
+    "collapsed": false
+  },
+  { "type": "divider" },
+  {
+    "type": "file",
+    "name": "file",
+    "label": "File Test"
+  },
+  {
+    "type": "custom-link",
+    "label": "Custom Link",
+    "link": "https://rspress.dev/"
+  }
+]
