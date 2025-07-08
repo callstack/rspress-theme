@@ -25,6 +25,7 @@ const themeConfig: LibConfig = {
   },
   output: {
     distPath: { root: './dist' },
+    externals: ['@theme'],
     target: 'web',
   },
   plugins: [pluginReact(), pluginSass()],

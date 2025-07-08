@@ -1,4 +1,8 @@
-import { Announcement, OutlineCTA } from '@callstack/rspress-theme';
+import {
+  Announcement,
+  OutlineCTA,
+  PrevNextPage,
+} from '@callstack/rspress-theme';
 import { useDark } from 'rspress/runtime';
 import { Layout as RspressLayout } from 'rspress/theme';
 
@@ -19,6 +23,6 @@ const Layout = () => {
   );
 };
 
-export { Layout };
+export { Layout, PrevNextPage };
 
 export * from 'rspress/theme';
