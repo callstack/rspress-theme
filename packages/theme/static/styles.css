@@ -718,3 +718,38 @@ tr > th {
 tr.rp-border {
   background-color: var(--rp-c-bg) !important;
 }
+
+/* Package Manager Tabs - background */
+div[class^="tab-list_"] {
+  background-color: var(--rp-code-title-bg);
+}
+
+/* Package Manager Tabs - selected color */
+div[class^="tab_"][class*="selected"],
+div[class^="tab_"][class*="selected"] span {
+  color: var(--rp-c-text-1);
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+/* Package Manager Tabs - not selected color */
+div[class^="tab_"][class*="not-selected_"],
+div[class^="tab_"][class*="not-selected_"] span {
+  color: var(--rp-c-text-2);
+  font-weight: 500;
+  margin-bottom: 0;
+}
+
+div[class^="tab_"][class*="selected"]::after {
+  color: var(--rp-c-brand);
+  border-radius: 0;
+  width: 80%;
+  bottom: -2px;
+  height: 2px;
+  left: 10%;
+}
+
+/* Divider between code blocks and tabs */
+div[class^="language"] > .rspress-code-title {
+  border-top: 1px solid var(--rp-c-divider);
+}
