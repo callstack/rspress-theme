@@ -46,7 +46,7 @@
   /* Callstack/Background/Primary */
   --ck-background-primary: #201f24;
   /* Callstack/Border/Primary */
-  --ck-border-primary: #ffffff4d;
+  --ck-border-primary: #ffffff26;
   /* Callstack/Border/Secondary */
   --ck-border-secondary: #ffffff4d;
   /* Callstack/Foreground/Primary */
@@ -98,7 +98,7 @@
   --rp-c-text-2: var(--ck-text-secondary) !important;
   --rp-c-text-3: var(--ck-text-tertiary) !important;
   --rp-c-text-4: var(--ck-text-tertiary) !important;
-  --rp-c-text-code: var(--rp-c-brand-dark) !important;
+  --rp-c-text-code: var(--ck-accent) !important;
   --rp-c-brand: var(--ck-accent) !important;
   --rp-c-brand-light: var(--ck-accent) !important;
   --rp-c-brand-lighter: var(--ck-accent) !important;
@@ -122,16 +122,10 @@
 }
 
 .dark {
-  --rp-c-bg: var(--ck-background-primary) !important;
   --rp-c-bg-soft: var(--ck-foreground-primary) !important;
   --rp-c-bg-mute: var(--ck-foreground-secondary) !important;
-  --rp-c-divider: var(--ck-border-primary) !important;
-  --rp-c-divider-light: var(--ck-border-secondary) !important;
-  --rp-c-text-1: var(--ck-text-primary) !important;
-  --rp-c-text-2: var(--ck-text-secondary) !important;
-  --rp-c-text-3: var(--ck-text-tertiary) !important;
-  --rp-c-text-4: var(--ck-text-tertiary) !important;
-  --rp-c-text-code: var(--rp-c-brand-light) !important;
+  --rp-c-divider: var(--ck-border-secondary) !important;
+  --rp-c-divider-light: var(--ck-border-primary) !important;
   --rp-code-title-bg: rgba(54, 53, 57, 1) !important;
   --rp-code-block-bg: rgba(43, 42, 47, 1) !important;
 }
@@ -304,11 +298,17 @@ p.rspress-home-hero-text {
   padding: 4px !important;
   border-radius: 2px !important;
   border: 1px solid var(--rp-c-divider-light) !important;
+  background-color: var(--rp-c-bg) !important;
+  transition: none !important;
+}
+
+.rspress-nav-search-button button > div {
+  background-color: var(--rp-c-divider-light) !important;
 }
 
 .rspress-nav-appearance > div.rp-border {
   color: var(--rp-c-text-1) !important;
-  background: var(--rp-c-bg-soft) !important;
+  background: var(--rp-c-divider-light) !important;
   border: none !important;
   border-radius: 2px !important;
   padding: 4px !important;
@@ -326,7 +326,7 @@ div[class^="social-links-icon"] {
 }
 
 div[class^="social-links-icon"] > div {
-  background: var(--rp-c-bg-soft) !important;
+  background: var(--rp-c-divider-light) !important;
   border: none !important;
   border-radius: 2px !important;
   padding: 6px !important;
@@ -442,7 +442,7 @@ h6 {
 .overview-index div {
   border-top: none !important;
   color: var(--rp-c-text-1) !important;
-  font-family: var(--ck-font-family) !important;
+  font-family: var(--rp-font-family) !important;
   font-weight: 400 !important;
   font-size: 16px !important;
   gap: 0 !important;
@@ -548,7 +548,7 @@ div#search-container div[class^="inputForm_"] label > svg {
 
 input.rspress-search-panel-input {
   color: var(--rp-c-text-1) !important;
-  font-family: var(--ck-font-family) !important;
+  font-family: var(--rp-font-family) !important;
   font-size: 16px !important;
   font-style: normal !important;
   font-weight: 400 !important;
