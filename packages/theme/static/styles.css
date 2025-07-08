@@ -228,7 +228,7 @@ h2 {
 #aside-container {
   border-left: 1px solid var(--rp-c-divider-light) !important;
   margin: -48px 0 0 0 !important;
-  padding: 36px 0 16px 0 !important;
+  padding: 48px 0 16px 0 !important;
 }
 
 .aside-link.aside-active {
