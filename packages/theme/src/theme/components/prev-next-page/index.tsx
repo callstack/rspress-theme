@@ -1,5 +1,6 @@
 // @ts-expect-error runtime import
 import { Link } from '@theme';
+import IconArrowBarRight from './arrow';
 import styles from './index.module.scss';
 
 interface PrevNextPageProps {
@@ -15,13 +16,34 @@ const nextPageText = 'Next Page';
 export function PrevNextPage(props: PrevNextPageProps) {
   const { type, text, href } = props;
   const pageText = type === 'prev' ? prevPageText : nextPageText;
-  const linkClassName =
-    type === 'prev' ? styles.pagerLink : `${styles.pagerLink} ${styles.next}`;
+  const isPrev = type === 'prev';
 
   return (
-    <Link href={href} className={linkClassName}>
-      <span className={styles.desc}>{pageText}</span>
-      <span className={styles.title}>{text}</span>
+    <Link href={href} className={styles.pagerLink}>
+      <div className={`${styles.inner} ${isPrev ? styles.prev : styles.next}`}>
+        {isPrev && (
+          <span className={styles.iconWrap}>
+            <span className={styles.iconBg}>
+              <IconArrowBarRight
+                className={`${styles.icon} ${styles.iconPrev}`}
+              />
+            </span>
+          </span>
+        )}
+        <span className={styles.textWrap}>
+          <span className={styles.desc}>{pageText}</span>
+          <span className={styles.title}>{text}</span>
+        </span>
+        {!isPrev && (
+          <span className={styles.iconWrap}>
+            <span className={styles.iconBg}>
+              <IconArrowBarRight
+                className={`${styles.icon} ${styles.iconNext}`}
+              />
+            </span>
+          </span>
+        )}
+      </div>
     </Link>
   );
 }
