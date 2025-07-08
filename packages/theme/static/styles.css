@@ -2,6 +2,9 @@
   /* Fonts */
   --ck-font-family: "Switzer Variable", Arial, sans-serif;
   --ck-header-font-family: "Alliance No. 2", Arial, sans-serif;
+  --ck-svg-arrow-up: path(
+    "M17.333 11.077H19.333V9.077H17.333V7.077H15.333V9.077H13.333V11.077H15.333V25.077H17.333V11.077ZM13.333 11.077H11.333V13.077H13.333V11.077ZM21.333 11.077H19.333V13.077H21.333V11.077ZM11.333 15.077V13.077H9.333V15.077H11.333ZM23.333 13.077H21.333V15.077H23.333V13.077Z"
+  );
   /* Callstack/Background/Primary */
   --ck-background-primary: #ffffff;
   /* Callstack/Border/Primary */
@@ -153,69 +156,160 @@ body {
   color: var(--rp-c-text-1) !important;
 }
 
-/* Sidebar item vertical line */
-.rspress-sidebar-group::before {
-  content: none;
+.rspress-nav-screen {
+  z-index: -1 !important;
 }
 
-/* Sidebar section items */
-.rspress-sidebar-group > div > a > div,
-.rspress-sidebar-group > div > section > div {
-  background-color: transparent !important;
-  font-size: 14px !important;
-  color: var(--rp-c-text-2) !important;
-  border-radius: var(--rp-radius-small) !important;
-  font-family: var(--rp-font-family) !important;
+div[class^="navTitleMask_"] {
+  border-bottom: 1px solid var(--rp-c-divider-light) !important;
 }
 
-.rspress-sidebar-group > div > a > div:hover,
-.rspress-sidebar-group > div > section > div:hover {
-  color: var(--rp-c-brand) !important;
-  background: var(--rp-c-bg-mute) !important;
+/* Scrollbar (nav & search) */
+.rspress-scrollbar {
+  scrollbar-gutter: auto !important;
+  scrollbar-width: thin !important;
+  overflow: scroll !important;
 }
 
+/* Sidebar right border */
 .rspress-sidebar {
-  background: var(--rp-c-bg) !important;
   border-right: 1px solid var(--rp-c-divider-light) !important;
-  color: var(--rp-c-text-2) !important;
-  font-family: var(--rp-font-family) !important;
-  margin-right: 12px !important;
-
-  & > div {
-    padding-right: 0 !important;
-  }
 }
 
-h2 {
-  margin: 0px !important;
-}
-
-/* Sidebar section headers */
-.rspress-scrollbar > nav > section > div:first-child,
-.rspress-scrollbar > nav > a > div:first-child {
-  background-color: transparent !important;
-  color: var(--rp-c-text-1) !important;
-  font-family: var(--rp-font-family) !important;
-}
-
-.rspress-scrollbar > nav > section > div:first-child:hover {
-  color: var(--rp-c-brand) !important;
-}
-
-.rspress-scrollbar > nav > a > div:first-child::before {
-  content: none;
-}
-
-.rspress-scrollbar > nav > a > div:first-child:hover {
-  color: var(--rp-c-brand) !important;
-}
-
-/* Sidebar section headers */
-.rspress-sidebar-section-header > span {
+/* Nav items */
+div[class^="menuItem_"],
+div[class^="menuItem_"] > span,
+div[class^="menuItemActive_"],
+div[class^="menuItemActive_"] > span {
+  color: var(--rp-c-text-2);
   font-size: 14px !important;
-  font-weight: 500 !important;
+  font-weight: 400;
+  margin-left: 0 !important;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  line-height: 1.5;
+  border-radius: 0 !important;
+}
+
+div[class^="menuItem_"]:hover {
+  background-color: var(--rp-c-bg-soft) !important;
+}
+
+div[class^="menuItem_"],
+div[class^="menuItemActive_"] {
+  padding-left: 24px;
+}
+
+div[class^="menuItemActive_"],
+div[class^="menuItemActive_"] > span {
+  color: var(--rp-c-brand);
+}
+
+div[class^="menuItemActive_"]:hover {
+  background-color: var(--rp-c-bg-soft) !important;
+}
+
+.rspress-sidebar-item span {
+  font-size: 14px !important;
+}
+
+.rspress-sidebar-section {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+.rspress-sidebar-section h2 {
+  margin-left: 0 !important;
+  padding-left: 24px !important;
+}
+
+.rspress-sidebar-section-header {
+  padding-top: 2px !important;
+  padding-bottom: 2px !important;
+  background-color: var(--rp-c-divider-light) !important;
+}
+
+/* Section header text */
+.rspress-sidebar-section-header > span {
   color: var(--rp-c-text-1) !important;
+  font-size: 14px !important;
   font-family: var(--rp-font-family) !important;
+  font-weight: 400 !important;
+  font-style: italic;
+}
+
+/* Sidebar group */
+.rspress-sidebar-group {
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  border: none !important;
+}
+
+/* Group collapse icon replacement */
+div[class^="collapseContainer_"] svg > path {
+  d: var(--ck-svg-arrow-up) !important;
+}
+
+/* Group collapse icon hover */
+div[class^="collapseContainer_"]:hover {
+  background-color: inherit !important;
+}
+
+/* Group collapse */
+.rspress-sidebar-collapse {
+  color: var(--rp-c-text-1) !important;
+  border-radius: 0 !important;
+}
+
+/* Group collapse header */
+.rspress-sidebar-collapse > h2 > span {
+  font-size: 14px !important;
+  font-family: var(--rp-font-family) !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+}
+
+/* Group collapse hover */
+.rspress-sidebar-collapse:hover {
+  background-color: var(--rp-c-bg-soft) !important;
+}
+
+/* Sidebar active item disable bg */
+.rspress-sidebar-item-active {
+  background-color: transparent !important;
+}
+
+/* Sidebar active item disable border */
+.rspress-sidebar-item-active::before {
+  display: none !important;
+}
+
+/* Sidebar active item border right */
+.rspress-sidebar-item-active::after {
+  content: "";
+  background-color: var(--rp-c-brand);
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* Remove default vertical line */
+.rspress-sidebar-group::before {
+  content: none !important;
+}
+
+/* Solid border after sections */
+.rspress-sidebar-item + div.rp-border-solid {
+  margin-left: 0 !important;
+}
+
+/* Remove dashed border after sections */
+.rp-border-dashed {
+  display: none !important;
 }
 
 /* Table of Contents */
@@ -577,7 +671,7 @@ li[class*="suggestItem_"] > a {
   padding: 0 16px 0 16px !important;
   background-color: transparent !important;
   box-shadow: none !important;
-  margin-left: 2px !important;
+  margin-left: 1px !important;
   letter-spacing: -0.32px;
   color: var(--rp-c-text-1) !important;
 }
