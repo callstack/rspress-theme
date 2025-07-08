@@ -740,6 +740,7 @@ div[class^="tab_"][class*="not-selected_"] span {
   margin-bottom: 0;
 }
 
+/* Tabs - selected underline */
 div[class^="tab_"][class*="selected"]::after {
   color: var(--rp-c-brand);
   border-radius: 0;
@@ -750,6 +751,13 @@ div[class^="tab_"][class*="selected"]::after {
 }
 
 /* Divider between code blocks and tabs */
-div[class^="language"] > .rspress-code-title {
+div[class^="container_"] div[class^="language"] > .rspress-code-title {
   border-top: 1px solid var(--rp-c-divider);
+}
+
+/* Code block actions */
+svg[class^="icon-wrap_"] > path,
+svg[class^="icon-wrapped_"] > path,
+svg[class^="icon-copy_"] > path {
+  fill: var(--rp-c-text-2);
 }
