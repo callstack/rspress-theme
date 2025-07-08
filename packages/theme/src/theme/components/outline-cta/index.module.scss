@@ -39,9 +39,7 @@
   letter-spacing: -0.28px;
 }
 
-.button{
-  background: #201F24;
-  color: var(--rp-c-text-1);
+.button {
   font-family: var(--rp-font-family);
   font-size: 14px;
   font-weight: 500;
@@ -52,9 +50,29 @@
   display: flex;
   gap: 8px;
   cursor: pointer;
+  width: fit-content;
+  align-self: flex-start;
 
   &:hover {
     background: #2d2c31;
+  }
+}
+
+.button-light {
+  background-color: #201F24;
+  color: #FFFFFF;
+  
+  &:hover {
+    background: #2d2c31;
+  }
+}
+
+.button-dark {
+  background-color: #FFFFFF;
+  color: #201F24;
+  
+  &:hover {
+    background: #F5F5F5;
   }
 }
 
@@ -62,8 +80,17 @@
   display: inline-block;
   width: 24px;
   height: 24px;
-  background: rgba(255,255,255,0.2);
   border-radius: 2px;
   padding: 4px;
+  margin-left: 8px;
 }
 
+.button-icon-light {
+  color: #fff;
+  background: #ffffff33;
+}
+
+.button-icon-dark {
+  color: #201f24;
+  background: #1514151a;
+}
