@@ -9,6 +9,14 @@ export default defineConfig({
     light: '/logo-light.png',
     dark: '/logo-dark.png',
   },
+  builderConfig: {
+    resolve: {
+      alias: {
+        '@runtime': '@rspress/core/runtime',
+        '@shared': '@rspress/shared',
+      },
+    },
+  },
   themeConfig: {
     overview: {
       filterNameText: '',

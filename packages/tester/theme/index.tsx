@@ -1,6 +1,7 @@
 import {
   Announcement,
   HomeFeature,
+  HomeHero,
   OutlineCTA,
   PrevNextPage,
 } from '@callstack/rspress-theme';
@@ -24,6 +25,6 @@ const Layout = () => {
   );
 };
 
-export { Layout, PrevNextPage, HomeFeature };
+export { Layout, PrevNextPage, HomeFeature, HomeHero };
 
 export * from 'rspress/theme';
