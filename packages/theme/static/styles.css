@@ -44,9 +44,9 @@
   /* Color/Neutral Lighter */
   --ck-neutral-lighter: #e9e7ee;
   --ck-bg-radial-1: radial-gradient(
-    ellipse 400% 100% at 65% 0%,
-    rgba(130, 50, 255, 0.7) 0%,
-    transparent 18%,
+    ellipse 800% 75% at 100% 0%,
+    rgba(130, 50, 255, 0.5) 0%,
+    transparent 30%,
     transparent 100%
   );
   --ck-bg-radial-2: radial-gradient(
@@ -801,9 +801,13 @@ div#root > section > div.rp-relative::before {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  background-image: url("nnnoise.svg"), var(--ck-bg-radial-1), var(--ck-bg-radial-2), var(--ck-bg-radial-3);
-  background-repeat: repeat, no-repeat, no-repeat, no-repeat;
-  background-size: auto, contain, cover, cover;
-  background-blend-mode: overlay, normal, normal, normal;
+  background-image: url("data:image/svg+xml;utf8,<svg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='0' y='0' width='32' height='32' fill='none'/><path d='M 32 0 H 0 V 32' stroke='%23ffffff33' stroke-width='2' stroke-opacity='1' stroke-dasharray='4,4'/></svg>"),
+    url("nnnoise.svg"), var(--ck-bg-radial-1), var(--ck-bg-radial-2), var(--ck-bg-radial-3);
+  background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat;
+  background-size: auto, auto, contain, cover, cover;
+  background-blend-mode: normal, overlay, normal, normal, normal;
+  /* Mask the grid to only show in the top right corner (e.g., top 40% height, right 40% width) */
   mask-image: var(--ck-bg-mask-1), var(--ck-bg-radial-2), var(--ck-bg-radial-3);
+  mask-size: 100% 100%, auto, auto, auto;
+  mask-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
 }
