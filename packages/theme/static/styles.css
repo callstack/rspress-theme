@@ -50,14 +50,14 @@
     transparent 100%
   );
   --ck-bg-radial-2: radial-gradient(
-    ellipse 400% 50% at 100% 100%,
-    rgba(130, 50, 255, 0.6) 0%,
+    ellipse calc(5 * 100vw) 100vw at 100% 100%,
+    rgba(130, 50, 255, 0.5) 0%,
     transparent 15%,
     transparent 100%
   );
   --ck-bg-radial-3: radial-gradient(
-    ellipse 200% 50% at 0% 100%,
-    rgba(130, 50, 255, 0.2) 0%,
+    ellipse 100vw 50vw at 0% 100%,
+    rgba(130, 50, 255, 0.5) 0%,
     transparent 15%,
     transparent 100%
   );
