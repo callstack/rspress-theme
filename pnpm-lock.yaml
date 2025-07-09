@@ -22,14 +22,14 @@ importers:
         version: link:../theme
       rspress:
         specifier: ^2.0.0-beta.18
-        version: 2.0.0-beta.18(@types/react@18.3.12)(acorn@8.14.0)(webpack@5.97.1)
+        version: 2.0.0-beta.18(@types/react@19.1.8)(acorn@8.14.0)(webpack@5.97.1)
     devDependencies:
       '@types/node':
-        specifier: ^18
-        version: 18.19.67
+        specifier: ^22
+        version: 22.7.7
       '@types/react':
-        specifier: ^18
-        version: 18.3.12
+        specifier: ^19
+        version: 19.1.8
 
   packages/theme:
     devDependencies:
@@ -49,7 +49,7 @@ importers:
         specifier: ^2.0.0-beta.18
         version: 2.0.0-beta.18
       '@types/node':
-        specifier: ^22.7.7
+        specifier: ^22
         version: 22.7.7
       '@types/react':
         specifier: ^19
@@ -614,17 +614,8 @@ packages:
   '@types/node@12.20.55':
     resolution: {integrity: sha512-J8xLz7q2OFulZ2cyGTLE1TbbZcjpno7FaN6zdJNrgAdrJ+DZzh/uFR6YrTb4C+nXakvud8Q4+rbhoIWlYQbUFQ==}
 
-  '@types/node@18.19.67':
-    resolution: {integrity: sha512-wI8uHusga+0ZugNp0Ol/3BqQfEcCCNfojtO6Oou9iVNGPTL6QNSdnUdqq85fRgIorLhLMuPIKpsN98QE9Nh+KQ==}
-
   '@types/node@22.7.7':
     resolution: {integrity: sha512-SRxCrrg9CL/y54aiMCG3edPKdprgMVGDXjA3gB8UmmBW5TcXzRUYAh8EWzTnSJFAd1rgImPELza+A3bJ+qxz8Q==}
-
-  '@types/prop-types@15.7.13':
-    resolution: {integrity: sha512-hCZTSvwbzWGvhqxp/RqVqwU999pBf2vp7hzIjiYOsl8wqOmUxkQ6ddw1cV3l8811+kdUFus/q4d1Y3E3SyEifA==}
-
-  '@types/react@18.3.12':
-    resolution: {integrity: sha512-D2wOSq/d6Agt28q7rSI3jhU7G6aiuzljDGZ2hTZHIkrTLUI+AF3WMeKkEZ9nN2fkBAlcktT6vcZjDFiIhMYEQw==}
 
   '@types/react@19.1.8':
     resolution: {integrity: sha512-AwAfQ2Wa5bCx9WP8nZL2uMZWod7J7/JSplxbTmBQ5ms6QpqNYm672H0Vu9ZVKVngQ+ii4R/byguVEUZQyeg44g==}
@@ -2024,9 +2015,6 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
-  undici-types@5.26.5:
-    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
-
   undici-types@6.19.8:
     resolution: {integrity: sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==}
 
@@ -2447,10 +2435,10 @@ snapshots:
       '@types/react': 19.1.8
       react: 19.1.0
 
-  '@mdx-js/react@3.1.0(@types/react@18.3.12)(react@19.1.0)':
+  '@mdx-js/react@3.1.0(@types/react@19.1.8)(react@19.1.0)':
     dependencies:
       '@types/mdx': 2.0.13
-      '@types/react': 18.3.12
+      '@types/react': 19.1.8
       react: 19.1.0
 
   '@microsoft/api-extractor-model@7.30.6(@types/node@22.7.7)':
@@ -2629,11 +2617,11 @@ snapshots:
       html-entities: 2.6.0
       react-refresh: 0.17.0
 
-  '@rspress/core@2.0.0-beta.18(@types/react@18.3.12)(acorn@8.14.0)(webpack@5.97.1)':
+  '@rspress/core@2.0.0-beta.18(@types/react@19.1.8)(acorn@8.14.0)(webpack@5.97.1)':
     dependencies:
       '@mdx-js/loader': 3.1.0(acorn@8.14.0)(webpack@5.97.1)
       '@mdx-js/mdx': 3.1.0(acorn@8.14.0)
-      '@mdx-js/react': 3.1.0(@types/react@18.3.12)(react@19.1.0)
+      '@mdx-js/react': 3.1.0(@types/react@19.1.8)(react@19.1.0)
       '@rsbuild/core': 1.4.5
       '@rsbuild/plugin-react': 1.3.4(@rsbuild/core@1.4.5)
       '@rspress/mdx-rs': 0.6.6
@@ -2884,20 +2872,9 @@ snapshots:
 
   '@types/node@12.20.55': {}
 
-  '@types/node@18.19.67':
-    dependencies:
-      undici-types: 5.26.5
-
   '@types/node@22.7.7':
     dependencies:
       undici-types: 6.19.8
-
-  '@types/prop-types@15.7.13': {}
-
-  '@types/react@18.3.12':
-    dependencies:
-      '@types/prop-types': 15.7.13
-      csstype: 3.1.3
 
   '@types/react@19.1.8':
     dependencies:
@@ -4419,10 +4396,10 @@ snapshots:
     dependencies:
       fs-extra: 11.3.0
 
-  rspress@2.0.0-beta.18(@types/react@18.3.12)(acorn@8.14.0)(webpack@5.97.1):
+  rspress@2.0.0-beta.18(@types/react@19.1.8)(acorn@8.14.0)(webpack@5.97.1):
     dependencies:
       '@rsbuild/core': 1.4.5
-      '@rspress/core': 2.0.0-beta.18(@types/react@18.3.12)(acorn@8.14.0)(webpack@5.97.1)
+      '@rspress/core': 2.0.0-beta.18(@types/react@19.1.8)(acorn@8.14.0)(webpack@5.97.1)
       '@rspress/shared': 2.0.0-beta.18
       cac: 6.7.14
       chokidar: 3.6.0
@@ -4683,8 +4660,6 @@ snapshots:
   typescript@5.8.2: {}
 
   typescript@5.8.3: {}
-
-  undici-types@5.26.5: {}
 
   undici-types@6.19.8: {}
 

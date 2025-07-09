@@ -15,7 +15,7 @@
     "@callstack/rspress-theme": "workspace:*"
   },
   "devDependencies": {
-    "@types/node": "^18",
-    "@types/react": "^18"
+    "@types/node": "^22",
+    "@types/react": "^19"
   }
 }
