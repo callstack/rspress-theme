@@ -1,4 +1,3 @@
-// @ts-expect-error runtime import
 import { Link } from '@theme';
 import IconArrowBarRight from './arrow';
 import styles from './index.module.scss';

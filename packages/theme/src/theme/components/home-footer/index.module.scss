@@ -1,0 +1,133 @@
+.container {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  width: 100%;
+  gap: 80px; // 20 * 4 from Tailwind gap-20
+}
+
+.logo {
+  width: 101px;
+  height: 20px;
+  overflow: hidden;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.logoSvg {
+  display: block;
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  color: var(--rp-c-text-1, #201f24);
+}
+
+.socialGrid {
+  display: flex;
+  flex-direction: row;
+  gap: 8px; // gap-2 in Tailwind = 0.5rem = 8px
+  height: 40px;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.socialButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  position: relative;
+  border-radius: 2px; // Radius/Small from design tokens
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:focus {
+    outline: 2px solid var(--rp-c-brand, #007acc);
+    outline-offset: 2px;
+  }
+}
+
+.socialIcon {
+  background-color: rgba(
+    21,
+    20,
+    21,
+    0.05
+  ); // Callstack/Button/Secondary/Icon from design tokens
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  position: relative;
+  border-radius: 2px; // Radius/Small
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+
+  svg,
+  img {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .row {
+    gap: 40px;
+  }
+
+  .socialGrid {
+    gap: 4px;
+  }
+
+  .socialButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .socialIcon {
+    width: 32px;
+    height: 32px;
+    padding: 8px;
+
+    svg,
+    img {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .row {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .socialGrid {
+    justify-content: center;
+  }
+}

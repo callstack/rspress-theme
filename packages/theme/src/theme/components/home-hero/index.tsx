@@ -1,9 +1,6 @@
 import type { FrontMatterMeta } from '@rspress/shared';
-// @ts-expect-error runtime import
 import { normalizeHrefInRuntime, normalizeImagePath } from '@runtime';
-// @ts-expect-error runtime import
 import { isExternalUrl, withBase } from '@shared';
-// @ts-expect-error runtime import
 import { Button, renderHtmlOrText } from '@theme';
 import styles from './index.module.scss';
 
