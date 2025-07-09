@@ -1,6 +1,6 @@
-export { default as IconServer } from './IconServer';
-export { default as IconLayoutDistributeVertical } from './IconLayoutDistributeVertical';
-export { default as IconSliders2 } from './IconSliders2';
-export { default as IconRepeat } from './IconRepeat';
-export { default as IconLayoutColumns } from './IconLayoutColumns';
-export { default as IconTrendingDown } from './IconTrendingDown';
+export { default as IconServer } from './server.svg?react';
+export { default as IconLayoutDistributeVertical } from './layout-distribute-vertical.svg?react';
+export { default as IconSliders2 } from './sliders-2.svg?react';
+export { default as IconRepeat } from './repeat.svg?react';
+export { default as IconLayoutColumns } from './layout-columns.svg?react';
+export { default as IconTrendingDown } from './trending-down.svg?react';
