@@ -12,6 +12,12 @@ export function HomeBanner({ text }: HomeBannerProps) {
         <div className={styles.gradient} />
         <div className={styles.pattern} />
       </div>
+      <img
+        className={styles.logo}
+        src={require('./ck-abstract-logo.png')}
+        alt="Abstract Logo"
+        aria-hidden="true"
+      />
       <div className={styles.content}>
         <h1 className={styles.heading}>
           Need React or React Native
@@ -20,9 +26,8 @@ export function HomeBanner({ text }: HomeBannerProps) {
         </h1>
         <div className={styles.description}>
           <p className={styles.descriptionText}>
-            We've spent years building full-stack, cross-platform
-            <br />
-            apps and solving tough technical challenges.
+            We've spent years building full-stack, cross-platform apps and
+            solving tough technical challenges.
           </p>
           <div className={styles.actions}>
             <button className={styles.ctaButton} type="button">

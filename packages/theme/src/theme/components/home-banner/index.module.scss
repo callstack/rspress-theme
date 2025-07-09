@@ -1,73 +1,31 @@
 .container {
-  background-color: #201f24;
   background-image: url('./gradient-dark.png');
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
   color: var(--rp-c-brand-light);
   padding: 64px 48px;
   border-radius: 8px;
   width: 85%;
+  height: 382px;
   display: flex;
   justify-self: center;
-  align-items: center;
   justify-content: flex-start;
+  align-items: center;
   position: relative;
   overflow: hidden;
-  min-height: 356px;
 }
 
-.background {
+.logo {
   position: absolute;
-  inset: 0;
-  overflow: hidden;
-  border-radius: 8px;
-}
-
-.gradient {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    135deg,
-    #6366f1 0%,
-    #8b5cf6 25%,
-    #d946ef 50%,
-    #f59e0b 75%,
-    #10b981 100%
-  );
-  opacity: 0.5;
-  z-index: 1;
-}
-
-.pattern {
-  position: absolute;
-  inset: 0;
-  background-image: radial-gradient(
-      circle at 20% 20%,
-      rgba(99, 102, 241, 0.3) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 80% 80%,
-      rgba(139, 92, 246, 0.3) 0%,
-      transparent 50%
-    ),
-    radial-gradient(
-      circle at 40% 60%,
-      rgba(217, 70, 239, 0.2) 0%,
-      transparent 50%
-    );
-  opacity: 0.4;
-  z-index: 2;
-}
-
-.union {
-  position: absolute;
-  right: 0;
+  left: 40%;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) rotateZ(-20deg);
   z-index: 3;
-  width: 220px;
-  height: auto;
+  width: 900px;
+  height: 625px;
   pointer-events: none;
-  opacity: 0.8;
+  opacity: 0.85;
 }
 
 .content {
