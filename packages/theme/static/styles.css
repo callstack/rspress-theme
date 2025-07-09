@@ -769,3 +769,16 @@ svg[class^="icon-wrapped_"] > path,
 svg[class^="icon-copy_"] > path {
   fill: var(--rp-c-text-2);
 }
+
+/* Home page background */
+div#root > section > div.rp-relative {
+  background-image: radial-gradient(
+      ellipse 200% 150% at 100% 0%,
+      rgba(130, 50, 255, 0.18) 0%,
+      transparent 18%,
+      transparent 100%
+    ), radial-gradient(ellipse 225% 100% at 100% 100%, rgba(130, 50, 255, 0.22) 0%, transparent 20%, transparent 100%),
+    radial-gradient(ellipse 175% 87.5% at 0% 100%, rgba(130, 50, 255, 0.14) 0%, transparent 16%, transparent 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
