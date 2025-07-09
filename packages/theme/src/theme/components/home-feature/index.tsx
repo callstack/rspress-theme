@@ -69,14 +69,11 @@ export function HomeFeature({
             key={title}
             className={`${getGridClass(feature)} rp-rounded hover:rp-var(--rp-c-brand)`}
           >
-            <div className="rp-h-full rp-p-2">
-              <article
-                key={title}
-                className={`rspress-home-feature-card ${styles.featureCard} rp-h-full rp-p-8 rp-rounded-4xl rp-border-transparent`}
-              >
+            <div className={styles.featureCardContainer}>
+              <article key={title} className={styles.featureCard}>
                 {icon ? (
                   <div className="rp-flex rp-items-center rp-justify-center">
-                    <div className="rspress-home-feature-icon rp-w-12 rp-h-12 rp-text-3xl rp-text-center">
+                    <div className={styles.featureIcon}>
                       {isIconComponent(IconComponent) ? (
                         <IconComponent />
                       ) : (
@@ -85,13 +82,8 @@ export function HomeFeature({
                     </div>
                   </div>
                 ) : null}
-
-                <h2 className="rspress-home-feature-title rp-font-bold rp-text-center">
-                  {title}
-                </h2>
-                <p className="rspress-home-feature-detail rp-leading-6 rp-pt-2 rp-text-sm rp-text-text-2 rp-font-medium">
-                  {details}
-                </p>
+                <h2 className={styles.featureTitle}>{title}</h2>
+                <p className={styles.featureDetail}>{details}</p>
               </article>
             </div>
           </div>

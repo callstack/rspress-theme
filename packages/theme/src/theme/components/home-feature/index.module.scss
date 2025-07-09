@@ -38,6 +38,11 @@
   }
 }
 
+.featureCardContainer {
+  height: 100%;
+  padding: 8px;
+}
+
 .featureCard {
   border: 1px dashed var(--rp-c-divider);
   border-radius: var(--rp-radius-small);
@@ -46,13 +51,14 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  height: 100%;
 }
 
 .featureCard:hover {
   border-color: var(--ck-accent);
 }
 
-.rspress-home-feature-icon {
+.featureIcon {
   width: 32px;
   height: 32px;
   display: flex;
@@ -62,7 +68,7 @@
   color: var(--rp-c-brand);
 }
 
-.rspress-home-feature-title {
+.featureTitle {
   font-family: 'Alliance No. 2', Arial, sans-serif;
   font-size: 20px;
   font-weight: 500;
@@ -73,7 +79,7 @@
   text-align: left;
 }
 
-.rspress-home-feature-detail {
+.featureDetail {
   font-family: var(--rp-font-family);
   font-size: 16px;
   font-weight: 400;
