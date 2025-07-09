@@ -7,7 +7,7 @@ interface HomeBannerProps {
 // biome-ignore lint/correctness/noUnusedVariables: <explanation>
 export function HomeBanner({ text }: HomeBannerProps) {
   return (
-    <div className={styles.container}>
+    <div className={`rp-max-w-6xl ${styles.container}`}>
       <div className={styles.background}>
         <div className={styles.gradient} />
         <div className={styles.pattern} />

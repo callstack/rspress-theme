@@ -804,7 +804,7 @@ div#root > section > div.rp-relative::before {
 }
 
 /* Home page bottom name + gradients */
-div#root > section {
+div#root > section:not(:has(div[class^="docLayout_"])) {
   position: relative; /* Ensure the parent is positioned */
   background-image: url("ck-name-dark.svg"), var(--ck-bg-radial-2), var(--ck-bg-radial-3);
   background-repeat: no-repeat, repeat, no-repeat, no-repeat;
@@ -813,7 +813,7 @@ div#root > section {
 }
 
 /* Home page bottom noise */
-div#root > section::before {
+div#root > section:not(:has(div[class^="docLayout_"]))::before {
   content: "";
   position: absolute;
   left: 0;

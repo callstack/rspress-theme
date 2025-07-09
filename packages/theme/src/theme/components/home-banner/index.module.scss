@@ -7,7 +7,7 @@
   padding: 64px 48px;
   margin: 32px;
   border-radius: 8px;
-  width: 85%;
+  width: calc(100% - 8 * 2px);
   height: 382px;
   display: flex;
   justify-self: center;

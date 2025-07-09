@@ -1,7 +1,8 @@
 .container {
-  width: 85%;
+  width: calc(100% - 8 * 2px);
   justify-self: center;
   margin: 90px;
+  padding: 4px;
 }
 
 .row {
