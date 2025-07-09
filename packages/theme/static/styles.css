@@ -44,27 +44,21 @@
   /* Color/Neutral Lighter */
   --ck-neutral-lighter: #e9e7ee;
   --ck-bg-radial-1: radial-gradient(
-    ellipse 800% 75% at 100% 0%,
+    ellipse calc(5 * 100vw) 100vw at 100% 0%,
     rgba(130, 50, 255, 0.5) 0%,
     transparent 30%,
     transparent 100%
   );
   --ck-bg-radial-2: radial-gradient(
-    ellipse 400% 75% at 100% 100%,
+    ellipse 400% 50% at 100% 100%,
     rgba(130, 50, 255, 0.6) 0%,
     transparent 15%,
     transparent 100%
   );
   --ck-bg-radial-3: radial-gradient(
     ellipse 200% 50% at 0% 100%,
-    rgba(130, 50, 255, 0.6) 0%,
+    rgba(130, 50, 255, 0.2) 0%,
     transparent 15%,
-    transparent 100%
-  );
-  --ck-bg-mask-1: radial-gradient(
-    ellipse 200% 150% at 90% 0%,
-    rgba(130, 50, 255, 0.5) 0%,
-    transparent 20%,
     transparent 100%
   );
 }
@@ -794,27 +788,42 @@ svg[class^="icon-copy_"] > path {
   fill: var(--rp-c-text-2);
 }
 
-/* Home page background */
+/* Home page background grid only on top */
 div#root > section > div.rp-relative::before {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  background-image: url("data:image/svg+xml;utf8,<svg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'><rect x='0' y='0' width='32' height='32' fill='none'/><path d='M 32 0 H 0 V 32' stroke='%23ffffff33' stroke-width='2' stroke-opacity='1' stroke-dasharray='4,4'/></svg>"),
-    url("nnnoise.svg"), var(--ck-bg-radial-1), var(--ck-bg-radial-2), var(--ck-bg-radial-3);
-  background-repeat: repeat, repeat, no-repeat, no-repeat, no-repeat;
-  background-size: auto, auto, contain, cover, cover;
-  background-blend-mode: normal, overlay, normal, normal, normal;
-  /* Mask the grid to only show in the top right corner (e.g., top 40% height, right 40% width) */
-  mask-image: var(--ck-bg-mask-1), var(--ck-bg-radial-2), var(--ck-bg-radial-3);
-  mask-size: 100% 100%, auto, auto, auto;
-  mask-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
+  background-image: url("bg-top.svg"), url("nnnoise.svg"), var(--ck-bg-radial-1);
+  background-repeat: no-repeat, repeat, no-repeat;
+  background-size: contain, auto, contain;
+  mask-image: radial-gradient(ellipse calc(150vw) 150vh at 100% -5%, rgb(0, 0, 0) -5%, transparent 40%);
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
 }
 
+/* Home page bottom name + gradients */
 div#root > section {
-  background-image: url("ck-name-dark.svg");
-  background-repeat: no-repeat;
-  background-position: center calc(100% + 12px);
-  background-size: 95% auto;
+  position: relative; /* Ensure the parent is positioned */
+  background-image: url("ck-name-dark.svg"), var(--ck-bg-radial-2), var(--ck-bg-radial-3);
+  background-repeat: no-repeat, repeat, no-repeat, no-repeat;
+  background-size: 95% auto, auto, contain, contain;
+  background-position: center calc(100% + 12px), bottom, bottom, bottom;
+}
+
+/* Home page bottom noise */
+div#root > section::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: auto;
+  height: 100%;
+  pointer-events: none;
+  background-image: url("nnnoise.svg");
+  background-repeat: repeat;
+  background-size: cover;
+  mask-image: var(--ck-bg-radial-2), var(--ck-bg-radial-3);
 }
