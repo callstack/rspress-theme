@@ -11,6 +11,11 @@ declare module '*.svg?react' {
   export default ReactComponent;
 }
 
+declare module '*.png' {
+  const content: string;
+  export default content;
+}
+
 // rspress aliases
 declare module '@theme';
 declare module '@runtime';
