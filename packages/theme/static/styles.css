@@ -43,6 +43,30 @@
   --ck-neutral-darkest: #201f24;
   /* Color/Neutral Lighter */
   --ck-neutral-lighter: #e9e7ee;
+  --ck-bg-radial-1: radial-gradient(
+    ellipse 400% 100% at 65% 0%,
+    rgba(130, 50, 255, 0.7) 0%,
+    transparent 18%,
+    transparent 100%
+  );
+  --ck-bg-radial-2: radial-gradient(
+    ellipse 400% 75% at 100% 100%,
+    rgba(130, 50, 255, 0.6) 0%,
+    transparent 15%,
+    transparent 100%
+  );
+  --ck-bg-radial-3: radial-gradient(
+    ellipse 200% 50% at 0% 100%,
+    rgba(130, 50, 255, 0.6) 0%,
+    transparent 15%,
+    transparent 100%
+  );
+  --ck-bg-mask-1: radial-gradient(
+    ellipse 200% 150% at 90% 0%,
+    rgba(130, 50, 255, 0.5) 0%,
+    transparent 20%,
+    transparent 100%
+  );
 }
 
 .dark {
@@ -771,14 +795,15 @@ svg[class^="icon-copy_"] > path {
 }
 
 /* Home page background */
-div#root > section > div.rp-relative {
-  background-image: radial-gradient(
-      ellipse 200% 150% at 100% 0%,
-      rgba(130, 50, 255, 0.18) 0%,
-      transparent 18%,
-      transparent 100%
-    ), radial-gradient(ellipse 225% 100% at 100% 100%, rgba(130, 50, 255, 0.22) 0%, transparent 20%, transparent 100%),
-    radial-gradient(ellipse 175% 87.5% at 0% 100%, rgba(130, 50, 255, 0.14) 0%, transparent 16%, transparent 100%);
-  background-repeat: no-repeat;
-  background-size: cover;
+div#root > section > div.rp-relative::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image: url("nnnoise.svg"), var(--ck-bg-radial-1), var(--ck-bg-radial-2), var(--ck-bg-radial-3);
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat;
+  background-size: auto, contain, cover, cover;
+  background-blend-mode: overlay, normal, normal, normal;
+  mask-image: var(--ck-bg-mask-1), var(--ck-bg-radial-2), var(--ck-bg-radial-3);
 }
