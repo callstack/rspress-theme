@@ -1,0 +1,17 @@
+.container {
+  background-color: var(--rp-c-brand);
+  color: var(--rp-c-brand-light);
+  padding: 16px;
+  border-radius: 8px;
+  width: 85%;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  color: var(--rp-c-text-1);
+  font-size: 16px;
+  font-weight: 600;
+}
