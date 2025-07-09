@@ -1,3 +1,4 @@
+import { pluginImageCompress } from '@rsbuild/plugin-image-compress';
 import { pluginReact } from '@rsbuild/plugin-react';
 import { pluginSass } from '@rsbuild/plugin-sass';
 import { type LibConfig, defineConfig } from '@rslib/core';
@@ -28,7 +29,7 @@ const themeConfig: LibConfig = {
     externals: ['@runtime', '@theme', '@shared'],
     target: 'web',
   },
-  plugins: [pluginReact(), pluginSass()],
+  plugins: [pluginImageCompress(), pluginReact(), pluginSass()],
 };
 
 export default defineConfig({
