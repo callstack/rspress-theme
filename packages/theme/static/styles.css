@@ -811,3 +811,10 @@ div#root > section > div.rp-relative::before {
   mask-size: 100% 100%, auto, auto, auto;
   mask-repeat: no-repeat, no-repeat, no-repeat, no-repeat;
 }
+
+div#root > section {
+  background-image: url("ck-name-dark.svg");
+  background-repeat: no-repeat;
+  background-position: center calc(100% + 12px);
+  background-size: 95% auto;
+}
