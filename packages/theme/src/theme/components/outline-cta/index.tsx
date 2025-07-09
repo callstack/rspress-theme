@@ -1,7 +1,10 @@
-import IconCorner from './corner';
+import { useDark } from '@runtime';
+import { CTAButton } from '../../primitives/cta-button';
 import styles from './index.module.scss';
 
-export const OutlineCTA = ({ isDark }: { isDark: boolean }) => {
+export function OutlineCTA() {
+  const isDark = useDark();
+
   return (
     <div className={styles.container}>
       <div>
@@ -13,17 +16,7 @@ export const OutlineCTA = ({ isDark }: { isDark: boolean }) => {
           efficiency.
         </div>
       </div>
-      <button
-        className={`${styles.button} ${isDark ? styles.buttonDark : styles.buttonLight}`}
-        type="button"
-      >
-        Let's chat
-        <IconCorner
-          className={`${styles['button-icon']} ${isDark ? styles.buttonIconDark : styles.buttonIconLight}`}
-          aria-hidden="true"
-          focusable="false"
-        />
-      </button>
+      <CTAButton isDark={isDark} text="Let's talk" />
     </div>
   );
-};
+}

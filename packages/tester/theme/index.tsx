@@ -7,15 +7,12 @@ import {
   OutlineCTA,
   PrevNextPage,
 } from '@callstack/rspress-theme';
-import { useDark } from 'rspress/runtime';
 import {
   HomeLayout as RspressHomeLayout,
   Layout as RspressLayout,
 } from 'rspress/theme';
 
 const Layout = () => {
-  const isDark = useDark();
-
   return (
     <RspressLayout
       beforeNav={
@@ -25,7 +22,7 @@ const Layout = () => {
           localStorageKey=""
         />
       }
-      afterOutline={<OutlineCTA isDark={isDark} />}
+      afterOutline={<OutlineCTA />}
     />
   );
 };
@@ -35,7 +32,7 @@ const HomeLayout = () => {
     <RspressHomeLayout
       afterFeatures={
         <>
-          <HomeBanner text="HomeBanner" />
+          <HomeBanner />
           <HomeFooter />
         </>
       }
