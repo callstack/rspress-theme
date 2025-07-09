@@ -1,39 +1,41 @@
 .bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    position: relative;
-    background-color: #8232FF;
-    height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  position: relative;
+  background-color: #8232ff;
+  height: 32px;
+}
+
+.link {
+  color: #fff;
+  font-weight: 500;
+  font-size: 14px;
+  font-family: 'Switzer Variable', sans-serif;
+  text-decoration: none;
+  line-height: 1.5;
+
+  &:hover {
+    text-decoration: underline;
+    opacity: 0.9;
   }
-  
-  .link {
-    color: #fff;
-    font-weight: 500;
-    font-size: 14px;
-    font-family: "Switzer Variable", sans-serif;
-    text-decoration: none;
-    line-height: 1.5;
-  
-    &:hover {
-      text-decoration: underline;
-      opacity: 0.9;
-    }
-  
-    &:active {
-      opacity: 0.7;
-    }
+
+  &:active {
+    opacity: 0.7;
   }
-  
-  .close {
-    right: 16px;
-    position: absolute;
-    cursor: pointer !important;
-    z-index: 1;
-    box-sizing: border-box;
-  
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.3);
-    }
+}
+
+.close {
+  width: 16px;
+  height: 16px;
+  right: 16px;
+  position: absolute;
+  cursor: pointer !important;
+  z-index: 1;
+  box-sizing: border-box;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.3);
   }
+}
