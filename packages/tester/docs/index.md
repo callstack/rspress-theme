@@ -2,9 +2,8 @@
 pageType: home
 
 hero:
-  name: My Site
-  text: A cool website!
-  tagline: This is the tagline
+  name: Modern build tool for React Native
+  tagline: Re.Pack brings Rspack and webpack ecosystem to mobile React Native apps.
   actions:
     - theme: brand
       text: Quick Start

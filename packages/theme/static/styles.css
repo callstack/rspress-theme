@@ -226,7 +226,6 @@ div[class^="menuItemActive_"]:hover {
 .rspress-sidebar-section-header {
   padding-top: 2px !important;
   padding-bottom: 2px !important;
-  background-color: var(--rp-c-divider-light) !important;
 }
 
 /* Section header text */
