@@ -1,10 +1,11 @@
 .container {
   background-image: url('./gradient-dark.png');
   background-size: cover;
-  background-position: bottom center;
+  background-position: bottom right;
   background-repeat: no-repeat;
   color: var(--rp-c-brand-light);
   padding: 64px 48px;
+  margin: 32px;
   border-radius: 8px;
   width: 85%;
   height: 382px;
@@ -41,12 +42,12 @@
 
 .heading {
   color: #ffffff;
+  font-family: 'Alliance No. 2', Arial, sans-serif;
   font-size: 40px;
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -1.6px;
   margin: 0;
-  font-family: var(--rp-font-family-heading, 'Inter', sans-serif);
 }
 
 .description {
@@ -62,8 +63,7 @@
   font-weight: 400;
   line-height: 1.5;
   letter-spacing: -0.36px;
-  margin: 0;
-  font-family: var(--rp-font-family-text, 'Inter', sans-serif);
+  font-family: var(--rp-font-family);
 }
 
 .actions {
@@ -117,10 +117,4 @@
     width: 16px;
     height: 16px;
   }
-}
-
-.text {
-  color: var(--rp-c-text-1);
-  font-size: 16px;
-  font-weight: 600;
 }
