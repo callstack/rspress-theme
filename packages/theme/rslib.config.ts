@@ -53,4 +53,7 @@ export default defineConfig({
       format: 'cjs',
     },
   ],
+  output: {
+    copy: [{ from: './src/styles', to: 'styles' }],
+  },
 });
