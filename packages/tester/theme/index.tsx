@@ -22,7 +22,7 @@ const Layout = () => {
           localStorageKey=""
         />
       }
-      afterOutline={<OutlineCTA />}
+      afterOutline={<OutlineCTA href="https://callstack.com" />}
     />
   );
 };
@@ -32,7 +32,7 @@ const HomeLayout = () => {
     <RspressHomeLayout
       afterFeatures={
         <>
-          <HomeBanner />
+          <HomeBanner href="https://callstack.com" />
           <HomeFooter />
         </>
       }
