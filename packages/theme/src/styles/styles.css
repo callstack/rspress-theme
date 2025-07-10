@@ -814,3 +814,8 @@ div#root > section:not(:has(div[class^="docLayout_"]))::before {
   background-size: cover;
   mask-image: var(--ck-bg-radial-2), var(--ck-bg-radial-3);
 }
+
+/* Home page footer */
+footer {
+  border: none !important;
+}
