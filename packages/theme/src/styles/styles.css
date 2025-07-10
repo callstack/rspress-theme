@@ -878,6 +878,32 @@ span[class*="badge_"][class*="details_"] {
   background: url("../assets/notes.svg") no-repeat center center / contain;
 }
 
+details.details {
+  position: relative;
+}
+
+summary.rspress-directive-title {
+  width: 100%;
+}
+
+details[open] > summary.rspress-directive-title::after {
+  content: "";
+  position: absolute;
+  left: 95%;
+  width: 24px;
+  height: 24px;
+  background: url("../assets/arrow-right.svg") no-repeat center center / contain;
+}
+
+details:not([open]) > summary.rspress-directive-title::after {
+  content: "";
+  position: absolute;
+  left: 95%;
+  width: 24px;
+  height: 24px;
+  background: url("../assets/arrow-down.svg") no-repeat center center / contain;
+}
+
 /* links */
 [class*="link_"]:hover {
   color: var(--rp-c-brand) !important;
