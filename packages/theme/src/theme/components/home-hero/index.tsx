@@ -1,5 +1,6 @@
 import type { FrontMatterMeta } from '@rspress/shared';
-import { normalizeImagePath } from '@runtime';
+import { normalizeImagePath, useDark } from '@runtime';
+import { CTAButton } from 'src/theme/primitives';
 // import { isExternalUrl, withBase } from '@shared';
 // import { Button, renderHtmlOrText } from '@theme';
 import styles from './index.module.scss';
@@ -24,6 +25,7 @@ function HomeHero({
   afterHeroActions,
   frontmatter,
 }: HomeHeroProps) {
+  const isDark = useDark();
   const hero = frontmatter.hero ?? DEFAULT_HERO;
   const imageSrc =
     typeof hero.image?.src === 'string'
@@ -53,6 +55,20 @@ function HomeHero({
         ) : null}
         {hero?.name ? <h1 className={styles.heroName}>{hero.name}</h1> : null}
       </div>
+      <div className={styles.heroTaglineActions}>
+        <div className={styles.heroTagline}>{hero.tagline}</div>
+        {beforeHeroActions}
+        <div className={styles.heroActions}>
+          {hero.actions.map((action, index) => (
+            <CTAButton
+              isDark={index === 0 ? isDark : !isDark}
+              key={action.text}
+              text={action.text}
+            />
+          ))}
+        </div>
+      </div>
+      {afterHeroActions}
     </div>
   );
 }
