@@ -89,6 +89,18 @@ export { Layout, HomeLayout, PrevNextPage, HomeFeature, HomeHero };
 export * from 'rspress/theme';
 ```
 
+### Copying Assets
+
+To override the default assets and replace them with the Callstack theme assets, run the following command:
+
+```bash
+npx @callstack/rspress-theme copy-assets <projectDir>
+```
+
+This will copy the assets to the `theme/assets` directory in your project.
+
+> Note: This command should be run after you have installed the package and before you start using the theme.
+
 ### Importing Components
 
 You can import components from the theme as named imports:
