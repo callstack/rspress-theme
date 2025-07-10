@@ -16,9 +16,11 @@
       "types": "./dist/plugin/index.d.ts",
       "import": "./dist/plugin/index.js",
       "require": "./dist/plugin/index.cjs"
-    }
+    },
+    "./package.json": "./package.json"
   },
-  "files": ["dist", "plugin", "README.md"],
+  "files": ["bin", "dist", "plugin", "README.md"],
+  "bin": "./bin/cli.js",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

@@ -54,6 +54,9 @@ export default defineConfig({
     },
   ],
   output: {
-    copy: [{ from: './src/styles', to: 'styles' }],
+    copy: [
+      { from: './src/styles', to: 'styles' },
+      { from: './src/assets', to: 'assets' },
+    ],
   },
 });
