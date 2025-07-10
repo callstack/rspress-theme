@@ -1,6 +1,4 @@
 :root {
-  /* Fonts */
-  --ck-font-family: "Switzer Variable", Arial, sans-serif;
   --ck-header-font-family: "Alliance No. 2", Arial, sans-serif;
   /* Callstack/Background/Primary */
   --ck-background-primary: #ffffff;
@@ -32,10 +30,10 @@
   --ck-button-secondary-icon: #1514150d;
   /* Callstack/Button/Secondary/Border */
   --ck-button-secondary-border: #15141526;
-  /* Coding/Coffee */
-  --ck-coding-coffee: #ffb14c;
-  /* Coding/Live Stream */
-  --ck-coding-live-stream: #fa7171;
+  /* Callstack/Container/Warning */
+  --ck-warning: #ffb14c;
+  /* Callstack/Container/Live Stream */
+  --ck-danger: #fa7171;
   /* Color/Neutral Darkest */
   --ck-neutral-darkest: #201f24;
   /* Color/Neutral Lighter */
@@ -104,48 +102,103 @@
   --rp-radius: 4px !important;
   --rp-radius-small: 2px !important;
   --rp-radius-large: 8px !important;
-  --rp-font-family: var(--ck-font-family) !important;
+  --rp-font-family: "Switzer Variable", Arial, sans-serif !important;
   --rp-nav-height: 48px !important;
-  /* rspress colors */
+  /* rspress background colors */
   --rp-c-bg: var(--ck-background-primary) !important;
   --rp-c-bg-soft: var(--ck-foreground-secondary) !important;
   --rp-c-bg-mute: var(--ck-foreground-primary) !important;
+  /* rspress divider colors */
   --rp-c-divider: var(--ck-border-primary) !important;
   --rp-c-divider-light: var(--ck-border-secondary) !important;
+  /* rspress text colors */
   --rp-c-text-1: var(--ck-text-primary) !important;
   --rp-c-text-2: var(--ck-text-secondary) !important;
   --rp-c-text-3: var(--ck-text-tertiary) !important;
   --rp-c-text-4: var(--ck-text-tertiary) !important;
   --rp-c-text-code: var(--ck-accent) !important;
+  /* rspress brand colors */
   --rp-c-brand: var(--ck-accent) !important;
   --rp-c-brand-light: var(--ck-accent) !important;
   --rp-c-brand-lighter: var(--ck-accent) !important;
   --rp-c-brand-dark: var(--ck-accent) !important;
   --rp-c-brand-darker: var(--ck-accent) !important;
   --rp-c-brand-tint: var(--ck-accent) !important;
+  /* rspress gray colors */
   --rp-c-gray: var(--ck-text-secondary) !important;
   --rp-c-gray-light-1: var(--ck-text-tertiary) !important;
   --rp-c-gray-light-2: var(--ck-foreground-secondary) !important;
   --rp-c-gray-light-3: var(--ck-foreground-secondary) !important;
   --rp-c-gray-light-4: var(--ck-foreground-secondary) !important;
   --rp-c-gray-light-5: var(--ck-foreground-secondary) !important;
+  /* rspress dark colors */
   --rp-c-dark: var(--ck-neutral-darkest) !important;
   --rp-c-dark-light-1: var(--ck-neutral-darkest) !important;
   --rp-c-dark-light-2: var(--ck-neutral-darkest) !important;
   --rp-c-dark-light-3: var(--ck-neutral-darkest) !important;
   --rp-c-dark-light-4: var(--ck-neutral-darkest) !important;
   --rp-c-dark-light-5: var(--ck-neutral-darkest) !important;
+  /* rspress code colors */
   --rp-code-title-bg: rgba(233, 231, 238, 1) !important;
   --rp-code-block-bg: rgba(249, 248, 253, 1) !important;
+  /* rspress note container colors */
+  --rp-container-note-border: var(--rp-c-divider-light);
+  --rp-container-note-text: var(--rp-c-text-1);
+  --rp-container-note-bg: var(--rp-c-bg-soft);
+  --rp-container-note-code-bg: rgba(128, 128, 128, 0.1);
+  --rp-container-note-link: var(--rp-c-link);
+  /* rspress tip container colors */
+  --rp-container-tip-border: rgba(7, 156, 112, 0.2);
+  --rp-container-tip-text: #278359;
+  --rp-container-tip-bg: rgba(7, 156, 112, 0.06);
+  --rp-container-tip-code-bg: rgba(7, 156, 112, 0.1);
+  /* rspress info container colors */
+  --rp-container-info-border: rgba(0, 149, 255, 0.2);
+  --rp-container-info-text: #07f;
+  --rp-container-info-bg: rgba(0, 149, 255, 0.06);
+  --rp-container-info-code-bg: rgba(0, 149, 255, 0.1);
+  /* rspress warning container colors */
+  --rp-container-warning-border: rgba(255, 197, 23, 0.4);
+  --rp-container-warning-text: #887233;
+  --rp-container-warning-bg: rgba(255, 197, 23, 0.1);
+  --rp-container-warning-code-bg: rgba(255, 197, 23, 0.1);
+  /* rspress danger container colors */
+  --rp-container-danger-border: rgba(237, 60, 80, 0.2);
+  --rp-container-danger-text: #ab2131;
+  --rp-container-danger-bg: rgba(237, 60, 80, 0.08);
+  --rp-container-danger-code-bg: rgba(237, 60, 80, 0.1);
+  /* rspress details container colors */
+  --rp-container-details-border: var(--rp-c-divider-light);
+  --rp-container-details-text: var(--rp-c-text-1);
+  --rp-container-details-bg: var(--rp-c-bg-soft);
+  --rp-container-details-code-bg: rgba(128, 128, 128, 0.1);
+  --rp-container-details-link: var(--rp-c-link);
 }
 
 .dark {
+  /* rspress background colors */
   --rp-c-bg-soft: var(--ck-foreground-primary) !important;
   --rp-c-bg-mute: var(--ck-foreground-secondary) !important;
+  /* rspress divider colors */
   --rp-c-divider: var(--ck-border-secondary) !important;
   --rp-c-divider-light: var(--ck-border-primary) !important;
+  /* rspress code colors */
   --rp-code-title-bg: rgba(54, 53, 57, 1) !important;
   --rp-code-block-bg: rgba(43, 42, 47, 1) !important;
+  /* rspress tip container colors */
+  --rp-container-tip-text: #3ec480;
+  --rp-container-tip-bg: rgba(7, 156, 112, 0.1);
+  /* rspress info container colors */
+  --rp-container-info-text: #66c2ff;
+  --rp-container-info-bg: rgba(0, 149, 255, 0.1);
+  /* rspress warning container colors */
+  --rp-container-warning-text: rgb(251, 180, 81);
+  --rp-container-warning-border: rgba(255, 197, 23, 0.25);
+  --rp-container-warning-bg: rgba(255, 197, 23, 0.12);
+  /* rspress danger container colors */
+  --rp-container-danger-text: rgb(247, 110, 133);
+  --rp-container-danger-border: rgba(237, 60, 80, 0.3);
+  --rp-container-danger-bg: rgba(237, 60, 80, 0.12);
 }
 
 body {
@@ -570,7 +623,7 @@ input#api-filter {
   border: 1px solid var(--ck-border-primary);
   color: var(--ck-text-secondary);
   border-radius: var(--rp-radius-small);
-  font-family: var(--ck-font-family);
+  font-family: var(--rp-font-family);
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
@@ -584,7 +637,7 @@ input#api-filter {
 input#api-filter::placeholder {
   color: var(--ck-text-tertiary);
   opacity: 1;
-  font-family: var(--ck-font-family);
+  font-family: var(--rp-font-family);
   font-size: 16px;
   font-weight: 400;
   letter-spacing: -0.32px;
@@ -610,7 +663,7 @@ div#search-container div[class^="modal_"] {
   background: var(--ck-background-primary);
   border: 1px solid var(--ck-border-primary);
   border-radius: var(--rp-radius);
-  font-family: var(--ck-font-family);
+  font-family: var(--rp-font-family);
   padding: 0px !important;
   box-shadow: 0px 40px 40px -20px rgba(32, 31, 36, 0.3);
 }
@@ -800,4 +853,10 @@ div#root > section:not(:has(div[class^="docLayout_"]))::before {
 /* Home page footer */
 footer {
   border: none !important;
+}
+
+/* Badge */
+span[class*="badge_"] {
+  border-radius: var(--rp-radius-small) !important;
+  padding: 0 6px !important;
 }
