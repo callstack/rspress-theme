@@ -5,3 +5,4 @@ export { HomeFooter } from './home-footer';
 export { HomeHero } from './home-hero';
 export { OutlineCTA } from './outline-cta';
 export { PrevNextPage } from './prev-next-page';
+export { VersionBadge } from './version-badge';
