@@ -1,5 +1,5 @@
 import { CTAButton } from '../../primitives/cta-button';
-import abstractAtom from './abstract-atom.png';
+import abstractAtom from './abstract-atom.avif';
 import styles from './index.module.scss';
 
 export function HomeBanner() {

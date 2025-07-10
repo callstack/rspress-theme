@@ -3,6 +3,7 @@ pageType: home
 
 hero:
   name: Modern build tool for React Native
+  text: Something something bundler
   tagline: Re.Pack brings Rspack and webpack ecosystem to mobile React Native apps.
   actions:
     - theme: brand

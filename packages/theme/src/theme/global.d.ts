@@ -16,6 +16,11 @@ declare module '*.png' {
   export default content;
 }
 
+declare module '*.avif' {
+  const content: string;
+  export default content;
+}
+
 // rspress aliases
 declare module '@theme';
 declare module '@runtime';
