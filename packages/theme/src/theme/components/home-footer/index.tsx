@@ -26,7 +26,7 @@ function HomeFooter(props: HomeFooterProps) {
   const SocialLinksComponent = props.SocialLinksComponent ?? SocialLinks;
 
   return (
-    <footer className={`rp-max-w-6xl ${styles.container}`}>
+    <div className={`rp-max-w-6xl ${styles.container}`}>
       <div className={styles.row}>
         <LinkComponent href="https://www.callstack.com/#">
           <div className={styles.logo}>
@@ -36,7 +36,7 @@ function HomeFooter(props: HomeFooterProps) {
         </LinkComponent>
         <SocialLinksComponent socialLinks={siteData.themeConfig.socialLinks} />
       </div>
-    </footer>
+    </div>
   );
 }
 
