@@ -1,10 +1,7 @@
-import { useDark } from '@runtime';
-import { CTAButton } from '../../primitives/cta-button';
+import { Button } from '../../primitives/button';
 import styles from './index.module.scss';
 
 export function OutlineCTA() {
-  const isDark = useDark();
-
   return (
     <div className={styles.container}>
       <div>
@@ -16,7 +13,7 @@ export function OutlineCTA() {
           efficiency.
         </div>
       </div>
-      <CTAButton isDark={isDark} text="Let's talk" />
+      <Button>Let's talk</Button>
     </div>
   );
 }

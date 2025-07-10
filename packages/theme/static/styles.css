@@ -788,6 +788,11 @@ svg[class^="icon-copy_"] > path {
   fill: var(--rp-c-text-2);
 }
 
+/* Fixes positioning of ck name on 404 page */
+div#root > section {
+  min-height: 100vh;
+}
+
 /* Home page background grid only on top */
 div#root > section > div.rp-relative::before {
   content: "";

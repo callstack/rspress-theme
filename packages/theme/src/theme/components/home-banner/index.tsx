@@ -1,4 +1,4 @@
-import { CTAButton } from '../../primitives/cta-button';
+import { Button } from '../../primitives/button';
 import abstractAtom from './abstract-atom.avif';
 import styles from './index.module.scss';
 
@@ -27,7 +27,7 @@ export function HomeBanner() {
             solving tough technical challenges.
           </p>
           <div>
-            <CTAButton isDark text="Let's talk" />
+            <Button dark>Let's talk</Button>
           </div>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import type { FrontMatterMeta } from '@rspress/shared';
-import { normalizeImagePath, useDark } from '@runtime';
-import { Button, CTAButton } from 'src/theme/primitives';
-// import { isExternalUrl, withBase } from '@shared';
+import { normalizeHrefInRuntime, normalizeImagePath } from '@runtime';
+import { isExternalUrl, withBase } from '@shared';
+import { Button } from 'src/theme/primitives';
 import styles from './index.module.scss';
 
 const DEFAULT_HERO = {
@@ -23,8 +23,8 @@ function HomeHero({
   beforeHeroActions,
   afterHeroActions,
   frontmatter,
+  routePath,
 }: HomeHeroProps) {
-  const isDark = useDark();
   const hero = frontmatter.hero ?? DEFAULT_HERO;
   const imageSrc =
     typeof hero.image?.src === 'string'
@@ -58,13 +58,17 @@ function HomeHero({
         <div className={styles.heroTagline}>{hero.tagline}</div>
         {beforeHeroActions}
         <div className={styles.heroActions}>
-          {hero.actions.map((action) =>
-            action.theme === 'alt' ? (
-              <Button isDark={isDark} key={action.text} text={action.text} />
-            ) : (
-              <CTAButton isDark={isDark} key={action.text} text={action.text} />
-            )
-          )}
+          {hero.actions.map((action) => {
+            const link = isExternalUrl(action.link)
+              ? action.link
+              : normalizeHrefInRuntime(withBase(action.link, routePath));
+
+            return (
+              <Button key={action.text} href={link} theme={action.theme}>
+                {action.text}
+              </Button>
+            );
+          })}
         </div>
       </div>
       {afterHeroActions}

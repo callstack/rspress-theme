@@ -11,11 +11,18 @@
   cursor: pointer;
   width: fit-content;
   align-self: flex-start;
-  border: 1px solid var(--rp-c-divider-light);
 
   &:hover {
     background: #2d2c31;
   }
+}
+
+.brand {
+  border: none;
+}
+
+.alt {
+  border: 1px solid var(--rp-c-divider-light);
 }
 
 .button-dark {
