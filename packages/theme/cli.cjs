@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 const fs = require('node:fs');
 const path = require('node:path');
 
@@ -19,8 +18,7 @@ function main() {
   }
 
   const projectDir = args[1];
-  const packageRoot = path.resolve(__dirname, '..');
-  const srcDir = path.join(packageRoot, 'dist/assets');
+  const srcDir = path.join(__dirname, 'dist/assets');
   const destDir = path.resolve(projectDir, 'theme/assets');
 
   if (!fs.existsSync(srcDir)) {
