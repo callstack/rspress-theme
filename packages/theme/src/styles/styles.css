@@ -9,7 +9,6 @@
   --ck-text-secondary: #838289;
   --ck-text-tertiary: #bcbbc2;
   --ck-accent: #8232ff;
-  --ck-accent-code-highlight: #8232ff1a;
   --ck-warning: #ffb14c;
   --ck-danger: #fa7171;
   --ck-success: #2fc717;
@@ -123,38 +122,38 @@
   /* rspress code colors */
   --rp-code-title-bg: rgba(233, 231, 238, 1) !important;
   --rp-code-block-bg: rgba(249, 248, 253, 1) !important;
-  /* rspress note container colors */
-  --rp-container-note-border: var(--rp-c-divider-light) !important;
-  --rp-container-note-text: var(--rp-c-text-1) !important;
-  --rp-container-note-bg: var(--rp-c-bg-soft) !important;
-  --rp-container-note-code-bg: rgba(128, 128, 128, 0.1) !important;
-  --rp-container-note-link: var(--rp-c-link) !important;
+  /* rspress link colors */
+  --rp-c-link: var(--rp-c-text-1) !important;
   /* rspress tip container colors */
-  --rp-container-tip-border: rgba(7, 156, 112, 0.2) !important;
-  --rp-container-tip-text: #278359 !important;
-  --rp-container-tip-bg: rgba(7, 156, 112, 0.06) !important;
-  --rp-container-tip-code-bg: rgba(7, 156, 112, 0.1) !important;
+  --rp-container-tip-border: var(--ck-success) !important;
+  --rp-container-tip-text: var(--rp-c-text-1) !important;
+  --rp-container-tip-bg: transparent !important;
+  --rp-container-tip-code-bg: var(--rp-code-block-bg) !important;
   /* rspress info container colors */
-  --rp-container-info-border: rgba(0, 149, 255, 0.2) !important;
-  --rp-container-info-text: #07f !important;
-  --rp-container-info-bg: rgba(0, 149, 255, 0.06) !important;
-  --rp-container-info-code-bg: rgba(0, 149, 255, 0.1) !important;
+  --rp-container-info-border: var(--ck-accent) !important;
+  --rp-container-info-text: var(--rp-c-text-1) !important;
+  --rp-container-info-bg: transparent !important;
+  --rp-container-info-code-bg: var(--rp-code-block-bg) !important;
   /* rspress warning container colors */
-  --rp-container-warning-border: rgba(255, 197, 23, 0.4) !important;
-  --rp-container-warning-text: #887233 !important;
-  --rp-container-warning-bg: rgba(255, 197, 23, 0.1) !important;
-  --rp-container-warning-code-bg: rgba(255, 197, 23, 0.1) !important;
+  --rp-container-warning-border: var(--ck-warning) !important;
+  --rp-container-warning-text: var(--rp-c-text-1) !important;
+  --rp-container-warning-bg: transparent !important;
+  --rp-container-warning-code-bg: var(--rp-code-block-bg) !important;
   /* rspress danger container colors */
-  --rp-container-danger-border: rgba(237, 60, 80, 0.2) !important;
-  --rp-container-danger-text: #ab2131 !important;
-  --rp-container-danger-bg: rgba(237, 60, 80, 0.08) !important;
-  --rp-container-danger-code-bg: rgba(237, 60, 80, 0.1) !important;
+  --rp-container-danger-border: var(--ck-danger) !important;
+  --rp-container-danger-text: var(--rp-c-text-1) !important;
+  --rp-container-danger-bg: transparent !important;
+  --rp-container-danger-code-bg: var(--rp-code-block-bg) !important;
+  /* rspress note container colors */
+  --rp-container-note-border: var(--ck-note) !important;
+  --rp-container-note-text: var(--rp-c-text-1) !important;
+  --rp-container-note-bg: transparent !important;
+  --rp-container-note-code-bg: var(--rp-code-block-bg) !important;
   /* rspress details container colors */
-  --rp-container-details-border: var(--rp-c-divider-light) !important;
+  --rp-container-details-border: var(--ck-note) !important;
   --rp-container-details-text: var(--rp-c-text-1) !important;
-  --rp-container-details-bg: var(--rp-c-bg-soft) !important;
-  --rp-container-details-code-bg: rgba(128, 128, 128, 0.1) !important;
-  --rp-container-details-link: var(--rp-c-link) !important;
+  --rp-container-details-bg: transparent !important;
+  --rp-container-details-code-bg: var(--rp-code-block-bg) !important;
 }
 
 .dark {
@@ -167,20 +166,6 @@
   /* rspress code colors */
   --rp-code-title-bg: rgba(54, 53, 57, 1) !important;
   --rp-code-block-bg: rgba(43, 42, 47, 1) !important;
-  /* rspress tip container colors */
-  --rp-container-tip-text: #3ec480;
-  --rp-container-tip-bg: rgba(7, 156, 112, 0.1);
-  /* rspress info container colors */
-  --rp-container-info-text: #66c2ff;
-  --rp-container-info-bg: rgba(0, 149, 255, 0.1);
-  /* rspress warning container colors */
-  --rp-container-warning-text: rgb(251, 180, 81);
-  --rp-container-warning-border: rgba(255, 197, 23, 0.25);
-  --rp-container-warning-bg: rgba(255, 197, 23, 0.12);
-  /* rspress danger container colors */
-  --rp-container-danger-text: rgb(247, 110, 133);
-  --rp-container-danger-border: rgba(237, 60, 80, 0.3);
-  --rp-container-danger-bg: rgba(237, 60, 80, 0.12);
 }
 
 /* Body */
@@ -766,7 +751,7 @@ span[class*="badge_"] {
 /* CONTAINERS */
 .rspress-directive {
   background: none !important;
-  border: none !important;
+  border: 1px dashed var(--rp-c-divider-light) !important;
   border-left: 2px solid !important;
   border-radius: 0px !important;
   padding: 8px 16px !important;
@@ -800,19 +785,22 @@ span[class*="badge_"] {
 }
 
 .info {
-  border-left-color: var(--ck-accent) !important;
+  border-left-color: var(--rp-container-info-border) !important;
 }
 .tip {
-  border-left-color: var(--ck-success) !important;
+  border-left-color: var(--rp-container-tip-border) !important;
 }
 .warning {
-  border-left-color: var(--ck-warning) !important;
+  border-left-color: var(--rp-container-warning-border) !important;
 }
 .danger {
-  border-left-color: var(--ck-danger) !important;
+  border-left-color: var(--rp-container-danger-border) !important;
 }
 .details {
-  border-left-color: var(--ck-note) !important;
+  border-left-color: var(--rp-container-details-border) !important;
+}
+.note {
+  border-left-color: var(--rp-container-note-border) !important;
 }
 
 .rspress-directive.tip .rspress-directive-title::before {
@@ -835,4 +823,8 @@ span[class*="badge_"] {
 .rspress-directive.details .rspress-directive-title::before {
   content: "";
   background: url("../assets/details.svg") no-repeat center center / contain;
+}
+.rspress-directive.note .rspress-directive-title::before {
+  content: "";
+  background: url("../assets/notes.svg") no-repeat center center / contain;
 }
