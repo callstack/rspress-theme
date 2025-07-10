@@ -9,10 +9,15 @@
   --ck-text-secondary: #838289;
   --ck-text-tertiary: #bcbbc2;
   --ck-accent: #8232ff;
+  --ck-accent-bg: #8232ff29;
   --ck-warning: #ffb14c;
+  --ck-warning-bg: #ffb14c29;
   --ck-danger: #fa7171;
+  --ck-danger-bg: #fa717129;
   --ck-success: #2fc717;
+  --ck-success-bg: #2fc71729;
   --ck-note: #838289;
+  --ck-note-bg: #83828929;
   --ck-neutral-darkest: #201f24;
 }
 
@@ -127,32 +132,32 @@
   /* rspress tip container colors */
   --rp-container-tip-border: var(--ck-success) !important;
   --rp-container-tip-text: var(--rp-c-text-1) !important;
-  --rp-container-tip-bg: transparent !important;
+  --rp-container-tip-bg: var(--ck-success-bg) !important;
   --rp-container-tip-code-bg: var(--rp-code-block-bg) !important;
   /* rspress info container colors */
   --rp-container-info-border: var(--ck-accent) !important;
   --rp-container-info-text: var(--rp-c-text-1) !important;
-  --rp-container-info-bg: transparent !important;
+  --rp-container-info-bg: var(--ck-accent-bg) !important;
   --rp-container-info-code-bg: var(--rp-code-block-bg) !important;
   /* rspress warning container colors */
   --rp-container-warning-border: var(--ck-warning) !important;
   --rp-container-warning-text: var(--rp-c-text-1) !important;
-  --rp-container-warning-bg: transparent !important;
+  --rp-container-warning-bg: var(--ck-warning-bg) !important;
   --rp-container-warning-code-bg: var(--rp-code-block-bg) !important;
   /* rspress danger container colors */
   --rp-container-danger-border: var(--ck-danger) !important;
   --rp-container-danger-text: var(--rp-c-text-1) !important;
-  --rp-container-danger-bg: transparent !important;
+  --rp-container-danger-bg: var(--ck-danger-bg) !important;
   --rp-container-danger-code-bg: var(--rp-code-block-bg) !important;
   /* rspress note container colors */
   --rp-container-note-border: var(--ck-note) !important;
   --rp-container-note-text: var(--rp-c-text-1) !important;
-  --rp-container-note-bg: transparent !important;
+  --rp-container-note-bg: var(--ck-note-bg) !important;
   --rp-container-note-code-bg: var(--rp-code-block-bg) !important;
   /* rspress details container colors */
   --rp-container-details-border: var(--ck-note) !important;
   --rp-container-details-text: var(--rp-c-text-1) !important;
-  --rp-container-details-bg: transparent !important;
+  --rp-container-details-bg: var(--ck-note-bg) !important;
   --rp-container-details-code-bg: var(--rp-code-block-bg) !important;
 }
 
@@ -744,11 +749,50 @@ footer {
 
 /* Badge */
 span[class*="badge_"] {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
   border-radius: var(--rp-radius-small) !important;
   padding: 0 6px !important;
 }
 
-/* CONTAINERS */
+/* Badges info colors */
+span[class*="badge_"][class*="info_"] {
+  color: var(--rp-container-info-border) !important;
+  background-color: var(--rp-container-info-bg) !important;
+}
+
+/* Badges tip colors */
+span[class*="badge_"][class*="tip_"] {
+  color: var(--rp-container-tip-border) !important;
+  background-color: var(--rp-container-tip-bg) !important;
+}
+
+/* Badges warning colors */
+span[class*="badge_"][class*="warning_"] {
+  color: var(--rp-container-warning-border) !important;
+  background-color: var(--rp-container-warning-bg) !important;
+}
+
+/* Badges danger colors */
+span[class*="badge_"][class*="danger_"] {
+  color: var(--rp-container-danger-border) !important;
+  background-color: var(--rp-container-danger-bg) !important;
+}
+
+/* Badges note colors */
+span[class*="badge_"][class*="note_"] {
+  color: var(--rp-container-note-border) !important;
+  background-color: var(--rp-container-note-bg) !important;
+}
+
+/* Badges details colors */
+span[class*="badge_"][class*="details_"] {
+  color: var(--rp-container-details-border) !important;
+  background-color: var(--rp-container-details-bg) !important;
+}
+
+/* container */
 .rspress-directive {
   background: none !important;
   border: 1px dashed var(--rp-c-divider-light) !important;
@@ -762,6 +806,7 @@ span[class*="badge_"] {
   flex-direction: column !important;
 }
 
+/* container title */
 .rspress-directive-title {
   display: flex !important;
   flex-direction: row !important;
@@ -772,6 +817,7 @@ span[class*="badge_"] {
   color: var(--rp-c-text-1) !important;
 }
 
+/* container icon */
 .rspress-directive .rspress-directive-title::before {
   display: inline-block;
   width: 24px;
@@ -779,11 +825,13 @@ span[class*="badge_"] {
   margin-right: 16px;
 }
 
+/* container content */
 .rspress-directive-content > p {
   font-size: 16px !important;
   margin: 0 0 0 40px !important;
 }
 
+/* container custom border left colors */
 .info {
   border-left-color: var(--rp-container-info-border) !important;
 }
@@ -803,6 +851,7 @@ span[class*="badge_"] {
   border-left-color: var(--rp-container-note-border) !important;
 }
 
+/* container custom icon */
 .rspress-directive.tip .rspress-directive-title::before {
   content: "";
   background: url("../assets/check-double.svg") no-repeat center center /
