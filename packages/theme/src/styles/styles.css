@@ -877,3 +877,8 @@ span[class*="badge_"][class*="details_"] {
   content: "";
   background: url("../assets/notes.svg") no-repeat center center / contain;
 }
+
+/* links */
+[class*="link_"]:hover {
+  color: var(--rp-c-brand) !important;
+}
