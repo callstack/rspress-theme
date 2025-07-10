@@ -1,11 +1,71 @@
-@media (min-width: 640px) {
-  :global(.rspress-home-hero-image) {
-    width: var(--rp-home-hero-image-width);
+.container {
+  margin: 32px;
+  width: calc(100% - 8 * 2px);
+  min-height: 40vh;
+  display: flex;
+  justify-self: center;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.heroMain {
+  display: flex;
+  flex-direction: column;
+  text-wrap: balance;
+  max-width: 55%;
+}
+
+.heroImage {
+  width: 128px;
+}
+
+.heroName {
+  color: var(--rp-c-text-1);
+  font-family: 'Alliance No.2', Arial, sans-serif;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -2.56px;
+}
+
+@media (max-width: 960px) {
+  .heroMain {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+  }
+
+  .heroImage {
+    margin: 0 32px;
+  }
+
+  .heroName {
+    font-size: 48px;
+    text-align: center;
+    margin: 0 32px;
   }
 }
 
 @media (max-width: 640px) {
-  :global(.rspress-home-hero-image) {
-    max-width: var(--rp-home-hero-image-width-sm);
+  .heroMain {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .heroImage {
+    margin: 0 16px;
+  }
+
+  .heroName {
+    font-size: 32px;
+    text-align: center;
+    margin: 0 16px;
   }
 }
