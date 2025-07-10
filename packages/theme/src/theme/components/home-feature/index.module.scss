@@ -52,10 +52,12 @@
   flex-direction: column;
   align-items: flex-start;
   height: 100%;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s;
 }
 
 .featureCard:hover {
   border-color: var(--ck-accent);
+  transform: scale(1.02);
 }
 
 .featureIcon {
