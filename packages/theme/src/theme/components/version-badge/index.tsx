@@ -13,7 +13,9 @@ export function VersionBadge({ version }: VersionBadgeProps) {
     return null;
   }
 
-  const versionText = `Version: ${version ?? pageData.page.version}`;
+  const currentVersion = version ?? pageData.page.version;
+  const versionText = `Version: ${currentVersion}`;
+
   return (
     <div className="py-2">
       <Badge type="info" outline text={versionText} />
