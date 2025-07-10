@@ -197,16 +197,6 @@ pre {
   font-family: var(--rp-font-family-mono) !important;
 }
 
-/* Home background gradient */
-:root {
-  --rp-home-mask-background-image: conic-gradient(
-    from 180deg at 50% 50%,
-    var(--rp-c-brand) 0deg,
-    180deg,
-    var(--rp-c-brand-darker) 1turn
-  );
-}
-
 /* Nav header */
 .rspress-nav {
   background-color: var(--rp-c-bg) !important;
