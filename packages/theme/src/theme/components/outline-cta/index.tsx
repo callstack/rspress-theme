@@ -1,7 +1,11 @@
 import { Button } from '../../primitives/button';
 import styles from './index.module.scss';
 
-export function OutlineCTA() {
+interface OutlineCTAProps {
+  href: string;
+}
+
+export function OutlineCTA({ href }: OutlineCTAProps) {
   return (
     <div className={styles.container}>
       <div>
@@ -13,7 +17,9 @@ export function OutlineCTA() {
           efficiency.
         </div>
       </div>
-      <Button>Let's talk</Button>
+      <Button external href={href}>
+        Let's talk
+      </Button>
     </div>
   );
 }

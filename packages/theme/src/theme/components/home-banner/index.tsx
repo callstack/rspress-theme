@@ -2,7 +2,11 @@ import { Button } from '../../primitives/button';
 import abstractAtom from './abstract-atom.avif';
 import styles from './index.module.scss';
 
-export function HomeBanner() {
+interface HomeBannerProps {
+  href: string;
+}
+
+export function HomeBanner({ href }: HomeBannerProps) {
   return (
     <div className={`rp-max-w-6xl ${styles.container}`}>
       <div className={styles.background}>
@@ -27,7 +31,9 @@ export function HomeBanner() {
             solving tough technical challenges.
           </p>
           <div>
-            <Button dark>Let's talk</Button>
+            <Button dark external href={href}>
+              Let's talk
+            </Button>
           </div>
         </div>
       </div>
