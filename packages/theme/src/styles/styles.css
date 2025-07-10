@@ -520,7 +520,8 @@ div[class^="overview-group_"] a:hover {
 
 /* Overview page - search */
 input#api-filter {
-  background: var(--rp-c-bg) url("search.svg") no-repeat 12px center / 16px 16px;
+  background: var(--rp-c-bg) url("../assets/search.svg") no-repeat 12px center /
+    16px 16px;
   border: 1px solid var(--ck-border-primary);
   color: var(--rp-c-text-2);
   border-radius: var(--rp-radius-small);
@@ -550,7 +551,7 @@ input#api-filter::-webkit-search-cancel-button {
   appearance: none;
   height: 16px;
   width: 16px;
-  background: url("close.svg") no-repeat center center / contain;
+  background: url("../assets/close.svg") no-repeat center center / contain;
   cursor: pointer;
 }
 
@@ -713,7 +714,8 @@ div#root > section > div.rp-relative::before {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  background-image: url("bg-top.svg"), url("noise.svg"), var(--ck-bg-radial-1);
+  background-image: url("../assets/hero-bg-shape.svg"),
+    url("../assets/noise.svg"), var(--ck-bg-radial-1);
   background-repeat: no-repeat, repeat, no-repeat;
   background-size: contain, auto, contain;
   mask-image: radial-gradient(
@@ -728,7 +730,7 @@ div#root > section > div.rp-relative::before {
 /* Home page bottom name + gradients */
 div#root > section:not(:has(div[class^="docLayout_"])) {
   position: relative; /* Ensure the parent is positioned */
-  background-image: url("ck-name-dark.svg"), var(--ck-bg-radial-2),
+  background-image: url("../assets/callstack.svg"), var(--ck-bg-radial-2),
     var(--ck-bg-radial-3);
   background-repeat: no-repeat, repeat, no-repeat, no-repeat;
   background-size: 95% auto, auto, contain, contain;
@@ -745,7 +747,7 @@ div#root > section:not(:has(div[class^="docLayout_"]))::before {
   top: auto;
   height: 100%;
   pointer-events: none;
-  background-image: url("noise.svg");
+  background-image: url("../assets/noise.svg");
   background-repeat: repeat;
   background-size: cover;
   mask-image: var(--ck-bg-radial-2), var(--ck-bg-radial-3);
