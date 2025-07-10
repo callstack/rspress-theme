@@ -71,7 +71,7 @@
 }
 
 .featureTitle {
-  font-family: 'Alliance No. 2', Arial, sans-serif;
+  font-family: var(--ck-header-font-family);
   font-size: 20px;
   font-weight: 500;
   color: var(--rp-c-text-1);

@@ -1,4 +1,5 @@
 [
+  { "type": "file", "name": "overview", "label": "Overview" },
   { "type": "section-header", "label": "Section A Deep" },
   "section-a-intro",
   {
