@@ -908,3 +908,20 @@ details:not([open]) > summary.rspress-directive-title::after {
 [class*="link_"]:hover {
   color: var(--rp-c-brand) !important;
 }
+
+/* Edit page */
+a[class^="editLink_"] {
+  color: var(--rp-c-text-2);
+  position: relative;
+  padding-left: 32px;
+}
+
+a[class^="editLink_"]::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 24px;
+  height: 24px;
+  background: url("../assets/edit-box.svg") no-repeat center center / contain;
+}

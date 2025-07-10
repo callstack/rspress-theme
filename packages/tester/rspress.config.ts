@@ -13,7 +13,7 @@ export default defineConfig({
   themeConfig: {
     editLink: {
       docRepoBaseUrl: 'https://github.com/callstack/rspress-theme',
-      text: '📝 Edit this page on GitHub',
+      text: 'Edit this page on GitHub',
     },
     socialLinks: [
       {
