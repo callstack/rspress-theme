@@ -36,7 +36,7 @@
 
 .heading {
   color: #ffffff;
-  font-family: 'Alliance No. 2', Arial, sans-serif;
+  font-family: var(--ck-header-font-family);
   font-size: 40px;
   font-weight: 600;
   line-height: 1.2;

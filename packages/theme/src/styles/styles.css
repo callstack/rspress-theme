@@ -1,43 +1,32 @@
 :root {
   --ck-header-font-family: "Alliance No. 2", Arial, sans-serif;
-  /* Callstack/Background/Primary */
   --ck-background-primary: #ffffff;
-  /* Callstack/Border/Primary */
   --ck-border-primary: #cfced5;
-  /* Callstack/Border/Secondary */
   --ck-border-secondary: #e9e7ee;
-  /* Callstack/Foreground/Primary */
   --ck-foreground-primary: #f9f8fd;
-  /* Callstack/Foreground/Secondary */
   --ck-foreground-secondary: #e9e7ee;
-  /* Callstack/Text/Primary */
   --ck-text-primary: #201f24;
-  /* Callstack/Text/Secondary */
   --ck-text-secondary: #838289;
-  /* Callstack/Text/Tertiary */
   --ck-text-tertiary: #bcbbc2;
-  /* Callstack/Accent */
   --ck-accent: #8232ff;
-  /* Callstack/Button/Primary/Label */
-  --ck-button-primary-label: #ffffff;
-  /* Callstack/Button/Primary/Icon */
-  --ck-button-primary-icon: #ffffff33;
-  /* Callstack/Button/Primary/Background */
-  --ck-button-primary-background: #201f24;
-  /* Callstack/Button/Secondary/Label */
-  --ck-button-secondary-label: #201f24;
-  /* Callstack/Button/Secondary/Icon */
-  --ck-button-secondary-icon: #1514150d;
-  /* Callstack/Button/Secondary/Border */
-  --ck-button-secondary-border: #15141526;
-  /* Callstack/Container/Warning */
   --ck-warning: #ffb14c;
-  /* Callstack/Container/Live Stream */
   --ck-danger: #fa7171;
-  /* Color/Neutral Darkest */
   --ck-neutral-darkest: #201f24;
-  /* Color/Neutral Lighter */
-  --ck-neutral-lighter: #e9e7ee;
+}
+
+/* Dark mode overrides */
+.dark {
+  --ck-background-primary: #201f24;
+  --ck-border-primary: #ffffff26;
+  --ck-border-secondary: #ffffff4d;
+  --ck-foreground-primary: #2b2a2f;
+  --ck-foreground-secondary: #838289;
+  --ck-text-primary: #ffffff;
+  --ck-text-secondary: #cfced5;
+}
+
+/* Gradients */
+:root {
   --ck-bg-radial-1: radial-gradient(
     ellipse calc(5 * 100vw) 100vw at 100% 0%,
     rgba(130, 50, 255, 0.5) 0%,
@@ -56,43 +45,6 @@
     transparent 15%,
     transparent 100%
   );
-}
-
-.dark {
-  /* Callstack/Background/Primary */
-  --ck-background-primary: #201f24;
-  /* Callstack/Border/Primary */
-  --ck-border-primary: #ffffff26;
-  /* Callstack/Border/Secondary */
-  --ck-border-secondary: #ffffff4d;
-  /* Callstack/Foreground/Primary */
-  --ck-foreground-primary: #2b2a2f;
-  /* Callstack/Foreground/Secondary */
-  --ck-foreground-secondary: #838289;
-  /* Callstack/Text/Primary */
-  --ck-text-primary: #ffffff;
-  /* Callstack/Text/Secondary */
-  --ck-text-secondary: #cfced5;
-  /* Callstack/Text/Tertiary */
-  --ck-text-tertiary: #bcbbc2;
-  /* Callstack/Accent */
-  --ck-accent: #8232ff;
-  /* Callstack/Button/Primary/Label */
-  --ck-button-primary-label: #201f24;
-  /* Callstack/Button/Primary/Icon */
-  --ck-button-primary-icon: #1514151a;
-  /* Callstack/Button/Primary/Background */
-  --ck-button-primary-background: #ffffff;
-  /* Callstack/Button/Secondary/Label */
-  --ck-button-secondary-label: #ffffff;
-  /* Callstack/Button/Secondary/Icon */
-  --ck-button-secondary-icon: #ffffff33;
-  /* Callstack/Button/Secondary/Border */
-  --ck-button-secondary-border: #ffffff4d;
-  /* Color/Neutral Darkest */
-  --ck-neutral-darkest: #201f24;
-  /* Color/White */
-  --ck-white: #ffffff;
 }
 
 :root {
@@ -633,10 +585,9 @@ div[class^="overview-group_"] a:hover {
 
 /* Overview page - search */
 input#api-filter {
-  background: var(--ck-background-primary) url("search.svg") no-repeat 12px
-    center / 16px 16px;
+  background: var(--rp-c-bg) url("search.svg") no-repeat 12px center / 16px 16px;
   border: 1px solid var(--ck-border-primary);
-  color: var(--ck-text-secondary);
+  color: var(--rp-c-text-2);
   border-radius: var(--rp-radius-small);
   font-family: var(--rp-font-family);
   font-size: 16px;
@@ -650,7 +601,7 @@ input#api-filter {
 
 /* Overview page - search placeholder */
 input#api-filter::placeholder {
-  color: var(--ck-text-tertiary);
+  color: var(--rp-c-text-3);
   opacity: 1;
   font-family: var(--rp-font-family);
   font-size: 16px;
@@ -675,7 +626,7 @@ div#search-container div[class^="mask_"] {
 }
 
 div#search-container div[class^="modal_"] {
-  background: var(--ck-background-primary);
+  background: var(--rp-c-bg);
   border: 1px solid var(--ck-border-primary);
   border-radius: var(--rp-radius);
   font-family: var(--rp-font-family);
