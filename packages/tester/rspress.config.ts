@@ -11,6 +11,10 @@ export default defineConfig({
     dark: '/logo-dark.png',
   },
   themeConfig: {
+    editLink: {
+      docRepoBaseUrl: 'https://github.com/callstack/rspress-theme',
+      text: '📝 Edit this page on GitHub',
+    },
     socialLinks: [
       {
         icon: 'github',

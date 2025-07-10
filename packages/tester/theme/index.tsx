@@ -7,10 +7,31 @@ import {
   OutlineCTA,
   PrevNextPage,
 } from '@callstack/rspress-theme';
+import { usePageData } from 'rspress/runtime';
 import {
+  Badge,
   HomeLayout as RspressHomeLayout,
   Layout as RspressLayout,
 } from 'rspress/theme';
+
+const VersionBadge = () => {
+  const pageData = usePageData();
+
+  // hide on overview pages since it's badly positioned
+  if (pageData.page.frontmatter.overview) {
+    return null;
+  }
+
+  if (pageData.page.routePath.startsWith('/blog')) {
+    return null;
+  }
+
+  return (
+    <div className="py-2">
+      <Badge type="info" outline text="Version: v5" />
+    </div>
+  );
+};
 
 const Layout = () => {
   return (
@@ -22,6 +43,7 @@ const Layout = () => {
           localStorageKey=""
         />
       }
+      beforeDocContent={<VersionBadge />}
       afterOutline={<OutlineCTA href="https://callstack.com" />}
     />
   );
