@@ -9,8 +9,11 @@
   --ck-text-secondary: #838289;
   --ck-text-tertiary: #bcbbc2;
   --ck-accent: #8232ff;
+  --ck-accent-code-highlight: #8232ff1a;
   --ck-warning: #ffb14c;
   --ck-danger: #fa7171;
+  --ck-success: #2fc717;
+  --ck-note: #838289;
   --ck-neutral-darkest: #201f24;
 }
 
@@ -23,6 +26,7 @@
   --ck-foreground-secondary: #838289;
   --ck-text-primary: #ffffff;
   --ck-text-secondary: #cfced5;
+  --ck-accent-code-highlight: #8232ff33;
 }
 
 /* Gradients */
