@@ -51,8 +51,16 @@
   );
 }
 
+/* rspress fonts */
 :root {
-  /* rspress vars */
+  --rp-font-family-base: "Switzer Variable", Arial, sans-serif !important;
+  --rp-font-family-mono: "Fira Code", monospace !important;
+  /* compat */
+  --rp-font-family: "Switzer Variable", Arial, sans-serif !important;
+}
+
+/* rspress sizing */
+:root {
   --rp-nav-height: 48px !important;
   --rp-sidebar-width: 320px !important;
   --rp-sidebar-menu-height: 46px !important;
@@ -62,7 +70,22 @@
   --rp-radius: 4px !important;
   --rp-radius-small: 2px !important;
   --rp-radius-large: 8px !important;
-  --rp-font-family: "Switzer Variable", Arial, sans-serif !important;
+}
+
+@media (max-width: 768px) {
+  html:root {
+    --rp-nav-height: 48px !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  html:root {
+    --rp-sidebar-menu-height: 0px !important;
+  }
+}
+
+/* rspress colors */
+:root {
   /* rspress background colors */
   --rp-c-bg: var(--ck-background-primary) !important;
   --rp-c-bg-soft: var(--ck-foreground-secondary) !important;
@@ -134,18 +157,6 @@
   --rp-container-details-link: var(--rp-c-link);
 }
 
-@media (max-width: 768px) {
-  html:root {
-    --rp-nav-height: 48px !important;
-  }
-}
-
-@media (min-width: 1280px) {
-  html:root {
-    --rp-sidebar-menu-height: 0px !important;
-  }
-}
-
 .dark {
   /* rspress background colors */
   --rp-c-bg-soft: var(--ck-foreground-primary) !important;
@@ -172,10 +183,18 @@
   --rp-container-danger-bg: rgba(237, 60, 80, 0.12);
 }
 
+/* Body */
 body {
   background: var(--rp-c-bg) !important;
   color: var(--rp-c-text-1) !important;
   font-family: var(--rp-font-family) !important;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--rp-font-family-mono) !important;
 }
 
 /* Home background gradient */
@@ -533,11 +552,6 @@ div[class^="social-links-icon"] > div {
 .rspress-directive.details .rspress-directive-title::before {
   content: "";
   background: url("details.svg") no-repeat center center / contain;
-}
-
-/* CODE BLOCKS */
-.rspress-code-title {
-  font-family: "Fira Code", monospace !important;
 }
 
 /* Header elements */
