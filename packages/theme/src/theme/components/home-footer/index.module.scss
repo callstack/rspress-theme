@@ -1,0 +1,20 @@
+.container {
+  width: calc(100% - 8 * 2px);
+  justify-self: center;
+  margin: 90px;
+  padding: 4px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  width: 101px;
+  height: 20px;
+  overflow: hidden;
+  position: relative;
+}

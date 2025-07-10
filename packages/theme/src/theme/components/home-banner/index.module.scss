@@ -1,0 +1,158 @@
+.container {
+  background-image: url('./gradient-dark.avif');
+  background-size: cover;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  color: var(--rp-c-brand-light);
+  padding: 64px 48px;
+  margin: 32px;
+  border-radius: 8px;
+  width: calc(100% - 8 * 2px);
+  height: 382px;
+  display: flex;
+  justify-self: center;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.content {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 640px;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.heading {
+  color: #ffffff;
+  font-family: 'Alliance No. 2', Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -1.6px;
+  margin: 0;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 416px;
+}
+
+.descriptionText {
+  color: #cfced5;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.36px;
+  font-family: var(--rp-font-family);
+}
+
+.ctaButton {
+  background: #ffffff;
+  border: none;
+  border-radius: 2px;
+  padding: 4px 4px 4px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.buttonText {
+  color: #201f24;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.28px;
+  font-family: var(--rp-font-family-text, 'Inter', sans-serif);
+  white-space: nowrap;
+}
+
+.buttonIcon {
+  background: rgba(21, 20, 21, 0.1);
+  border-radius: 2px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #201f24;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+@media (max-width: 960px) {
+  .container {
+    padding: 32px 16px;
+    height: 320px;
+  }
+  .content {
+    max-width: 90vw;
+    gap: 24px;
+  }
+  .logo {
+    scale: 1.2;
+  }
+  .heading {
+    font-size: 28px;
+    letter-spacing: -1px;
+  }
+  .description {
+    max-width: 380px;
+    gap: 20px;
+  }
+  .descriptionText {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    margin: 16px;
+    height: 240px;
+  }
+  .content {
+    max-width: 100vw;
+    gap: 16px;
+  }
+  .logo {
+    scale: 1.5;
+  }
+  .heading {
+    font-size: 20px;
+    letter-spacing: -0.5px;
+  }
+  .description {
+    max-width: 320px;
+    gap: 12px;
+  }
+  .descriptionText {
+    font-size: 14px;
+  }
+}

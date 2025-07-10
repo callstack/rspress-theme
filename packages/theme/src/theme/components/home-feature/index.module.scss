@@ -1,0 +1,93 @@
+@media (max-width: 640px) {
+  .grid-2,
+  .grid-4,
+  .grid-6 {
+    width: calc(100%);
+  }
+}
+
+@media (min-width: 640px) {
+  .grid-2,
+  .grid-4,
+  .grid-6 {
+    width: calc(100% / 2);
+  }
+}
+
+@media (min-width: 768px) {
+  .grid-2,
+  .grid-4 {
+    width: calc(100% / 2);
+  }
+
+  .grid-3,
+  .grid-6 {
+    width: calc(100% / 3);
+  }
+}
+
+@media (min-width: 960px) {
+  .grid-3 {
+    width: calc(100% / 4);
+  }
+  .grid-4 {
+    width: calc(100% / 3);
+  }
+  .grid-6 {
+    width: calc(100% / 2);
+  }
+}
+
+.featureCardContainer {
+  height: 100%;
+  padding: 8px;
+}
+
+.featureCard {
+  border: 1px dashed var(--rp-c-divider);
+  border-radius: var(--rp-radius-small);
+  padding: 32px;
+  gap: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s;
+}
+
+.featureCard:hover {
+  border-color: var(--ck-accent);
+  transform: scale(1.02);
+}
+
+.featureIcon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  color: var(--rp-c-brand);
+}
+
+.featureTitle {
+  font-family: 'Alliance No. 2', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--rp-c-text-1);
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  margin-bottom: 16px;
+  text-align: left;
+}
+
+.featureDetail {
+  font-family: var(--rp-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--rp-c-text-2);
+  line-height: 1.5;
+  letter-spacing: -0.32px;
+  text-align: left;
+  margin-bottom: 0;
+}

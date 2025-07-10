@@ -1,4 +1,5 @@
 import * as path from 'node:path';
+import { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
 import { defineConfig } from 'rspress/config';
 
 export default defineConfig({
@@ -6,8 +7,8 @@ export default defineConfig({
   title: 'My Site',
   icon: '/rspress-icon.png',
   logo: {
-    light: '/rspress-light-logo.png',
-    dark: '/rspress-dark-logo.png',
+    light: '/logo-light.png',
+    dark: '/logo-dark.png',
   },
   themeConfig: {
     socialLinks: [
@@ -18,6 +19,5 @@ export default defineConfig({
       },
     ],
   },
-  // for the purpose of development, it's easier to override the styles directly
-  globalStyles: path.resolve(__dirname, '..', 'theme', 'static', 'styles.css'),
+  plugins: [pluginCallstackTheme()],
 });

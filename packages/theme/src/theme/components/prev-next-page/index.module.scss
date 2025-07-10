@@ -1,0 +1,83 @@
+.pager-link {
+  display: block;
+  border: 1px solid var(--rp-c-divider-light);
+  border-radius: var(--rp-radius-small);
+  padding: 12px;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.pager-link:hover,
+.pager-link:focus {
+  border-color: var(--ck-accent) !important;
+}
+
+.pager-link:hover .title,
+.pager-link:focus .title {
+  color: var(--ck-accent);
+}
+
+.pager-link.next {
+  margin-left: auto;
+  text-align: right;
+}
+
+.desc {
+  line-height: 1;
+  font-size: 12px;
+  font-family: var(--rp-font-family);
+  font-weight: 400;
+  color: var(--rp-c-text-2);
+  letter-spacing: -0.24px;
+}
+
+.title {
+  line-height: 1.5;
+  font-size: 16px;
+  font-family: var(--rp-font-family);
+  font-weight: 400;
+  color: var(--rp-c-text-1);
+  letter-spacing: -0.32px;
+}
+
+.inner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.textWrap {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.iconWrap {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconBg {
+  background-color: var(--rp-c-divider-light);
+  border-radius: var(--rp-radius-small);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  display: block;
+}
+
+.iconPrev {
+  transform: rotate(180deg) scaleY(-1);
+}

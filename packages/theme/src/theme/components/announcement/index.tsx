@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import IconCloseCircle from './close';
+import IconClose from './close.svg?react';
 import styles from './index.module.scss';
 
 // based on https://github.com/rspack-contrib/rstack-doc-ui/blob/main/src/announcement/index.tsx
-
 export function Announcement({
   href,
   message,
@@ -31,12 +30,12 @@ export function Announcement({
       <a href={href} className={styles.link}>
         {message}
       </a>
-      <IconCloseCircle
+      <IconClose
+        className={styles.close}
         onClick={() => {
           setDisable(true);
           window.localStorage.setItem(localStorageKey, 'true');
         }}
-        className={styles.close}
       />
     </div>
   );

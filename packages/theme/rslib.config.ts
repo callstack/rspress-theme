@@ -1,5 +1,7 @@
+import { pluginImageCompress } from '@rsbuild/plugin-image-compress';
 import { pluginReact } from '@rsbuild/plugin-react';
 import { pluginSass } from '@rsbuild/plugin-sass';
+import { pluginSvgr } from '@rsbuild/plugin-svgr';
 import { type LibConfig, defineConfig } from '@rslib/core';
 
 const pluginConfig: LibConfig = {
@@ -25,9 +27,10 @@ const themeConfig: LibConfig = {
   },
   output: {
     distPath: { root: './dist' },
+    externals: ['@runtime', '@theme', '@shared'],
     target: 'web',
   },
-  plugins: [pluginReact(), pluginSass()],
+  plugins: [pluginImageCompress(), pluginReact(), pluginSass(), pluginSvgr()],
 };
 
 export default defineConfig({
@@ -50,4 +53,10 @@ export default defineConfig({
       format: 'cjs',
     },
   ],
+  output: {
+    copy: [
+      { from: './src/styles', to: 'styles' },
+      { from: './src/assets', to: 'assets' },
+    ],
+  },
 });

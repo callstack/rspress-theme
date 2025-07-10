@@ -1,0 +1,13 @@
+[
+  { "type": "section-header", "label": "Section A Deep" },
+  "section-a-intro",
+  {
+    "type": "dir",
+    "name": "deep-nest",
+    "label": "Deep Nest",
+    "collapsible": true,
+    "collapsed": false
+  },
+  "section-a-summary",
+  { "type": "divider" }
+]
