@@ -2,9 +2,6 @@
   /* Fonts */
   --ck-font-family: "Switzer Variable", Arial, sans-serif;
   --ck-header-font-family: "Alliance No. 2", Arial, sans-serif;
-  --ck-svg-arrow-up: path(
-    "M17.333 11.077H19.333V9.077H17.333V7.077H15.333V9.077H13.333V11.077H15.333V25.077H17.333V11.077ZM13.333 11.077H11.333V13.077H13.333V11.077ZM21.333 11.077H19.333V13.077H21.333V11.077ZM11.333 15.077V13.077H9.333V15.077H11.333ZM23.333 13.077H21.333V15.077H23.333V13.077Z"
-  );
   /* Callstack/Background/Primary */
   --ck-background-primary: #ffffff;
   /* Callstack/Border/Primary */
@@ -262,11 +259,6 @@ div[class^="menuItemActive_"]:hover {
   border: none !important;
 }
 
-/* Group collapse icon replacement */
-div[class^="collapseContainer_"] svg > path {
-  d: var(--ck-svg-arrow-up) !important;
-}
-
 /* Group collapse icon hover */
 div[class^="collapseContainer_"]:hover {
   background-color: inherit !important;
@@ -516,7 +508,7 @@ div[class^="social-links-icon"] > div {
 }
 .rspress-directive.details .rspress-directive-title::before {
   content: "";
-  background: url("arrow-bar-right.svg") no-repeat center center / contain;
+  background: url("details.svg") no-repeat center center / contain;
 }
 
 /* CODE BLOCKS */
@@ -591,7 +583,8 @@ div[class^="overview-group_"] a:hover {
 
 /* Overview page - search */
 input#api-filter {
-  background: var(--ck-background-primary) url("search.svg") no-repeat 12px center / 16px 16px;
+  background: var(--ck-background-primary) url("search.svg") no-repeat 12px
+    center / 16px 16px;
   border: 1px solid var(--ck-border-primary);
   color: var(--ck-text-secondary);
   border-radius: var(--rp-radius-small);
@@ -640,30 +633,12 @@ div#search-container div[class^="modal_"] {
   box-shadow: 0px 40px 40px -20px rgba(32, 31, 36, 0.3);
 }
 
+div#search-container div[class^="inputForm_"] + h2 {
+  display: none;
+}
+
 div#search-container div[class^="inputForm_"] {
   border: none !important;
-}
-
-div#search-container div[class^="inputForm_"]::before {
-  content: "";
-  background: url("search.svg") no-repeat center center / contain;
-  width: 20px;
-  height: 20px;
-}
-
-div#search-container div[class^="inputForm_"]::after {
-  content: "";
-  background: url("close.svg") no-repeat center center / contain;
-  width: 20px;
-  height: 20px;
-}
-
-div#search-container div[class^="inputForm_"] label > svg {
-  display: none !important;
-}
-
-div#search-container div[class^="inputForm_"] label > svg {
-  display: none !important;
 }
 
 input.rspress-search-panel-input {
@@ -682,11 +657,6 @@ div#search-container div[class^="searchHits"] {
 
 div#search-container div[class^="searchHits"] > div:not(:has(ul)) {
   justify-content: flex-end;
-  min-height: 200px;
-  background-image: url("union.svg");
-  background-repeat: no-repeat;
-  background-size: 80px 80px;
-  background-position: center 35%;
 }
 
 div#search-container div[class^="searchHits"] svg {
@@ -721,11 +691,18 @@ li[class*="suggestItem_"][class*="current_"] > a span[class^="mark_"] {
   background-color: var(--rp-c-bg-soft) !important;
 }
 
-li[class*="suggestItem_"] > a > div[class^="suggestItemContainer_"] > div > svg {
+li[class*="suggestItem_"]
+  > a
+  > div[class^="suggestItemContainer_"]
+  > div
+  > svg {
   display: none !important;
 }
 
-li[class*="suggestItem_"] > a > div[class^="suggestItemContainer_"] > div[class^="contentWrapper_"] {
+li[class*="suggestItem_"]
+  > a
+  > div[class^="suggestItemContainer_"]
+  > div[class^="contentWrapper_"] {
   padding: 0 !important;
 }
 
@@ -800,10 +777,14 @@ div#root > section > div.rp-relative::before {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  background-image: url("bg-top.svg"), url("nnnoise.svg"), var(--ck-bg-radial-1);
+  background-image: url("bg-top.svg"), url("noise.svg"), var(--ck-bg-radial-1);
   background-repeat: no-repeat, repeat, no-repeat;
   background-size: contain, auto, contain;
-  mask-image: radial-gradient(ellipse calc(150vw) 150vh at 100% -5%, rgb(0, 0, 0) -5%, transparent 40%);
+  mask-image: radial-gradient(
+    ellipse calc(150vw) 150vh at 100% -5%,
+    rgb(0, 0, 0) -5%,
+    transparent 40%
+  );
   mask-size: 100% 100%;
   mask-repeat: no-repeat;
 }
@@ -811,7 +792,8 @@ div#root > section > div.rp-relative::before {
 /* Home page bottom name + gradients */
 div#root > section:not(:has(div[class^="docLayout_"])) {
   position: relative; /* Ensure the parent is positioned */
-  background-image: url("ck-name-dark.svg"), var(--ck-bg-radial-2), var(--ck-bg-radial-3);
+  background-image: url("ck-name-dark.svg"), var(--ck-bg-radial-2),
+    var(--ck-bg-radial-3);
   background-repeat: no-repeat, repeat, no-repeat, no-repeat;
   background-size: 95% auto, auto, contain, contain;
   background-position: center calc(100% + 12px), bottom, bottom, bottom;
@@ -827,7 +809,7 @@ div#root > section:not(:has(div[class^="docLayout_"]))::before {
   top: auto;
   height: 100%;
   pointer-events: none;
-  background-image: url("nnnoise.svg");
+  background-image: url("noise.svg");
   background-repeat: repeat;
   background-size: cover;
   mask-image: var(--ck-bg-radial-2), var(--ck-bg-radial-3);
