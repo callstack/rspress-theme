@@ -1,7 +1,6 @@
 .container {
   width: calc(100% - 8 * 2px);
-  justify-self: center;
-  margin: 90px;
+  margin: 90px auto;
   padding: 4px;
 }
 
@@ -17,4 +16,16 @@
   height: 20px;
   overflow: hidden;
   position: relative;
+}
+
+@media (max-width: 960px) {
+  .container {
+    margin: 64px auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    margin: 32px auto;
+  }
 }
