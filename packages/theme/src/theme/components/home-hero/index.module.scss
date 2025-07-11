@@ -1,11 +1,10 @@
 .container {
-  margin: 0 32px;
+  margin: 0 auto;
   width: calc(100% - 8 * 2px);
   height: 50vh;
   max-height: 600px;
   display: flex;
   flex-direction: column;
-  justify-self: center;
   justify-content: center;
   align-items: flex-start;
   position: relative;
@@ -117,11 +116,7 @@
 
 @media (max-width: 400px) {
   .container {
-    height: 55vh;
-  }
-
-  .heroActions {
-    flex-direction: column;
+    height: 65vh;
   }
 
   .heroTaglineActions {

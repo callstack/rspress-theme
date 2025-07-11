@@ -5,12 +5,11 @@
   background-repeat: no-repeat;
   color: var(--rp-c-brand-light);
   padding: 64px 48px;
-  margin: 32px;
+  margin: 32px auto;
   border-radius: 8px;
   width: calc(100% - 8 * 2px);
   height: 382px;
   display: flex;
-  justify-self: center;
   justify-content: flex-start;
   align-items: center;
   position: relative;
@@ -134,7 +133,7 @@
 
 @media (max-width: 640px) {
   .container {
-    margin: 16px;
+    margin: 16px auto;
     height: 240px;
   }
   .content {
