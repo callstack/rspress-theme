@@ -69,6 +69,7 @@ export function Button(props: ButtonProps): JSX.Element {
     [
       children,
       React.createElement(theme === 'brand' ? IconCorner : IconArrowBarRight, {
+        key: 'button-icon',
         className: `${styles['button-icon']} ${iconModeStyles}`,
         'aria-hidden': true,
         focusable: false,
