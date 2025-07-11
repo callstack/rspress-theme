@@ -1,6 +1,14 @@
+import { NoSSR } from '@runtime';
 import { useState } from 'react';
 import IconClose from './close.svg?react';
 import styles from './index.module.scss';
+
+interface AnnouncementProps {
+  href: string;
+  message: string;
+  localStorageKey: string;
+  display?: boolean;
+}
 
 // based on https://github.com/rspack-contrib/rstack-doc-ui/blob/main/src/announcement/index.tsx
 export function Announcement({
@@ -8,12 +16,25 @@ export function Announcement({
   message,
   localStorageKey,
   display = true,
-}: {
-  href: string;
-  message: string;
-  localStorageKey: string;
-  display?: boolean;
-}) {
+}: AnnouncementProps) {
+  return (
+    <NoSSR>
+      <AnnouncementComponent
+        href={href}
+        message={message}
+        localStorageKey={localStorageKey}
+        display={display}
+      />
+    </NoSSR>
+  );
+}
+
+function AnnouncementComponent({
+  href,
+  message,
+  localStorageKey,
+  display = true,
+}: AnnouncementProps) {
   if (!display) {
     return null;
   }
