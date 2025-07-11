@@ -16,6 +16,44 @@ Or with yarn:
 yarn add @callstack/rspress-theme
 ```
 
+### Adding the Alliance No. 2 Font
+
+The theme uses **Alliance No. 2** as the header font family. This is a licensed font that you need to add to your project manually.
+
+1. **Create a `styles.css` file** in your project root or in a `styles` directory.
+
+2. **Add the font declarations** to your `styles.css` file:
+
+```css
+@font-face {
+  font-family: 'Alliance No. 2';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/alliance-no-2-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Alliance No. 2';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('./fonts/alliance-no-2-medium.ttf') format('truetype');
+}
+```
+
+3. **Link the styles in your Rspress config** by adding the `globalStyles` option:
+
+```ts
+import { defineConfig } from '@rspress/shared';
+import { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
+
+export default defineConfig({
+  plugins: [pluginCallstackTheme()],
+  globalStyles: './styles.css', // or the path to your styles.css file
+});
+```
+
 ## Usage
 
 To use the `rspress-theme` package, you need to add the plugin to the Rspress configuration in the plugin section. You can also import components through named imports like `Announcement`. These components can be used in your `.mdx` files or added to the layout as described in the [guide](https://rspress.dev/guide/advanced/custom-theme#extensions-based-on-the-default-theme).
