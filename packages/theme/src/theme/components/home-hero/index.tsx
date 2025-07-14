@@ -1,6 +1,7 @@
 import type { FrontMatterMeta } from '@rspress/shared';
 import { normalizeHrefInRuntime, normalizeImagePath, withBase } from '@runtime';
 import { isExternalUrl } from '@shared';
+import { renderHtmlOrText } from '../../utils';
 import { Button } from '../button';
 import styles from './index.module.scss';
 
@@ -52,10 +53,15 @@ function HomeHero({
             />
           </div>
         ) : null}
-        {hero?.name ? <h1 className={styles.heroName}>{hero.name}</h1> : null}
+        {hero?.name ? (
+          <h1 className={styles.heroName} {...renderHtmlOrText(hero.name)} />
+        ) : null}
       </div>
       <div className={styles.heroTaglineActions}>
-        <div className={styles.heroTagline}>{hero.tagline}</div>
+        <div
+          className={styles.heroTagline}
+          {...renderHtmlOrText(hero.tagline)}
+        />
         {beforeHeroActions}
         <div className={styles.heroActions}>
           {hero.actions.map((action) => {
@@ -64,9 +70,12 @@ function HomeHero({
               : normalizeHrefInRuntime(withBase(action.link, routePath));
 
             return (
-              <Button key={action.text} href={link} theme={action.theme}>
-                {action.text}
-              </Button>
+              <Button
+                key={action.text}
+                href={link}
+                theme={action.theme}
+                {...renderHtmlOrText(action.text)}
+              />
             );
           })}
         </div>
