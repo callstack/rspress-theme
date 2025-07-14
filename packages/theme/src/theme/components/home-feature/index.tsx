@@ -1,9 +1,6 @@
-import {
-  type Feature,
-  type FrontMatterMeta,
-  isExternalUrl,
-} from '@rspress/shared';
+import type { Feature, FrontMatterMeta } from '@rspress/shared';
 import { normalizeHrefInRuntime, withBase } from '@runtime';
+import { isExternalUrl } from '@shared';
 import {
   IconLayoutColumns,
   IconLayoutDistributeVertical,
