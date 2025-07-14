@@ -1,4 +1,9 @@
-import type { Feature, FrontMatterMeta } from '@rspress/shared';
+import {
+  type Feature,
+  type FrontMatterMeta,
+  isExternalUrl,
+} from '@rspress/shared';
+import { normalizeHrefInRuntime, withBase } from '@runtime';
 import {
   IconLayoutColumns,
   IconLayoutDistributeVertical,
@@ -9,8 +14,7 @@ import {
 } from './icons';
 import styles from './index.module.scss';
 
-const getGridClass = (feature: Feature): string => {
-  const { span } = feature;
+const getGridClass = ({ span }: Feature): string => {
   switch (span) {
     case 2:
       return styles.grid2;
@@ -61,8 +65,15 @@ export function HomeFeature({
   return (
     <div className="rp-overflow-hidden rp-m-auto rp-flex rp-flex-wrap rp-max-w-6xl">
       {features?.map((feature) => {
-        const { icon, title, details } = feature;
+        const { icon, title, details, link: rawLink } = feature;
         const IconComponent = getIconComponent(icon);
+
+        let link = rawLink;
+        if (rawLink) {
+          link = isExternalUrl(rawLink)
+            ? rawLink
+            : normalizeHrefInRuntime(withBase(rawLink));
+        }
 
         return (
           <div
@@ -70,7 +81,16 @@ export function HomeFeature({
             className={`${getGridClass(feature)} rp-rounded hover:rp-var(--rp-c-brand)`}
           >
             <div className={styles.featureCardContainer}>
-              <article key={title} className={styles.featureCard}>
+              <article
+                key={title}
+                className={styles.featureCard}
+                style={{ cursor: link ? 'pointer' : 'auto' }}
+                onClick={() => {
+                  if (link) {
+                    window.location.href = link;
+                  }
+                }}
+              >
                 {icon ? (
                   <div className="rp-flex rp-items-center rp-justify-center">
                     <div className={styles.featureIcon}>
