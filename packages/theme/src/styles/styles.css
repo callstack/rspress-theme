@@ -745,6 +745,10 @@ div#root > section:not(:has(div[class^="docLayout_"]))::before {
   mask-image: var(--ck-bg-radial-2), var(--ck-bg-radial-3);
 }
 
+.dark div#root > section:not(:has(div[class^="docLayout_"]))::before {
+  opacity: 0.2 !important;
+}
+
 /* Home page footer */
 footer {
   border: none !important;
