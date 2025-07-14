@@ -19,7 +19,7 @@
 }
 
 .heroImage {
-  width: 128px;
+  max-height: 24px;
   margin: 0 0 32px 0;
 }
 
@@ -55,8 +55,9 @@
 
 .heroActions {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   align-self: flex-start;
+  justify-content: flex-start;
   gap: 16px;
   margin: 32px 0;
 }
@@ -112,6 +113,10 @@
     text-align: center;
     margin: 0 16px;
   }
+
+  .heroActions {
+    justify-content: center;
+  }
 }
 
 @media (max-width: 400px) {
@@ -122,5 +127,9 @@
   .heroTaglineActions {
     align-self: center;
     margin-bottom: 0;
+  }
+
+  .heroActions {
+    gap: 12px;
   }
 }
