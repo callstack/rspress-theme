@@ -1,4 +1,4 @@
-import { Button } from '../../primitives/button';
+import { Button } from '@theme';
 import styles from './index.module.scss';
 
 interface OutlineCTAProps {

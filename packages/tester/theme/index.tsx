@@ -1,5 +1,6 @@
 import {
   Announcement,
+  Button,
   HomeBanner,
   HomeFeature,
   HomeFooter,
@@ -42,6 +43,6 @@ const HomeLayout = () => {
   );
 };
 
-export { Layout, HomeLayout, PrevNextPage, HomeFeature, HomeHero };
+export { Layout, HomeLayout, Button, PrevNextPage, HomeFeature, HomeHero };
 
 export * from 'rspress/theme';
