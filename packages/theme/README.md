@@ -84,6 +84,7 @@ To take full advantage of the theme components, you should create or modify a `t
 // theme/index.tsx
 import {
   Announcement,
+  Button,
   HomeBanner,
   HomeFeature,
   HomeFooter,
@@ -122,7 +123,7 @@ const HomeLayout = () => (
 );
 
 // Export your custom layouts and any components you want available via '@theme'
-export { Layout, HomeLayout, PrevNextPage, HomeFeature, HomeHero };
+export { Layout, HomeLayout, Button, PrevNextPage, HomeFeature, HomeHero };
 // Don't forget to export the default theme components which are not overridden
 export * from 'rspress/theme';
 ```

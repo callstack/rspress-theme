@@ -1,6 +1,6 @@
 import { useDark } from '@runtime';
 import { Link } from '@theme';
-import React, { type JSX } from 'react';
+import * as React from 'react';
 import IconArrowBarRight from './arrow-bar-right.svg?react';
 import IconCorner from './corner-down-right.svg?react';
 import styles from './index.module.scss';
@@ -35,7 +35,7 @@ function getIconStyles(
   return useDarkStyle ? styles.buttonIconDark : styles.buttonIconLight;
 }
 
-export function Button(props: ButtonProps): JSX.Element {
+export function Button(props: ButtonProps): React.ReactNode {
   const isDark = useDark();
 
   const {

@@ -1,7 +1,7 @@
 import type { FrontMatterMeta } from '@rspress/shared';
 import { normalizeHrefInRuntime, normalizeImagePath, withBase } from '@runtime';
 import { isExternalUrl } from '@shared';
-import { Button } from 'src/theme/primitives';
+import { Button } from '../button';
 import styles from './index.module.scss';
 
 const DEFAULT_HERO = {

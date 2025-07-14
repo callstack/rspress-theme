@@ -1,4 +1,5 @@
 export { Announcement } from './announcement';
+export { Button } from './button';
 export { HomeBanner } from './home-banner';
 export { HomeFeature } from './home-feature';
 export { HomeFooter } from './home-footer';
