@@ -11,9 +11,12 @@
   cursor: pointer;
   width: fit-content;
   align-self: flex-start;
+  transition: background-position 0.45s cubic-bezier(0.625, 0.05, 0, 1),
+    color 0.45s cubic-bezier(0.625, 0.05, 0, 1);
 
   &:hover {
-    background: #2d2c31;
+    color: #ffffff;
+    background-position: left bottom;
   }
 }
 
@@ -26,21 +29,15 @@
 }
 
 .button-dark {
-  background-color: #201f24;
+  background: linear-gradient(to right, var(--rp-c-brand) 50%, #201f24 50%)
+    right bottom / 200% 100%;
   color: #ffffff;
-
-  &:hover {
-    background: #2d2c31;
-  }
 }
 
 .button-light {
-  background-color: #ffffff;
+  background: linear-gradient(to right, var(--rp-c-brand) 50%, #ffffff 50%)
+    right bottom / 200% 100%;
   color: #201f24;
-
-  &:hover {
-    background: #f5f5f5;
-  }
 }
 
 .button-icon {
@@ -50,14 +47,16 @@
   border-radius: 2px;
   padding: 4px;
   margin-left: 8px;
+  transition: color 0.45s cubic-bezier(0.625, 0.05, 0, 1);
+  overflow: hidden;
 }
 
 .button-icon-dark {
-  color: #fff;
+  color: inherit;
   background: #ffffff33;
 }
 
 .button-icon-light {
-  color: #201f24;
+  color: inherit;
   background: #1514151a;
 }

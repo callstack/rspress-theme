@@ -24,8 +24,8 @@
 /* Dark mode overrides */
 .dark {
   --ck-background-primary: #201f24;
-  --ck-border-primary: #ffffff26;
-  --ck-border-secondary: #ffffff4d;
+  --ck-border-primary: #424145;
+  --ck-border-secondary: #636266;
   --ck-foreground-primary: #2b2a2f;
   --ck-foreground-secondary: #838289;
   --ck-text-primary: #ffffff;
