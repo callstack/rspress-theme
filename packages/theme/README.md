@@ -92,6 +92,7 @@ import {
   LinkCard,
   OutlineCTA,
   PrevNextPage,
+  VersionBadge,
 } from '@callstack/rspress-theme';
 import {
   HomeLayout as RspressHomeLayout,
@@ -132,6 +133,8 @@ export {
   HomeFeature,
   HomeHero,
   LinkCard,
+  VersionBadge,
+  Announcement,
 };
 // Don't forget to export the default theme components which are not overridden
 export * from 'rspress/theme';
