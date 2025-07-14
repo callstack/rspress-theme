@@ -477,6 +477,10 @@ h6 {
   margin-bottom: 16px !important;
 }
 
+.overview-index div:has(input#api-filter) {
+  gap: 0 !important;
+}
+
 /* Overview page - no results */
 .overview-index div {
   border-top: none !important;
@@ -521,7 +525,7 @@ input#api-filter {
   padding: 10px 12px 10px 36px;
   box-sizing: border-box;
   outline: none;
-  min-width: 300px;
+  min-width: 200px;
 }
 
 /* Overview page - search placeholder */
@@ -634,8 +638,7 @@ li[class*="suggestItem_"]
 
 /* Logo */
 img#logo {
-  width: 102px;
-  height: 16px;
+  max-height: 16px;
 }
 
 /* Table header */
