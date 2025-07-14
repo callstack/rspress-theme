@@ -5,6 +5,7 @@ import {
   HomeFeature,
   HomeFooter,
   HomeHero,
+  LinkCard,
   OutlineCTA,
   PrevNextPage,
   VersionBadge,
@@ -43,6 +44,14 @@ const HomeLayout = () => {
   );
 };
 
-export { Layout, HomeLayout, Button, PrevNextPage, HomeFeature, HomeHero };
+export {
+  Layout,
+  HomeLayout,
+  Button,
+  PrevNextPage,
+  HomeFeature,
+  HomeHero,
+  LinkCard,
+};
 
 export * from 'rspress/theme';

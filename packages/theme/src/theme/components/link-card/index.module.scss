@@ -1,0 +1,11 @@
+.link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.linkCard {
+  &:hover {
+    background-color: var(--rp-c-bg-mute);
+  }
+}
