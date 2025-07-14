@@ -1,4 +1,4 @@
-import { Button } from '@theme';
+import { Button } from '../button';
 import abstractAtom from './abstract-atom.avif';
 import styles from './index.module.scss';
 
