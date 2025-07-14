@@ -89,6 +89,7 @@ import {
   HomeFeature,
   HomeFooter,
   HomeHero,
+  LinkCard,
   OutlineCTA,
   PrevNextPage,
 } from '@callstack/rspress-theme';
@@ -123,7 +124,15 @@ const HomeLayout = () => (
 );
 
 // Export your custom layouts and any components you want available via '@theme'
-export { Layout, HomeLayout, Button, PrevNextPage, HomeFeature, HomeHero };
+export {
+  Layout,
+  HomeLayout,
+  Button,
+  PrevNextPage,
+  HomeFeature,
+  HomeHero,
+  LinkCard,
+};
 // Don't forget to export the default theme components which are not overridden
 export * from 'rspress/theme';
 ```
