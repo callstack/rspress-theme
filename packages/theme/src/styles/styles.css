@@ -704,12 +704,9 @@ div#root > section > div.rp-relative::before {
   content: "";
   position: absolute;
   inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  background-image: url("../assets/hero-bg-shape.svg"),
-    url("../assets/noise.svg"), var(--ck-bg-radial-1);
-  background-repeat: no-repeat, repeat, no-repeat;
-  background-size: contain, auto, contain;
+  background-image: url("../assets/hero-bg-shape.svg"), var(--ck-bg-radial-1);
+  background-repeat: no-repeat, no-repeat;
+  background-size: contain, contain;
   mask-image: radial-gradient(
     ellipse calc(150vw) 150vh at 100% -5%,
     rgb(0, 0, 0) -5%,
@@ -717,6 +714,27 @@ div#root > section > div.rp-relative::before {
   );
   mask-size: 100% 100%;
   mask-repeat: no-repeat;
+}
+
+/* Home page top noise with opacity control */
+div#root > section > div.rp-relative::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/noise.svg");
+  background-repeat: repeat;
+  background-size: cover;
+  mask-image: radial-gradient(
+    ellipse calc(150vw) 150vh at 100% -5%,
+    rgb(0, 0, 0) -5%,
+    transparent 40%
+  );
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+
+.dark div#root > section > div.rp-relative::after {
+  opacity: 0.1;
 }
 
 /* Home page bottom name + gradients */
