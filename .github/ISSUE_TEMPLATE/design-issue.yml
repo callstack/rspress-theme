@@ -27,8 +27,6 @@ body:
     attributes:
       label: Screenshot
       description: Upload a screenshot showing the current state
-      type: file
-      accept: image/*
     validations:
       required: true
 
@@ -42,8 +40,6 @@ body:
     attributes:
       label: Expected Screenshot/Mockup
       description: Upload a screenshot or mockup showing how it should look
-      type: file
-      accept: image/*
 
   - type: input
     id: figma-link
