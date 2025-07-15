@@ -44,4 +44,3 @@ body:
       label: Additional details
       description: Any other context that might be helpful
       placeholder: Browser, device, specific page, etc.
-      render: text
