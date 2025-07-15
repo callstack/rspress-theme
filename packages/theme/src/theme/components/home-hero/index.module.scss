@@ -118,11 +118,11 @@
   }
 }
 
-@media (max-width: 400px) {
-  .container {
-    height: 65vh;
-  }
+.container {
+  padding-top: 1.6rem;
+}
 
+@media (max-width: 400px) {
   .heroTaglineActions {
     align-self: center;
     margin-bottom: 0;
