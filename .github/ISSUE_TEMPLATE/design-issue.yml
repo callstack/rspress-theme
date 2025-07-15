@@ -34,7 +34,7 @@ body:
   - type: input
     id: figma-link
     attributes:
-      label: Figma Link (optional)
+      label: Figma Link
       description: Link to Figma design if available
       placeholder: https://www.figma.com/file/...
 
