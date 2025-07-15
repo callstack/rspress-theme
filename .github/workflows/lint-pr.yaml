@@ -8,17 +8,16 @@ on:
       - opened
       - edited
 
-permissions:
-  issues: write
-  contents: read
-
 jobs:
   lint-pr-title:
+    if: github.repository == 'callstack/rspress-theme'
     name: Validate PR title
+    permissions:
+      pull-requests: read
     runs-on: ubuntu-latest
     steps:
       # https://github.com/amannn/action-semantic-pull-request
-      - uses: amannn/action-semantic-pull-request@v5
+      - uses: amannn/action-semantic-pull-request@0723387faaf9b38adef4775cd42cfd5155ed6017 # tag v5.5.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -46,16 +45,3 @@ jobs:
           # Configure additional validation for the subject based on a regex.
           ignoreLabels: |
             bot
-
-  release-labeling:
-    # See context at https://github.com/web-infra-dev/rspack/discussions/2760
-    name: Labeling for releasing
-    runs-on: ubuntu-latest
-    steps:
-      - uses: github/issue-labeler@v3.4
-        with:
-          repo-token: "${{ secrets.GITHUB_TOKEN }}"
-          configuration-path: .github/pr-labeler.yml
-          enable-versioned-regex: 0
-          include-title: 1
-          sync-labels: 1
