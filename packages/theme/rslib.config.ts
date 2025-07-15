@@ -27,7 +27,7 @@ const themeConfig: LibConfig = {
   },
   output: {
     distPath: { root: './dist' },
-    externals: ['@runtime', '@theme', '@shared'],
+    externals: ['@theme'],
     target: 'web',
   },
   plugins: [pluginImageCompress(), pluginReact(), pluginSass(), pluginSvgr()],

@@ -45,7 +45,7 @@ The theme uses **Alliance No. 2** as the header font family. This is a licensed 
 3. **Link the styles in your Rspress config** by adding the `globalStyles` option:
 
 ```ts
-import { defineConfig } from '@rspress/shared';
+import { defineConfig } from 'rspress/core';
 import { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
 
 export default defineConfig({
@@ -63,7 +63,7 @@ To use the `rspress-theme` package, you need to add the plugin to the Rspress co
 In your `rspress.config.ts` file, import `pluginCallstackTheme` from `@callstack/rspress-theme/plugin` and add it to the plugins array:
 
 ```ts
-import { defineConfig } from '@rspress/shared';
+import { defineConfig } from 'rspress/core';
 import { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
 
 export default defineConfig({

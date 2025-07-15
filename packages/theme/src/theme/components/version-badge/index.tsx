@@ -1,5 +1,5 @@
-import { usePageData } from '@runtime';
 import { Badge } from '@theme';
+import { usePageData } from 'rspress/runtime';
 
 interface VersionBadgeProps {
   version?: string;

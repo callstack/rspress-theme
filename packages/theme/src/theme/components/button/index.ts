@@ -1,6 +1,6 @@
-import { useDark } from '@runtime';
 import { Link } from '@theme';
 import * as React from 'react';
+import { useDark } from 'rspress/runtime';
 import IconArrowBarRight from './arrow-bar-right.svg?react';
 import IconCorner from './corner-down-right.svg?react';
 import styles from './index.module.scss';
