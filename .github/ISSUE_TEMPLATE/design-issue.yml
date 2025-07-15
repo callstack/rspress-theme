@@ -1,12 +1,12 @@
 name: 🎨 Design Issue
 description: Report design inconsistencies or missing elements
 title: '[Design] '
-labels: ['design', 'theme']
+labels: ['design']
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to report a design issue!
+        Thanks for taking the time to report a design issue! Please provide as much details as possible to help us fix the issue.
 
   - type: textarea
     id: problem
@@ -22,12 +22,14 @@ body:
     attributes:
       label: How it looks now
       description: Upload a screenshot showing the current state
+      placeholder: Copy-paste the screenshot here
 
   - type: input
     id: expected-screenshot
     attributes:
       label: How it should look
       description: Upload a screenshot or mockup showing how it should look
+      placeholder: Copy-paste the screenshot here
 
   - type: input
     id: figma-link
