@@ -94,6 +94,17 @@
   }
 }
 
+.container {
+  padding-top: 1.6rem;
+}
+
+@media (min-width: 960px) {
+  .container {
+    padding-top: 155px;
+    padding-bottom: 155px;
+  }
+}
+
 @media (max-width: 640px) {
   .heroMain {
     display: flex;
@@ -116,10 +127,6 @@
   .heroActions {
     justify-content: center;
   }
-}
-
-.container {
-  padding-top: 1.6rem;
 }
 
 @media (max-width: 400px) {
