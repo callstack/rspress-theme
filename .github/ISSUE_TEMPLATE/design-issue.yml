@@ -17,28 +17,16 @@ body:
     validations:
       required: true
 
-  - type: markdown
-    attributes:
-      value: |
-        ### How it looks now
-
   - type: input
     id: current-screenshot
     attributes:
-      label: Screenshot
+      label: How it looks now
       description: Upload a screenshot showing the current state
-    validations:
-      required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        ### How it should look
 
   - type: input
     id: expected-screenshot
     attributes:
-      label: Expected Screenshot/Mockup
+      label: How it should look
       description: Upload a screenshot or mockup showing how it should look
 
   - type: input
