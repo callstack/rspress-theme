@@ -1,6 +1,6 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import type { RspressPlugin, UserConfig } from '@rspress/shared';
+import type { RspressPlugin, UserConfig } from 'rspress/core';
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -49,14 +49,5 @@ export function pluginCallstackTheme(): RspressPlugin {
     },
     // inject style overrides
     globalStyles: path.join(path.dirname(dirname), 'styles/styles.css'),
-    // add aliases for runtime and shared
-    builderConfig: {
-      resolve: {
-        alias: {
-          '@runtime': '@rspress/core/runtime',
-          '@shared': '@rspress/shared',
-        },
-      },
-    },
   };
 }

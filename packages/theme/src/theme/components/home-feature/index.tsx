@@ -1,6 +1,9 @@
-import type { Feature, FrontMatterMeta } from '@rspress/shared';
-import { normalizeHrefInRuntime, withBase } from '@runtime';
-import { isExternalUrl } from '@shared';
+import {
+  isExternalUrl,
+  normalizeHrefInRuntime,
+  withBase,
+} from 'rspress/runtime';
+import type { Feature, FrontMatterMeta } from '../../types';
 import { renderHtmlOrText } from '../../utils';
 import styles from './index.module.scss';
 

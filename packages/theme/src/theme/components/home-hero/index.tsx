@@ -1,6 +1,10 @@
-import type { FrontMatterMeta } from '@rspress/shared';
-import { normalizeHrefInRuntime, normalizeImagePath, withBase } from '@runtime';
-import { isExternalUrl } from '@shared';
+import {
+  isExternalUrl,
+  normalizeHrefInRuntime,
+  normalizeImagePath,
+  withBase,
+} from 'rspress/runtime';
+import type { FrontMatterMeta, Hero } from '../../types';
 import { renderHtmlOrText } from '../../utils';
 import { Button } from '../button';
 import styles from './index.module.scss';
@@ -11,7 +15,7 @@ const DEFAULT_HERO = {
   tagline: '',
   actions: [],
   image: undefined,
-} satisfies FrontMatterMeta['hero'];
+} satisfies Hero;
 
 interface HomeHeroProps {
   frontmatter: FrontMatterMeta;
@@ -24,7 +28,6 @@ function HomeHero({
   beforeHeroActions,
   afterHeroActions,
   frontmatter,
-  routePath,
 }: HomeHeroProps) {
   const hero = frontmatter.hero ?? DEFAULT_HERO;
   const imageSrc =
@@ -67,7 +70,7 @@ function HomeHero({
           {hero.actions.map((action) => {
             const link = isExternalUrl(action.link)
               ? action.link
-              : normalizeHrefInRuntime(withBase(action.link, routePath));
+              : normalizeHrefInRuntime(withBase(action.link));
 
             return (
               <Button

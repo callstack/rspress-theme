@@ -23,5 +23,3 @@ declare module '*.avif' {
 
 // rspress aliases
 declare module '@theme';
-declare module '@runtime';
-declare module '@shared';
