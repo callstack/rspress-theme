@@ -1,15 +1,14 @@
 .container {
   margin: 0 auto;
   width: calc(100% - 8 * 2px);
-  max-height: 600px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   position: relative;
   overflow: hidden;
-  padding-top: 155px;
-  padding-bottom: 155px;
+  padding-top: 12vh;
+  padding-bottom: 6vh;
 }
 
 .heroMain {
