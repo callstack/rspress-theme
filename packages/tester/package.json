@@ -11,7 +11,7 @@
     "preview": "rspress preview"
   },
   "dependencies": {
-    "rspress": "^2.0.0-beta.18",
+    "rspress": "^2.0.0-beta.21",
     "@callstack/rspress-theme": "workspace:*"
   },
   "devDependencies": {
