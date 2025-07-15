@@ -17,14 +17,14 @@ body:
     validations:
       required: true
 
-  - type: input
+  - type: textarea
     id: current-screenshot
     attributes:
       label: How it looks now
       description: Upload a screenshot showing the current state
       placeholder: Copy-paste the screenshot here
 
-  - type: input
+  - type: textarea
     id: expected-screenshot
     attributes:
       label: How it should look
