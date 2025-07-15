@@ -1,0 +1,61 @@
+name: 🎨 Design Issue
+description: Report design inconsistencies or missing elements
+title: '[Design] '
+labels: ['design', 'theme']
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a design issue!
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: What's wrong?
+      description: Brief description of the design issue
+      placeholder: Describe the design problem you've found...
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### How it looks now
+
+  - type: input
+    id: current-screenshot
+    attributes:
+      label: Screenshot
+      description: Upload a screenshot showing the current state
+      type: file
+      accept: image/*
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ### How it should look
+
+  - type: input
+    id: expected-screenshot
+    attributes:
+      label: Expected Screenshot/Mockup
+      description: Upload a screenshot or mockup showing how it should look
+      type: file
+      accept: image/*
+
+  - type: input
+    id: figma-link
+    attributes:
+      label: Figma Link (optional)
+      description: Link to Figma design if available
+      placeholder: https://www.figma.com/file/...
+
+  - type: textarea
+    id: additional-details
+    attributes:
+      label: Additional details
+      description: Any other context that might be helpful
+      placeholder: Browser, device, specific page, etc.
+      render: text
