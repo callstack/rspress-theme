@@ -1,6 +1,5 @@
 import { Link } from '@theme';
 import * as React from 'react';
-import { useDark } from 'rspress/runtime';
 import IconArrowBarRight from './arrow-bar-right.svg?react';
 import IconCorner from './corner-down-right.svg?react';
 import styles from './index.module.scss';
@@ -15,31 +14,9 @@ interface ButtonProps {
   dark?: boolean;
 }
 
-function getStyles(
-  theme: string,
-  isDarkMode: boolean,
-  styles: Record<string, string>
-) {
-  const invert = theme === 'brand';
-  const useDarkStyle = invert ? !isDarkMode : isDarkMode;
-  return useDarkStyle ? styles.buttonDark : styles.buttonLight;
-}
-
-function getIconStyles(
-  theme: string,
-  isDarkMode: boolean,
-  styles: Record<string, string>
-) {
-  const invert = theme === 'brand';
-  const useDarkStyle = invert ? !isDarkMode : isDarkMode;
-  return useDarkStyle ? styles.buttonIconDark : styles.buttonIconLight;
-}
-
 export function Button(props: ButtonProps): React.ReactNode {
-  const isDark = useDark();
-
   const {
-    dark,
+    dark = false,
     theme = 'brand',
     href = '/',
     external = false,
@@ -56,16 +33,12 @@ export function Button(props: ButtonProps): React.ReactNode {
     type = 'a';
   }
 
-  const isDarkMode = dark ?? isDark;
-  const modeStyles = getStyles(theme, isDarkMode, styles);
-  const iconModeStyles = getIconStyles(theme, isDarkMode, styles);
-
   return React.createElement(React.Fragment, null, [
     React.createElement(
       type,
       {
         key: 'button-1',
-        className: `dark:rp-hidden ${styles.button} ${styles[theme]} ${modeStyles} ${className}`,
+        className: `dark:rp-hidden ${styles.button} ${styles[theme]} ${className}`,
         href,
       },
       [
@@ -74,7 +47,7 @@ export function Button(props: ButtonProps): React.ReactNode {
           theme === 'brand' ? IconCorner : IconArrowBarRight,
           {
             key: 'button-icon-1',
-            className: `${styles['button-icon']} ${iconModeStyles}`,
+            className: `${styles['button-icon']}`,
             'aria-hidden': true,
             focusable: false,
           }
@@ -85,7 +58,7 @@ export function Button(props: ButtonProps): React.ReactNode {
       type,
       {
         key: 'button-2',
-        className: `rp-hidden dark:rp-block ${styles.button} ${styles[theme]} ${modeStyles} ${className}`,
+        className: `rp-hidden dark:rp-block ${styles.button} ${styles[theme]} ${className}`,
         href,
       },
       [
@@ -94,7 +67,7 @@ export function Button(props: ButtonProps): React.ReactNode {
           theme === 'brand' ? IconCorner : IconArrowBarRight,
           {
             key: 'button-icon-2',
-            className: `${styles['button-icon']} ${iconModeStyles}`,
+            className: `${styles['button-icon']}`,
             'aria-hidden': true,
             focusable: false,
           }

@@ -27,6 +27,20 @@
   }
 }
 
+// light mode
+.button {
+  background: linear-gradient(to right, var(--rp-c-brand) 50%, #ffffff 50%)
+    right bottom / 200% 100%;
+  color: #201f24;
+}
+
+// dark mode
+:global(.dark) .button {
+  background: linear-gradient(to right, var(--rp-c-brand) 50%, #201f24 50%)
+    right bottom / 200% 100%;
+  color: #ffffff;
+}
+
 @keyframes slide-in {
   from {
     transform: translateX(-150%);
@@ -53,18 +67,6 @@
   border: 1px solid var(--rp-c-divider-light);
 }
 
-.button-dark {
-  background: linear-gradient(to right, var(--rp-c-brand) 50%, #201f24 50%)
-    right bottom / 200% 100%;
-  color: #ffffff;
-}
-
-.button-light {
-  background: linear-gradient(to right, var(--rp-c-brand) 50%, #ffffff 50%)
-    right bottom / 200% 100%;
-  color: #201f24;
-}
-
 .button-icon {
   display: inline-block;
   width: 24px;
@@ -76,12 +78,14 @@
   overflow: hidden;
 }
 
-.button-icon-dark {
-  color: inherit;
-  background: #ffffff33;
-}
-
-.button-icon-light {
+// light mode
+.button-icon {
   color: inherit;
   background: #1514151a;
+}
+
+// dark mode
+:global(.dark) .button-icon {
+  color: inherit;
+  background: #ffffff33;
 }
