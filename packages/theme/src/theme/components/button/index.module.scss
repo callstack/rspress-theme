@@ -16,8 +16,8 @@
 
   @media (pointer: fine) {
     &:hover {
-      color: #ffffff;
-      background-position: left bottom;
+      color: #ffffff !important;
+      background-position: left bottom !important;
     }
 
     &:hover svg.button-icon > path {
@@ -28,14 +28,16 @@
 }
 
 // light mode
-.button {
+.button.alt,
+:global(.dark) .button.brand {
   background: linear-gradient(to right, var(--rp-c-brand) 50%, #ffffff 50%)
     right bottom / 200% 100%;
   color: #201f24;
 }
 
 // dark mode
-:global(.dark) .button {
+.button.brand,
+:global(.dark) .button.alt {
   background: linear-gradient(to right, var(--rp-c-brand) 50%, #201f24 50%)
     right bottom / 200% 100%;
   color: #ffffff;
@@ -79,13 +81,16 @@
 }
 
 // light mode
+.button.alt .button-icon,
+:global(.dark) .button.brand .button-icon,
 .button-icon {
   color: inherit;
   background: #1514151a;
 }
 
 // dark mode
-:global(.dark) .button-icon {
+.button.brand .button-icon,
+:global(.dark) .button.alt .button-icon {
   color: inherit;
   background: #ffffff33;
 }
