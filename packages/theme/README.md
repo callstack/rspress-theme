@@ -29,7 +29,7 @@ The theme uses **Alliance No. 2** as the header font family. This is a licensed 
   font-family: 'Alliance No. 2';
   font-style: normal;
   font-weight: 400;
-  font-display: swap;
+  font-display: block;
   src: url('./fonts/alliance-no-2-regular.ttf') format('truetype');
 }
 
@@ -37,7 +37,7 @@ The theme uses **Alliance No. 2** as the header font family. This is a licensed 
   font-family: 'Alliance No. 2';
   font-style: normal;
   font-weight: 500;
-  font-display: swap;
+  font-display: block;
   src: url('./fonts/alliance-no-2-medium.ttf') format('truetype');
 }
 ```
