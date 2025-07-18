@@ -31,7 +31,8 @@
 .button.alt,
 :global(.dark) .button.brand {
   background: linear-gradient(to right, var(--rp-c-brand) 50%, #ffffff 50%)
-    right bottom / 200% 100%;
+    // add 1px to avoid subpixel problems (lagging 1px violet background) in odd-width buttons
+    right bottom / calc(200% + 1px) 100%;
   color: #201f24;
 }
 
@@ -39,7 +40,8 @@
 .button.brand,
 :global(.dark) .button.alt {
   background: linear-gradient(to right, var(--rp-c-brand) 50%, #201f24 50%)
-    right bottom / 200% 100%;
+    // add 1px to avoid subpixel problems (lagging 1px violet background) in odd-width buttons
+    right bottom / calc(200% + 1px) 100%;
   color: #ffffff;
 }
 
