@@ -33,12 +33,12 @@ export function Button(props: ButtonProps): React.ReactNode {
     type = 'a';
   }
 
-  return React.createElement(React.Fragment, null, [
+  return React.createElement('div', { className: dark ? 'dark' : undefined }, [
     React.createElement(
       type,
       {
         key: 'button-1',
-        className: `dark:rp-hidden ${styles.button} ${styles[theme]} ${className}`,
+        className: `dark:rp-hidden rp-block ${styles.button} ${styles[theme]} ${className}`,
         href,
       },
       [
