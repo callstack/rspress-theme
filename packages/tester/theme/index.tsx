@@ -8,6 +8,7 @@ import {
   LinkCard,
   OutlineCTA,
   PrevNextPage,
+  SwitchAppearance,
   VersionBadge,
 } from '@callstack/rspress-theme';
 import {
@@ -52,6 +53,7 @@ export {
   HomeFeature,
   HomeHero,
   LinkCard,
+  SwitchAppearance,
 };
 
 export * from 'rspress/theme';
