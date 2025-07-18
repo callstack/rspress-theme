@@ -60,20 +60,46 @@ export function Button(props: ButtonProps): React.ReactNode {
   const modeStyles = getStyles(theme, isDarkMode, styles);
   const iconModeStyles = getIconStyles(theme, isDarkMode, styles);
 
-  return React.createElement(
-    type,
-    {
-      className: `${styles.button} ${styles[theme]} ${modeStyles} ${className}`,
-      href,
-    },
-    [
-      children,
-      React.createElement(theme === 'brand' ? IconCorner : IconArrowBarRight, {
-        key: 'button-icon',
-        className: `${styles['button-icon']} ${iconModeStyles}`,
-        'aria-hidden': true,
-        focusable: false,
-      }),
-    ]
-  );
+  return React.createElement(React.Fragment, null, [
+    React.createElement(
+      type,
+      {
+        key: 'button-1',
+        className: `dark:rp-hidden ${styles.button} ${styles[theme]} ${modeStyles} ${className}`,
+        href,
+      },
+      [
+        children,
+        React.createElement(
+          theme === 'brand' ? IconCorner : IconArrowBarRight,
+          {
+            key: 'button-icon-1',
+            className: `${styles['button-icon']} ${iconModeStyles}`,
+            'aria-hidden': true,
+            focusable: false,
+          }
+        ),
+      ]
+    ),
+    React.createElement(
+      type,
+      {
+        key: 'button-2',
+        className: `rp-hidden dark:rp-block ${styles.button} ${styles[theme]} ${modeStyles} ${className}`,
+        href,
+      },
+      [
+        children,
+        React.createElement(
+          theme === 'brand' ? IconCorner : IconArrowBarRight,
+          {
+            key: 'button-icon-2',
+            className: `${styles['button-icon']} ${iconModeStyles}`,
+            'aria-hidden': true,
+            focusable: false,
+          }
+        ),
+      ]
+    ),
+  ]);
 }
