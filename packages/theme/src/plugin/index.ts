@@ -1,8 +1,42 @@
+import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { RspressPlugin, UserConfig } from 'rspress/core';
 
+type BuilderConfig = UserConfig['builderConfig'];
+
+const { resolve } = createRequire(import.meta.url);
 const dirname = path.dirname(fileURLToPath(import.meta.url));
+
+function getBuilderConfig(): BuilderConfig {
+  const ckThemeExportsPath = path.join(dirname, 'theme');
+  const rspressThemeDefaultPath = resolve('@rspress/theme-default', {
+    paths: [resolve('rspress')],
+  });
+
+  return {
+    resolve: {
+      alias: (alias) => {
+        // alias '@theme' to CK theme exports instead of the default theme
+        if (Array.isArray(alias['@theme'])) {
+          const index = alias['@theme'].indexOf(rspressThemeDefaultPath);
+          if (index !== -1) {
+            alias['@theme'][index] = ckThemeExportsPath;
+          } else {
+            alias['@theme'].push(ckThemeExportsPath);
+          }
+        } else {
+          alias['@theme'] = ckThemeExportsPath;
+        }
+
+        // alias '@default-theme' to the default theme
+        alias['@default-theme'] = rspressThemeDefaultPath;
+        // alias 'rspress/theme' to CK theme exports
+        alias['rspress/theme'] = ckThemeExportsPath;
+      },
+    },
+  };
+}
 
 function addFonts(head: UserConfig['head'] = []) {
   // Fira Code font
@@ -40,6 +74,8 @@ function addThemeOverrides(themeConfig: UserConfig['themeConfig'] = {}) {
 export function pluginCallstackTheme(): RspressPlugin {
   return {
     name: 'plugin-callstack-theme',
+    // replace default theme & theme assets
+    builderConfig: getBuilderConfig(),
     // add ck theme defaults if not present
     config: (config) => {
       config.head = addFonts(config.head);
