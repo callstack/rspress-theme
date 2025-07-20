@@ -1,38 +1,85 @@
+import fs from 'node:fs';
 import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { RspressPlugin, UserConfig } from 'rspress/core';
 
-type BuilderConfig = UserConfig['builderConfig'];
+type BuilderConfig = NonNullable<UserConfig['builderConfig']>;
 
 const { resolve } = createRequire(import.meta.url);
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
-function getBuilderConfig(): BuilderConfig {
+function getThemeAssets() {
+  const assetsDirPath = path.join(dirname, '../assets');
+  const contents = fs.readdirSync(assetsDirPath);
+  return contents
+    .map(path.parse)
+    .map(({ base, name }) => [
+      `@theme-assets/${name}`,
+      path.join(assetsDirPath, base),
+    ]);
+}
+
+function getThemeAliases(
+  existingThemeAlias: string | string[] | false | undefined
+): Record<string, string | string[]> {
   const ckThemeExportsPath = path.join(dirname, 'theme');
   const rspressThemeDefaultPath = resolve('@rspress/theme-default', {
     paths: [resolve('rspress')],
   });
 
+  const aliases: Record<string, string | string[]> = {};
+
+  // Handle @theme alias
+  if (Array.isArray(existingThemeAlias)) {
+    const index = existingThemeAlias.indexOf(rspressThemeDefaultPath);
+    if (index !== -1) {
+      aliases['@theme'] = existingThemeAlias.filter(Boolean).slice();
+      aliases['@theme'].splice(index, 0, ckThemeExportsPath);
+    } else {
+      // Add CK theme path to existing array
+      aliases['@theme'] = [...existingThemeAlias, ckThemeExportsPath];
+    }
+  } else {
+    // Replace single string with CK theme path
+    aliases['@theme'] = ckThemeExportsPath;
+  }
+
+  // Add alias for @default-theme to avoid circular dependency
+  aliases['@default-theme'] = rspressThemeDefaultPath;
+  // Alias rspress/theme to our theme to keep the theme override pattern from Rspress docs
+  aliases['rspress/theme'] = ckThemeExportsPath;
+
+  return aliases;
+}
+
+function getBuilderConfig(): BuilderConfig {
+  const assetOverrides = getThemeAssets();
+
   return {
     resolve: {
       alias: (alias) => {
-        // alias '@theme' to CK theme exports instead of the default theme
-        if (Array.isArray(alias['@theme'])) {
-          const index = alias['@theme'].indexOf(rspressThemeDefaultPath);
-          if (index !== -1) {
-            alias['@theme'][index] = ckThemeExportsPath;
+        // add '@theme-assets' aliases but keep the custom ones from user
+        for (const [assetAlias, assetPath] of assetOverrides) {
+          if (Array.isArray(alias[assetAlias])) {
+            alias[assetAlias].push(assetPath);
+          } else if (alias[assetAlias]) {
+            alias[assetAlias] = [alias[assetAlias], assetPath];
           } else {
-            alias['@theme'].push(ckThemeExportsPath);
+            alias[assetAlias] = assetPath;
           }
-        } else {
-          alias['@theme'] = ckThemeExportsPath;
         }
 
-        // alias '@default-theme' to the default theme
-        alias['@default-theme'] = rspressThemeDefaultPath;
-        // alias 'rspress/theme' to CK theme exports
-        alias['rspress/theme'] = ckThemeExportsPath;
+        // remove & add existing @theme-assets alias to keep specific aliases on top
+        const themeAssetsAlias = alias['@theme-assets'];
+        // biome-ignore lint/performance/noDelete: change property order
+        delete alias['@theme-assets'];
+        Object.assign(alias, { '@theme-assets': themeAssetsAlias });
+
+        // add '@theme', '@default-theme' & 'rspress/theme' aliases
+        // @ts-ignore
+        const themeAliases = getThemeAliases(alias['@theme']);
+        Object.assign(alias, themeAliases);
       },
     },
   };
