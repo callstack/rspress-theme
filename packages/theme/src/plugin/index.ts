@@ -9,6 +9,10 @@ type BuilderConfig = NonNullable<UserConfig['builderConfig']>;
 const { resolve } = createRequire(import.meta.url);
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
+function excludeFalse<T>(value: T): value is Exclude<T, false> {
+  return value !== false;
+}
+
 function getThemeAssets() {
   const assetsDirPath = path.join(dirname, '../assets');
   const contents = fs.readdirSync(assetsDirPath);
@@ -21,7 +25,7 @@ function getThemeAssets() {
 }
 
 function getThemeAliases(
-  existingThemeAlias: string | string[] | false | undefined
+  existingThemeAlias: string | (false | string)[] | false | undefined
 ): Record<string, string | string[]> {
   const ckThemeExportsPath = path.join(dirname, 'theme');
   const rspressThemeDefaultPath = resolve('@rspress/theme-default', {
@@ -34,11 +38,13 @@ function getThemeAliases(
   if (Array.isArray(existingThemeAlias)) {
     const index = existingThemeAlias.indexOf(rspressThemeDefaultPath);
     if (index !== -1) {
-      aliases['@theme'] = existingThemeAlias.filter(Boolean).slice();
+      aliases['@theme'] = existingThemeAlias.filter(excludeFalse).slice();
       aliases['@theme'].splice(index, 0, ckThemeExportsPath);
     } else {
       // Add CK theme path to existing array
-      aliases['@theme'] = [...existingThemeAlias, ckThemeExportsPath];
+      aliases['@theme'] = existingThemeAlias
+        .filter(excludeFalse)
+        .concat(ckThemeExportsPath);
     }
   } else {
     // Replace single string with CK theme path
