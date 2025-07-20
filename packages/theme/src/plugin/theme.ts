@@ -1,4 +1,3 @@
-// @ts-nocheck
 import {
   Announcement,
   Button,
@@ -10,10 +9,12 @@ import {
   OutlineCTA,
   PrevNextPage,
   VersionBadge,
+  // @ts-ignore
 } from '@callstack/rspress-theme';
 import {
   HomeLayout as DefaultHomeLayout,
   Layout as DefaultLayout,
+  // @ts-ignore
 } from '@default-theme';
 import React from 'react';
 
@@ -56,4 +57,5 @@ export {
   VersionBadge,
 };
 
+// @ts-ignore
 export * from '@default-theme';
