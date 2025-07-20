@@ -23,6 +23,7 @@ const Layout = (
 ): React.JSX.Element => {
   const afterOutline = props.afterOutline ?? [
     React.createElement(OutlineCTA, {
+      key: 'outline-cta',
       href: 'https://callstack.com',
     }),
   ];
@@ -34,7 +35,10 @@ const HomeLayout = (
   props: Parameters<typeof DefaultHomeLayout>[0]
 ): React.JSX.Element => {
   const afterFeatures = props.afterFeatures ?? [
-    React.createElement(HomeBanner, { href: 'https://callstack.com' }),
+    React.createElement(HomeBanner, {
+      key: 'home-banner',
+      href: 'https://callstack.com',
+    }),
   ];
 
   return React.createElement(DefaultHomeLayout, { ...props, afterFeatures });
