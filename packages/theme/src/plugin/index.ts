@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 import type { RspressPlugin, UserConfig } from 'rspress/core';
 
 type BuilderConfig = NonNullable<UserConfig['builderConfig']>;
+type AliasEntry = string | (false | string)[] | false | undefined;
 
 const { resolve } = createRequire(import.meta.url);
 const dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -25,7 +26,7 @@ function getThemeAssets() {
 }
 
 function getThemeAliases(
-  existingThemeAlias: string | (false | string)[] | false | undefined
+  existingThemeAlias: AliasEntry
 ): Record<string, string | string[]> {
   const ckThemeExportsPath = path.join(dirname, 'theme');
   const rspressThemeDefaultPath = resolve('@rspress/theme-default', {
@@ -59,22 +60,33 @@ function getThemeAliases(
   return aliases;
 }
 
-function getBuilderConfig(): BuilderConfig {
+function getThemeAssetAlias(
+  existingAssetAlias: AliasEntry
+): Record<string, string | string[]> {
   const assetOverrides = getThemeAssets();
+  const aliases: Record<string, string | string[]> = {};
 
+  for (const [assetAlias, assetPath] of assetOverrides) {
+    if (Array.isArray(existingAssetAlias)) {
+      aliases[assetAlias] = existingAssetAlias.filter(excludeFalse);
+      aliases[assetAlias].push(assetPath);
+    } else if (existingAssetAlias) {
+      aliases[assetAlias] = [existingAssetAlias, assetPath];
+    } else {
+      aliases[assetAlias] = assetPath;
+    }
+  }
+
+  return aliases;
+}
+
+function getBuilderConfig(): BuilderConfig {
   return {
     resolve: {
       alias: (alias) => {
         // add '@theme-assets' aliases but keep the custom ones from user
-        for (const [assetAlias, assetPath] of assetOverrides) {
-          if (Array.isArray(alias[assetAlias])) {
-            alias[assetAlias].push(assetPath);
-          } else if (alias[assetAlias]) {
-            alias[assetAlias] = [alias[assetAlias], assetPath];
-          } else {
-            alias[assetAlias] = assetPath;
-          }
-        }
+        const assetAliases = getThemeAssetAlias(alias['@theme-assets']);
+        Object.assign(alias, assetAliases);
 
         // remove & add existing @theme-assets alias to keep specific aliases on top
         const themeAssetsAlias = alias['@theme-assets'];
