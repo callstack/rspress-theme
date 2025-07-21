@@ -17,6 +17,9 @@ export default defineConfig({
     },
   },
   themeConfig: {
+    footer: {
+      message: 'Copyright © 2025 Callstack',
+    },
     editLink: {
       docRepoBaseUrl: 'https://github.com/callstack/rspress-theme',
       text: 'Edit this page on GitHub',
