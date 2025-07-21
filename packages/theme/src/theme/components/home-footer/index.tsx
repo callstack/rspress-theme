@@ -4,6 +4,8 @@ import CKLogoDark from './ck-logo-dark.svg?react';
 import CKLogoLight from './ck-logo-light.svg?react';
 import styles from './index.module.scss';
 
+declare const HOME_FOOTER_LINK: string;
+
 interface SocialLink {
   href: string;
   icon: React.ReactNode;
@@ -12,7 +14,7 @@ interface SocialLink {
 
 interface HomeFooterProps {
   LinkComponent?: React.ComponentType<{
-    href: string;
+    href?: string;
     children: React.ReactNode;
   }>;
   SocialLinksComponent?: React.ComponentType<{
@@ -28,7 +30,7 @@ function HomeFooter(props: HomeFooterProps) {
   return (
     <div className={`rp-max-w-6xl ${styles.container}`}>
       <div className={styles.row}>
-        <LinkComponent href="https://www.callstack.com/#">
+        <LinkComponent href={HOME_FOOTER_LINK}>
           <div className={styles.logo}>
             <CKLogoDark className="rp-hidden dark:rp-block" />
             <CKLogoLight className="dark:rp-hidden" />

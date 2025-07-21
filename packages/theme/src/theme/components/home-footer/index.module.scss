@@ -1,6 +1,6 @@
 .container {
   width: calc(100% - 8 * 2px);
-  margin: 90px auto;
+  margin: 0 auto 90px auto;
   padding: 4px;
 }
 
@@ -20,12 +20,12 @@
 
 @media (max-width: 960px) {
   .container {
-    margin: 64px auto;
+    margin: 0 auto 64px auto;
   }
 }
 
 @media (max-width: 640px) {
   .container {
-    margin: 32px auto;
+    margin: 0 auto 32px auto;
   }
 }

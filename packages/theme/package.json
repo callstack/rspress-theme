@@ -19,8 +19,7 @@
     },
     "./package.json": "./package.json"
   },
-  "files": ["cli.cjs", "dist", "plugin", "README.md"],
-  "bin": "./cli.cjs",
+  "files": ["dist", "plugin", "README.md"],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

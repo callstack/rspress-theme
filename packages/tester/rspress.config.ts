@@ -34,5 +34,13 @@ export default defineConfig({
       },
     ],
   },
-  plugins: [pluginCallstackTheme()],
+  plugins: [
+    pluginCallstackTheme({
+      links: {
+        homeBanner: 'https://callstack.com?source=banner',
+        homeFooter: 'https://callstack.com?source=footer',
+        outlineCTA: 'https://callstack.com?source=outline-cta',
+      },
+    }),
+  ],
 });
