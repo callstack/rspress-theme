@@ -1,7 +1,7 @@
 import { type MouseEvent, useContext } from 'react';
 import { DataContext, ThemeContext, flushSync } from 'rspress/runtime';
-import IconMoon from './moon.svg?react';
-import IconSun from './sun.svg?react';
+import IconMoon from '../../assets/moon.svg?react';
+import IconSun from '../../assets/sun.svg?react';
 import './index.module.scss';
 
 const supportAppearanceTransition = () => {

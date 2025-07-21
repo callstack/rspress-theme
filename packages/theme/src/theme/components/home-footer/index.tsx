@@ -1,7 +1,7 @@
 import { Link, SocialLinks } from '@theme';
 import { usePageData } from 'rspress/runtime';
-import CKLogoDark from './ck-logo-dark.svg?react';
-import CKLogoLight from './ck-logo-light.svg?react';
+import CKLogoDark from '../../assets/ck-logo-dark.svg?react';
+import CKLogoLight from '../../assets/ck-logo-light.svg?react';
 import styles from './index.module.scss';
 
 declare const HOME_FOOTER_LINK: string;

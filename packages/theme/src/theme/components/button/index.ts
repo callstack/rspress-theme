@@ -1,7 +1,7 @@
 import { Link } from '@theme';
 import * as React from 'react';
-import IconArrowBarRight from './arrow-bar-right.svg?react';
-import IconCorner from './corner-down-right.svg?react';
+import IconArrowBarRight from '../../assets/arrow-bar-right.svg?react';
+import IconCorner from '../../assets/corner-down-right.svg?react';
 import styles from './index.module.scss';
 
 interface ButtonProps {

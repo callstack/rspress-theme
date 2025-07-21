@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NoSSR } from 'rspress/runtime';
-import IconClose from './close.svg?react';
+import IconClose from '../../assets/close.svg?react';
 import styles from './index.module.scss';
 
 interface AnnouncementProps {

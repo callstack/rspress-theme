@@ -1,5 +1,5 @@
 import type * as React from 'react';
-import ArrowRight from './arrow-right.svg?react';
+import ArrowRight from '../../assets/arrow-right.svg?react';
 import styles from './index.module.scss';
 
 interface LinkCardProps {
