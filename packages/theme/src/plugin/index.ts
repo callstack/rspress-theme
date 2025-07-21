@@ -7,6 +7,14 @@ import type { RspressPlugin, UserConfig } from 'rspress/core';
 type BuilderConfig = NonNullable<UserConfig['builderConfig']>;
 type AliasEntry = string | (false | string)[] | false | undefined;
 
+interface PluginCallstackThemeOptions {
+  links?: {
+    homeBanner?: string;
+    homeFooter?: string;
+    outlineCTA?: string;
+  };
+}
+
 const { resolve } = createRequire(import.meta.url);
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
@@ -80,8 +88,15 @@ function getThemeAssetAlias(
   return aliases;
 }
 
-function getBuilderConfig(): BuilderConfig {
+function getBuilderConfig(options: PluginCallstackThemeOptions): BuilderConfig {
   return {
+    source: {
+      define: {
+        HOME_BANNER_LINK: JSON.stringify(options.links?.homeBanner),
+        HOME_FOOTER_LINK: JSON.stringify(options.links?.homeFooter),
+        OUTLINE_CTA_LINK: JSON.stringify(options.links?.outlineCTA),
+      },
+    },
     resolve: {
       alias: (alias) => {
         // add '@theme-assets' aliases but keep the custom ones from user
@@ -136,16 +151,28 @@ function addThemeOverrides(themeConfig: UserConfig['themeConfig'] = {}) {
   return themeConfig;
 }
 
-export function pluginCallstackTheme(): RspressPlugin {
+function normalizeOptions(options: PluginCallstackThemeOptions) {
+  return {
+    links: {
+      homeBanner: options.links?.homeBanner ?? 'https://callstack.com',
+      homeFooter: options.links?.homeFooter ?? 'https://callstack.com',
+      outlineCTA: options.links?.outlineCTA ?? 'https://callstack.com',
+    },
+  };
+}
+
+export function pluginCallstackTheme(
+  options: PluginCallstackThemeOptions = {}
+): RspressPlugin {
+  const normalizedOptions = normalizeOptions(options);
   return {
     name: 'plugin-callstack-theme',
     // replace default theme & theme assets
-    builderConfig: getBuilderConfig(),
+    builderConfig: getBuilderConfig(normalizedOptions),
     // add ck theme defaults if not present
     config: (config) => {
       config.head = addFonts(config.head);
       config.themeConfig = addThemeOverrides(config.themeConfig);
-
       return config;
     },
     // inject style overrides

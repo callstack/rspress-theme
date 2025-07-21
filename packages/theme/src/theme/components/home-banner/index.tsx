@@ -2,11 +2,13 @@ import { Button } from '../button';
 import abstractAtom from './abstract-atom.avif';
 import styles from './index.module.scss';
 
+declare const HOME_BANNER_LINK: string;
+
 interface HomeBannerProps {
-  href: string;
+  href?: string;
 }
 
-export function HomeBanner({ href }: HomeBannerProps) {
+export function HomeBanner({ href = HOME_BANNER_LINK }: HomeBannerProps) {
   return (
     <div className={`rp-max-w-6xl ${styles.container}`}>
       <div className={styles.background}>
