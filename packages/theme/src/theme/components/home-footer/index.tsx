@@ -36,6 +36,9 @@ function HomeFooter(props: HomeFooterProps) {
             <CKLogoLight className="dark:rp-hidden" />
           </div>
         </LinkComponent>
+        <span className={styles.message}>
+          {siteData.themeConfig.footer?.message}
+        </span>
         <SocialLinksComponent socialLinks={siteData.themeConfig.socialLinks} />
       </div>
     </div>
