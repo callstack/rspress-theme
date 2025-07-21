@@ -7,11 +7,12 @@ import { type LibConfig, defineConfig } from '@rslib/core';
 const pluginConfig: LibConfig = {
   syntax: 'es2021',
   source: {
-    entry: { index: './src/plugin/index.ts' },
+    entry: { index: './src/plugin/index.ts', theme: './src/plugin/theme.ts' },
     tsconfigPath: './tsconfig.plugin.json',
   },
   output: {
     distPath: { root: './dist/plugin' },
+    externals: ['@callstack/rspress-theme', '@default-theme', 'react'],
     target: 'node',
   },
 };
@@ -29,6 +30,10 @@ const themeConfig: LibConfig = {
     distPath: { root: './dist' },
     externals: ['@theme'],
     target: 'web',
+    copy: [
+      { from: './src/styles', to: 'styles' },
+      { from: './src/assets', to: 'assets' },
+    ],
   },
   plugins: [pluginImageCompress(), pluginReact(), pluginSass(), pluginSvgr()],
 };
@@ -53,10 +58,4 @@ export default defineConfig({
       format: 'cjs',
     },
   ],
-  output: {
-    copy: [
-      { from: './src/styles', to: 'styles' },
-      { from: './src/assets', to: 'assets' },
-    ],
-  },
 });
