@@ -1,3 +1,8 @@
+import {
+  HOME_BANNER_BUTTON_TEXT,
+  HOME_BANNER_DESCRIPTION,
+  HOME_BANNER_HEADLINE,
+} from '../../const';
 import { Button } from '../button';
 import abstractAtom from './abstract-atom.avif';
 import styles from './index.module.scss';
@@ -5,10 +10,18 @@ import styles from './index.module.scss';
 declare const HOME_BANNER_LINK: string;
 
 interface HomeBannerProps {
+  buttonText?: string;
+  description?: string;
+  headline?: string;
   href?: string;
 }
 
-export function HomeBanner({ href = HOME_BANNER_LINK }: HomeBannerProps) {
+export function HomeBanner({
+  buttonText = HOME_BANNER_BUTTON_TEXT,
+  description = HOME_BANNER_DESCRIPTION,
+  headline = HOME_BANNER_HEADLINE,
+  href = HOME_BANNER_LINK,
+}: HomeBannerProps) {
   return (
     <div className={`rp-max-w-6xl ${styles.container}`}>
       <div className={styles.background}>
@@ -22,19 +35,12 @@ export function HomeBanner({ href = HOME_BANNER_LINK }: HomeBannerProps) {
         aria-hidden="true"
       />
       <div className={styles.content}>
-        <h1 className={styles.heading}>
-          Need React or React Native
-          <br />
-          expertise you can count on?
-        </h1>
+        <h1 className={styles.headline}>{headline}</h1>
         <div className={styles.description}>
-          <p className={styles.descriptionText}>
-            We've spent years building full-stack, cross-platform apps and
-            solving tough technical challenges.
-          </p>
+          <p className={styles.descriptionText}>{description}</p>
           <div>
             <Button dark external href={href}>
-              Let's talk
+              {buttonText}
             </Button>
           </div>
         </div>
