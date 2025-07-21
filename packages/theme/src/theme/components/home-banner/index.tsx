@@ -1,10 +1,10 @@
+import abstractAtom from '../../assets/abstract-atom.avif';
 import {
   HOME_BANNER_BUTTON_TEXT,
   HOME_BANNER_DESCRIPTION,
   HOME_BANNER_HEADLINE,
 } from '../../const';
 import { Button } from '../button';
-import abstractAtom from './abstract-atom.avif';
 import styles from './index.module.scss';
 
 declare const HOME_BANNER_LINK: string;
