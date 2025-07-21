@@ -8,6 +8,7 @@ import {
   LinkCard,
   OutlineCTA,
   PrevNextPage,
+  SwitchAppearance,
   VersionBadge,
   // @ts-ignore
 } from '@callstack/rspress-theme';
@@ -52,6 +53,7 @@ export {
   LinkCard,
   OutlineCTA,
   PrevNextPage,
+  SwitchAppearance,
   VersionBadge,
 };
 

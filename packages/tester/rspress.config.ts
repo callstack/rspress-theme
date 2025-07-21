@@ -11,6 +11,11 @@ export default defineConfig({
     dark: '/logo-dark.png',
   },
   globalStyles: path.join(__dirname, 'styles.css'),
+  builderConfig: {
+    performance: {
+      buildCache: false,
+    },
+  },
   themeConfig: {
     editLink: {
       docRepoBaseUrl: 'https://github.com/callstack/rspress-theme',

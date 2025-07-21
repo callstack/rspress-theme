@@ -433,8 +433,6 @@ p.rspress-home-hero-text {
 }
 
 .rspress-nav-appearance > div.rp-border {
-  color: var(--rp-c-text-1) !important;
-  background: var(--rp-c-divider-light) !important;
   border: none !important;
   border-radius: var(--rp-radius-small) !important;
   padding: 4px !important;
@@ -952,4 +950,27 @@ a[class^="editLink_"]::before {
   width: 24px;
   height: 24px;
   background: url("../assets/edit-box.svg") no-repeat center center / contain;
+}
+
+/* Social links icon */
+div.rspress-nav-appearance > div,
+div[class^="social-links-icon_"] > div {
+  color: var(--rp-c-text-1) !important;
+  background: linear-gradient(
+      to right,
+      var(--rp-c-brand) 50%,
+      var(--rp-c-divider-light) 50%
+    )
+    right bottom / 200% 100% !important;
+  transition: background-position 0.45s cubic-bezier(0.625, 0.05, 0, 1), color
+    0.45s cubic-bezier(0.625, 0.05, 0, 1), transform 0.45s
+    cubic-bezier(0.625, 0.05, 0, 1) !important;
+}
+
+@media (pointer: fine) {
+  div.rspress-nav-appearance > div:hover,
+  div[class^="social-links-icon_"] > div:hover {
+    color: #ffffff !important;
+    background-position: left bottom !important;
+  }
 }
