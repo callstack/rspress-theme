@@ -1013,3 +1013,10 @@ h2.rspress-doc-outline {
   margin-bottom: 0 !important;
   border: none !important;
 }
+
+h1 > code,
+h2 > code {
+  font-family: unset !important;
+  background-color: unset !important;
+  padding: unset !important;
+}
