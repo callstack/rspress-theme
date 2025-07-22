@@ -1,11 +1,75 @@
+.linkCard {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: var(--rp-c-text-1);
+  border: 1px dashed var(--rp-c-divider);
+  border-radius: var(--rp-radius-small);
+  margin: 1rem 0;
+  padding: 32px;
+  transition: border-color 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.linkCard:hover {
+  color: var(--rp-c-brand) !important;
+  border-color: var(--ck-accent);
+}
+
+.linkCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../../assets/gradient-light.avif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  z-index: -1;
+  border-radius: inherit;
+  transition: opacity 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
 .link::before {
   content: '';
   position: absolute;
   inset: 0;
 }
 
-.linkCard {
-  &:hover {
-    background-color: var(--rp-c-bg-mute);
-  }
+:global(.dark) .linkCard::before {
+  background-image: url('../../assets/gradient-dark.avif');
+}
+
+.linkCard:hover::before {
+  opacity: 1;
+}
+
+:global(.dark) .linkCard:hover::before {
+  opacity: 0.5;
+}
+
+.linkCardContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.linkCardTitle {
+  font-family: var(--ck-header-font-family);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.linkCardDescription {
+  font-family: var(--rp-font-family);
+  color: var(--rp-c-text-2);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: -0.32px;
+  text-align: left;
+  margin-bottom: 0;
 }

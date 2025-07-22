@@ -25,20 +25,16 @@ export function LinkCard(props: LinkCardProps) {
   const { href, title, description, style } = props;
 
   return (
-    <div
-      className={`rp-relative rp-border rp-border-gray-400 rp-rounded-lg rp-p-6 rp-flex rp-justify-between rp-items-start hover:rp-border-gray-500 rp-transition-all rp-duration-300 ${styles.linkCard}`}
-      style={style}
-    >
-      <div className="rp-flex rp-flex-col">
-        <a
-          href={href}
-          className={`rp-flex rp-items-center rp-gap-2 rp-mb-4 ${styles.link}`}
-        >
-          {title && <span className="rp-text-2xl rp-font-bold">{title}</span>}
+    <div className={styles.linkCard} style={style}>
+      <div className={styles.linkCardContent}>
+        <a href={href} className={styles.link}>
+          {title && <span className={styles.linkCardTitle}>{title}</span>}
         </a>
-        <span className="rp-text-base rp-overflow-auto">{description}</span>
+        <span className={styles.linkCardDescription}>{description}</span>
       </div>
-      <ArrowRight />
+      <div className={styles.linkCardArrow}>
+        <ArrowRight />
+      </div>
     </div>
   );
 }
