@@ -145,7 +145,7 @@
   --rp-code-block-bg: rgba(249, 248, 253, 1) !important;
   /* rspress inline code colors */
   --rp-c-text-code: var(--rp-c-text-1) !important;
-  --rp-c-text-code-bg: var(--ck-border-primary) !important;
+  --rp-c-text-code-bg: var(--ck-border-secondary) !important;
   /* rspress link colors */
   --rp-c-link: var(--rp-c-text-1) !important;
   /* rspress tip container colors */
@@ -190,6 +190,8 @@
   /* rspress code colors */
   --rp-code-title-bg: rgba(54, 53, 57, 1) !important;
   --rp-code-block-bg: rgba(43, 42, 47, 1) !important;
+  /* rspress inline code colors */
+  --rp-c-text-code-bg: var(--ck-border-primary) !important;
 }
 
 /* Body */
@@ -197,6 +199,11 @@ body {
   background: var(--rp-c-bg) !important;
   color: var(--rp-c-text-1) !important;
   font-family: var(--rp-font-family) !important;
+}
+
+body * {
+  line-height: 1.5 !important;
+  letter-spacing: -0.02rem !important;
 }
 
 code,
@@ -670,7 +677,8 @@ img#logo {
 
 /* Table header */
 tr > th {
-  background-color: var(--rp-c-bg-soft);
+  background-color: var(--rp-code-block-bg) !important;
+  font-weight: 500 !important;
 }
 
 /* Table - don't color even rows */
@@ -881,9 +889,9 @@ span[class*="badge_"][class*="details_"] {
 }
 
 /* container content */
-.rspress-directive-content > p {
+.rspress-directive-content > * {
   font-size: 16px !important;
-  margin: 0 0 0 40px !important;
+  margin-left: 40px !important;
 }
 
 /* container custom border left colors */
@@ -964,6 +972,11 @@ details:not([open]) > summary.rspress-directive-title::after {
   color: var(--rp-c-brand) !important;
 }
 
+/* remove arrow from links */
+[class*="link_"]:after {
+  content: none !important;
+}
+
 /* Edit page */
 a[class^="editLink_"] {
   color: var(--rp-c-text-2);
@@ -1014,9 +1027,35 @@ h2.rspress-doc-outline {
   border: none !important;
 }
 
+/* inline code in headers */
 h1 > code,
-h2 > code {
+h2 > code,
+h3 > code,
+h4 > code,
+h5 > code,
+h6 > code {
   font-family: unset !important;
   background-color: unset !important;
   padding: unset !important;
+}
+
+/* inline code outside of headers */
+.rspress-doc :not(:is(pre, h1, h2, h3, h4, h5, h6)) > code {
+  font-size: 16px !important;
+}
+
+/* inline code outside of headers */
+.rspress-doc :not(:is(pre, div)) > code {
+  border-radius: var(--rp-radius) !important;
+}
+
+/* code block titles */
+.rspress-code-title {
+  font-family: var(--rp-font-family-mono) !important;
+}
+
+/* header anchors (appear on hover) */
+.header-anchor {
+  line-height: 1.2 !important;
+  margin-left: -1em !important;
 }
