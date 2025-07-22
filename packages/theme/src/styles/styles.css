@@ -70,7 +70,7 @@
   --rp-sidebar-menu-height: 46px !important;
   --rp-aside-width: 268px !important;
   --rp-content-padding-x: 24px;
-  --rp-content-padding-y: 48px;
+  --rp-content-padding-y: 64px;
   --rp-radius: 4px !important;
   --rp-radius-small: 2px !important;
   --rp-radius-large: 8px !important;
@@ -979,6 +979,10 @@ div[class^="social-links-icon_"] > div {
     color: #ffffff !important;
     background-position: left bottom !important;
   }
+}
+
+h1.rspress-doc-title {
+  margin-bottom: 1.5rem !important;
 }
 
 h2.rspress-doc-outline {
