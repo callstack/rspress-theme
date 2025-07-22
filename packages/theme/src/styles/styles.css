@@ -260,7 +260,7 @@ div[class^="menuItemActive_"] > span {
 }
 
 div[class^="menuItem_"]:hover {
-  background-color: var(--rp-c-bg-soft) !important;
+  background-color: var(--ck-foreground-primary) !important;
 }
 
 div[class^="menuItem_"],
@@ -274,7 +274,11 @@ div[class^="menuItemActive_"] > span {
 }
 
 div[class^="menuItemActive_"]:hover {
-  background-color: var(--rp-c-bg-soft) !important;
+  background-color: var(--ck-foreground-primary) !important;
+}
+
+.rspress-sidebar-item > a > div {
+  margin-top: 0 !important;
 }
 
 .rspress-sidebar-item span {
@@ -401,8 +405,8 @@ div[class^="collapseContainer_"]:hover {
 /* Table of Contents */
 #aside-container {
   border-left: 1px solid var(--rp-c-divider-light) !important;
-  margin: -48px 0 0 0 !important;
-  padding: 48px 0 16px 0 !important;
+  margin: -64px 0 0 0 !important;
+  padding: 64px 0 16px 0 !important;
 }
 
 /* Contents - header */
@@ -411,6 +415,10 @@ div[class^="collapseContainer_"]:hover {
   font-weight: 500 !important;
   line-height: 1.5 !important;
   color: var(--rp-c-text-1) !important;
+}
+
+.aside-link:hover {
+  background-color: var(--ck-foreground-primary) !important;
 }
 
 /* Content - active link */
@@ -804,7 +812,7 @@ div#root > section:not(:has(div[class^="docLayout_"])) {
   background-image: url("../assets/callstack.svg"), var(--ck-bg-radial-2),
     var(--ck-bg-radial-3);
   background-repeat: no-repeat, repeat, no-repeat, no-repeat;
-  background-size: 95% auto, auto, contain, contain;
+  background-size: min(72rem, 95%) auto, auto, contain, contain;
   background-position: center calc(100% + 12px), bottom, bottom, bottom;
 }
 
@@ -996,9 +1004,24 @@ details:not([open]) > summary.rspress-directive-title::after {
   color: var(--rp-c-brand) !important;
 }
 
+/* code links */
+[class*="link_"]:hover > code {
+  color: var(--rp-c-brand) !important;
+}
+
 /* remove arrow from links */
 [class*="link_"]:after {
   content: none !important;
+}
+
+/* nav menu links */
+.rspress-nav-menu > a > .rspress-nav-menu-item:hover {
+  color: var(--rp-c-brand) !important;
+}
+
+/* nav menu active link */
+.rspress-nav-menu-item[class*="activeItem_"] {
+  color: var(--rp-c-brand) !important;
 }
 
 /* Edit page */
@@ -1082,4 +1105,10 @@ h6 > code {
 .header-anchor {
   line-height: 1.2 !important;
   margin-left: -1em !important;
+}
+
+/* mobile search button */
+div[class^="mobileNavSearchButton_"] > img {
+  width: 24px;
+  height: 24px;
 }

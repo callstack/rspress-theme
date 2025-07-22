@@ -1,6 +1,6 @@
 .container {
   width: calc(100% - 8 * 2px);
-  margin: 0 auto 90px auto;
+  margin: 0 auto 120px auto;
   padding: 4px;
 }
 
@@ -35,6 +35,6 @@
 
 @media (max-width: 640px) {
   .container {
-    margin: 0 auto 32px auto;
+    margin: 0 auto 16px auto;
   }
 }
