@@ -1,3 +1,19 @@
+@font-face {
+  font-family: "Fira Code";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("./fonts/FiraCode-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Fira Code";
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url("./fonts/FiraCode-Medium.ttf") format("truetype");
+}
+
 :root {
   --ck-header-font-family: "Alliance No. 2", Arial, sans-serif;
   --ck-background-primary: #ffffff;
@@ -127,6 +143,9 @@
   /* rspress code colors */
   --rp-code-title-bg: rgba(233, 231, 238, 1) !important;
   --rp-code-block-bg: rgba(249, 248, 253, 1) !important;
+  /* rspress inline code colors */
+  --rp-c-text-code: var(--rp-c-text-1) !important;
+  --rp-c-text-code-bg: var(--ck-border-primary) !important;
   /* rspress link colors */
   --rp-c-link: var(--rp-c-text-1) !important;
   /* rspress tip container colors */
@@ -185,6 +204,10 @@ kbd,
 samp,
 pre {
   font-family: var(--rp-font-family-mono) !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  letter-spacing: -0.04rem !important;
 }
 
 /* Nav header */
@@ -827,7 +850,7 @@ span[class*="badge_"][class*="details_"] {
 /* container */
 .rspress-directive {
   background: none !important;
-  border: 1px dashed var(--rp-c-divider-light) !important;
+  border: 1px dashed transparent !important;
   border-left: 2px solid !important;
   border-radius: 0px !important;
   padding: 8px 16px !important;
@@ -986,5 +1009,7 @@ h1.rspress-doc-title {
 }
 
 h2.rspress-doc-outline {
+  margin-top: 2rem !important;
+  margin-bottom: 0 !important;
   border: none !important;
 }

@@ -2,9 +2,12 @@ import { LinkCard, PackageManagerTabs, Tabs, Tab } from '@theme';
 
 # Hello World!
 
-## Start
+## What Re.Pack actually is?
 
-Write something to build your own docs! 🎁
+React Native environment and Browser environment have differences. React Native needs to run additional JS setup/init code so that it's usable at all. There's a great discrepancy between available APIs. In React Native we also have platform specific files — e.g.: .ios.js, .android.js and so on.
+Putting all the above together, makes webpack unable to produce bundle at all due to build errors and then the bundle produced by webpack is unusable by default.
+Therefore, we need to make changes to webpack configuration and change how and what webpack puts into the final bundle. All these necessary changes are encapsulated inside Re.Pack in form of webpack plugins.
+So to answer the question:
 
 ## Tabs
 
