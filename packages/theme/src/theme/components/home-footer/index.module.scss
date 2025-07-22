@@ -1,6 +1,6 @@
 .container {
   width: calc(100% - 8 * 2px);
-  margin: 0 auto 120px auto;
+  margin: 0 auto 150px auto;
   padding: 4px;
 }
 
@@ -25,6 +25,12 @@
   line-height: 1.5;
   text-align: center;
   margin: 0 8px;
+}
+
+@media (max-width: 1200px) {
+  .container {
+    margin: 0 auto 100px auto;
+  }
 }
 
 @media (max-width: 960px) {

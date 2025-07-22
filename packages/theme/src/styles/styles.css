@@ -812,7 +812,7 @@ div#root > section:not(:has(div[class^="docLayout_"])) {
   background-image: url("../assets/callstack.svg"), var(--ck-bg-radial-2),
     var(--ck-bg-radial-3);
   background-repeat: no-repeat, repeat, no-repeat, no-repeat;
-  background-size: min(72rem, 95%) auto, auto, contain, contain;
+  background-size: min(90rem, 95%) auto, auto, contain, contain;
   background-position: center calc(100% + 12px), bottom, bottom, bottom;
 }
 
