@@ -467,6 +467,12 @@ h4,
 h5,
 h6 {
   font-family: var(--ck-header-font-family) !important;
+  font-variant-numeric: lining-nums tabular-nums !important;
+  font-feature-settings: "ss04" on !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.96px !important;
 }
 
 /* Overview page */
@@ -973,4 +979,8 @@ div[class^="social-links-icon_"] > div {
     color: #ffffff !important;
     background-position: left bottom !important;
   }
+}
+
+h2.rspress-doc-outline {
+  border: none !important;
 }
