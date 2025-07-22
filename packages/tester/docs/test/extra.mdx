@@ -2,9 +2,21 @@ import { LinkCard, PackageManagerTabs, Tabs, Tab } from '@theme';
 
 # Hello World!
 
-## Start
+Before diving deep into Re.Pack and introducing it into project, it's important to understand when and why to use Re.Pack and how does it compare with alternatives.
 
-Write something to build your own docs! 🎁
+## What `@callstack/repack` actually is? 
+
+React Native environment and Browser environment have differences. React Native needs to run additional JS setup/init code so that it's usable at all. There's a great discrepancy between available APIs. In React Native we also have platform specific files — e.g.: .ios.js, .android.js and so on.
+
+Putting all the above together, makes webpack unable to produce bundle at all due to build errors and then the bundle produced by webpack is unusable by default.
+
+Therefore, we need to make changes to webpack configuration and change how and what webpack puts into the final bundle. All these necessary changes are encapsulated inside Re.Pack in form of webpack plugins.
+
+So to answer the question:
+
+:::info 
+Re.Pack is what makes webpack and webpack-produced bundle usable in React Native application.
+:::
 
 ## Tabs
 
@@ -61,7 +73,6 @@ The command is started through the React Native Community CLI's `start` command,
 :::warning This plugin is primarily intended for Rspack users.
 
 The main purpose of this plugin is to limit the **build performance impact** of the `react-native-reanimated` babel plugin.
-
 If you're using webpack with `babel-loader`, you probably don't need this plugin. Instead, you should follow the [official Reanimated documentation](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/#step-2-add-reanimateds-babel-plugin) and add the Reanimated Babel plugin directly to your `babel.config.js`:
 
 ```js
@@ -75,6 +86,11 @@ module.exports = {
 
 :::danger Platform-Specific Output
 By default, extracted asset files are copied to `assets/` directory for iOS and `drawable-*` directories (e.g. `drawable-mdpi`, `drawable-hdpi`, etc.) for Android which matches Metro's asset handling behavior.
+
+1. [Inlining assets as base64 strings](/docs/guides/inline-assets)
+1. [Converting to remote assets](/docs/guides/remote-assets)
+1.  [Adding SVG support](/docs/guides/svg)
+
 :::
 
 :::tip Guides related to AssetsLoader

@@ -1,5 +1,6 @@
 import { Badge } from '@theme';
 import { usePageData } from 'rspress/runtime';
+import styles from './index.module.scss';
 
 interface VersionBadgeProps {
   version?: string;
@@ -17,8 +18,8 @@ export function VersionBadge({ version }: VersionBadgeProps) {
   const versionText = `Version: ${currentVersion}`;
 
   return (
-    <div className="py-2">
-      <Badge type="info" outline text={versionText} />
+    <div className={styles.container}>
+      <Badge type="info" text={versionText} />
     </div>
   );
 }
