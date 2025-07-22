@@ -282,8 +282,14 @@ div[class^="menuItemActive_"]:hover {
 }
 
 .rspress-sidebar-section {
+  margin-top: 0 !important;
+  margin-bottom: 16px !important;
   margin-left: 0 !important;
   padding-left: 0 !important;
+}
+
+.rspress-sidebar-section:first-of-type {
+  margin-top: 16px !important;
 }
 
 .rspress-sidebar-section h2 {
@@ -336,14 +342,17 @@ div[class^="collapseContainer_"]:hover {
   border-radius: 0 !important;
 }
 
+.rspress-sidebar-collapse > h2 {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
 /* Group collapse header */
 .rspress-sidebar-collapse > h2 > span {
   font-size: 14px !important;
   font-family: var(--rp-font-family) !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
-  padding-top: 4px !important;
-  padding-bottom: 4px !important;
 }
 
 /* Group collapse hover */
@@ -380,6 +389,7 @@ div[class^="collapseContainer_"]:hover {
 
 /* Solid border after sections */
 .rspress-sidebar-item + div.rp-border-solid {
+  display: none !important;
   margin-left: 0 !important;
 }
 
