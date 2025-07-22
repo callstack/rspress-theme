@@ -926,6 +926,11 @@ span[class*="badge_"][class*="details_"] {
   margin-left: 40px !important;
 }
 
+/* container content links */
+.rspress-directive .rspress-directive-content a {
+  font-weight: 400 !important;
+}
+
 /* container custom border left colors */
 .info {
   border-left-color: var(--rp-container-info-border) !important;
