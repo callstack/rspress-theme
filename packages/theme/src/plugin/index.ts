@@ -118,16 +118,6 @@ function getBuilderConfig(options: PluginCallstackThemeOptions): BuilderConfig {
   };
 }
 
-function addFonts(head: UserConfig['head'] = []) {
-  // Fira Code font
-  head.push(
-    '<link rel="preconnect" href="https://fonts.googleapis.com">',
-    '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>',
-    '<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">'
-  );
-  return head;
-}
-
 function addThemeOverrides(themeConfig: UserConfig['themeConfig'] = {}) {
   if (!themeConfig.overview) {
     themeConfig.overview = { filterNameText: '' };
@@ -171,7 +161,6 @@ export function pluginCallstackTheme(
     builderConfig: getBuilderConfig(normalizedOptions),
     // add ck theme defaults if not present
     config: (config) => {
-      config.head = addFonts(config.head);
       config.themeConfig = addThemeOverrides(config.themeConfig);
       return config;
     },
