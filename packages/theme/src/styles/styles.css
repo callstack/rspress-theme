@@ -298,11 +298,24 @@ div[class^="menuItemActive_"]:hover {
 
 /* Section header text */
 .rspress-sidebar-section-header > span {
-  color: var(--rp-c-text-1) !important;
-  font-size: 14px !important;
-  font-family: var(--rp-font-family) !important;
-  font-weight: 400 !important;
-  font-style: italic;
+  color: var(--rp-c-text-3) !important;
+  font-family: var(--rp-font-family-mono) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.02rem !important;
+  line-height: 1.5 !important;
+  text-transform: uppercase;
+}
+
+.rspress-sidebar-section-header > span::before {
+  content: "//";
+  color: var(--rp-c-brand) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.04rem !important;
+  line-height: 1.5 !important;
+  text-transform: uppercase;
+  margin-right: 6px;
 }
 
 /* Sidebar group */
@@ -335,7 +348,8 @@ div[class^="collapseContainer_"]:hover {
 
 /* Group collapse hover */
 .rspress-sidebar-collapse:hover {
-  background-color: var(--rp-c-bg-soft) !important;
+  color: var(--rp-c-brand) !important;
+  background-color: transparent !important;
 }
 
 /* Sidebar active item disable bg */
