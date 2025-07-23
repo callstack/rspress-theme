@@ -1,6 +1,7 @@
 import {
   Announcement,
   Button,
+  Card,
   HomeBanner,
   HomeFeature,
   HomeFooter,
@@ -46,6 +47,7 @@ export {
   // components
   Announcement,
   Button,
+  Card,
   HomeBanner,
   HomeFeature,
   HomeFooter,
