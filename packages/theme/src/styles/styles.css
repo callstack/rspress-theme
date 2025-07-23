@@ -203,7 +203,7 @@ body {
 
 body * {
   line-height: 1.5 !important;
-  letter-spacing: -0.02rem !important;
+  letter-spacing: -0.02em !important;
 }
 
 code,
@@ -214,7 +214,22 @@ pre {
   font-style: normal !important;
   font-weight: 500 !important;
   line-height: 1.5 !important;
-  letter-spacing: -0.04rem !important;
+}
+
+/* Header elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ck-header-font-family) !important;
+  font-variant-numeric: lining-nums tabular-nums !important;
+  font-feature-settings: "ss04" on !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.04em !important;
 }
 
 /* Nav header */
@@ -312,7 +327,6 @@ div[class^="menuItemActive_"]:hover {
   font-family: var(--rp-font-family-mono) !important;
   font-size: 12px !important;
   font-weight: 500 !important;
-  letter-spacing: -0.02rem !important;
   line-height: 1.5 !important;
   text-transform: uppercase;
 }
@@ -322,7 +336,6 @@ div[class^="menuItemActive_"]:hover {
   color: var(--rp-c-brand) !important;
   font-size: 12px !important;
   font-weight: 500 !important;
-  letter-spacing: -0.04rem !important;
   line-height: 1.5 !important;
   text-transform: uppercase;
   margin-right: 6px;
@@ -521,22 +534,6 @@ div[class^="social-links-icon"] > div {
   transition: background 0.15s;
 }
 
-/* Header elements */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--ck-header-font-family) !important;
-  font-variant-numeric: lining-nums tabular-nums !important;
-  font-feature-settings: "ss04" on !important;
-  font-style: normal !important;
-  font-weight: 500 !important;
-  line-height: 1.2 !important;
-  letter-spacing: -0.96px !important;
-}
-
 /* Overview page */
 .overview-index div > h2 {
   border-top: none !important;
@@ -601,7 +598,6 @@ input#api-filter::placeholder {
   font-family: var(--rp-font-family);
   font-size: 16px;
   font-weight: 400;
-  letter-spacing: -0.32px;
 }
 
 /* Overview page - search placeholder - close button */
@@ -664,7 +660,6 @@ li[class*="suggestItem_"] > a {
   background-color: transparent !important;
   box-shadow: none !important;
   margin-left: 1px !important;
-  letter-spacing: -0.32px;
   color: var(--rp-c-text-1) !important;
 }
 
