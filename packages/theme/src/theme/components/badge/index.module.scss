@@ -1,0 +1,63 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  padding-inline: 0.625rem;
+  height: 1.5rem;
+  gap: 0.25rem;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  border-radius: var(--rp-radius-small);
+  padding: 0 6px;
+  transition: color 0.25s;
+
+  &.tip {
+    color: var(--rp-container-tip-border);
+    background-color: var(--rp-container-tip-bg);
+  }
+
+  &.info {
+    color: var(--rp-container-info-border);
+    background-color: var(--rp-container-info-bg);
+  }
+
+  &.warning {
+    color: var(--rp-container-warning-border);
+    background-color: var(--rp-container-warning-bg);
+  }
+
+  &.danger {
+    color: var(--rp-container-danger-border);
+    background-color: var(--rp-container-danger-bg);
+  }
+
+  &.note {
+    color: var(--rp-container-note-border);
+    background-color: var(--rp-container-note-bg);
+  }
+}
+
+.outline {
+  &.tip {
+    border-color: var(--rp-container-tip-border);
+  }
+
+  &.info {
+    border-color: var(--rp-container-info-border);
+  }
+
+  &.warning {
+    border-color: var(--rp-container-warning-border);
+  }
+
+  &.danger {
+    border-color: var(--rp-container-danger-border);
+  }
+
+  &.note {
+    border-color: var(--rp-container-note-border);
+  }
+}
