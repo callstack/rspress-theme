@@ -842,51 +842,6 @@ footer {
   border: none !important;
 }
 
-/* Badge */
-span[class*="badge_"] {
-  font-size: 14px !important;
-  font-weight: 500 !important;
-  line-height: 1.5 !important;
-  border-radius: var(--rp-radius-small) !important;
-  padding: 0 6px !important;
-}
-
-/* Badges info colors */
-span[class*="badge_"][class*="info_"] {
-  color: var(--rp-container-info-border) !important;
-  background-color: var(--rp-container-info-bg) !important;
-}
-
-/* Badges tip colors */
-span[class*="badge_"][class*="tip_"] {
-  color: var(--rp-container-tip-border) !important;
-  background-color: var(--rp-container-tip-bg) !important;
-}
-
-/* Badges warning colors */
-span[class*="badge_"][class*="warning_"] {
-  color: var(--rp-container-warning-border) !important;
-  background-color: var(--rp-container-warning-bg) !important;
-}
-
-/* Badges danger colors */
-span[class*="badge_"][class*="danger_"] {
-  color: var(--rp-container-danger-border) !important;
-  background-color: var(--rp-container-danger-bg) !important;
-}
-
-/* Badges note colors */
-span[class*="badge_"][class*="note_"] {
-  color: var(--rp-container-note-border) !important;
-  background-color: var(--rp-container-note-bg) !important;
-}
-
-/* Badges details colors */
-span[class*="badge_"][class*="details_"] {
-  color: var(--rp-container-details-border) !important;
-  background-color: var(--rp-container-details-bg) !important;
-}
-
 /* container */
 .rspress-directive {
   background: none !important;

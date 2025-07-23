@@ -1,5 +1,6 @@
 import {
   Announcement,
+  Badge,
   Button,
   Card,
   HomeBanner,
@@ -46,6 +47,7 @@ export {
   Layout,
   // components
   Announcement,
+  Badge,
   Button,
   Card,
   HomeBanner,
