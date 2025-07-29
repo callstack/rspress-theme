@@ -292,6 +292,18 @@ div[class^="menuItemActive_"]:hover {
   background-color: var(--ck-foreground-primary) !important;
 }
 
+/* Spacing between menu items */
+div[class*="sidebarContent_"] > nav {
+  display: grid;
+  gap: 8px;
+  padding-top: 16px;
+}
+
+/* Spacing between sections */
+.rspress-sidebar-section + .rspress-sidebar-section {
+  margin-top: 16px !important;
+}
+
 .rspress-sidebar-item > a > div {
   margin-top: 0 !important;
 }
@@ -302,13 +314,9 @@ div[class^="menuItemActive_"]:hover {
 
 .rspress-sidebar-section {
   margin-top: 0 !important;
-  margin-bottom: 16px !important;
+  margin-bottom: 0px !important;
   margin-left: 0 !important;
   padding-left: 0 !important;
-}
-
-.rspress-sidebar-section:first-of-type {
-  margin-top: 16px !important;
 }
 
 .rspress-sidebar-section h2 {
@@ -374,8 +382,7 @@ div[class^="collapseContainer_"]:hover {
 
 /* Group collapse hover */
 .rspress-sidebar-collapse:hover {
-  color: var(--rp-c-brand) !important;
-  background-color: transparent !important;
+  background-color: var(--ck-foreground-primary) !important;
 }
 
 /* Sidebar active item disable bg */
@@ -964,6 +971,17 @@ details:not([open]) > summary.rspress-directive-title::after {
   color: var(--rp-c-brand) !important;
 }
 
+/* code links in rspress-doc */
+.rspress-doc a > code {
+  color: var(--rp-c-text-1) !important;
+  text-decoration: underline !important;
+}
+
+/* inline links */
+div[class*="inline-link_"] {
+  text-decoration: underline !important;
+}
+
 /* remove arrow from links */
 [class*="link_"]:after {
   content: none !important;
@@ -990,7 +1008,7 @@ a[class^="editLink_"]::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 0;
+  top: -2px;
   width: 24px;
   height: 24px;
   background: url("../assets/edit-box.svg") no-repeat center center / contain;
@@ -1044,6 +1062,7 @@ h6 > code {
 /* inline code outside of headers */
 .rspress-doc :not(:is(pre, h1, h2, h3, h4, h5, h6)) > code {
   font-size: 16px !important;
+  padding: 2px 4px !important;
 }
 
 /* inline code outside of headers */
