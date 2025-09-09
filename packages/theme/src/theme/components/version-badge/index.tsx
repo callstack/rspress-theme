@@ -1,5 +1,5 @@
+import { usePageData } from '@rspress/core/runtime';
 import { Badge } from '@theme';
-import { usePageData } from 'rspress/runtime';
 import styles from './index.module.scss';
 
 interface VersionBadgeProps {

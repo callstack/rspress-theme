@@ -31,7 +31,7 @@ To use the `rspress-theme` package, you need to add the plugin to the Rspress co
 In your `rspress.config.ts` file, import `pluginCallstackTheme` from `@callstack/rspress-theme/plugin` and add it to the plugins array:
 
 ```ts
-import { defineConfig } from 'rspress/core';
+import { defineConfig } from '@rspress/core';
 import { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
 
 export default defineConfig({
@@ -87,7 +87,7 @@ import { Announcement } from '@callstack/rspress-theme';
 
 ```ts
 import path from 'node:path';
-import { defineConfig } from 'rspress/core';
+import { defineConfig } from '@rspress/core';
 import { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
 
 export default defineConfig({

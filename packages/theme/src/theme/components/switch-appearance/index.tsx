@@ -1,5 +1,5 @@
+import { ThemeContext, flushSync, useSite } from '@rspress/core/runtime';
 import { type MouseEvent, useContext } from 'react';
-import { DataContext, ThemeContext, flushSync } from 'rspress/runtime';
 import IconMoon from '../../assets/moon.svg?react';
 import IconSun from '../../assets/sun.svg?react';
 import './index.module.scss';
@@ -26,12 +26,12 @@ const removeClipViewTransition = () => {
 };
 
 export function SwitchAppearance({ onClick }: { onClick?: () => void }) {
-  const { data: pageData } = useContext(DataContext);
+  const { site: siteData } = useSite();
   const { theme, setTheme = () => {} } = useContext(ThemeContext);
 
   const handleClick = (event: MouseEvent) => {
     const supported = supportAppearanceTransition();
-    const enabled = pageData.siteData?.themeConfig?.enableAppearanceAnimation;
+    const enabled = siteData.themeConfig?.enableAppearanceAnimation;
 
     const nextTheme = theme === 'dark' ? 'light' : 'dark';
     const isDark = nextTheme === 'dark';
