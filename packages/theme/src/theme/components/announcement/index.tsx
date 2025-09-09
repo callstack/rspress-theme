@@ -1,5 +1,5 @@
+import { NoSSR } from '@rspress/core/runtime';
 import { useState } from 'react';
-import { NoSSR } from 'rspress/runtime';
 import IconClose from '../../assets/close.svg?react';
 import styles from './index.module.scss';
 

@@ -3,7 +3,7 @@ import {
   normalizeHrefInRuntime,
   normalizeImagePath,
   withBase,
-} from 'rspress/runtime';
+} from '@rspress/core/runtime';
 import type { FrontMatterMeta, Hero } from '../../types';
 import { renderHtmlOrText } from '../../utils';
 import { Button } from '../button';

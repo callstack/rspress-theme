@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import type { RspressPlugin, UserConfig } from 'rspress/core';
+import type { RspressPlugin, UserConfig } from '@rspress/core';
 
 type BuilderConfig = NonNullable<UserConfig['builderConfig']>;
 type AliasEntry = string | (false | string)[] | false | undefined;
@@ -15,7 +15,6 @@ interface PluginCallstackThemeOptions {
   };
 }
 
-const { resolve } = createRequire(import.meta.url);
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 function excludeFalse<T>(value: T): value is Exclude<T, false> {
@@ -37,8 +36,10 @@ function getThemeAliases(
   existingThemeAlias: AliasEntry
 ): Record<string, string | string[]> {
   const ckThemeExportsPath = path.join(dirname, 'theme');
+
+  const { resolve } = createRequire(import.meta.url);
   const rspressThemeDefaultPath = resolve('@rspress/theme-default', {
-    paths: [resolve('rspress')],
+    paths: [resolve('@rspress/core')],
   });
 
   const aliases: Record<string, string | string[]> = {};
@@ -63,7 +64,7 @@ function getThemeAliases(
   // Add alias for @default-theme to avoid circular dependency
   aliases['@default-theme'] = rspressThemeDefaultPath;
   // Alias rspress/theme to our theme to keep the theme override pattern from Rspress docs
-  aliases['rspress/theme'] = ckThemeExportsPath;
+  aliases['@rspress/core/theme'] = ckThemeExportsPath;
 
   return aliases;
 }

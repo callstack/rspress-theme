@@ -2,7 +2,7 @@ import {
   isExternalUrl,
   normalizeHrefInRuntime,
   withBase,
-} from 'rspress/runtime';
+} from '@rspress/core/runtime';
 import type { Feature, FrontMatterMeta } from '../../types';
 import { renderHtmlOrText } from '../../utils';
 import styles from './index.module.scss';
