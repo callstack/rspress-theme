@@ -15,6 +15,37 @@ importers:
         specifier: ^2.27.10
         version: 2.27.10
 
+  packages/preset:
+    dependencies:
+      '@callstack/rspress-theme':
+        specifier: workspace:*
+        version: link:../theme
+      '@rspress/plugin-llms':
+        specifier: 2.0.0-beta.31
+        version: 2.0.0-beta.31(@rspress/core@2.0.0-beta.31(@types/react@19.1.8))
+      rsbuild-plugin-open-graph:
+        specifier: ^1.0.2
+        version: 1.1.0(@rsbuild/core@1.5.4)
+      rspress-plugin-sitemap:
+        specifier: ^1.2.1
+        version: 1.2.1
+    devDependencies:
+      '@microsoft/api-extractor':
+        specifier: ^7.52.8
+        version: 7.52.8(@types/node@22.7.7)
+      '@rslib/core':
+        specifier: ^0.10.5
+        version: 0.10.5(@microsoft/api-extractor@7.52.8(@types/node@22.7.7))(typescript@5.8.3)
+      '@rspress/core':
+        specifier: ^2.0.0-beta.31
+        version: 2.0.0-beta.31(@types/react@19.1.8)
+      '@types/node':
+        specifier: ^22
+        version: 22.7.7
+      typescript:
+        specifier: ^5.8.3
+        version: 5.8.3
+
   packages/tester:
     dependencies:
       '@callstack/rspress-theme':
@@ -778,6 +809,12 @@ packages:
   '@rspress/mdx-rs@0.6.6':
     resolution: {integrity: sha512-NpNhTKBIlV3O6ADhoZkgHvBFvXMW2TYlIWmIT1ysJESUBqDpaN9H3Teve5fugjU2pQ2ORBZO6SQGKliMw/8m/Q==}
     engines: {node: '>= 10'}
+
+  '@rspress/plugin-llms@2.0.0-beta.31':
+    resolution: {integrity: sha512-rTy3ppTZCJ3oDA0rXsIXm8JCOx8iL7wQ2iFkAAtRpxwQ35qvhfnq/DGpibo8RSDnJMlqxmeGLwvQzBT+pa5dwg==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      '@rspress/core': ^2.0.0-beta.31
 
   '@rspress/runtime@2.0.0-beta.31':
     resolution: {integrity: sha512-yyOEEIqO3N/q8NkssZPFj0ZT8khrl9uVPgFwAhYUiME5kzphwkr7G90wwPL85/jduJ4xw9xEUO40zUyrTynCFw==}
@@ -2006,6 +2043,9 @@ packages:
   remark-mdx@3.1.0:
     resolution: {integrity: sha512-Ngl/H3YXyBV9RcRNdlYsZujAmhsxwzxpDzpDEhFBVAGthS4GDgnctpDjgFl/ULx5UEDzqtW1cyBSNKqYYrqLBA==}
 
+  remark-mdx@3.1.1:
+    resolution: {integrity: sha512-Pjj2IYlUY3+D8x00UJsIOg5BEvfMyeI+2uLPn9VO9Wg4MEtN/VTIq2NEJQfde9PnX15KgtHyl9S0BcTnWrIuWg==}
+
   remark-parse@11.0.0:
     resolution: {integrity: sha512-FCxlKLNGknS5ba/1lmpYijMUzX2esxW5xQqjWxw2eHFfS2MSdaHVINFmhjo+qN1WhZhNimq0dZATN9pH0IDrpA==}
 
@@ -2047,6 +2087,17 @@ packages:
         optional: true
       typescript:
         optional: true
+
+  rsbuild-plugin-open-graph@1.1.0:
+    resolution: {integrity: sha512-ETrmQxhs/hW7xFzDGb6CIiZ1tVOrsrGPDgPTC/49bQ+sK75y6LZ3/CvcqPNxMwdnI3Ba79l62FIFvR0uC+UISw==}
+    peerDependencies:
+      '@rsbuild/core': 1.x
+    peerDependenciesMeta:
+      '@rsbuild/core':
+        optional: true
+
+  rspress-plugin-sitemap@1.2.1:
+    resolution: {integrity: sha512-JMf2/SKerX3oiFuNaRAnPJxOtBl5hOF0qupK63Fh9CaTb6Mn440iximV+1V0fd/XeOhHlN0oLJPFUDrrkgkcwg==}
 
   run-parallel@1.2.0:
     resolution: {integrity: sha512-5l4VyZR86LZ/lDxZTR6jqL8AFE2S0IFLMP26AbjsLVADxHdhB/c0GUsH+y39UfCi3dzz8OlQuPmnaJOMoDHQBA==}
@@ -3284,6 +3335,17 @@ snapshots:
       '@rspress/mdx-rs-linux-x64-musl': 0.6.6
       '@rspress/mdx-rs-win32-arm64-msvc': 0.6.6
       '@rspress/mdx-rs-win32-x64-msvc': 0.6.6
+
+  '@rspress/plugin-llms@2.0.0-beta.31(@rspress/core@2.0.0-beta.31(@types/react@19.1.8))':
+    dependencies:
+      '@rspress/core': 2.0.0-beta.31(@types/react@19.1.8)
+      remark-mdx: 3.1.1
+      remark-parse: 11.0.0
+      remark-stringify: 11.0.0
+      unified: 11.0.5
+      unist-util-visit: 5.0.0
+    transitivePeerDependencies:
+      - supports-color
 
   '@rspress/runtime@2.0.0-beta.31':
     dependencies:
@@ -4904,6 +4966,13 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+  remark-mdx@3.1.1:
+    dependencies:
+      mdast-util-mdx: 3.0.0
+      micromark-extension-mdxjs: 3.0.0
+    transitivePeerDependencies:
+      - supports-color
+
   remark-parse@11.0.0:
     dependencies:
       '@types/mdast': 4.0.4
@@ -4952,6 +5021,12 @@ snapshots:
     optionalDependencies:
       '@microsoft/api-extractor': 7.52.8(@types/node@22.7.7)
       typescript: 5.8.3
+
+  rsbuild-plugin-open-graph@1.1.0(@rsbuild/core@1.5.4):
+    optionalDependencies:
+      '@rsbuild/core': 1.5.4
+
+  rspress-plugin-sitemap@1.2.1: {}
 
   run-parallel@1.2.0:
     dependencies:
