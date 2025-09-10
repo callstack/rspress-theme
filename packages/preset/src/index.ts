@@ -1,1 +1,1 @@
-export * from './preset';
+export { withCallstackPreset } from './preset';

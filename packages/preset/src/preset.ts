@@ -14,22 +14,54 @@ type SupportedSocialLinks = Exclude<
 
 type Socials = Record<SupportedSocialLinks, string>;
 
-interface CallstackPresetOptions {
+type ThemeConfig = Parameters<typeof pluginCallstackTheme>[0];
+
+interface PresetConfig {
   docs: {
+    /**
+     * Short summary used in page metadata and Open Graph tags.
+     * Example: "A modern build tool for React Native that brings the Rspack and webpack ecosystem to mobile React Native apps".
+     */
     description: string;
+    /**
+     * Base URL to the docs repository for edit links.
+     * Example: "https://github.com/callstack/repack/tree/main/website/src/latest".
+     */
     editUrl: string;
+    /**
+     * Absolute site origin used for sitemaps and Open Graph URLs.
+     * Example: "https://re-pack.dev".
+     */
     rootUrl: string;
+    /**
+     * Social icon -> URL mapping for header/footer social links and OG:twitter.
+     * Keys must be built-in icons like 'github', 'X', 'discord'.
+     * Example:
+     * ```ts
+     * {
+     *   github: 'https://github.com/callstack/repack',
+     *   X: 'https://x.com/repack_rn',
+     * }
+     * ```
+     */
     socials: Socials;
+    /**
+     * Site title displayed in the header and used in meta tags.
+     * Example: "Re.Pack"
+     */
     title: string;
   };
+  theme?: ThemeConfig;
+  /**
+   * Absolute path to the docs root directory (contains markdown files).
+   * Example: path.join(__dirname, 'docs')
+   */
   root: string;
 }
 
 type SocialLinks = Parameters<typeof SocialLinksComponent>[0]['socialLinks'];
 
-function createSocialLinks(
-  socialLinks: CallstackPresetOptions['docs']['socials']
-): SocialLinks {
+function createSocialLinks(socialLinks: Socials): SocialLinks {
   return Object.entries(socialLinks).map(([key, value]) => ({
     icon: key as keyof Socials,
     mode: 'link',
@@ -37,10 +69,7 @@ function createSocialLinks(
   }));
 }
 
-export const createPreset = ({
-  docs,
-  root,
-}: CallstackPresetOptions): UserConfig => {
+const createPreset = ({ docs, root, theme }: PresetConfig): UserConfig => {
   return defineConfig({
     root,
     title: docs.title,
@@ -86,7 +115,7 @@ export const createPreset = ({
       ],
     },
     plugins: [
-      pluginCallstackTheme(),
+      pluginCallstackTheme(theme),
       pluginSitemap({
         siteUrl: docs.rootUrl,
       }),
@@ -100,7 +129,7 @@ export const createPreset = ({
 };
 
 export function withCallstackPreset(
-  options: CallstackPresetOptions,
+  options: PresetConfig,
   userConfig: UserConfig
 ): Promise<UserConfig> {
   return mergeDocConfig(createPreset(options), userConfig);
