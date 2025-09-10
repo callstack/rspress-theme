@@ -44,6 +44,14 @@ export default defineConfig({
   },
   plugins: [
     pluginCallstackTheme({
+      content: {
+        homeBannerButtonText: 'Home Banner Button Text',
+        homeBannerDescription: 'Home Banner Description',
+        homeBannerHeadline: 'Home Banner Headline',
+        outlineCTAButtonText: 'Outline CTA Button Text',
+        outlineCTADescription: 'Outline CTA Description',
+        outlineCTAHeadline: 'Outline CTA Headline',
+      },
       links: {
         homeBanner: 'https://callstack.com?source=banner',
         homeFooter: 'https://callstack.com?source=footer',
