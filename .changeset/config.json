@@ -2,7 +2,7 @@
   "$schema": "https://unpkg.com/@changesets/config@3.0.4/schema.json",
   "changelog": false,
   "commit": false,
-  "fixed": [],
+  "fixed": [["@callstack/rspress-preset", "@callstack/rspress-theme"]],
   "linked": [],
   "access": "public",
   "baseBranch": "main",
