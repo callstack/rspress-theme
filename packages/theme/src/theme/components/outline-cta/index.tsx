@@ -1,12 +1,10 @@
-import {
-  OUTLINE_CTA_BUTTON_TEXT,
-  OUTLINE_CTA_DESCRIPTION,
-  OUTLINE_CTA_HEADLINE,
-} from '../../const';
 import { Button } from '../button';
 import styles from './index.module.scss';
 
 declare const OUTLINE_CTA_LINK: string;
+declare const OUTLINE_CTA_BUTTON_TEXT: string;
+declare const OUTLINE_CTA_DESCRIPTION: string;
+declare const OUTLINE_CTA_HEADLINE: string;
 
 interface OutlineCTAProps {
   buttonText?: string;

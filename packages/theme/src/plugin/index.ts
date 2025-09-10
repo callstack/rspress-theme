@@ -3,11 +3,20 @@ import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { RspressPlugin, UserConfig } from '@rspress/core';
+import * as consts from './const';
 
 type BuilderConfig = NonNullable<UserConfig['builderConfig']>;
 type AliasEntry = string | (false | string)[] | false | undefined;
 
 interface PluginCallstackThemeOptions {
+  content?: {
+    homeBannerButtonText?: string;
+    homeBannerDescription?: string;
+    homeBannerHeadline?: string;
+    outlineCTAButtonText?: string;
+    outlineCTADescription?: string;
+    outlineCTAHeadline?: string;
+  };
   links?: {
     homeBanner?: string;
     homeFooter?: string;
@@ -94,7 +103,25 @@ function getBuilderConfig(options: PluginCallstackThemeOptions): BuilderConfig {
     source: {
       define: {
         HOME_BANNER_LINK: JSON.stringify(options.links?.homeBanner),
+        HOME_BANNER_BUTTON_TEXT: JSON.stringify(
+          options.content?.homeBannerButtonText
+        ),
+        HOME_BANNER_DESCRIPTION: JSON.stringify(
+          options.content?.homeBannerDescription
+        ),
+        HOME_BANNER_HEADLINE: JSON.stringify(
+          options.content?.homeBannerHeadline
+        ),
         HOME_FOOTER_LINK: JSON.stringify(options.links?.homeFooter),
+        OUTLINE_CTA_BUTTON_TEXT: JSON.stringify(
+          options.content?.outlineCTAButtonText
+        ),
+        OUTLINE_CTA_DESCRIPTION: JSON.stringify(
+          options.content?.outlineCTADescription
+        ),
+        OUTLINE_CTA_HEADLINE: JSON.stringify(
+          options.content?.outlineCTAHeadline
+        ),
         OUTLINE_CTA_LINK: JSON.stringify(options.links?.outlineCTA),
       },
     },
@@ -121,22 +148,21 @@ function getBuilderConfig(options: PluginCallstackThemeOptions): BuilderConfig {
 
 function addThemeOverrides(themeConfig: UserConfig['themeConfig'] = {}) {
   if (!themeConfig.overview) {
-    themeConfig.overview = { filterNameText: '' };
+    themeConfig.overview = { filterNameText: consts.OVERVIEW_FILTER_NAME_TEXT };
   } else if (!themeConfig.overview.filterNameText) {
-    themeConfig.overview.filterNameText = '';
+    themeConfig.overview.filterNameText = consts.OVERVIEW_FILTER_NAME_TEXT;
   }
 
   if (!themeConfig.outlineTitle) {
-    themeConfig.outlineTitle = 'Contents';
+    themeConfig.outlineTitle = consts.OUTLINE_TITLE;
   }
 
   if (!themeConfig.searchNoResultsText) {
-    themeConfig.searchNoResultsText =
-      'No results found, try something different than';
+    themeConfig.searchNoResultsText = consts.SEARCH_NO_RESULTS_TEXT;
   }
 
   if (!themeConfig.searchSuggestedQueryText) {
-    themeConfig.searchSuggestedQueryText = '';
+    themeConfig.searchSuggestedQueryText = consts.SEARCH_SUGGESTED_QUERY_TEXT;
   }
 
   return themeConfig;
@@ -144,10 +170,26 @@ function addThemeOverrides(themeConfig: UserConfig['themeConfig'] = {}) {
 
 function normalizeOptions(options: PluginCallstackThemeOptions) {
   return {
+    content: {
+      homeBannerButtonText:
+        options.content?.homeBannerButtonText ?? consts.HOME_BANNER_BUTTON_TEXT,
+      homeBannerDescription:
+        options.content?.homeBannerDescription ??
+        consts.HOME_BANNER_DESCRIPTION,
+      homeBannerHeadline:
+        options.content?.homeBannerHeadline ?? consts.HOME_BANNER_HEADLINE,
+      outlineCTAButtonText:
+        options.content?.outlineCTAButtonText ?? consts.OUTLINE_CTA_BUTTON_TEXT,
+      outlineCTADescription:
+        options.content?.outlineCTADescription ??
+        consts.OUTLINE_CTA_DESCRIPTION,
+      outlineCTAHeadline:
+        options.content?.outlineCTAHeadline ?? consts.OUTLINE_CTA_HEADLINE,
+    },
     links: {
-      homeBanner: options.links?.homeBanner ?? 'https://callstack.com',
-      homeFooter: options.links?.homeFooter ?? 'https://callstack.com',
-      outlineCTA: options.links?.outlineCTA ?? 'https://callstack.com',
+      homeBanner: options.links?.homeBanner ?? consts.HOME_BANNER_LINK,
+      homeFooter: options.links?.homeFooter ?? consts.HOME_FOOTER_LINK,
+      outlineCTA: options.links?.outlineCTA ?? consts.OUTLINE_CTA_LINK,
     },
   };
 }
