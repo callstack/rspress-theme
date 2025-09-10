@@ -1,13 +1,11 @@
 import abstractAtom from '../../assets/abstract-atom.avif';
-import {
-  HOME_BANNER_BUTTON_TEXT,
-  HOME_BANNER_DESCRIPTION,
-  HOME_BANNER_HEADLINE,
-} from '../../const';
 import { Button } from '../button';
 import styles from './index.module.scss';
 
 declare const HOME_BANNER_LINK: string;
+declare const HOME_BANNER_BUTTON_TEXT: string;
+declare const HOME_BANNER_DESCRIPTION: string;
+declare const HOME_BANNER_HEADLINE: string;
 
 interface HomeBannerProps {
   buttonText?: string;
