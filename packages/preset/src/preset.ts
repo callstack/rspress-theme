@@ -6,6 +6,7 @@ import type { SocialLinks as SocialLinksComponent } from '@rspress/core/theme';
 import { pluginLlms } from '@rspress/plugin-llms';
 import { pluginSitemap } from '@rspress/plugin-sitemap';
 import { pluginOpenGraph } from 'rsbuild-plugin-open-graph';
+import { validatePresetOptions } from './validate';
 
 type SupportedSocialLinks = Exclude<
   Parameters<typeof SocialLinksComponent>[0]['socialLinks'][number]['icon'],
@@ -44,7 +45,7 @@ interface PresetConfig {
      * }
      * ```
      */
-    socials: Socials;
+    socials?: Socials;
     /**
      * Site title displayed in the header and used in meta tags.
      * Example: "Re.Pack"
@@ -61,8 +62,8 @@ interface PresetConfig {
 
 type SocialLinks = Parameters<typeof SocialLinksComponent>[0]['socialLinks'];
 
-function createSocialLinks(socialLinks: Socials): SocialLinks {
-  return Object.entries(socialLinks).map(([key, value]) => ({
+function createSocialLinks(socials: Socials | undefined): SocialLinks {
+  return Object.entries(socials ?? {}).map(([key, value]) => ({
     icon: key as keyof Socials,
     mode: 'link',
     content: value,
@@ -108,7 +109,7 @@ const createPreset = ({ docs, root, theme }: PresetConfig): UserConfig => {
           image: `${docs.rootUrl}/og-image.jpg`,
           description: docs.description,
           twitter: {
-            site: docs.socials.x,
+            site: docs.socials?.x,
             card: 'summary_large_image',
           },
         }),
@@ -132,5 +133,6 @@ export function withCallstackPreset(
   options: PresetConfig,
   userConfig: UserConfig
 ): Promise<UserConfig> {
+  validatePresetOptions(options);
   return mergeDocConfig(createPreset(options), userConfig);
 }
