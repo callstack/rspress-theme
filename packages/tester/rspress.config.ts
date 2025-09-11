@@ -1,49 +1,22 @@
 import * as path from 'node:path';
-import { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
-import { defineConfig } from '@rspress/core';
+import { withCallstackPreset } from '@callstack/rspress-preset';
 
-export default defineConfig({
-  root: path.join(__dirname, 'docs'),
-  title: 'My Site',
-  icon: '/rspress-icon.png',
-  logo: {
-    light: '/logo-light.png',
-    dark: '/logo-dark.png',
-  },
-  globalStyles: path.join(__dirname, 'styles.css'),
-  builderConfig: {
-    performance: {
-      buildCache: false,
-    },
-  },
-  themeConfig: {
-    footer: {
-      message: 'Copyright © 2025 Callstack',
-    },
-    editLink: {
-      docRepoBaseUrl: 'https://github.com/callstack/rspress-theme',
-      text: 'Edit this page on GitHub',
-    },
-    socialLinks: [
-      {
-        icon: 'github',
-        mode: 'link',
-        content: '/',
+export default withCallstackPreset(
+  {
+    context: path.join(__dirname),
+    docs: {
+      title: 'My Site',
+      description: 'My Site Description',
+      editUrl: 'https://github.com/callstack/rspress-theme',
+      rootDir: 'docs',
+      rootUrl: 'https://callstack.com',
+      socials: {
+        github: 'https://github.com/callstack/rspress-theme',
+        X: 'https://github.com/callstack/rspress-theme',
+        discord: 'https://github.com/callstack/rspress-theme',
       },
-      {
-        icon: 'X',
-        mode: 'link',
-        content: '/',
-      },
-      {
-        icon: 'discord',
-        mode: 'link',
-        content: '/',
-      },
-    ],
-  },
-  plugins: [
-    pluginCallstackTheme({
+    },
+    theme: {
       content: {
         homeBannerButtonText: 'Home Banner Button Text',
         homeBannerDescription: 'Home Banner Description',
@@ -57,6 +30,13 @@ export default defineConfig({
         homeFooter: 'https://callstack.com?source=footer',
         outlineCTA: 'https://callstack.com?source=outline-cta',
       },
-    }),
-  ],
-});
+    },
+  },
+  {
+    builderConfig: {
+      performance: {
+        buildCache: false,
+      },
+    },
+  }
+);

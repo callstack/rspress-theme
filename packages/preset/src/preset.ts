@@ -6,61 +6,19 @@ import type { SocialLinks as SocialLinksComponent } from '@rspress/core/theme';
 import { pluginLlms } from '@rspress/plugin-llms';
 import { pluginSitemap } from '@rspress/plugin-sitemap';
 import { pluginOpenGraph } from 'rsbuild-plugin-open-graph';
-import { validatePresetOptions } from './validate';
+import { type PresetOptions, validatePresetOptions } from './options';
+import { resolvePublicAssetPath } from './utils';
 
 type SupportedSocialLinks = Exclude<
   Parameters<typeof SocialLinksComponent>[0]['socialLinks'][number]['icon'],
   { svg: string }
 >;
-
-type Socials = Record<SupportedSocialLinks, string>;
-
-type ThemeConfig = Parameters<typeof pluginCallstackTheme>[0];
-
-interface PresetConfig {
-  docs: {
-    /**
-     * Short summary used in page metadata and Open Graph tags.
-     * Example: "A modern build tool for React Native that brings the Rspack and webpack ecosystem to mobile React Native apps".
-     */
-    description: string;
-    /**
-     * Base URL to the docs repository for edit links.
-     * Example: "https://github.com/callstack/repack/tree/main/website/src/latest".
-     */
-    editUrl: string;
-    /**
-     * Absolute site origin used for sitemaps and Open Graph URLs.
-     * Example: "https://re-pack.dev".
-     */
-    rootUrl: string;
-    /**
-     * Social icon -> URL mapping for header/footer social links and OG:twitter.
-     * Keys must be built-in icons like 'github', 'X', 'discord'.
-     * Example:
-     * ```ts
-     * {
-     *   github: 'https://github.com/callstack/repack',
-     *   X: 'https://x.com/repack_rn',
-     * }
-     * ```
-     */
-    socials?: Socials;
-    /**
-     * Site title displayed in the header and used in meta tags.
-     * Example: "Re.Pack"
-     */
-    title: string;
-  };
-  theme?: ThemeConfig;
-  /**
-   * Absolute path to the docs root directory (contains markdown files).
-   * Example: path.join(__dirname, 'docs')
-   */
-  root: string;
-}
-
+type Socials = Partial<Record<SupportedSocialLinks, string>>;
 type SocialLinks = Parameters<typeof SocialLinksComponent>[0]['socialLinks'];
+type ThemeConfig = Parameters<typeof pluginCallstackTheme>[0];
+type PresetConfig = Omit<PresetOptions, 'theme'> & {
+  theme?: ThemeConfig;
+};
 
 function createSocialLinks(socials: Socials | undefined): SocialLinks {
   return Object.entries(socials ?? {}).map(([key, value]) => ({
@@ -70,16 +28,23 @@ function createSocialLinks(socials: Socials | undefined): SocialLinks {
   }));
 }
 
-const createPreset = ({ docs, root, theme }: PresetConfig): UserConfig => {
+const createPreset = ({ context, docs, theme }: PresetConfig): UserConfig => {
+  const rootDir = path.join(context, docs.rootDir ?? 'docs');
+
+  const resolvedIconPath = resolvePublicAssetPath(rootDir, 'icon');
+  const resolvedLogoLightPath = resolvePublicAssetPath(rootDir, 'logo-light');
+  const resolvedLogoDarkPath = resolvePublicAssetPath(rootDir, 'logo-dark');
+  const resolvedOgImagePath = resolvePublicAssetPath(rootDir, 'og-image');
+
   return defineConfig({
-    root,
+    root: rootDir,
     title: docs.title,
     description: docs.description,
-    icon: '/icon.png',
-    globalStyles: path.join(root, 'theme/styles.css'),
+    icon: resolvedIconPath ?? '/icon.png',
+    globalStyles: path.join(context, 'theme/styles.css'),
     logo: {
-      light: '/logo-light.png',
-      dark: '/logo-dark.png',
+      light: resolvedLogoLightPath ?? '/logo-light.png',
+      dark: resolvedLogoDarkPath ?? '/logo-dark.png',
     },
     route: {
       cleanUrls: true,
@@ -98,7 +63,7 @@ const createPreset = ({ docs, root, theme }: PresetConfig): UserConfig => {
         docRepoBaseUrl: docs.editUrl,
         text: 'Edit this page on GitHub',
       },
-      socialLinks: [...createSocialLinks(docs.socials)],
+      socialLinks: createSocialLinks(docs.socials),
     },
     builderConfig: {
       plugins: [
@@ -106,12 +71,14 @@ const createPreset = ({ docs, root, theme }: PresetConfig): UserConfig => {
           title: docs.title,
           type: 'website',
           url: docs.rootUrl,
-          image: `${docs.rootUrl}/og-image.jpg`,
+          image: `${docs.rootUrl}/${resolvedOgImagePath}`,
           description: docs.description,
-          twitter: {
-            site: docs.socials?.x,
-            card: 'summary_large_image',
-          },
+          twitter: docs.socials?.x
+            ? {
+                site: docs.socials?.x,
+                card: 'summary_large_image',
+              }
+            : undefined,
         }),
       ],
     },

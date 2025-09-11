@@ -29,6 +29,9 @@ importers:
       rsbuild-plugin-open-graph:
         specifier: ^1.0.2
         version: 1.1.0(@rsbuild/core@1.4.5)
+      zod:
+        specifier: ^3.23.8
+        version: 3.25.76
     devDependencies:
       '@microsoft/api-extractor':
         specifier: ^7.52.8
@@ -48,6 +51,9 @@ importers:
 
   packages/tester:
     dependencies:
+      '@callstack/rspress-preset':
+        specifier: workspace:*
+        version: link:../preset
       '@callstack/rspress-theme':
         specifier: workspace:*
         version: link:../theme
@@ -2449,6 +2455,9 @@ packages:
 
   yallist@4.0.0:
     resolution: {integrity: sha512-3wdGidZyq5PB084XLES5TpOSRA3wjXAlIWMhum2kRcv/41Sn2emQ0dycQW4uZXLejwKvg6EsvbdlVL+FYEct7A==}
+
+  zod@3.25.76:
+    resolution: {integrity: sha512-gzUt/qt81nXsFGKIFcC3YnfEAx5NkunCfnDlvuBSSFS02bcXu4Lmea0AFIUwbLWxWPx3d9p8S5QoaujKcNQxcQ==}
 
   zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
@@ -5342,5 +5351,7 @@ snapshots:
   yallist@3.1.1: {}
 
   yallist@4.0.0: {}
+
+  zod@3.25.76: {}
 
   zwitch@2.0.4: {}

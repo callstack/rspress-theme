@@ -5,7 +5,7 @@
   "license": "MIT",
   "packageManager": "pnpm@9.12.2",
   "scripts": {
-    "build": "pnpm -F ./packages/theme build",
+    "build": "pnpm -F !./packages/tester build",
     "lint": "biome check --write",
     "typecheck": "pnpm -r typecheck"
   },
