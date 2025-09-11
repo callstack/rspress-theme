@@ -16,22 +16,65 @@ bun add @callstack/rspress-preset
 
 ## Usage
 
-To use the `rspress-theme` package, you need to add the plugin to the Rspress configuration in the plugin section. You can also import components through named imports like `Announcement`. These components can be used in your `.mdx` files or added to the layout as described in the [guide](https://rspress.dev/guide/advanced/custom-theme#extensions-based-on-the-default-theme).
+Use the preset helper `withCallstackPreset` to generate a complete Rspress config from a small set of options, and then merge it with your own overrides if needed.
 
-> The plugin automatically injects overrides for the default theme as well as theme icons. There is no need to create overrides manually via `theme/index.tsx`.
+> The preset wires up the Callstack theme, sensible defaults, sitemap and open-graph plugins, search, clean URLs, and common theme config.
 
-### Adding the Plugin
-
-In your `rspress.config.ts` file, import `pluginCallstackTheme` from `@callstack/rspress-theme/plugin` and add it to the plugins array:
+Update your `rspress.config.ts`:
 
 ```ts
 import { defineConfig } from '@rspress/core';
-import { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
+import { withCallstackPreset } from '@callstack/rspress-preset';
 
-export default defineConfig({
-  plugins: [
-    pluginCallstackTheme(),
-    // other plugins
-  ],
-});
+export default withCallstackPreset(
+  {
+    context: __dirname,
+    docs: {
+      title: 'My Project',
+      description: 'Awesome docs powered by Rspress',
+      editUrl: 'https://github.com/org/repo/edit/main',
+      rootUrl: 'https://docs.example.com',
+      // Optional: defaults to 'docs'
+      rootDir: 'docs',
+      // Optional: social links; keys follow Rspress theme icons
+      socials: {
+        github: 'https://github.com/org/repo',
+        x: 'https://x.com/my_profile',
+      },
+    },
+    // Optional: forwarded to @callstack/rspress-theme/plugin
+    theme: {
+      // e.g. enableColorModeSwitch: true
+    },
+  },
+  defineConfig({
+    // Your extra/override Rspress config if needed
+  })
+);
 ```
+
+### Required/expected public assets
+
+Place these files under your docs root `public/` directory (based on `docs.rootDir`, default `docs/public/`):
+
+- `icon.(png|svg|jpg|jpeg|webp|avif|ico)` → site favicon (`icon`)
+- `logo-light.(png|svg|jpg|jpeg|webp|avif)` → light logo
+- `logo-dark.(png|svg|jpg|jpeg|webp|avif)` → dark logo
+- `og-image.(png|svg|jpg|jpeg|webp|avif)` → OG image
+
+## Options Reference
+
+```ts
+withCallstackPreset(options, userConfig?)
+```
+
+- **options.context** (string, required): Absolute path to your project root (e.g. `__dirname`).
+- **options.docs** (object, required):
+  - **title** (string, required): Docs site title.
+  - **description** (string, required): Site description.
+  - **editUrl** (url string, required): Base repo URL used to build “Edit this page” links.
+  - **rootDir** (string, optional): Directory containing markdown docs. Default: `docs`.
+  - **rootUrl** (url string, required): Absolute site origin, e.g. `https://docs.example.com`.
+  - **socials** (record, optional): Map of social icon name → URL. Keys must match Rspress theme `socialLinks` icons (e.g. `github`, `x`, `discord`, …).
+- **options.theme** (object, optional): Passed through to `@callstack/rspress-theme/plugin`. See that package for available settings.
+- **userConfig** (Rspress `UserConfig`, optional): Your additional config merged after the preset config via `mergeDocConfig`.
