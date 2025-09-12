@@ -6,8 +6,7 @@ import type { SocialLinks as SocialLinksComponent } from '@rspress/core/theme';
 import { pluginLlms } from '@rspress/plugin-llms';
 import { pluginSitemap } from '@rspress/plugin-sitemap';
 import { pluginOpenGraph } from 'rsbuild-plugin-open-graph';
-import { type PresetOptions, validatePresetOptions } from './options';
-import { resolvePublicAssetPath } from './utils';
+import { type PresetConfig, validatePresetOptions } from './options';
 
 type SupportedSocialLinks = Exclude<
   Parameters<typeof SocialLinksComponent>[0]['socialLinks'][number]['icon'],
@@ -15,10 +14,6 @@ type SupportedSocialLinks = Exclude<
 >;
 type Socials = Partial<Record<SupportedSocialLinks, string>>;
 type SocialLinks = Parameters<typeof SocialLinksComponent>[0]['socialLinks'];
-type ThemeConfig = Parameters<typeof pluginCallstackTheme>[0];
-type PresetConfig = Omit<PresetOptions, 'theme'> & {
-  theme?: ThemeConfig;
-};
 
 function createSocialLinks(socials: Socials | undefined): SocialLinks {
   return Object.entries(socials ?? {}).map(([key, value]) => ({
@@ -31,20 +26,15 @@ function createSocialLinks(socials: Socials | undefined): SocialLinks {
 const createPreset = ({ context, docs, theme }: PresetConfig): UserConfig => {
   const rootDir = path.join(context, docs.rootDir ?? 'docs');
 
-  const resolvedIconPath = resolvePublicAssetPath(rootDir, 'icon');
-  const resolvedLogoLightPath = resolvePublicAssetPath(rootDir, 'logo-light');
-  const resolvedLogoDarkPath = resolvePublicAssetPath(rootDir, 'logo-dark');
-  const resolvedOgImagePath = resolvePublicAssetPath(rootDir, 'og-image');
-
   return defineConfig({
     root: rootDir,
     title: docs.title,
     description: docs.description,
-    icon: resolvedIconPath ?? '/icon.png',
+    icon: docs.icon,
     globalStyles: path.join(context, 'theme/styles.css'),
     logo: {
-      light: resolvedLogoLightPath ?? '/logo-light.png',
-      dark: resolvedLogoDarkPath ?? '/logo-dark.png',
+      light: docs.logoLight,
+      dark: docs.logoDark,
     },
     route: {
       cleanUrls: true,
@@ -71,7 +61,7 @@ const createPreset = ({ context, docs, theme }: PresetConfig): UserConfig => {
           title: docs.title,
           type: 'website',
           url: docs.rootUrl,
-          image: `${docs.rootUrl}/${resolvedOgImagePath}`,
+          image: `${docs.rootUrl}/${docs.ogImage}`,
           description: docs.description,
           twitter: docs.socials?.x
             ? {
@@ -100,6 +90,6 @@ export function withCallstackPreset(
   options: PresetConfig,
   userConfig: UserConfig
 ): Promise<UserConfig> {
-  validatePresetOptions(options);
-  return mergeDocConfig(createPreset(options), userConfig);
+  const parsed = validatePresetOptions(options);
+  return mergeDocConfig(createPreset(parsed), userConfig);
 }

@@ -1,5 +1,6 @@
 import path from 'node:path';
 import { styleText } from 'node:util';
+import type { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
 import { type ZodIssue, z } from 'zod';
 
 const nonEmptyString = z
@@ -7,14 +8,12 @@ const nonEmptyString = z
   .trim()
   .min(1, { message: 'must be a non-empty string' });
 
-const contextSchema = nonEmptyString
-  .refine((value: string) => path.isAbsolute(value), {
-    message: 'must be an absolute path',
-  })
-  .describe('Absolute path to the project root');
-
 export const presetOptionsSchema = z.object({
-  context: contextSchema,
+  context: nonEmptyString
+    .refine((value: string) => path.isAbsolute(value), {
+      message: 'must be an absolute path',
+    })
+    .describe('Absolute path to the project root'),
   docs: z.object({
     title: nonEmptyString.describe('Title of the docs'),
     description: nonEmptyString.describe('Description of the docs'),
@@ -23,6 +22,30 @@ export const presetOptionsSchema = z.object({
       .trim()
       .url({ message: 'must be a valid URL' })
       .describe('Base URL to repository for edit links'),
+    logoLight: nonEmptyString
+      .optional()
+      .default('logo-light.png')
+      .describe(
+        'Filename from docs public directory for light mode logo (default: logo-light.png)'
+      ),
+    logoDark: nonEmptyString
+      .optional()
+      .default('logo-dark.png')
+      .describe(
+        'Filename from docs public directory for dark mode logo (default: logo-dark.png)'
+      ),
+    icon: nonEmptyString
+      .optional()
+      .default('icon.png')
+      .describe(
+        'Filename from docs public directory for site icon (default: icon.png)'
+      ),
+    ogImage: nonEmptyString
+      .optional()
+      .default('og-image.png')
+      .describe(
+        'Filename from docs public directory for Open Graph image (default: og.png)'
+      ),
     rootDir: nonEmptyString
       .optional()
       .describe('Root directory containing markdown docs'),
@@ -39,7 +62,12 @@ export const presetOptionsSchema = z.object({
   theme: z.unknown().optional(),
 });
 
-export type PresetOptions = z.infer<typeof presetOptionsSchema>;
+type ThemeConfig = Parameters<typeof pluginCallstackTheme>[0];
+type PresetSchema = z.infer<typeof presetOptionsSchema>;
+
+export type PresetConfig = Omit<PresetSchema, 'theme'> & {
+  theme?: ThemeConfig;
+};
 
 function error(...message: string[]): void {
   for (const msg of message) {
@@ -47,7 +75,7 @@ function error(...message: string[]): void {
   }
 }
 
-export function validatePresetOptions(options: unknown): void {
+export function validatePresetOptions(options: unknown): PresetConfig {
   const result = presetOptionsSchema.safeParse(options);
   if (!result.success) {
     const bullets = result.error.issues
@@ -84,4 +112,6 @@ export function validatePresetOptions(options: unknown): void {
     error(bullets);
     process.exit(1);
   }
+
+  return result.data as PresetConfig;
 }
