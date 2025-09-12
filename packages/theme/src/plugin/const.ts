@@ -13,6 +13,11 @@ export const OUTLINE_CTA_DESCRIPTION =
 export const OUTLINE_CTA_HEADLINE = "Need to boost your app's performance?";
 export const OUTLINE_CTA_LINK = 'https://callstack.com';
 
+export const DOC_FOOTER_CTA_BUTTON_TEXT = "Let's talk";
+export const DOC_FOOTER_CTA_HEADLINE =
+  'Need React or React Native\nexpertise you can count on?';
+export const DOC_FOOTER_CTA_LINK = 'https://callstack.com';
+
 export const HOME_BANNER_HEADLINE =
   'Need React or React Native\nexpertise you can count on?';
 export const HOME_BANNER_DESCRIPTION =

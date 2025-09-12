@@ -2,6 +2,7 @@ export { Announcement } from './announcement';
 export { Badge } from './badge';
 export { Button } from './button';
 export { Card } from './card';
+export { DocFooterCTA } from './doc-footer-cta';
 export { HomeBanner } from './home-banner';
 export { HomeFeature } from './home-feature';
 export { HomeFooter } from './home-footer';
