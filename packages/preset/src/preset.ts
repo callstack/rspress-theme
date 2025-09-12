@@ -53,6 +53,11 @@ const createPreset = (config: PresetConfig): UserConfig => {
             dark: (docs.logoDark ?? docs.logoLight) as string,
           }
         : undefined,
+    markdown: {
+      link: {
+        checkDeadLinks: true,
+      },
+    },
     route: {
       cleanUrls: true,
     },
