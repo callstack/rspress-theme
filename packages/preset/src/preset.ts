@@ -1,11 +1,17 @@
+import fs from 'node:fs';
 import path from 'node:path';
 import { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
-import { defineConfig, mergeDocConfig } from '@rspress/core';
+import {
+  type RspressPlugin,
+  defineConfig,
+  mergeDocConfig,
+} from '@rspress/core';
 import type { UserConfig } from '@rspress/core';
 import type { SocialLinks as SocialLinksComponent } from '@rspress/core/theme';
 import { pluginLlms } from '@rspress/plugin-llms';
 import { pluginSitemap } from '@rspress/plugin-sitemap';
 import { pluginOpenGraph } from 'rsbuild-plugin-open-graph';
+import pluginVercelAnalytics from 'rspress-plugin-vercel-analytics';
 import { type PresetConfig, validatePresetOptions } from './options';
 
 type SupportedSocialLinks = Exclude<
@@ -23,8 +29,16 @@ function createSocialLinks(socials: Socials | undefined): SocialLinks {
   }));
 }
 
-const createPreset = ({ context, docs, theme }: PresetConfig): UserConfig => {
+const createPreset = (config: PresetConfig): UserConfig => {
+  const { context, docs, theme, vercelAnalytics } = config;
   const rootDir = path.join(context, docs.rootDir ?? 'docs');
+
+  const enableVercel =
+    vercelAnalytics === undefined
+      ? fs.existsSync(path.join(context, 'vercel.json'))
+      : Boolean(vercelAnalytics);
+  const vercelOptions =
+    typeof vercelAnalytics === 'object' ? vercelAnalytics : {};
 
   return defineConfig({
     root: rootDir,
@@ -77,15 +91,14 @@ const createPreset = ({ context, docs, theme }: PresetConfig): UserConfig => {
     },
     plugins: [
       pluginCallstackTheme(theme),
-      pluginSitemap({
-        siteUrl: docs.rootUrl,
-      }),
+      pluginSitemap({ siteUrl: docs.rootUrl }),
       pluginLlms({
         exclude: ({ page }) => {
           return page.routePath.includes('404');
         },
       }),
-    ],
+      enableVercel && pluginVercelAnalytics(vercelOptions),
+    ].filter(Boolean) as RspressPlugin[],
   });
 };
 

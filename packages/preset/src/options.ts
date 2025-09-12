@@ -1,6 +1,7 @@
 import path from 'node:path';
 import { styleText } from 'node:util';
 import type { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
+import type pluginVercelAnalytics from 'rspress-plugin-vercel-analytics';
 import { type ZodIssue, z } from 'zod';
 
 const nonEmptyString = z
@@ -56,13 +57,21 @@ export const presetOptionsSchema = z.object({
       .describe('Map of social icon name to profile URL'),
   }),
   theme: z.unknown().optional(),
+  vercelAnalytics: z
+    .union([z.boolean(), z.record(z.unknown())])
+    .optional()
+    .describe(
+      'Enable/disable Vercel Analytics or pass its config (overrides auto-detect)'
+    ),
 });
 
 type ThemeConfig = Parameters<typeof pluginCallstackTheme>[0];
+type VercelAnalyticsConfig = Parameters<typeof pluginVercelAnalytics>[0];
 type PresetSchema = z.infer<typeof presetOptionsSchema>;
 
-export type PresetConfig = Omit<PresetSchema, 'theme'> & {
+export type PresetConfig = Omit<PresetSchema, 'theme' | 'vercelAnalytics'> & {
   theme?: ThemeConfig;
+  vercelAnalytics?: boolean | VercelAnalyticsConfig;
 };
 
 function error(...message: string[]): void {
