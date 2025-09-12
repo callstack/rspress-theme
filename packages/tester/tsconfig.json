@@ -13,6 +13,8 @@
     "useDefineForClassFields": true,
     "allowImportingTsExtensions": true,
     "paths": {
+      "@callstack/rspress-preset": ["../preset/src"],
+      "@callstack/rspress-preset/*": ["../preset/src/*"],
       "@callstack/rspress-theme": ["../theme/src"],
       "@callstack/rspress-theme/*": ["../theme/src/*"],
       "@callstack/rspress-theme/plugin": ["../theme/src/plugin"],

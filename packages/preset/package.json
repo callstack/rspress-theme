@@ -1,0 +1,61 @@
+{
+  "name": "@callstack/rspress-preset",
+  "version": "0.3.1",
+  "description": "Callstack preset for Rspress docs",
+  "author": "Jakub Romańczyk <jakub.romanczyk@callstack.com>",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["dist", "README.md"],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "homepage": "https://github.com/callstack/rspress-theme/tree/main/packages/preset#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callstack/rspress-theme.git",
+    "directory": "packages/preset"
+  },
+  "keywords": [
+    "rspress",
+    "theme",
+    "preset",
+    "callstack",
+    "documentation",
+    "react",
+    "typescript"
+  ],
+  "packageManager": "pnpm@9.12.2",
+  "scripts": {
+    "build": "rslib build",
+    "dev": "rslib build --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@callstack/rspress-theme": "workspace:*",
+    "@rspress/plugin-llms": "2.0.0-beta.31",
+    "@rspress/plugin-sitemap": "2.0.0-beta.31",
+    "rsbuild-plugin-open-graph": "^1.0.2",
+    "rspress-plugin-vercel-analytics": "^0.3.0",
+    "zod": "^3.23.8"
+  },
+  "peerDependencies": {
+    "@rspress/core": "2.0.0-beta.31"
+  },
+  "devDependencies": {
+    "@microsoft/api-extractor": "^7.52.8",
+    "@rslib/core": "^0.10.5",
+    "@rspress/core": "2.0.0-beta.31",
+    "@types/node": "^22",
+    "typescript": "^5.8.3"
+  }
+}
