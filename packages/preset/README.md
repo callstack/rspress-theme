@@ -34,8 +34,12 @@ export default withCallstackPreset(
       description: 'Awesome docs powered by Rspress',
       editUrl: 'https://github.com/org/repo/edit/main',
       rootUrl: 'https://docs.example.com',
+      icon: 'icon.ico',
+      logoLight: 'logo-light.png',
+      logoDark: 'logo-dark.png',
+      ogImage: 'og-image.png',
       // Optional: defaults to 'docs'
-      rootDir: 'docs',
+      rootDir: 'docs', 
       // Optional: social links; keys follow Rspress theme icons
       socials: {
         github: 'https://github.com/org/repo',
@@ -44,8 +48,10 @@ export default withCallstackPreset(
     },
     // Optional: forwarded to @callstack/rspress-theme/plugin
     theme: {
-      // e.g. enableColorModeSwitch: true
+      // theme settings
     },
+    // Optional: boolean or config for rspress-plugin-vercel-analytics.
+    vercelAnalytics: true,
   },
   defineConfig({
     // Your extra/override Rspress config if needed
@@ -55,26 +61,35 @@ export default withCallstackPreset(
 
 ### Required/expected public assets
 
-Place these files under your docs root `public/` directory (based on `docs.rootDir`, default `docs/public/`):
+All graphical assets are optional but recommended. Place files in `<docs.rootDir>/public/` (default `docs/public/`), and set their filenames via theme options (`docs.icon`, `docs.logoLight`, `docs.logoDark`, `docs.ogImage`). Defaults are used if omitted.
 
-- `icon.(png|svg|jpg|jpeg|webp|avif|ico)` → site favicon (`icon`)
-- `logo-light.(png|svg|jpg|jpeg|webp|avif)` → light logo
-- `logo-dark.(png|svg|jpg|jpeg|webp|avif)` → dark logo
-- `og-image.(png|svg|jpg|jpeg|webp|avif)` → OG image
+- **Favicon**: default `icon.png` (supports `png|svg|jpg|jpeg|webp|avif|ico`)
+- **Logo (light)**: default `logo-light.png` (supports `png|svg|jpg|jpeg|webp|avif`)
+- **Logo (dark)**: default `logo-dark.png` (supports `png|svg|jpg|jpeg|webp|avif`)
+- **Open Graph image**: default `og.png` (supports `png|svg|jpg|jpeg|webp|avif`)
+
+If only one of `logoLight` or `logoDark` is provided, it will be used for both modes.
 
 ## Options Reference
 
 ```ts
-withCallstackPreset(options, userConfig?)
+withCallstackPreset(options, userConfig)
 ```
 
+- **options** (object, required): Preset options.
 - **options.context** (string, required): Absolute path to your project root (e.g. `__dirname`).
 - **options.docs** (object, required):
   - **title** (string, required): Docs site title.
   - **description** (string, required): Site description.
   - **editUrl** (url string, required): Base repo URL used to build “Edit this page” links.
+  - **icon** (string, optional): Filename from docs public directory for site icon.
+  - **logoLight** (string, optional): Filename from docs public for light logo.
+  - **logoDark** (string, optional): Filename from docs public for dark logo.
+  - **ogImage** (string, optional): Filename from docs public for Open Graph image.
   - **rootDir** (string, optional): Directory containing markdown docs. Default: `docs`.
   - **rootUrl** (url string, required): Absolute site origin, e.g. `https://docs.example.com`.
   - **socials** (record, optional): Map of social icon name → URL. Keys must match Rspress theme `socialLinks` icons (e.g. `github`, `x`, `discord`, …).
 - **options.theme** (object, optional): Passed through to `@callstack/rspress-theme/plugin`. See that package for available settings.
+- **options.vercelAnalytics** (boolean | object, optional): Enable/disable Vercel Analytics or pass its config. If omitted, it auto-enables when a `vercel.json` exists at the project root.
+
 - **userConfig** (Rspress `UserConfig`, optional): Your additional config merged after the preset config via `mergeDocConfig`.
