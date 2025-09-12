@@ -29,6 +29,17 @@ function createSocialLinks(socials: Socials | undefined): SocialLinks {
   }));
 }
 
+// Extract an @handle from an X/Twitter profile URL
+function extractXHandle(profileUrl: string): string {
+  try {
+    const url = new URL(profileUrl);
+    const handle = url.pathname.split('/')[1];
+    return `@${handle}`;
+  } catch {
+    throw new Error('Failed to extract X handle from X profile URL');
+  }
+}
+
 const createPreset = (config: PresetConfig): UserConfig => {
   const { context, docs, theme, vercelAnalytics } = config;
   const rootDir = path.join(context, docs.rootDir ?? 'docs');
@@ -85,9 +96,9 @@ const createPreset = (config: PresetConfig): UserConfig => {
           url: docs.rootUrl,
           image: `${docs.rootUrl}/${docs.ogImage}`,
           description: docs.description,
-          twitter: docs.socials?.x
+          twitter: docs.socials?.X
             ? {
-                site: docs.socials?.x,
+                site: extractXHandle(docs.socials?.X),
                 card: 'summary_large_image',
               }
             : undefined,
