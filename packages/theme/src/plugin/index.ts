@@ -48,7 +48,7 @@ function getThemeAliases(
 
   const { resolve } = createRequire(import.meta.url);
   const rspressThemeDefaultPath = resolve('@rspress/theme-default', {
-    paths: [resolve('@rspress/core')],
+    paths: [resolve('@rspress/core/package.json')],
   });
 
   const aliases: Record<string, string | string[]> = {};
