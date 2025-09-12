@@ -1,17 +1,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import url from 'node:url';
 import { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
-import {
-  type RspressPlugin,
-  defineConfig,
-  mergeDocConfig,
-} from '@rspress/core';
+import { defineConfig, mergeDocConfig } from '@rspress/core';
 import type { UserConfig } from '@rspress/core';
 import type { SocialLinks as SocialLinksComponent } from '@rspress/core/theme';
 import { pluginLlms } from '@rspress/plugin-llms';
 import { pluginSitemap } from '@rspress/plugin-sitemap';
 import { pluginOpenGraph } from 'rsbuild-plugin-open-graph';
-import pluginVercelAnalytics from 'rspress-plugin-vercel-analytics';
 import { type PresetConfig, validatePresetOptions } from './options';
 
 type SupportedSocialLinks = Exclude<
@@ -20,6 +16,9 @@ type SupportedSocialLinks = Exclude<
 >;
 type Socials = Partial<Record<SupportedSocialLinks, string>>;
 type SocialLinks = Parameters<typeof SocialLinksComponent>[0]['socialLinks'];
+
+const __filename = url.fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 function createSocialLinks(socials: Socials | undefined): SocialLinks {
   return Object.entries(socials ?? {}).map(([key, value]) => ({
@@ -57,6 +56,14 @@ const createPreset = (config: PresetConfig): UserConfig => {
     description: docs.description,
     icon: docs.icon,
     globalStyles: path.join(context, 'theme/styles.css'),
+    globalUIComponents: enableVercel
+      ? [
+          [
+            path.join(path.dirname(__dirname), 'vendor/VercelAnalytics.ts'),
+            { mode: process.env.NODE_ENV ?? 'development', ...vercelOptions },
+          ],
+        ]
+      : [],
     logo:
       docs.logoLight || docs.logoDark
         ? {
@@ -113,8 +120,7 @@ const createPreset = (config: PresetConfig): UserConfig => {
           return page.routePath.includes('404');
         },
       }),
-      enableVercel && pluginVercelAnalytics(vercelOptions),
-    ].filter(Boolean) as RspressPlugin[],
+    ],
   });
 };
 
