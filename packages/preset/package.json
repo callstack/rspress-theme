@@ -14,7 +14,7 @@
     },
     "./package.json": "./package.json"
   },
-  "files": ["dist", "README.md"],
+  "files": ["dist", "README.md", "vendor"],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
@@ -44,8 +44,8 @@
     "@callstack/rspress-theme": "workspace:*",
     "@rspress/plugin-llms": "2.0.0-beta.32",
     "@rspress/plugin-sitemap": "2.0.0-beta.32",
+    "@vercel/analytics": "^1.5.0",
     "rsbuild-plugin-open-graph": "^1.0.2",
-    "rspress-plugin-vercel-analytics": "^0.3.0",
     "zod": "^3.23.8"
   },
   "peerDependencies": {

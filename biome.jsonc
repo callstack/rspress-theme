@@ -6,7 +6,7 @@
     "defaultBranch": "main",
     "useIgnoreFile": true
   },
-  "files": { "ignoreUnknown": false, "ignore": [] },
+  "files": { "ignoreUnknown": false, "ignore": ["packages/preset/vendor/*"] },
   "formatter": {
     "enabled": true,
     "useEditorconfig": true,
