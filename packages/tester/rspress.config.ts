@@ -12,7 +12,7 @@ export default withCallstackPreset(
       rootUrl: 'https://callstack.com',
       socials: {
         github: 'https://github.com/callstack/rspress-theme',
-        X: 'https://github.com/callstack/rspress-theme',
+        X: 'https://x.com/repack_rn',
         discord: 'https://github.com/callstack/rspress-theme',
       },
     },
