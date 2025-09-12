@@ -61,12 +61,12 @@ export default withCallstackPreset(
 
 ### Required/expected public assets
 
-All graphical assets are optional but recommended. Place files in `<docs.rootDir>/public/` (default `docs/public/`), and set their filenames via theme options (`docs.icon`, `docs.logoLight`, `docs.logoDark`, `docs.ogImage`). Defaults are used if omitted.
+All graphical assets are optional but recommended. Place files in `<docs.rootDir>/public/` (default `docs/public/`), and set their filenames via theme options (`docs.icon`, `docs.logoLight`, `docs.logoDark`, `docs.ogImage`).
 
-- **Favicon**: default `icon.png` (supports `png|svg|jpg|jpeg|webp|avif|ico`)
-- **Logo (light)**: default `logo-light.png` (supports `png|svg|jpg|jpeg|webp|avif`)
-- **Logo (dark)**: default `logo-dark.png` (supports `png|svg|jpg|jpeg|webp|avif`)
-- **Open Graph image**: default `og.png` (supports `png|svg|jpg|jpeg|webp|avif`)
+- **Favicon**: e.g. `/icon.png` (supports `png|svg|ico`)
+- **Logo (light)**: e.g. `/logo-light.png` (supports `png|svg|jpg|jpeg|webp|avif`)
+- **Logo (dark)**: e.g. `/logo-dark.png` (supports `png|svg|jpg|jpeg|webp|avif`)
+- **Open Graph image**: e.g. `/og-image.png` (supports `png|svg|jpg|jpeg|webp|avif`)
 
 If only one of `logoLight` or `logoDark` is provided, it will be used for both modes.
 
