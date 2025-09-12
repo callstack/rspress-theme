@@ -94,7 +94,7 @@ const createPreset = (config: PresetConfig): UserConfig => {
           title: docs.title,
           type: 'website',
           url: docs.rootUrl,
-          image: `${docs.rootUrl}/${docs.ogImage}`,
+          image: docs.rootUrl + docs.ogImage,
           description: docs.description,
           twitter: docs.socials?.X
             ? {
