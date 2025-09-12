@@ -1,7 +1,7 @@
 import path from 'node:path';
 import { styleText } from 'node:util';
 import type { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
-import type pluginVercelAnalytics from 'rspress-plugin-vercel-analytics';
+import type { AnalyticsProps } from '@vercel/analytics';
 import { type ZodIssue, z } from 'zod';
 
 const nonEmptyString = z
@@ -66,12 +66,11 @@ export const presetOptionsSchema = z.object({
 });
 
 type ThemeConfig = Parameters<typeof pluginCallstackTheme>[0];
-type VercelAnalyticsConfig = Parameters<typeof pluginVercelAnalytics>[0];
 type PresetSchema = z.infer<typeof presetOptionsSchema>;
 
 export type PresetConfig = Omit<PresetSchema, 'theme' | 'vercelAnalytics'> & {
   theme?: ThemeConfig;
-  vercelAnalytics?: boolean | VercelAnalyticsConfig;
+  vercelAnalytics?: boolean | AnalyticsProps;
 };
 
 function error(...message: string[]): void {

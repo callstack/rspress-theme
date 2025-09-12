@@ -50,7 +50,7 @@ export default withCallstackPreset(
     theme: {
       // theme settings
     },
-    // Optional: boolean or config for rspress-plugin-vercel-analytics.
+    // Optional: boolean or config for Vercel Analytics.
     vercelAnalytics: true,
   },
   defineConfig({
