@@ -24,25 +24,21 @@ export const presetOptionsSchema = z.object({
       .describe('Base URL to repository for edit links'),
     logoLight: nonEmptyString
       .optional()
-      .default('logo-light.png')
       .describe(
         'Filename from docs public directory for light mode logo (default: logo-light.png)'
       ),
     logoDark: nonEmptyString
       .optional()
-      .default('logo-dark.png')
       .describe(
         'Filename from docs public directory for dark mode logo (default: logo-dark.png)'
       ),
     icon: nonEmptyString
       .optional()
-      .default('icon.png')
       .describe(
         'Filename from docs public directory for site icon (default: icon.png)'
       ),
     ogImage: nonEmptyString
       .optional()
-      .default('og-image.png')
       .describe(
         'Filename from docs public directory for Open Graph image (default: og.png)'
       ),

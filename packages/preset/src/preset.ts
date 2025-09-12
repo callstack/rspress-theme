@@ -32,10 +32,13 @@ const createPreset = ({ context, docs, theme }: PresetConfig): UserConfig => {
     description: docs.description,
     icon: docs.icon,
     globalStyles: path.join(context, 'theme/styles.css'),
-    logo: {
-      light: docs.logoLight,
-      dark: docs.logoDark,
-    },
+    logo:
+      docs.logoLight || docs.logoDark
+        ? {
+            light: (docs.logoLight ?? docs.logoDark) as string,
+            dark: (docs.logoDark ?? docs.logoLight) as string,
+          }
+        : undefined,
     route: {
       cleanUrls: true,
     },
@@ -45,7 +48,7 @@ const createPreset = ({ context, docs, theme }: PresetConfig): UserConfig => {
     },
     themeConfig: {
       enableContentAnimation: true,
-      enableScrollToTop: true,
+      enableScrollToTop: false,
       footer: {
         message: `Copyright © ${new Date().getFullYear()} Callstack Open Source`,
       },
