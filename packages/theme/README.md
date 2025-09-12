@@ -42,6 +42,69 @@ export default defineConfig({
 });
 ```
 
+### Configurable options
+
+You can customize texts and links used by built‑in components through the plugin options. All options are optional.
+
+- **content** (consumed by components):
+  - **docFooterCTAHeadline**: Used by `DocFooterCTA` (rendered after doc content).
+  - **docFooterCTAButtonText**: Used by `DocFooterCTA` (rendered after doc content).
+  - **homeBannerHeadline**: Used by `HomeBanner` (rendered on the home page after features).
+  - **homeBannerDescription**: Used by `HomeBanner` (rendered on the home page after features).
+  - **homeBannerButtonText**: Used by `HomeBanner` (rendered on the home page after features).
+  - **outlineCTAHeadline**: Used by `OutlineCTA` (rendered below the outline on doc pages).
+  - **outlineCTADescription**: Used by `OutlineCTA` (rendered below the outline on doc pages).
+  - **outlineCTAButtonText**: Used by `OutlineCTA` (rendered below the outline on doc pages).
+
+- **links** (target URLs for calls to action):
+  - **docFooterCTA**: Button link in `DocFooterCTA`.
+  - **homeBanner**: Button link in `HomeBanner`.
+  - **homeFooter**: Logo link in `HomeFooter`.
+  - **outlineCTA**: Button link in `OutlineCTA`.
+
+Example usage in `rspress.config.ts`:
+
+```ts
+import { defineConfig } from '@rspress/core';
+import { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
+
+export default defineConfig({
+  plugins: [
+    pluginCallstackTheme({
+      content: {
+        docFooterCTAHeadline: 'Need expert help?',
+        docFooterCTAButtonText: 'Contact us',
+        homeBannerHeadline: 'Build better apps, faster',
+        homeBannerDescription: 'We partner with teams to ship quality software.',
+        homeBannerButtonText: 'Get in touch',
+        outlineCTAHeadline: 'Performance issues?',
+        outlineCTADescription: 'We can help you diagnose and fix bottlenecks.',
+        outlineCTAButtonText: 'Schedule a chat',
+      },
+      links: {
+        docFooterCTA: 'https://example.com/contact',
+        homeBanner: 'https://example.com/contact',
+        homeFooter: 'https://example.com',
+        outlineCTA: 'https://example.com/performance',
+      },
+    }),
+  ],
+});
+```
+
+Note: The plugin also applies default `themeConfig` values when missing, which you can override in your Rspress config:
+
+```ts
+export default defineConfig({
+  themeConfig: {
+    outlineTitle: 'Contents', // default
+    overview: { filterNameText: '' }, // default
+    searchNoResultsText: 'No results found, try something different than', // default
+    searchSuggestedQueryText: '', // default
+  },
+});
+```
+
 ### Importing Components
 
 You can import components from the theme as named imports:
