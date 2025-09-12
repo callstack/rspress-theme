@@ -10,6 +10,8 @@ type AliasEntry = string | (false | string)[] | false | undefined;
 
 interface PluginCallstackThemeOptions {
   content?: {
+    docFooterCTAButtonText?: string;
+    docFooterCTAHeadline?: string;
     homeBannerButtonText?: string;
     homeBannerDescription?: string;
     homeBannerHeadline?: string;
@@ -18,6 +20,7 @@ interface PluginCallstackThemeOptions {
     outlineCTAHeadline?: string;
   };
   links?: {
+    docFooterCTA?: string;
     homeBanner?: string;
     homeFooter?: string;
     outlineCTA?: string;
@@ -102,6 +105,13 @@ function getBuilderConfig(options: PluginCallstackThemeOptions): BuilderConfig {
   return {
     source: {
       define: {
+        DOC_FOOTER_CTA_BUTTON_TEXT: JSON.stringify(
+          options.content?.docFooterCTAButtonText
+        ),
+        DOC_FOOTER_CTA_HEADLINE: JSON.stringify(
+          options.content?.docFooterCTAHeadline
+        ),
+        DOC_FOOTER_CTA_LINK: JSON.stringify(options.links?.docFooterCTA),
         HOME_BANNER_LINK: JSON.stringify(options.links?.homeBanner),
         HOME_BANNER_BUTTON_TEXT: JSON.stringify(
           options.content?.homeBannerButtonText
@@ -171,6 +181,11 @@ function addThemeOverrides(themeConfig: UserConfig['themeConfig'] = {}) {
 function normalizeOptions(options: PluginCallstackThemeOptions) {
   return {
     content: {
+      docFooterCTAButtonText:
+        options.content?.docFooterCTAButtonText ??
+        consts.DOC_FOOTER_CTA_BUTTON_TEXT,
+      docFooterCTAHeadline:
+        options.content?.docFooterCTAHeadline ?? consts.DOC_FOOTER_CTA_HEADLINE,
       homeBannerButtonText:
         options.content?.homeBannerButtonText ?? consts.HOME_BANNER_BUTTON_TEXT,
       homeBannerDescription:
@@ -187,6 +202,7 @@ function normalizeOptions(options: PluginCallstackThemeOptions) {
         options.content?.outlineCTAHeadline ?? consts.OUTLINE_CTA_HEADLINE,
     },
     links: {
+      docFooterCTA: options.links?.docFooterCTA ?? consts.DOC_FOOTER_CTA_LINK,
       homeBanner: options.links?.homeBanner ?? consts.HOME_BANNER_LINK,
       homeFooter: options.links?.homeFooter ?? consts.HOME_FOOTER_LINK,
       outlineCTA: options.links?.outlineCTA ?? consts.OUTLINE_CTA_LINK,

@@ -3,6 +3,7 @@ import {
   Badge,
   Button,
   Card,
+  DocFooterCTA,
   HomeBanner,
   HomeFeature,
   HomeFooter,
@@ -27,8 +28,15 @@ const Layout = (
   const afterOutline = props.afterOutline ?? [
     React.createElement(OutlineCTA, { key: 'outline-cta' }),
   ];
+  const afterDocContent = props.afterDocContent ?? [
+    React.createElement(DocFooterCTA, { key: 'doc-footer-cta' }),
+  ];
 
-  return React.createElement(DefaultLayout, { ...props, afterOutline });
+  return React.createElement(DefaultLayout, {
+    ...props,
+    afterOutline,
+    afterDocContent,
+  });
 };
 
 const HomeLayout = (

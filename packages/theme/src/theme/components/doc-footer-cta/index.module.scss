@@ -1,0 +1,71 @@
+.container {
+  background-image: url('../../assets/gradient-dark.avif');
+  background-size: cover;
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  color: var(--rp-c-brand-light);
+  margin: 64px auto 0 auto;
+  padding: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.logo {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.7;
+  left: 25%;
+}
+
+.content {
+  display: flex;
+  position: relative;
+  align-items: center;
+  width: 100%;
+  z-index: 4;
+}
+
+.headlineContainer {
+  display: flex;
+  flex: 1;
+  max-width: 300px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.headline {
+  color: #ffffff;
+  font-family: var(--ck-header-font-family);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+
+@media (max-width: 960px) {
+  .logo {
+    scale: 1.2;
+    left: 20%;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    margin: 32px auto -32px auto;
+  }
+  .logo {
+    scale: 1.5;
+    left: 15%;
+  }
+  .headline {
+    font-size: 16px;
+    letter-spacing: -0.32px;
+  }
+}
