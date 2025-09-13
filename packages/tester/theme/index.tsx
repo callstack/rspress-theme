@@ -4,13 +4,13 @@ import { Layout as RspressLayout } from '@rspress/core/theme';
 const Layout = () => {
   return (
     <RspressLayout
-      beforeNav={
-        <Announcement
-          href="./guide"
-          message="Announcement Test"
-          localStorageKey="announcement-test"
-        />
-      }
+      // beforeNav={
+      //   <Announcement
+      //     href="./guide"
+      //     message="Announcement Test"
+      //     localStorageKey="announcement-test"
+      //   />
+      // }
       beforeDocContent={<VersionBadge version="v5" />}
     />
   );

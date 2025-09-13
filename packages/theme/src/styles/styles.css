@@ -768,77 +768,6 @@ div#root > section {
   min-height: 100vh;
 }
 
-/* Home page background grid only on top */
-div#root > section > div.rp-relative::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -100;
-  background-image: url("../assets/hero-bg-shape.svg"), var(--ck-bg-radial-1);
-  background-repeat: no-repeat, no-repeat;
-  background-size: contain, contain;
-  mask-image: radial-gradient(
-    ellipse calc(150vw) 150vh at 100% -5%,
-    rgb(0, 0, 0) -5%,
-    transparent 40%
-  );
-  mask-size: 100% 100%;
-  mask-repeat: no-repeat;
-}
-
-/* Home page top noise with opacity control */
-div#root > section > div.rp-relative::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -100;
-  background-image: url("../assets/noise.svg");
-  background-repeat: repeat;
-  background-size: cover;
-  mask-image: radial-gradient(
-    ellipse calc(150vw) 150vh at 100% -5%,
-    rgb(0, 0, 0) -5%,
-    transparent 40%
-  );
-  mask-size: 100% 100%;
-  mask-repeat: no-repeat;
-}
-
-.dark div#root > section > div.rp-relative::after {
-  opacity: 0.1;
-}
-
-/* Home page bottom name + gradients */
-div#root > section:not(:has(div[class^="docLayout_"])) {
-  position: relative; /* Ensure the parent is positioned */
-  background-image: url("../assets/callstack.svg"), var(--ck-bg-radial-2),
-    var(--ck-bg-radial-3);
-  background-repeat: no-repeat, repeat, no-repeat, no-repeat;
-  background-size: min(90rem, 95%) auto, auto, contain, contain;
-  background-position: center calc(100% + 12px), bottom, bottom, bottom;
-}
-
-/* Home page bottom noise */
-div#root > section:not(:has(div[class^="docLayout_"]))::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: auto;
-  height: 100%;
-  z-index: -100;
-  pointer-events: none;
-  background-image: url("../assets/noise.svg");
-  background-repeat: repeat;
-  background-size: cover;
-  mask-image: var(--ck-bg-radial-2), var(--ck-bg-radial-3);
-}
-
-.dark div#root > section:not(:has(div[class^="docLayout_"]))::before {
-  opacity: 0.2 !important;
-}
-
 /* Home page footer */
 footer {
   border: none !important;
@@ -982,8 +911,17 @@ div[class*="inline-link_"] {
   text-decoration: underline !important;
 }
 
+/* regular links in paragraphs have underline */
+p > [class*="link_"] {
+  border-bottom: 3px solid var(--rp-c-brand);
+}
+
+p > [class*="link_"]:hover {
+  border-bottom-width: 3px;
+}
+
 /* remove arrow from links */
-[class*="link_"]:after {
+[class*="link_"]:not([target="_blank"]):after {
   content: none !important;
 }
 

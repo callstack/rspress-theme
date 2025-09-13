@@ -1,6 +1,6 @@
 # Markdown & MDX
 
-Rspress supports not only Markdown but also [MDX](https://mdxjs.com/), a powerful way to develop content.
+Rspress supports not only Markdown but also [MDX](https://mdxjs.com/), a powerful way to develop content. You can link to a section, such as [Use Component](#use-component).
 
 ## Markdown
 

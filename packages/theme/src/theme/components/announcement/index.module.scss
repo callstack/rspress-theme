@@ -6,6 +6,8 @@
   position: relative;
   background-color: #8232ff;
   height: 32px;
+  // prevent Safari top bar color change
+  margin-top: 1px;
 }
 
 .link {
