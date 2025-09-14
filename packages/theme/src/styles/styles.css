@@ -778,6 +778,7 @@ div#root > section > div.rp-relative {
   bottom: 0px !important;
 }
 
+/* only show bottom image on non-touch devices, because it looks bad the other way around */
 @media (any-pointer: fine) {
   div#root > section > div.rp-relative {
     padding-bottom: 200px !important;
@@ -847,6 +848,10 @@ div#root > section > div.rp-relative {
     background-repeat: no-repeat;
     background-size: contain;
     background-position: bottom;
+  }
+
+  .dark div#root > section:not(:has(div[class^="docLayout_"]))::after  {
+    background-image: url("../assets/footer-dark.png");
   }
 
   .dark div#root > section:not(:has(div[class^="docLayout_"]))::before {
