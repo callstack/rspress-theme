@@ -1002,12 +1002,12 @@ div[class*="inline-link_"] {
 }
 
 /* regular links in paragraphs have underline */
-p > [class*="link_"] {
+.dark p > [class*="link_"] {
   border-bottom: 3px solid var(--rp-c-brand);
 }
 
-p > [class*="link_"]:hover {
-  border-bottom-width: 3px;
+p > [class*="link_"] {
+  border-bottom: 1px solid var(--rp-c-brand);
 }
 
 /* remove arrow from links */
