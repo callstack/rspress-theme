@@ -850,7 +850,7 @@ div#root > section > div.rp-relative {
     background-position: bottom;
   }
 
-  .dark div#root > section:not(:has(div[class^="docLayout_"]))::after  {
+  .dark div#root > section:not(:has(div[class^="docLayout_"]))::after {
     background-image: url("../assets/footer-dark.png");
   }
 
