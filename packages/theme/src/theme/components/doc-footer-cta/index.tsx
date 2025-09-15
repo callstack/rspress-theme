@@ -1,3 +1,4 @@
+import { usePageData } from '@rspress/core/runtime';
 import abstractAtom from '../../assets/abstract-atom.avif';
 import { Button } from '../button';
 import styles from './index.module.scss';
@@ -17,6 +18,13 @@ export function DocFooterCTA({
   headline = DOC_FOOTER_CTA_HEADLINE,
   href = DOC_FOOTER_CTA_LINK,
 }: DocFooterCTAProps) {
+  const pageData = usePageData();
+
+  // hide on overview pages
+  if (pageData.page.frontmatter.overview) {
+    return null;
+  }
+
   return (
     <div className={`rp-max-w-6xl ${styles.container}`}>
       <img
