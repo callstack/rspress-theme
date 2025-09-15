@@ -422,10 +422,13 @@ div[class^="collapseContainer_"]:hover {
   display: none !important;
 }
 
+div[class^="aside-container_"] {
+  padding-top: 0 !important;
+}
+
 /* Table of Contents */
 #aside-container {
   border-left: 1px solid var(--rp-c-divider-light) !important;
-  margin: -64px 0 0 0 !important;
   padding: 16px 0 16px 0 !important;
 }
 
