@@ -1,8 +1,19 @@
 .container {
-  width: calc(100% - 8 * 2px);
-  margin: 0 auto 150px auto;
-  padding: 4px;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 8px 0;
+  width: 100%;
 }
+
+@media (max-width: 768px) {
+  .container {
+    padding: 8px;
+  }
+}
+
 
 .row {
   display: flex;
@@ -25,22 +36,4 @@
   line-height: 1.5;
   text-align: center;
   margin: 0 8px;
-}
-
-@media (max-width: 1200px) {
-  .container {
-    margin: 0 auto 100px auto;
-  }
-}
-
-@media (max-width: 960px) {
-  .container {
-    margin: 0 auto 64px auto;
-  }
-}
-
-@media (max-width: 640px) {
-  .container {
-    margin: 0 auto 16px auto;
-  }
 }
