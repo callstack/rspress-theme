@@ -28,8 +28,7 @@ function HomeFooter(props: HomeFooterProps) {
   const SocialLinksComponent = props.SocialLinksComponent ?? SocialLinks;
 
   return (
-    // setting left: 0 in style because tailwind doesn't generate rp-left-0, weird.
-    <footer className="rp-absolute rp-right-0 rp-left-0 rp-bottom-0 rp-py-8 rp-px-2 rp-w-full rp-max-w-6xl rp-mx-auto" style={{left: 0}}>
+    <footer className={`rp-max-w-6xl ${styles.container}`}>
       <div className={styles.row}>
         <LinkComponent href={HOME_FOOTER_LINK}>
           <div className={styles.logo}>

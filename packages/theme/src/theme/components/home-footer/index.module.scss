@@ -1,3 +1,20 @@
+.container {
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  padding: 8px 0;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 8px;
+  }
+}
+
+
 .row {
   display: flex;
   flex-direction: row;
