@@ -422,10 +422,13 @@ div[class^="collapseContainer_"]:hover {
   display: none !important;
 }
 
+div[class^="aside-container_"] {
+  padding-top: 0 !important;
+}
+
 /* Table of Contents */
 #aside-container {
   border-left: 1px solid var(--rp-c-divider-light) !important;
-  margin: -64px 0 0 0 !important;
   padding: 16px 0 16px 0 !important;
 }
 
@@ -437,8 +440,15 @@ div[class^="collapseContainer_"]:hover {
   color: var(--rp-c-text-1) !important;
 }
 
-.aside-link:hover {
+/* use specific selector to avoid being stripped when compiling */
+li > a.aside-link:hover {
   background-color: var(--ck-foreground-primary) !important;
+}
+
+/* replace margin-left with padding-left for proper hover higlight */
+li > a.aside-link[style*="margin-left: 12px"] {
+  margin-left: 0 !important;
+  padding-left: 12px;
 }
 
 /* Content - active link */

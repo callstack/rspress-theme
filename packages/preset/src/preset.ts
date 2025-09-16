@@ -87,7 +87,7 @@ const createPreset = (config: PresetConfig): UserConfig => {
       enableContentAnimation: true,
       enableScrollToTop: false,
       footer: {
-        message: `Copyright © ${new Date().getFullYear()} Callstack Open Source`,
+        message: `Copyright © ${new Date().getFullYear()} Callstack`,
       },
       editLink: {
         docRepoBaseUrl: docs.editUrl,
