@@ -28,7 +28,7 @@ function HomeFooter(props: HomeFooterProps) {
   const SocialLinksComponent = props.SocialLinksComponent ?? SocialLinks;
 
   return (
-    <div className={`rp-max-w-6xl ${styles.container}`}>
+    <footer className={`rp-max-w-6xl ${styles.container}`}>
       <div className={styles.row}>
         <LinkComponent href={HOME_FOOTER_LINK}>
           <div className={styles.logo}>
@@ -41,7 +41,7 @@ function HomeFooter(props: HomeFooterProps) {
         </span>
         <SocialLinksComponent socialLinks={siteData.themeConfig.socialLinks} />
       </div>
-    </div>
+    </footer>
   );
 }
 
