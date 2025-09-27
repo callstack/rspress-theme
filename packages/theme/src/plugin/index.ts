@@ -181,10 +181,6 @@ function addThemeOverrides(themeConfig: UserConfig['themeConfig'] = {}) {
 }
 
 function normalizeOptions(options: PluginCallstackThemeOptions, docsTitle?: string) {
-  const replaceTitlePlaceholder = (url: string) => {
-    return docsTitle ? url.replace('$TITLE', encodeURIComponent(docsTitle)) : url;
-  };
-
   return {
     content: {
       docFooterCTAButtonText:
@@ -208,10 +204,10 @@ function normalizeOptions(options: PluginCallstackThemeOptions, docsTitle?: stri
         options.content?.outlineCTAHeadline ?? consts.OUTLINE_CTA_HEADLINE,
     },
     links: {
-      docFooterCTA: replaceTitlePlaceholder(options.links?.docFooterCTA ?? consts.DOC_FOOTER_CTA_LINK),
-      homeBanner: replaceTitlePlaceholder(options.links?.homeBanner ?? consts.HOME_BANNER_LINK),
+      docFooterCTA: options.links?.docFooterCTA ?? consts.DOC_FOOTER_CTA_LINK,
+      homeBanner: options.links?.homeBanner ?? consts.HOME_BANNER_LINK,
       homeFooter: options.links?.homeFooter ?? consts.HOME_FOOTER_LINK,
-      outlineCTA: replaceTitlePlaceholder(options.links?.outlineCTA ?? consts.OUTLINE_CTA_LINK),
+      outlineCTA: options.links?.outlineCTA ?? consts.OUTLINE_CTA_LINK,
     },
   };
 }
