@@ -14,6 +14,22 @@
   src: url("./fonts/FiraCode-Medium.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Alliance No. 2";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://assets.callstack.com/alliance-no-2-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Alliance No. 2";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://assets.callstack.com/alliance-no-2-medium.woff2") format("woff2");
+}
+
 :root {
   --ck-header-font-family: "Alliance No. 2", Arial, sans-serif;
   --ck-background-primary: #ffffff;
@@ -790,10 +806,6 @@ div#root > section > div.rp-relative {
 
 /* only show bottom image on non-touch devices, because it looks bad the other way around */
 @media (any-pointer: fine) {
-  div#root > section > div.rp-relative {
-    padding-bottom: 200px !important;
-  }
-
   /* Home page background grid only on top */
   div#root > section > div.rp-relative::before {
     content: "";
@@ -834,38 +846,37 @@ div#root > section > div.rp-relative {
     opacity: 0.1;
   }
 
-  /* Home page bottom name + gradients */
+  /* Home page bottom noise */
   div#root > section:not(:has(div[class^="docLayout_"])) {
-    position: relative; /* Ensure the parent is positioned */
+    background-image: url("../assets/footer.webp");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    position: relative;
+    padding-bottom: 12vw;
+  }
+
+  .dark div#root > section:not(:has(div[class^="docLayout_"])) {
+    background-image: url("../assets/footer-dark.png");
+  }
+
+  /* Home page bottom name + gradients */
+  div#root > section:not(:has(div[class^="docLayout_"]))::after {
+    content: "";
+    position: absolute; /* Ensure the parent is positioned */
+
+    aspect-ratio: 1440/286;
+    opacity: .3;
+    pointer-events: none;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    inset: auto 0% -2px;
+
     background-image: url("../assets/callstack.svg");
     background-repeat: no-repeat, repeat, no-repeat, no-repeat;
     background-size: min(90rem, 95%) auto, auto, contain, contain;
     background-position: center calc(100% + 12px), bottom, bottom, bottom;
-  }
-
-  /* Home page bottom noise */
-  div#root > section:not(:has(div[class^="docLayout_"]))::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: auto;
-    height: 100%;
-    z-index: -100;
-    pointer-events: none;
-    background-image: url("../assets/footer.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: bottom;
-  }
-
-  .dark div#root > section:not(:has(div[class^="docLayout_"]))::after {
-    background-image: url("../assets/footer-dark.png");
-  }
-
-  .dark div#root > section:not(:has(div[class^="docLayout_"]))::before {
-    opacity: 0.2 !important;
   }
 
   footer {

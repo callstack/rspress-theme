@@ -16,7 +16,7 @@ bun add @callstack/rspress-theme
 
 ### Adding the `Alliance No. 2 Font`
 
-The theme uses **Alliance No. 2** as the header font family. This is a licensed font that you need to add to your project manually. See [Adding the Alliance No. 2 Font](#adding-the-alliance-no-2-font) for more details.
+The theme uses **Alliance No. 2** as the header font family. This is a licensed font that can only be used with Callstack projects.
 
 Alternatively, you can point to a different header font - see [Replacing the Alliance No. 2 Font](#replacing-the-alliance-no-2-font) for more details.
 
@@ -122,27 +122,17 @@ import { Announcement } from '@callstack/rspress-theme';
 ;
 ```
 
-### Adding `Alliance No. 2 Font`
+### Replacing `Alliance No. 2 Font`
+
+To use a different header font, you can modify the `var(--ck-header-font-family)` CSS variable. You can add this CSS to your `styles.css` file or any other global stylesheet that's loaded by your Rspress configuration:
 
 1. **Create a `styles.css` file** in `theme` directory (or create the theme directory if needed).
 
-2. **Add the font declarations** to your `styles.css` file:
+2. **Define CSS Variable** in your `styles.css` file:
 
 ```css
-@font-face {
-  font-family: 'Alliance No. 2';
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: url('./fonts/alliance-no-2-regular.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'Alliance No. 2';
-  font-style: normal;
-  font-weight: 500;
-  font-display: block;
-  src: url('./fonts/alliance-no-2-medium.ttf') format('truetype');
+:root {
+  --ck-header-font-family: 'Your Custom Font', sans-serif;
 }
 ```
 
@@ -157,14 +147,4 @@ export default defineConfig({
   plugins: [pluginCallstackTheme()],
   globalStyles: path.join(__dirname, './theme/styles.css'),
 });
-```
-
-### Replacing `Alliance No. 2 Font`
-
-To use a different header font, you can modify the `var(--ck-header-font-family)` CSS variable. You can add this CSS to your `styles.css` file or any other global stylesheet that's loaded by your Rspress configuration:
-
-```css
-:root {
-  --ck-header-font-family: 'Your Custom Font', sans-serif;
-}
 ```

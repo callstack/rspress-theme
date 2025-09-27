@@ -38,7 +38,7 @@ export function DocFooterCTA({
           <h1 className={styles.headline}>{headline}</h1>
         </div>
         <div className={styles.buttonContainer}>
-          <Button dark external href={href}>
+          <Button dark external href={href} location={"FOOTER_CTA"}>
             {buttonText}
           </Button>
         </div>
