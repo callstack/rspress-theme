@@ -180,7 +180,7 @@ function addThemeOverrides(themeConfig: UserConfig['themeConfig'] = {}) {
   return themeConfig;
 }
 
-function normalizeOptions(options: PluginCallstackThemeOptions, docsTitle?: string) {
+function normalizeOptions(options: PluginCallstackThemeOptions) {
   return {
     content: {
       docFooterCTAButtonText:
