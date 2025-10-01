@@ -133,6 +133,8 @@ function getBuilderConfig(options: PluginCallstackThemeOptions): BuilderConfig {
           options.content?.outlineCTAHeadline
         ),
         OUTLINE_CTA_LINK: JSON.stringify(options.links?.outlineCTA),
+        UTM_CAMPAIGN: JSON.stringify(consts.UTM_CAMPAIGN),
+        UTM_MEDIUM: JSON.stringify(consts.UTM_MEDIUM),
       },
     },
     resolve: {

@@ -7,8 +7,7 @@
   align-items: flex-start;
   position: relative;
   overflow: hidden;
-  padding-top: 12vh;
-  padding-bottom: 6vh;
+  padding: calc(var(--rp-content-padding-y) * 1.5) 0 var(--rp-content-padding-y) 0;
 }
 
 .heroMain {
@@ -39,6 +38,7 @@
   justify-content: flex-end;
   align-items: flex-end;
   margin: 0 32px 0 60%;
+  gap: 32px;
 }
 
 .heroTagline {
@@ -58,7 +58,6 @@
   align-self: flex-start;
   justify-content: flex-start;
   gap: 16px;
-  margin: 32px 0;
 }
 
 @media (max-width: 960px) {
