@@ -14,7 +14,7 @@ pnpm add @callstack/rspress-theme
 bun add @callstack/rspress-theme
 ```
 
-> **Important**: Since this theme is based on Rspress beta, you must match the exact beta version of `@rspress/core` and `@rspress/shared`. The theme is tightly coupled to the beta API and may break with version mismatches. Once Rspress 2 is stable, this requirement will likely become more flexible.
+> **Important**: Since this theme is based on Rspress beta, you must match the exact beta version of `@rspress/core` declared as a peer dependency in the theme's `package.json` (currently `^2.0.0-beta.34`). The theme is tightly coupled to the beta API and may break with version mismatches. Once Rspress 2 is stable, this requirement will likely become more flexible.
 
 ### Adding the `Alliance No. 2 Font`
 
