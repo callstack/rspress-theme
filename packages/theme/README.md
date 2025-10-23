@@ -18,9 +18,9 @@ bun add @callstack/rspress-theme
 
 ### Adding the `Alliance No. 2 Font`
 
-The theme uses **Alliance No. 2** as the header font family. This is a licensed font that can only be used with Callstack projects.
+The theme uses **Alliance No. 2** as the header font family. This is a licensed font that can only be used with Callstack projects. This font is already configured and included with the theme—no additional setup is required.
 
-Alternatively, you can point to a different header font - see [Replacing the Alliance No. 2 Font](#replacing-the-alliance-no-2-font) for more details.
+If you want to use a different header font instead, see [Replacing the Alliance No. 2 Font](#replacing-the-alliance-no-2-font) for instructions.
 
 ## Usage
 
