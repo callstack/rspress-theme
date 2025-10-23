@@ -42,19 +42,19 @@
   },
   "dependencies": {
     "@callstack/rspress-theme": "workspace:*",
-    "@rspress/plugin-llms": "2.0.0-beta.32",
-    "@rspress/plugin-sitemap": "2.0.0-beta.32",
+    "@rspress/plugin-llms": "2.0.0-beta.34",
+    "@rspress/plugin-sitemap": "2.0.0-beta.34",
     "@vercel/analytics": "^1.5.0",
     "rsbuild-plugin-open-graph": "^1.0.2",
     "zod": "^3.23.8"
   },
   "peerDependencies": {
-    "@rspress/core": "2.0.0-beta.32"
+    "@rspress/core": "2.0.0-beta.34"
   },
   "devDependencies": {
     "@microsoft/api-extractor": "^7.52.8",
     "@rslib/core": "^0.10.5",
-    "@rspress/core": "2.0.0-beta.32",
+    "@rspress/core": "2.0.0-beta.34",
     "@types/node": "^22",
     "typescript": "^5.8.3"
   }
