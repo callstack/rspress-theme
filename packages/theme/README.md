@@ -14,11 +14,13 @@ pnpm add @callstack/rspress-theme
 bun add @callstack/rspress-theme
 ```
 
+> **Important**: Since this theme is based on Rspress beta, you must match the exact beta version of `@rspress/core` declared as a peer dependency in the theme's `package.json` (currently `^2.0.0-beta.34`). The theme is tightly coupled to the beta API and may break with version mismatches. Once Rspress 2 is stable, this requirement will likely become more flexible.
+
 ### Adding the `Alliance No. 2 Font`
 
-The theme uses **Alliance No. 2** as the header font family. This is a licensed font that can only be used with Callstack projects.
+The theme uses **Alliance No. 2** as the header font family. This is a licensed font that can only be used with Callstack projects. This font is already configured and included with the theme—no additional setup is required.
 
-Alternatively, you can point to a different header font - see [Replacing the Alliance No. 2 Font](#replacing-the-alliance-no-2-font) for more details.
+If you want to use a different header font instead, see [Replacing the Alliance No. 2 Font](#replacing-the-alliance-no-2-font) for instructions.
 
 ## Usage
 
