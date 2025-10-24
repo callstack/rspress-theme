@@ -19,7 +19,8 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("https://assets.callstack.com/alliance-no-2-regular.woff2") format("woff2");
+  src: url("https://assets.callstack.com/alliance-no-2-regular.woff2")
+    format("woff2");
 }
 
 @font-face {
@@ -27,7 +28,8 @@
   font-style: normal;
   font-weight: 500;
   font-display: swap;
-  src: url("https://assets.callstack.com/alliance-no-2-medium.woff2") format("woff2");
+  src: url("https://assets.callstack.com/alliance-no-2-medium.woff2")
+    format("woff2");
 }
 
 :root {
@@ -865,8 +867,8 @@ div#root > section > div.rp-relative {
     content: "";
     position: absolute; /* Ensure the parent is positioned */
 
-    aspect-ratio: 1440/286;
-    opacity: .3;
+    aspect-ratio: 1440 / 286;
+    opacity: 0.3;
     pointer-events: none;
     object-fit: contain;
     width: 100%;

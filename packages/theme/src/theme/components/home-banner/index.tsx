@@ -38,7 +38,7 @@ export function HomeBanner({
           <div className={styles.description}>
             <p className={styles.descriptionText}>{description}</p>
             <div>
-              <Button dark external href={href} location="HOME_BANNER">
+              <Button dark external href={href}>
                 {buttonText}
               </Button>
             </div>

@@ -10,7 +10,8 @@ export const OVERVIEW_FILTER_NAME_TEXT = '';
 export const OUTLINE_CTA_BUTTON_TEXT = "Let's talk";
 export const OUTLINE_CTA_DESCRIPTION =
   'We support teams building scalable apps with React and React Native.';
-export const OUTLINE_CTA_HEADLINE = "Need help with React or React Native projects?";
+export const OUTLINE_CTA_HEADLINE =
+  'Need help with React or React Native projects?';
 export const OUTLINE_CTA_LINK = 'https://www.callstack.com/contact';
 
 export const DOC_FOOTER_CTA_BUTTON_TEXT = "Let's talk";
@@ -26,6 +27,3 @@ export const HOME_BANNER_BUTTON_TEXT = "Let's talk";
 export const HOME_BANNER_LINK = 'https://www.callstack.com/contact';
 
 export const HOME_FOOTER_LINK = 'https://callstack.com';
-
-export const UTM_CAMPAIGN = 'open_source';
-export const UTM_MEDIUM = 'documentation';

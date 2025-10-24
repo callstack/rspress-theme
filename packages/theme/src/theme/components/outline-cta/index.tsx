@@ -25,7 +25,7 @@ export function OutlineCTA({
         <div className={styles.headline}>{headline}</div>
         <div className={styles.description}>{description}</div>
       </div>
-      <Button external href={href} location="OUTLINE_CTA">
+      <Button external href={href}>
         {buttonText}
       </Button>
     </div>
