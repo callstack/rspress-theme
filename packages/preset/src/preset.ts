@@ -10,6 +10,9 @@ import { pluginSitemap } from '@rspress/plugin-sitemap';
 import { pluginOpenGraph } from 'rsbuild-plugin-open-graph';
 import { type PresetConfig, validatePresetOptions } from './options';
 
+const CALLSTACK_BASE_URL = 'https://www.callstack.com';
+const CALLSTACK_CONTACT_URL = 'https://www.callstack.com/contact';
+
 type SupportedSocialLinks = Exclude<
   Parameters<typeof SocialLinksComponent>[0]['socialLinks'][number]['icon'],
   { svg: string }
@@ -39,8 +42,21 @@ function extractXHandle(profileUrl: string): string {
   }
 }
 
+function addUTMParameters(
+  url: string,
+  location: string,
+  siteTitle: string
+): string {
+  const urlObj = new URL(url);
+  urlObj.searchParams.set('utm_campaign', 'open_source');
+  urlObj.searchParams.set('utm_source', siteTitle);
+  urlObj.searchParams.set('utm_medium', 'documentation');
+  urlObj.searchParams.set('utm_content', location);
+  return urlObj.toString();
+}
+
 const createPreset = (config: PresetConfig): UserConfig => {
-  const { context, docs, theme, vercelAnalytics } = config;
+  const { context, docs, vercelAnalytics } = config;
   const rootDir = path.join(context, docs.rootDir ?? 'docs');
 
   const enableVercel =
@@ -49,6 +65,33 @@ const createPreset = (config: PresetConfig): UserConfig => {
       : Boolean(vercelAnalytics);
   const vercelOptions =
     typeof vercelAnalytics === 'object' ? vercelAnalytics : {};
+
+  const defaultLinks = {
+    docFooterCTA: addUTMParameters(
+      CALLSTACK_CONTACT_URL,
+      'FOOTER_CTA',
+      docs.title
+    ),
+    homeBanner: addUTMParameters(
+      CALLSTACK_CONTACT_URL,
+      'HOME_BANNER',
+      docs.title
+    ),
+    homeFooter: CALLSTACK_BASE_URL,
+    outlineCTA: addUTMParameters(
+      CALLSTACK_CONTACT_URL,
+      'OUTLINE_CTA',
+      docs.title
+    ),
+  };
+
+  const theme = {
+    ...config.theme,
+    links: {
+      ...defaultLinks,
+      ...config.theme?.links,
+    },
+  };
 
   return defineConfig({
     root: rootDir,

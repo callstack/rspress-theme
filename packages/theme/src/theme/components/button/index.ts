@@ -1,4 +1,3 @@
-import { useSite } from '@rspress/core/runtime';
 import { Link } from '@theme';
 import * as React from 'react';
 import IconArrowBarRight from '../../assets/arrow-bar-right.svg?react';
@@ -13,11 +12,7 @@ interface ButtonProps {
   className?: string;
   children?: React.ReactNode;
   dark?: boolean;
-  location?: string;
 }
-
-declare const UTM_CAMPAIGN: string;
-declare const UTM_MEDIUM: string;
 
 export function Button(props: ButtonProps): React.ReactNode {
   const {
@@ -27,26 +22,8 @@ export function Button(props: ButtonProps): React.ReactNode {
     external = false,
     className = '',
     children,
-    location,
   } = props;
   let type: string | typeof Link | null = null;
-  let finalHref = href;
-
-  const site = useSite();
-
-  // Handle UTM parameters for callstack.com external links
-  if (external && href.includes('callstack.com')) {
-    if (!location) {
-      console.warn('location prop is missing for external callstack.com link');
-    } else {
-      const url = new URL(href);
-      url.searchParams.set('utm_campaign', UTM_CAMPAIGN);
-      url.searchParams.set('utm_source', site.site.title);
-      url.searchParams.set('utm_medium', UTM_MEDIUM);
-      url.searchParams.set('utm_content', location);
-      finalHref = url.toString();
-    }
-  }
 
   if (props.type === 'button') {
     type = 'button';
@@ -61,8 +38,8 @@ export function Button(props: ButtonProps): React.ReactNode {
       type,
       {
         key: 'button-1',
+        href,
         className: `dark:rp-hidden rp-block ${styles.button} ${styles[theme]} ${className}`,
-        href: finalHref,
       },
       [
         children,
@@ -81,8 +58,8 @@ export function Button(props: ButtonProps): React.ReactNode {
       type,
       {
         key: 'button-2',
+        href,
         className: `rp-hidden dark:rp-block ${styles.button} ${styles[theme]} ${className}`,
-        href: finalHref,
       },
       [
         children,

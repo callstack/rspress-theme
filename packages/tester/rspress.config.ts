@@ -25,11 +25,6 @@ export default withCallstackPreset(
         outlineCTADescription: 'Outline CTA Description',
         outlineCTAHeadline: 'Outline CTA Headline',
       },
-      links: {
-        homeBanner: 'https://callstack.com?source=banner',
-        homeFooter: 'https://callstack.com?source=footer',
-        outlineCTA: 'https://callstack.com?source=outline-cta',
-      },
     },
   },
   {
