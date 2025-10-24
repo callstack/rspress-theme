@@ -1,9 +1,9 @@
+import { useSite } from '@rspress/core/runtime';
 import { Link } from '@theme';
 import * as React from 'react';
 import IconArrowBarRight from '../../assets/arrow-bar-right.svg?react';
 import IconCorner from '../../assets/corner-down-right.svg?react';
 import styles from './index.module.scss';
-import { useSite } from '@rspress/core/runtime';
 
 interface ButtonProps {
   type?: string;
