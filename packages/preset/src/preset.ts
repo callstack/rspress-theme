@@ -55,6 +55,11 @@ function addUTMParameters(
   return urlObj.toString();
 }
 
+function getGlobalStyles(context: string): string | undefined {
+  const stylesPath = path.join(context, 'theme/styles.css');
+  return fs.existsSync(stylesPath) ? stylesPath : undefined;
+}
+
 const createPreset = (config: PresetConfig): UserConfig => {
   const { context, docs, vercelAnalytics } = config;
   const rootDir = path.join(context, docs.rootDir ?? 'docs');
@@ -98,7 +103,7 @@ const createPreset = (config: PresetConfig): UserConfig => {
     title: docs.title,
     description: docs.description,
     icon: docs.icon,
-    globalStyles: path.join(context, 'theme/styles.css'),
+    globalStyles: getGlobalStyles(context),
     globalUIComponents: enableVercel
       ? [
           [
