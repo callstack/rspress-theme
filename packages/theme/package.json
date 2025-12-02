@@ -46,7 +46,8 @@
   },
   "peerDependencies": {
     "@rspress/core": "^2.0.0-rc.1",
-    "react": "^19.0.0"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@microsoft/api-extractor": "^7.52.8",
@@ -57,8 +58,10 @@
     "@rslib/core": "^0.10.5",
     "@rspress/core": "^2.0.0-rc.1",
     "@types/node": "^22",
-    "@types/react": "^19",
-    "react": "^19",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "typescript": "^5.8.3"
   }
 }
