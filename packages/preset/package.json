@@ -56,6 +56,6 @@
     "@rslib/core": "^0.10.5",
     "@rspress/core": "2.0.0-rc.1",
     "@types/node": "^22",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.3"
   }
 }
