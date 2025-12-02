@@ -156,26 +156,42 @@ function getBuilderConfig(options: PluginCallstackThemeOptions): BuilderConfig {
   };
 }
 
-function addThemeOverrides(themeConfig: UserConfig['themeConfig'] = {}) {
-  if (!themeConfig.overview) {
-    themeConfig.overview = { filterNameText: consts.OVERVIEW_FILTER_NAME_TEXT };
-  } else if (!themeConfig.overview.filterNameText) {
-    themeConfig.overview.filterNameText = consts.OVERVIEW_FILTER_NAME_TEXT;
+function getI18nSourceOverrides(
+  existingI18nSource: UserConfig['i18nSource'] = {}
+): UserConfig['i18nSource'] {
+  const i18nSource: UserConfig['i18nSource'] = {
+    ...existingI18nSource,
+  };
+
+  if (!i18nSource['overview.filterNameText']) {
+    i18nSource['overview.filterNameText'] = {
+      en: consts.OVERVIEW_FILTER_NAME_TEXT,
+      zh: consts.OVERVIEW_FILTER_NAME_TEXT,
+    };
   }
 
-  if (!themeConfig.outlineTitle) {
-    themeConfig.outlineTitle = consts.OUTLINE_TITLE;
+  if (!i18nSource.outlineTitle) {
+    i18nSource.outlineTitle = {
+      en: consts.OUTLINE_TITLE,
+      zh: consts.OUTLINE_TITLE,
+    };
   }
 
-  if (!themeConfig.searchNoResultsText) {
-    themeConfig.searchNoResultsText = consts.SEARCH_NO_RESULTS_TEXT;
+  if (!i18nSource.searchNoResultsText) {
+    i18nSource.searchNoResultsText = {
+      en: consts.SEARCH_NO_RESULTS_TEXT,
+      zh: consts.SEARCH_NO_RESULTS_TEXT,
+    };
   }
 
-  if (!themeConfig.searchSuggestedQueryText) {
-    themeConfig.searchSuggestedQueryText = consts.SEARCH_SUGGESTED_QUERY_TEXT;
+  if (!i18nSource.searchSuggestedQueryText) {
+    i18nSource.searchSuggestedQueryText = {
+      en: consts.SEARCH_SUGGESTED_QUERY_TEXT,
+      zh: consts.SEARCH_SUGGESTED_QUERY_TEXT,
+    };
   }
 
-  return themeConfig;
+  return i18nSource;
 }
 
 function normalizeOptions(options: PluginCallstackThemeOptions) {
@@ -218,9 +234,8 @@ export function pluginCallstackTheme(
     name: 'plugin-callstack-theme',
     // replace default theme & theme assets
     builderConfig: getBuilderConfig(normalizedOptions),
-    // add ck theme defaults if not present
     config: (config) => {
-      config.themeConfig = addThemeOverrides(config.themeConfig);
+      config.i18nSource = getI18nSourceOverrides(config.i18nSource);
       return config;
     },
     // inject style overrides
