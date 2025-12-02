@@ -27,3 +27,5 @@ export const HOME_BANNER_BUTTON_TEXT = "Let's talk";
 export const HOME_BANNER_LINK = 'https://www.callstack.com/contact';
 
 export const HOME_FOOTER_LINK = 'https://callstack.com';
+
+export const EDIT_LINK_TEXT = 'Edit this page on GitHub';

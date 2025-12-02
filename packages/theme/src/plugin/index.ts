@@ -191,6 +191,13 @@ function getI18nSourceOverrides(
     };
   }
 
+  if (!i18nSource.editLinkText) {
+    i18nSource.editLinkText = {
+      en: consts.EDIT_LINK_TEXT,
+      zh: consts.EDIT_LINK_TEXT,
+    };
+  }
+
   return i18nSource;
 }
 
