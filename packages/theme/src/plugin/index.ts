@@ -50,7 +50,7 @@ function getThemeAliases(
   const ckThemeExportsPath = path.join(dirname, 'theme');
 
   const { resolve } = createRequire(import.meta.url);
-  const rspressThemeDefaultPath = resolve('@rspress/theme-default', {
+  const rspressCoreThemePath = resolve('@rspress/core/theme', {
     paths: [resolve('@rspress/core/package.json')],
   });
 
@@ -58,7 +58,7 @@ function getThemeAliases(
 
   // Handle @theme alias
   if (Array.isArray(existingThemeAlias)) {
-    const index = existingThemeAlias.indexOf(rspressThemeDefaultPath);
+    const index = existingThemeAlias.indexOf(rspressCoreThemePath);
     if (index !== -1) {
       aliases['@theme'] = existingThemeAlias.filter(excludeFalse).slice();
       aliases['@theme'].splice(index, 0, ckThemeExportsPath);
@@ -74,7 +74,7 @@ function getThemeAliases(
   }
 
   // Add alias for @default-theme to avoid circular dependency
-  aliases['@default-theme'] = rspressThemeDefaultPath;
+  aliases['@default-theme'] = rspressCoreThemePath;
   // Alias rspress/theme to our theme to keep the theme override pattern from Rspress docs
   aliases['@rspress/core/theme'] = ckThemeExportsPath;
 
