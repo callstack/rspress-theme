@@ -2,9 +2,10 @@ import {
   isExternalUrl,
   normalizeHrefInRuntime,
   normalizeImagePath,
+  useFrontmatter,
   withBase,
 } from '@rspress/core/runtime';
-import type { FrontMatterMeta, Hero } from '../../types';
+import type { Hero } from '../../types';
 import { renderHtmlOrText } from '../../utils';
 import { Button } from '../button';
 import styles from './index.module.scss';
@@ -18,17 +19,13 @@ const DEFAULT_HERO = {
 } satisfies Hero;
 
 interface HomeHeroProps {
-  frontmatter: FrontMatterMeta;
   routePath: string;
   beforeHeroActions?: React.ReactNode;
   afterHeroActions?: React.ReactNode;
 }
 
-function HomeHero({
-  beforeHeroActions,
-  afterHeroActions,
-  frontmatter,
-}: HomeHeroProps) {
+function HomeHero({ beforeHeroActions, afterHeroActions }: HomeHeroProps) {
+  const { frontmatter } = useFrontmatter();
   const hero = frontmatter.hero ?? DEFAULT_HERO;
   const imageSrc =
     typeof hero.image?.src === 'string'
@@ -67,7 +64,7 @@ function HomeHero({
         />
         {beforeHeroActions}
         <div className={styles.heroActions}>
-          {hero.actions.map((action) => {
+          {hero.actions?.map((action) => {
             const link = isExternalUrl(action.link)
               ? action.link
               : normalizeHrefInRuntime(withBase(action.link));
