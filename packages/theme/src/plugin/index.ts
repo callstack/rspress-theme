@@ -1,4 +1,3 @@
-import fs from 'node:fs';
 import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -31,17 +30,6 @@ const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 function excludeFalse<T>(value: T): value is Exclude<T, false> {
   return value !== false;
-}
-
-function getThemeAssets() {
-  const assetsDirPath = path.join(dirname, '../assets');
-  const contents = fs.readdirSync(assetsDirPath);
-  return contents
-    .map(path.parse)
-    .map(({ base, name }) => [
-      `@theme-assets/${name}`,
-      path.join(assetsDirPath, base),
-    ]);
 }
 
 function getThemeAliases(
@@ -77,26 +65,6 @@ function getThemeAliases(
   aliases['@default-theme'] = rspressCoreThemePath;
   // Alias rspress/theme to our theme to keep the theme override pattern from Rspress docs
   aliases['@rspress/core/theme'] = ckThemeExportsPath;
-
-  return aliases;
-}
-
-function getThemeAssetAlias(
-  existingAssetAlias: AliasEntry
-): Record<string, string | string[]> {
-  const assetOverrides = getThemeAssets();
-  const aliases: Record<string, string | string[]> = {};
-
-  for (const [assetAlias, assetPath] of assetOverrides) {
-    if (Array.isArray(existingAssetAlias)) {
-      aliases[assetAlias] = existingAssetAlias.filter(excludeFalse);
-      aliases[assetAlias].push(assetPath);
-    } else if (existingAssetAlias) {
-      aliases[assetAlias] = [existingAssetAlias, assetPath];
-    } else {
-      aliases[assetAlias] = assetPath;
-    }
-  }
 
   return aliases;
 }
@@ -137,16 +105,6 @@ function getBuilderConfig(options: PluginCallstackThemeOptions): BuilderConfig {
     },
     resolve: {
       alias: (alias) => {
-        // add '@theme-assets' aliases but keep the custom ones from user
-        const assetAliases = getThemeAssetAlias(alias['@theme-assets']);
-        Object.assign(alias, assetAliases);
-
-        // remove & add existing @theme-assets alias to keep specific aliases on top
-        const themeAssetsAlias = alias['@theme-assets'];
-        // biome-ignore lint/performance/noDelete: change property order
-        delete alias['@theme-assets'];
-        Object.assign(alias, { '@theme-assets': themeAssetsAlias });
-
         // add '@theme', '@default-theme' & 'rspress/theme' aliases
         // @ts-ignore
         const themeAliases = getThemeAliases(alias['@theme']);
