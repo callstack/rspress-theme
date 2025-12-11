@@ -251,104 +251,54 @@ h6 {
 }
 
 /* Nav header */
-.rspress-nav {
+.rp-nav {
   background-color: var(--rp-c-bg) !important;
   border-bottom: 1px solid var(--rp-c-divider-light) !important;
   color: var(--rp-c-text-1) !important;
 }
 
-.rspress-nav-screen {
+.rp-nav-screen {
   z-index: -1 !important;
 }
 
-div[class^="navTitleMask_"] {
-  border-bottom: 1px solid var(--rp-c-divider-light) !important;
-}
-
 /* Scrollbar (nav & search) */
-.rspress-scrollbar {
+.rp-scrollbar {
   scrollbar-gutter: auto !important;
   scrollbar-width: thin !important;
   overflow: scroll !important;
 }
 
 /* Sidebar right border */
-.rspress-sidebar {
+.rp-doc-layout__sidebar {
   border-right: 1px solid var(--rp-c-divider-light) !important;
 }
 
 /* Nav items */
-div[class^="menuItem_"],
-div[class^="menuItem_"] > span,
-div[class^="menuItemActive_"],
-div[class^="menuItemActive_"] > span {
+.rp-sidebar-item,
+.rp-sidebar-item--active {
   color: var(--rp-c-text-2);
   font-size: 14px !important;
   font-weight: 400;
-  margin-left: 0 !important;
-  padding-top: 2px;
-  padding-bottom: 2px;
   line-height: 1.5;
   border-radius: 0 !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
 }
 
-div[class^="menuItem_"]:hover {
+.rp-sidebar-item:hover {
   background-color: var(--ck-foreground-primary) !important;
 }
 
-div[class^="menuItem_"],
-div[class^="menuItemActive_"] {
-  padding-left: 24px;
+.rp-sidebar-item--active {
+  color: var(--rp-c-brand) !important;
 }
 
-div[class^="menuItemActive_"],
-div[class^="menuItemActive_"] > span {
-  color: var(--rp-c-brand);
-}
-
-div[class^="menuItemActive_"]:hover {
-  background-color: var(--ck-foreground-primary) !important;
-}
-
-/* Spacing between menu items */
-div[class*="sidebarContent_"] > nav {
-  display: grid;
-  gap: 8px;
-  padding-top: 16px;
-}
-
-/* Spacing between sections */
-.rspress-sidebar-section + .rspress-sidebar-section {
-  margin-top: 16px !important;
-}
-
-.rspress-sidebar-item > a > div {
-  margin-top: 0 !important;
-}
-
-.rspress-sidebar-item span {
-  font-size: 14px !important;
-}
-
-.rspress-sidebar-section {
-  margin-top: 0 !important;
-  margin-bottom: 0px !important;
-  margin-left: 0 !important;
-  padding-left: 0 !important;
-}
-
-.rspress-sidebar-section h2 {
-  margin-left: 0 !important;
-  padding-left: 24px !important;
-}
-
-.rspress-sidebar-section-header {
-  padding-top: 2px !important;
-  padding-bottom: 2px !important;
+.rp-sidebar-item--active:hover {
+  background-color: transparent !important;
 }
 
 /* Section header text */
-.rspress-sidebar-section-header > span {
+.rp-sidebar-section-header__left > span {
   color: var(--rp-c-text-3) !important;
   font-family: var(--rp-font-family-mono) !important;
   font-size: 12px !important;
@@ -357,7 +307,7 @@ div[class*="sidebarContent_"] > nav {
   text-transform: uppercase;
 }
 
-.rspress-sidebar-section-header > span::before {
+.rp-sidebar-section-header__left > span::before {
   content: "//";
   color: var(--rp-c-brand) !important;
   font-size: 12px !important;
@@ -365,13 +315,6 @@ div[class*="sidebarContent_"] > nav {
   line-height: 1.5 !important;
   text-transform: uppercase;
   margin-right: 6px;
-}
-
-/* Sidebar group */
-.rspress-sidebar-group {
-  margin-left: 0 !important;
-  padding-left: 0 !important;
-  border: none !important;
 }
 
 /* Group collapse icon hover */
@@ -424,19 +367,13 @@ div[class^="collapseContainer_"]:hover {
   right: 0;
 }
 
-/* Remove default vertical line */
-.rspress-sidebar-group::before {
-  content: none !important;
-}
-
 /* Solid border after sections */
-.rspress-sidebar-item + div.rp-border-solid {
-  display: none !important;
-  margin-left: 0 !important;
+.rp-sidebar-divider {
+  border-color: transparent !important;
 }
 
 /* Remove dashed border after sections */
-.rp-border-dashed {
+.rp-sidebar-divider--dashed {
   display: none !important;
 }
 
@@ -779,11 +716,6 @@ div[class^="tab_"][class*="selected"]::after {
   left: 10%;
 }
 
-/* Divider between code blocks and tabs */
-div[class^="container_"] div[class^="language"] > .rspress-code-title {
-  border-top: 1px solid var(--rp-c-divider);
-}
-
 /* Code block actions */
 svg[class^="icon-wrap_"] > path,
 svg[class^="icon-wrapped_"] > path,
@@ -887,7 +819,7 @@ div#root > section > div.rp-relative {
 }
 
 /* container */
-.rspress-directive {
+.rp-callout {
   background: none !important;
   border: 1px dashed transparent !important;
   border-left: 2px solid !important;
@@ -901,7 +833,7 @@ div#root > section > div.rp-relative {
 }
 
 /* container title */
-.rspress-directive-title {
+.rp-callout__title {
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
@@ -912,85 +844,94 @@ div#root > section > div.rp-relative {
 }
 
 /* container icon */
-.rspress-directive .rspress-directive-title::before {
+.rp-callout .rp-callout__title::before {
   display: inline-block;
+  position: relative;
+  top: 0;
+  left: 0;
   width: 24px;
   height: 24px;
   margin-right: 16px;
 }
 
 /* container content */
-.rspress-directive-content > * {
+.rp-callout__content > * {
   font-size: 16px !important;
   margin-left: 40px !important;
 }
 
 /* container content links */
-.rspress-directive .rspress-directive-content a {
+.rp-callout .rp-callout__content a {
   font-weight: 400 !important;
 }
 
 /* directive content width to avoid overflowing the container */
-.rspress-directive-content {
+.rp-callout__content {
   width: 100%;
 }
 
 /* container custom border left colors */
-.info {
+.rp-callout--info {
   border-left-color: var(--rp-container-info-border) !important;
 }
-.tip {
+.rp-callout--tip {
   border-left-color: var(--rp-container-tip-border) !important;
 }
-.warning {
+.rp-callout--warning {
   border-left-color: var(--rp-container-warning-border) !important;
 }
-.danger {
+.rp-callout--danger {
   border-left-color: var(--rp-container-danger-border) !important;
 }
-.details {
+.rp-callout--details {
   border-left-color: var(--rp-container-details-border) !important;
 }
-.note {
+.rp-callout--note {
   border-left-color: var(--rp-container-note-border) !important;
 }
 
 /* container custom icon */
-.rspress-directive.tip .rspress-directive-title::before {
+.rp-callout--tip .rp-callout__title::before {
   content: "";
   background: url("../assets/check-double.svg") no-repeat center center /
     contain;
+  background-color: transparent !important;
 }
-.rspress-directive.info .rspress-directive-title::before {
+.rp-callout--info .rp-callout__title::before {
   content: "";
   background: url("../assets/info-box.svg") no-repeat center center / contain;
+  background-color: transparent !important;
 }
-.rspress-directive.warning .rspress-directive-title::before {
+.rp-callout--warning .rp-callout__title::before {
   content: "";
   background: url("../assets/warning-box.svg") no-repeat center center / contain;
+  background-color: transparent !important;
 }
-.rspress-directive.danger .rspress-directive-title::before {
+.rp-callout--danger .rp-callout__title::before {
   content: "";
   background: url("../assets/alert.svg") no-repeat center center / contain;
+  background-color: transparent !important;
 }
-.rspress-directive.details .rspress-directive-title::before {
+.rp-callout--details .rp-callout__title::before {
   content: "";
   background: url("../assets/details.svg") no-repeat center center / contain;
+  background-color: transparent !important;
 }
-.rspress-directive.note .rspress-directive-title::before {
+.rp-callout--note .rp-callout__title::before {
   content: "";
   background: url("../assets/notes.svg") no-repeat center center / contain;
+  background-color: transparent !important;
 }
 
 details.details {
   position: relative;
 }
 
-summary.rspress-directive-title {
+summary.rp-callout__title {
   width: 100%;
 }
 
-details[open] > summary.rspress-directive-title::after {
+details[open] > summary.rp-callout__title::after {
   content: "";
   position: absolute;
   left: 95%;
@@ -999,7 +940,7 @@ details[open] > summary.rspress-directive-title::after {
   background: url("../assets/arrow-right.svg") no-repeat center center / contain;
 }
 
-details:not([open]) > summary.rspress-directive-title::after {
+details:not([open]) > summary.rp-callout__title::after {
   content: "";
   position: absolute;
   left: 95%;
