@@ -65,6 +65,10 @@ function getThemeAliases(
   aliases['@default-theme'] = rspressCoreThemePath;
   // Alias rspress/theme to our theme to keep the theme override pattern from Rspress docs
   aliases['@rspress/core/theme'] = ckThemeExportsPath;
+  // Alias @theme-original and @rspress/core/theme-original to always override
+  // the original theme
+  aliases['@theme-original'] = ckThemeExportsPath;
+  aliases['@rspress/core/theme-original'] = ckThemeExportsPath;
 
   return aliases;
 }

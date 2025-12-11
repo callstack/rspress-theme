@@ -1,5 +1,5 @@
 import { Announcement, VersionBadge } from '@callstack/rspress-theme';
-import { Layout as RspressLayout } from '@rspress/core/theme';
+import { Layout as RspressLayout } from '@rspress/core/theme-original';
 
 const Layout = () => {
   return (
@@ -18,4 +18,4 @@ const Layout = () => {
 
 export { Layout };
 
-export * from '@rspress/core/theme';
+export * from '@rspress/core/theme-original';
