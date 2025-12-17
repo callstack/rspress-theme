@@ -590,12 +590,12 @@ input#api-filter::-webkit-search-cancel-button {
 }
 
 /* SEARCH */
-div#search-container div[class^="mask_"] {
+div.rp-search-panel__mask {
   background: rgba(21, 20, 21, 0.5);
   backdrop-filter: blur(2px);
 }
 
-div#search-container div[class^="modal_"] {
+div.rp-search-panel__modal {
   background: var(--rp-c-bg);
   border: 1px solid var(--ck-border-primary);
   border-radius: var(--rp-radius);
@@ -604,15 +604,15 @@ div#search-container div[class^="modal_"] {
   box-shadow: 0px 40px 40px -20px rgba(32, 31, 36, 0.3);
 }
 
-div#search-container div[class^="inputForm_"] + h2 {
+div.rp-search-panel__input-form + h2 {
   display: none;
 }
 
-div#search-container div[class^="inputForm_"] {
+div.rp-search-panel__input-form {
   border: none !important;
 }
 
-input.rspress-search-panel-input {
+input.rp-search-panel__input {
   color: var(--rp-c-text-1) !important;
   font-family: var(--rp-font-family) !important;
   font-size: 16px !important;
@@ -621,20 +621,20 @@ input.rspress-search-panel-input {
   line-height: 150% !important; /* 24px */
 }
 
-div#search-container div[class^="searchHits"] {
+div.rp-search-panel__results {
   border-top: 1px solid var(--ck-border-primary) !important;
   box-shadow: 0px 40px 40px -20px rgba(32, 31, 36, 0.3);
 }
 
-div#search-container div[class^="searchHits"] > div:not(:has(ul)) {
+div.rp-search-panel__results > div:not(:has(ul)) {
   justify-content: flex-end;
 }
 
-div#search-container div[class^="searchHits"] svg {
+div.rp-search-panel__results svg {
   display: none !important;
 }
 
-li[class*="suggestItem_"] > a {
+li.rp-suggest-item > a {
   padding: 0 16px 0 16px !important;
   background-color: transparent !important;
   box-shadow: none !important;
@@ -642,37 +642,33 @@ li[class*="suggestItem_"] > a {
   color: var(--rp-c-text-1) !important;
 }
 
-li[class*="suggestItem_"] > a span[class^="mark_"] {
+li.rp-suggest-item > a span.rp-suggest-item__mark {
   text-decoration: underline !important;
   color: var(--rp-c-text-1) !important;
 }
 
-li[class*="suggestItem_"][class*="current_"] > a {
+li.rp-suggest-item--current > a {
   color: var(--rp-c-text-1) !important;
   text-decoration: none !important;
   background-color: var(--rp-c-bg-soft) !important;
 }
 
-li[class*="suggestItem_"][class*="current_"] > a p[class^="titleForContent_"] {
+li.rp-suggest-item--current > a p.rp-suggest-item__title {
   color: var(--rp-c-text-2) !important;
 }
 
-li[class*="suggestItem_"][class*="current_"] > a span[class^="mark_"] {
+li.rp-suggest-item--current > a span.rp-suggest-item__mark {
   background-color: var(--rp-c-bg-soft) !important;
 }
 
-li[class*="suggestItem_"]
-  > a
-  > div[class^="suggestItemContainer_"]
-  > div
-  > svg {
+li.rp-suggest-item > a > div.rp-suggest-item__container > div > svg {
   display: none !important;
 }
 
-li[class*="suggestItem_"]
+li.rp-suggest-item
   > a
-  > div[class^="suggestItemContainer_"]
-  > div[class^="contentWrapper_"] {
+  > div.rp-suggest-item__container
+  > div.rp-suggest-item__content {
   padding: 0 !important;
 }
 
@@ -741,7 +737,6 @@ footer {
   bottom: 30px !important;
 }
 
-/* Remove filter from home page background */
 .rp-home-background {
   filter: unset !important;
   right: 0;
