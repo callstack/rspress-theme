@@ -33,7 +33,7 @@ function HomeHero({ beforeHeroActions, afterHeroActions }: HomeHeroProps) {
       : hero.image?.src || { light: '', dark: '' };
 
   return (
-    <div className={`rp-overflow-hidden rp-max-w-6xl ${styles.container}`}>
+    <div className={styles.container}>
       <div className={styles.heroMain}>
         {hero.image ? (
           <div>

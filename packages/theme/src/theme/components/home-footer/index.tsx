@@ -28,7 +28,7 @@ function HomeFooter(props: HomeFooterProps) {
   const SocialLinksComponent = props.SocialLinksComponent ?? SocialLinks;
 
   return (
-    <footer className={`rp-max-w-6xl ${styles.container}`}>
+    <footer className={styles.container}>
       <div className={styles.row}>
         <LinkComponent href={HOME_FOOTER_LINK}>
           <div className={styles.logo}>

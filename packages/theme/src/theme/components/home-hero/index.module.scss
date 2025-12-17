@@ -1,6 +1,7 @@
 .container {
   margin: 0 auto;
   width: calc(100% - 8 * 2px);
+  max-width: 72rem;
   display: flex;
   flex-direction: column;
   justify-content: center;

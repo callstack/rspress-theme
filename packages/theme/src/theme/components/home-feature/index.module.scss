@@ -38,6 +38,16 @@
   }
 }
 
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: auto;
+  overflow: hidden;
+  max-width: 72rem;
+}
+
 .featureCardContainer {
   height: 100%;
   padding: 8px;

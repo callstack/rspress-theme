@@ -33,7 +33,7 @@ export function HomeFeature({
   const features = frontmatter?.features;
 
   return (
-    <div className="rp-overflow-hidden rp-m-auto rp-flex rp-flex-wrap rp-max-w-6xl">
+    <div className={styles.container}>
       {features?.map((feature) => {
         const { icon, title, details, link: rawLink } = feature;
 
