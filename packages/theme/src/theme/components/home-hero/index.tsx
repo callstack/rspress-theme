@@ -38,14 +38,14 @@ function HomeHero({ beforeHeroActions, afterHeroActions }: HomeHeroProps) {
         {hero.image ? (
           <div>
             <img
-              className={`dark:rp-hidden ${styles.heroImage}`}
+              className={`rp-home-hero__image-img--light ${styles.heroImage}`}
               src={normalizeImagePath(imageSrc.light)}
               alt={hero.image?.alt}
               srcSet={normalizeSrcsetAndSizes(hero.image?.srcset)}
               sizes={normalizeSrcsetAndSizes(hero.image?.sizes)}
             />
             <img
-              className={`rp-hidden dark:rp-block ${styles.heroImage}`}
+              className={`rp-home-hero__image-img--dark ${styles.heroImage}`}
               src={normalizeImagePath(imageSrc.dark)}
               alt={hero.image?.alt}
               srcSet={normalizeSrcsetAndSizes(hero.image?.srcset)}
