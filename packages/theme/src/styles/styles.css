@@ -89,6 +89,11 @@
   );
 }
 
+:root {
+  --rp-home-background-bg: var(--ck-bg-radial-1), var(--ck-bg-radial-2),
+    var(--ck-bg-radial-3);
+}
+
 /* rspress fonts */
 :root {
   --rp-font-family-base: "Switzer Variable", Arial, sans-serif !important;
@@ -729,7 +734,7 @@ svg[class^="icon-copy_"] > path {
 }
 
 /* Fixes positioning of ck name on 404 page */
-div#root > section {
+div#__rspress_root > section {
   min-height: 100vh;
 }
 
@@ -739,32 +744,39 @@ footer {
   bottom: 30px !important;
 }
 
-div#root > section > div.rp-relative {
+/* Remove filter from home page background */
+.rp-home-background {
+  filter: unset !important;
+  right: 0;
+  mask-image: radial-gradient(
+    ellipse 150vw 150vh at 100% -5%,
+    rgb(0, 0, 0) -5%,
+    transparent 40%
+  );
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+
+div#__rspress_root > .rp-home-background {
   bottom: 0px !important;
 }
 
 /* only show bottom image on non-touch devices, because it looks bad the other way around */
 @media (any-pointer: fine) {
   /* Home page background grid only on top */
-  div#root > section > div.rp-relative::before {
+  div#__rspress_root > .rp-home-background::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: -100;
-    background-image: url("../assets/hero-bg-shape.svg"), var(--ck-bg-radial-1);
+    background-image: url("../assets/hero-bg-shape.svg");
     background-repeat: no-repeat, no-repeat;
     background-size: contain, contain;
-    mask-image: radial-gradient(
-      ellipse 150vw 150vh at 100% -5%,
-      rgb(0, 0, 0) -5%,
-      transparent 40%
-    );
-    mask-size: 100% 100%;
-    mask-repeat: no-repeat;
+    background-position: center var(--rp-nav-height), center center;
   }
 
   /* Home page top noise with opacity control */
-  div#root > section > div.rp-relative::after {
+  div#__rspress_root > .rp-home-background::after {
     content: "";
     position: absolute;
     inset: 0;
@@ -772,6 +784,7 @@ div#root > section > div.rp-relative {
     background-image: url("../assets/noise.svg");
     background-repeat: repeat;
     background-size: cover;
+    background-position: center var(--rp-nav-height), center center;
     mask-image: radial-gradient(
       ellipse 150vw 150vh at 100% -5%,
       rgb(0, 0, 0) -5%,
@@ -781,12 +794,12 @@ div#root > section > div.rp-relative {
     mask-repeat: no-repeat;
   }
 
-  .dark div#root > section > div.rp-relative::after {
+  .dark div#__rspress_root > .rp-home-background::after {
     opacity: 0.1;
   }
 
   /* Home page bottom noise */
-  div#root > section:not(:has(div[class^="docLayout_"])) {
+  div#__rspress_root:not(:has(div[class^="rp-doc"])) {
     background-image: url("../assets/footer.webp");
     background-repeat: no-repeat;
     background-size: contain;
@@ -795,14 +808,14 @@ div#root > section > div.rp-relative {
     padding-bottom: 12vw;
   }
 
-  .dark div#root > section:not(:has(div[class^="docLayout_"])) {
+  .dark div#__rspress_root:not(:has(div[class^="rp-doc"])) {
     background-image: url("../assets/footer-dark.png");
   }
 
   /* Home page bottom name + gradients */
-  div#root > section:not(:has(div[class^="docLayout_"]))::after {
+  div#__rspress_root:not(:has(div[class^="rp-doc"]))::after {
     content: "";
-    position: absolute; /* Ensure the parent is positioned */
+    position: absolute;
 
     aspect-ratio: 1440 / 286;
     opacity: 0.3;
