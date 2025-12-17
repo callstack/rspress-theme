@@ -1,7 +1,44 @@
 import * as path from 'node:path';
+import { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
 import { withCallstackPreset } from '@callstack/rspress-preset';
+import { defineConfig } from '@rspress/core';
 
-export default withCallstackPreset(
+const isDev = process.env.NODE_ENV === 'development';
+
+const themeOptions = {
+  content: {
+    homeBannerButtonText: 'Home Banner Button Text',
+    homeBannerDescription: 'Home Banner Description',
+    homeBannerHeadline: 'Home Banner Headline',
+    outlineCTAButtonText: 'Outline CTA Button Text',
+    outlineCTADescription: 'Outline CTA Description',
+    outlineCTAHeadline: 'Outline CTA Headline',
+  },
+};
+
+const devConfig = defineConfig({
+  root: path.join(__dirname, 'docs'),
+  title: 'My Site',
+  description: 'My Site Description',
+  themeConfig: {
+    editLink: {
+      docRepoBaseUrl: 'https://github.com/callstack/rspress-theme',
+    },
+    socialLinks: [
+      { icon: 'github', mode: 'link', content: 'https://github.com/callstack/rspress-theme' },
+      { icon: 'X', mode: 'link', content: 'https://x.com/repack_rn' },
+      { icon: 'discord', mode: 'link', content: 'https://github.com/callstack/rspress-theme' },
+    ],
+  },
+  plugins: [pluginCallstackTheme(themeOptions)],
+  builderConfig: {
+    performance: {
+      buildCache: false,
+    },
+  },
+});
+
+const prodConfig = withCallstackPreset(
   {
     context: path.join(__dirname),
     docs: {
@@ -16,16 +53,7 @@ export default withCallstackPreset(
         discord: 'https://github.com/callstack/rspress-theme',
       },
     },
-    theme: {
-      content: {
-        homeBannerButtonText: 'Home Banner Button Text',
-        homeBannerDescription: 'Home Banner Description',
-        homeBannerHeadline: 'Home Banner Headline',
-        outlineCTAButtonText: 'Outline CTA Button Text',
-        outlineCTADescription: 'Outline CTA Description',
-        outlineCTAHeadline: 'Outline CTA Headline',
-      },
-    },
+    theme: themeOptions,
   },
   {
     builderConfig: {
@@ -35,3 +63,5 @@ export default withCallstackPreset(
     },
   }
 );
+
+export default isDev ? devConfig : prodConfig;
