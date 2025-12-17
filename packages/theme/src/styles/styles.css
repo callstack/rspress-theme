@@ -1094,7 +1094,12 @@ h6 > code {
 }
 
 /* mobile search button */
-div[class^="mobileNavSearchButton_"] > img {
+button.rp-nav-hamburger > img {
   width: 24px;
   height: 24px;
+}
+
+.rp-nav-hamburger:hover,
+.rp-nav-hamburger--active {
+  background: none !important;
 }
