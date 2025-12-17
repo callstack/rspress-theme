@@ -1,9 +1,10 @@
 import {
   isExternalUrl,
   normalizeHrefInRuntime,
+  useFrontmatter,
   withBase,
 } from '@rspress/core/runtime';
-import type { Feature, FrontMatterMeta } from '../../types';
+import type { Feature } from '../../types';
 import { renderHtmlOrText } from '../../utils';
 import styles from './index.module.scss';
 
@@ -24,17 +25,12 @@ const getGridClass = ({ span }: Feature): string => {
   }
 };
 
-export function HomeFeature({
-  frontmatter,
-}: {
-  frontmatter: FrontMatterMeta;
-  routePath: string;
-}) {
-  const features = frontmatter?.features;
+export function HomeFeature() {
+  const { frontmatter } = useFrontmatter();
 
   return (
     <div className={styles.container}>
-      {features?.map((feature) => {
+      {frontmatter.features?.map((feature) => {
         const { icon, title, details, link: rawLink } = feature;
 
         let link = rawLink;
@@ -61,7 +57,7 @@ export function HomeFeature({
                 }}
               >
                 {icon ? (
-                  <div className="rp-flex rp-items-center rp-justify-center">
+                  <div className={styles.featureIconContainer}>
                     <div
                       className={styles.featureIcon}
                       {...renderHtmlOrText(icon)}

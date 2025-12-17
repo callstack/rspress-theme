@@ -42,7 +42,6 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 16px;
   margin: auto;
   overflow: hidden;
   max-width: 72rem;
@@ -109,6 +108,12 @@
   justify-content: center;
   margin-bottom: 0;
   color: var(--rp-c-brand);
+}
+
+.featureIconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .featureTitle {
