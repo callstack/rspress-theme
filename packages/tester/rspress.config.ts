@@ -1,6 +1,6 @@
 import * as path from 'node:path';
-import { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
 import { withCallstackPreset } from '@callstack/rspress-preset';
+import { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
 import { defineConfig } from '@rspress/core';
 
 const isDev = process.env.NODE_ENV === 'development';
@@ -25,9 +25,17 @@ const devConfig = defineConfig({
       docRepoBaseUrl: 'https://github.com/callstack/rspress-theme',
     },
     socialLinks: [
-      { icon: 'github', mode: 'link', content: 'https://github.com/callstack/rspress-theme' },
+      {
+        icon: 'github',
+        mode: 'link',
+        content: 'https://github.com/callstack/rspress-theme',
+      },
       { icon: 'X', mode: 'link', content: 'https://x.com/repack_rn' },
-      { icon: 'discord', mode: 'link', content: 'https://github.com/callstack/rspress-theme' },
+      {
+        icon: 'discord',
+        mode: 'link',
+        content: 'https://github.com/callstack/rspress-theme',
+      },
     ],
   },
   plugins: [pluginCallstackTheme(themeOptions)],
