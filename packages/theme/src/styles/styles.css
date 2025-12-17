@@ -262,10 +262,6 @@ h6 {
   color: var(--rp-c-text-1) !important;
 }
 
-.rp-nav-screen {
-  z-index: -1 !important;
-}
-
 /* Scrollbar (nav & search) */
 .rp-scrollbar {
   scrollbar-gutter: auto !important;
@@ -467,11 +463,11 @@ p.rspress-home-hero-text {
 }
 
 /* NAV */
-.rspress-nav {
+.rp-nav {
   padding: 8px 16px !important;
 }
 
-.rspress-nav-search-button {
+.rp-search-button {
   height: 30px !important;
   padding: 4px !important;
   border-radius: var(--rp-radius-small) !important;
@@ -480,10 +476,11 @@ p.rspress-home-hero-text {
   transition: none !important;
 }
 
-.rspress-nav-search-button button > div {
+.rp-search-button button > div {
   background-color: var(--rp-c-divider-light) !important;
 }
 
+/* switch theme button */
 .rspress-nav-appearance > div.rp-border {
   border: none !important;
   border-radius: var(--rp-radius-small) !important;
