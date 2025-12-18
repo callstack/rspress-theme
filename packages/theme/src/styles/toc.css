@@ -14,35 +14,31 @@ aside.rp-doc-layout__outline > div.rp-outline {
   border-left: none !important;
 }
 
+/* spacing between toc items */
 .rp-toc-item {
-  margin-top: 8px !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  margin-top: 0 !important;
 }
 
+/* hide progress circle */
 .rp-progress-circle {
   display: none !important;
 }
 
-/* use specific selector to avoid being stripped when compiling */
-li > a.aside-link:hover {
+/* hover highlight color */
+.rp-outline__toc > a.rp-toc-item.rp-link:hover {
   background-color: var(--ck-foreground-primary) !important;
 }
 
-/* replace margin-left with padding-left for proper hover higlight */
-li > a.aside-link[style*="margin-left: 12px"] {
-  margin-left: 0 !important;
-  padding-left: 12px;
+/* hover higlight fill fix */
+.rp-toc-item {
+  margin-left: -20px !important;
+  margin-right: -20px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
 }
 
-/* Content - active link */
-.aside-link.aside-active {
-  color: var(--rp-c-text-1) !important;
-  background-color: transparent !important;
-}
-
-/* Content - active indicator */
-li:has(> a.aside-link.aside-active) {
-  background-color: transparent !important;
-  border-left: 1px solid var(--rp-c-text-1) !important;
-  border-radius: 0 !important;
-  transition: none !important;
+.rp-toc-item--active:before {
+  left: 0 !important;
 }
