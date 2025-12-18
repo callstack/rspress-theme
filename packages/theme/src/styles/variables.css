@@ -1,0 +1,182 @@
+:root {
+  --ck-header-font-family: "Alliance No. 2", Arial, sans-serif;
+  --ck-background-primary: #ffffff;
+  --ck-border-primary: #cfced5;
+  --ck-border-secondary: #e9e7ee;
+  --ck-foreground-primary: #f9f8fd;
+  --ck-foreground-secondary: #e9e7ee;
+  --ck-text-primary: #201f24;
+  --ck-text-secondary: #838289;
+  --ck-text-tertiary: #bcbbc2;
+  --ck-accent: #8232ff;
+  --ck-accent-bg: #8232ff29;
+  --ck-warning: #ffb14c;
+  --ck-warning-bg: #ffb14c29;
+  --ck-danger: #fa7171;
+  --ck-danger-bg: #fa717129;
+  --ck-success: #2fc717;
+  --ck-success-bg: #2fc71729;
+  --ck-note: #838289;
+  --ck-note-bg: #83828929;
+  --ck-neutral-darkest: #201f24;
+}
+
+/* Dark mode overrides */
+.dark {
+  --ck-background-primary: #201f24;
+  --ck-border-primary: #424145;
+  --ck-border-secondary: #636266;
+  --ck-foreground-primary: #2b2a2f;
+  --ck-foreground-secondary: #838289;
+  --ck-text-primary: #ffffff;
+  --ck-text-secondary: #cfced5;
+  --ck-accent-code-highlight: #8232ff33;
+}
+
+/* Gradients */
+:root {
+  --ck-bg-radial-1: radial-gradient(
+    ellipse calc(5 * 100vw) 100vw at 100% 0%,
+    rgba(130, 50, 255, 0.5) 0%,
+    transparent 30%,
+    transparent 100%
+  );
+  --ck-bg-radial-2: radial-gradient(
+    ellipse calc(5 * 100vw) 100vw at 100% 100%,
+    rgba(130, 50, 255, 0.5) 0%,
+    transparent 15%,
+    transparent 100%
+  );
+  --ck-bg-radial-3: radial-gradient(
+    ellipse 100vw 50vw at 0% 100%,
+    rgba(130, 50, 255, 0.5) 0%,
+    transparent 15%,
+    transparent 100%
+  );
+  --rp-home-background-bg: var(--ck-bg-radial-1), var(--ck-bg-radial-2),
+    var(--ck-bg-radial-3);
+}
+
+/* rspress fonts */
+:root {
+  --rp-font-family-base: "Switzer Variable", Arial, sans-serif !important;
+  --rp-font-family-mono: "Fira Code", monospace !important;
+  /* compat */
+  --rp-font-family: "Switzer Variable", Arial, sans-serif !important;
+}
+
+/* rspress sizing */
+:root {
+  --rp-nav-height: 48px !important;
+  --rp-sidebar-width: 320px !important;
+  --rp-sidebar-menu-height: 46px !important;
+  --rp-aside-width: 268px !important;
+  --rp-sidebar-padding: 0 !important;
+  --rp-content-padding-x: 24px;
+  --rp-content-padding-y: 64px;
+  --rp-radius: 4px !important;
+  --rp-radius-small: 2px !important;
+  --rp-radius-large: 8px !important;
+}
+
+@media (max-width: 768px) {
+  html:root {
+    --rp-nav-height: 48px !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  html:root {
+    --rp-sidebar-menu-height: 0px !important;
+  }
+}
+
+/* rspress colors */
+:root {
+  /* rspress background colors */
+  --rp-c-bg: var(--ck-background-primary) !important;
+  --rp-c-bg-soft: var(--ck-foreground-secondary) !important;
+  --rp-c-bg-mute: var(--ck-foreground-primary) !important;
+  /* rspress divider colors */
+  --rp-c-divider: var(--ck-border-primary) !important;
+  --rp-c-divider-light: var(--ck-border-secondary) !important;
+  /* rspress text colors */
+  --rp-c-text-1: var(--ck-text-primary) !important;
+  --rp-c-text-2: var(--ck-text-secondary) !important;
+  --rp-c-text-3: var(--ck-text-tertiary) !important;
+  --rp-c-text-4: var(--ck-text-tertiary) !important;
+  --rp-c-text-code: var(--ck-accent) !important;
+  /* rspress brand colors */
+  --rp-c-brand: var(--ck-accent) !important;
+  --rp-c-brand-light: var(--ck-accent) !important;
+  --rp-c-brand-lighter: var(--ck-accent) !important;
+  --rp-c-brand-dark: var(--ck-accent) !important;
+  --rp-c-brand-darker: var(--ck-accent) !important;
+  --rp-c-brand-tint: var(--ck-accent) !important;
+  /* rspress gray colors */
+  --rp-c-gray: var(--ck-text-secondary) !important;
+  --rp-c-gray-light-1: var(--ck-text-tertiary) !important;
+  --rp-c-gray-light-2: var(--ck-foreground-secondary) !important;
+  --rp-c-gray-light-3: var(--ck-foreground-secondary) !important;
+  --rp-c-gray-light-4: var(--ck-foreground-secondary) !important;
+  --rp-c-gray-light-5: var(--ck-foreground-secondary) !important;
+  /* rspress dark colors */
+  --rp-c-dark: var(--ck-neutral-darkest) !important;
+  --rp-c-dark-light-1: var(--ck-neutral-darkest) !important;
+  --rp-c-dark-light-2: var(--ck-neutral-darkest) !important;
+  --rp-c-dark-light-3: var(--ck-neutral-darkest) !important;
+  --rp-c-dark-light-4: var(--ck-neutral-darkest) !important;
+  --rp-c-dark-light-5: var(--ck-neutral-darkest) !important;
+  /* rspress code colors */
+  --rp-code-title-bg: rgba(233, 231, 238, 1) !important;
+  --rp-code-block-bg: rgba(249, 248, 253, 1) !important;
+  /* rspress inline code colors */
+  --rp-c-text-code: var(--rp-c-text-1) !important;
+  --rp-c-text-code-bg: var(--ck-border-secondary) !important;
+  /* rspress link colors */
+  --rp-c-link: var(--rp-c-text-1) !important;
+  /* rspress tip container colors */
+  --rp-container-tip-border: var(--ck-success) !important;
+  --rp-container-tip-text: var(--rp-c-text-1) !important;
+  --rp-container-tip-bg: var(--ck-success-bg) !important;
+  --rp-container-tip-code-bg: var(--rp-code-block-bg) !important;
+  /* rspress info container colors */
+  --rp-container-info-border: var(--ck-accent) !important;
+  --rp-container-info-text: var(--rp-c-text-1) !important;
+  --rp-container-info-bg: var(--ck-accent-bg) !important;
+  --rp-container-info-code-bg: var(--rp-code-block-bg) !important;
+  /* rspress warning container colors */
+  --rp-container-warning-border: var(--ck-warning) !important;
+  --rp-container-warning-text: var(--rp-c-text-1) !important;
+  --rp-container-warning-bg: var(--ck-warning-bg) !important;
+  --rp-container-warning-code-bg: var(--rp-code-block-bg) !important;
+  /* rspress danger container colors */
+  --rp-container-danger-border: var(--ck-danger) !important;
+  --rp-container-danger-text: var(--rp-c-text-1) !important;
+  --rp-container-danger-bg: var(--ck-danger-bg) !important;
+  --rp-container-danger-code-bg: var(--rp-code-block-bg) !important;
+  /* rspress note container colors */
+  --rp-container-note-border: var(--ck-note) !important;
+  --rp-container-note-text: var(--rp-c-text-1) !important;
+  --rp-container-note-bg: var(--ck-note-bg) !important;
+  --rp-container-note-code-bg: var(--rp-code-block-bg) !important;
+  /* rspress details container colors */
+  --rp-container-details-border: var(--ck-note) !important;
+  --rp-container-details-text: var(--rp-c-text-1) !important;
+  --rp-container-details-bg: var(--ck-note-bg) !important;
+  --rp-container-details-code-bg: var(--rp-code-block-bg) !important;
+}
+
+.dark {
+  /* rspress background colors */
+  --rp-c-bg-soft: var(--ck-foreground-primary) !important;
+  --rp-c-bg-mute: var(--ck-foreground-secondary) !important;
+  /* rspress divider colors */
+  --rp-c-divider: var(--ck-border-secondary) !important;
+  --rp-c-divider-light: var(--ck-border-primary) !important;
+  /* rspress code colors */
+  --rp-code-title-bg: rgba(54, 53, 57, 1) !important;
+  --rp-code-block-bg: rgba(43, 42, 47, 1) !important;
+  /* rspress inline code colors */
+  --rp-c-text-code-bg: var(--ck-border-primary) !important;
+}

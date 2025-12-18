@@ -1,0 +1,65 @@
+/* Body */
+body {
+  background: var(--rp-c-bg) !important;
+  color: var(--rp-c-text-1) !important;
+  font-family: var(--rp-font-family) !important;
+}
+
+body * {
+  line-height: 1.5 !important;
+  letter-spacing: -0.02em !important;
+}
+
+code,
+kbd,
+samp,
+pre {
+  font-family: var(--rp-font-family-mono) !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+}
+
+/* Header elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--ck-header-font-family) !important;
+  font-variant-numeric: lining-nums tabular-nums !important;
+  font-feature-settings: "ss04" on !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.04em !important;
+}
+
+h1.rspress-doc-title {
+  margin-bottom: 1.5rem !important;
+}
+
+h2.rspress-doc-outline {
+  margin-top: 2rem !important;
+  margin-bottom: 0 !important;
+  border: none !important;
+}
+
+/* inline code in headers */
+h1 > code,
+h2 > code,
+h3 > code,
+h4 > code,
+h5 > code,
+h6 > code {
+  font-family: unset !important;
+  background-color: unset !important;
+  padding: unset !important;
+}
+
+/* header anchors (appear on hover) */
+.header-anchor {
+  line-height: 1.2 !important;
+  margin-left: -1em !important;
+}

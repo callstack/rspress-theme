@@ -1,0 +1,266 @@
+/* Nav header */
+.rp-nav {
+  background-color: var(--rp-c-bg) !important;
+  border-bottom: 1px solid var(--rp-c-divider-light) !important;
+  color: var(--rp-c-text-1) !important;
+  padding: 8px 16px !important;
+}
+
+/* Scrollbar (nav & search) */
+.rp-scrollbar {
+  scrollbar-gutter: auto !important;
+  scrollbar-width: thin !important;
+  overflow: scroll !important;
+}
+
+/* Sidebar right border */
+.rp-doc-layout__sidebar {
+  border-right: 1px solid var(--rp-c-divider-light) !important;
+  padding-top: 16px !important;
+}
+
+/* Nav items */
+.rp-sidebar-item,
+.rp-sidebar-item--active {
+  color: var(--rp-c-text-2);
+  font-size: 14px !important;
+  font-weight: 400;
+  line-height: 1.5;
+  border-radius: 0 !important;
+  padding-top: 4px !important;
+  padding-bottom: 4px !important;
+  /* spacing between borders in menu */
+  margin-top: 0 !important;
+}
+
+.rp-sidebar-item:hover {
+  background-color: var(--ck-foreground-primary) !important;
+}
+
+.rp-sidebar-item--active {
+  color: var(--rp-c-brand) !important;
+  font-weight: 400 !important;
+}
+
+.rp-sidebar-item--group-item.rp-sidebar-item--active
+  .rp-sidebar-item__left:before {
+  left: 24px !important;
+}
+
+/* Section header text */
+.rp-sidebar-section-header__left > span {
+  color: var(--rp-c-text-3) !important;
+  font-family: var(--rp-font-family-mono) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  text-transform: uppercase;
+}
+
+.rp-sidebar-section-header__left > span::before {
+  content: "//";
+  color: var(--rp-c-brand) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  text-transform: uppercase;
+  margin-right: 6px;
+}
+
+/* Sidebar active item disable bg */
+.rp-sidebar-item--active {
+  background-color: transparent !important;
+}
+
+/* Sidebar active item disable border */
+.rp-sidebar-item--active::before {
+  display: none !important;
+}
+
+/* Sidebar active item border right */
+.rp-sidebar-item--active:after {
+  content: "";
+  background-color: var(--rp-c-brand);
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* Solid border after sections */
+.rp-sidebar-divider {
+  border-color: transparent !important;
+}
+
+/* Remove dashed border after sections */
+.rp-sidebar-divider--dashed {
+  display: none !important;
+}
+
+/* Table of Contents */
+aside.rp-doc-layout__outline {
+  border-left: 1px solid var(--rp-c-divider-light) !important;
+  padding: 16px 0 16px 0 !important;
+}
+
+/* Contents - header */
+.rp-outline__title,
+aside.rp-doc-layout__outline > div.rp-outline {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  color: var(--rp-c-text-1) !important;
+  border-left: none !important;
+}
+
+.rp-toc-item {
+  margin-top: 8px !important;
+}
+
+.rp-progress-circle {
+  display: none !important;
+}
+
+/* use specific selector to avoid being stripped when compiling */
+li > a.aside-link:hover {
+  background-color: var(--ck-foreground-primary) !important;
+}
+
+/* replace margin-left with padding-left for proper hover higlight */
+li > a.aside-link[style*="margin-left: 12px"] {
+  margin-left: 0 !important;
+  padding-left: 12px;
+}
+
+/* Content - active link */
+.aside-link.aside-active {
+  color: var(--rp-c-text-1) !important;
+  background-color: transparent !important;
+}
+
+/* Content - active indicator */
+li:has(> a.aside-link.aside-active) {
+  background-color: transparent !important;
+  border-left: 1px solid var(--rp-c-text-1) !important;
+  border-radius: 0 !important;
+  transition: none !important;
+}
+
+/* Logo */
+img#logo {
+  max-height: 16px;
+}
+
+/* NAV */
+.rp-search-button {
+  height: 30px !important;
+  padding: 4px !important;
+  border-radius: var(--rp-radius-small) !important;
+  border: 1px solid var(--rp-c-divider-light) !important;
+  background-color: var(--rp-c-bg) !important;
+  transition: none !important;
+}
+
+.rp-search-button button > div {
+  background-color: var(--rp-c-divider-light) !important;
+}
+
+/* switch theme button */
+.rspress-nav-appearance > div.rp-border {
+  border: none !important;
+  border-radius: var(--rp-radius-small) !important;
+  padding: 4px !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  transition: background 0.15s;
+}
+
+.rp-social-links {
+  gap: 16px !important;
+}
+
+.rp-nav__others {
+  gap: 16px !important;
+}
+
+.rp-social-links__icon > div {
+  width: 26px !important;
+  height: 26px !important;
+  background: var(--rp-c-divider-light) !important;
+  border: none !important;
+  border-radius: var(--rp-radius-small) !important;
+  padding: 6px !important;
+  margin: -6px !important;
+  cursor: pointer !important;
+  transition: background 0.15s;
+}
+
+/* spacing of nav menu items */
+.rp-nav-menu,
+.rp-nav__right {
+  gap: 16px !important;
+}
+
+/* nav menu links */
+.rp-nav-menu-item:hover {
+  color: var(--rp-c-brand) !important;
+}
+
+/* nav menu active link */
+.rp-nav-menu-item--active {
+  color: var(--rp-c-brand) !important;
+}
+
+/* mobile nav menu active link */
+.rp-nav-screen-menu-item--active {
+  background-color: transparent !important;
+}
+
+/* remove arrow from mobile nav menu links */
+.rp-nav-screen-menu-item.rp-link[target="_blank"]
+  .rp-nav-screen-menu-item__left:after {
+  content: none !important;
+}
+
+/* remove arrow from nav menu links */
+.rp-nav-menu a[target="_blank"]:after {
+  content: none !important;
+}
+
+/* mobile search button */
+button.rp-nav-hamburger > img {
+  width: 20px;
+  height: 20px;
+}
+
+.rp-nav-hamburger:hover,
+.rp-nav-hamburger--active {
+  background: none !important;
+}
+
+/* Social links icon */
+div.rspress-nav-appearance > div,
+.rp-social-links__icon > div {
+  color: var(--rp-c-text-1) !important;
+  background: linear-gradient(
+      to right,
+      var(--rp-c-brand) 50%,
+      var(--rp-c-divider-light) 50%
+    )
+    right bottom / 200% 100% !important;
+  transition: background-position 0.45s cubic-bezier(0.625, 0.05, 0, 1), color
+    0.45s cubic-bezier(0.625, 0.05, 0, 1), transform 0.45s
+    cubic-bezier(0.625, 0.05, 0, 1) !important;
+}
+
+@media (pointer: fine) {
+  div.rspress-nav-appearance > div:hover,
+  .rp-social-links__icon > div:hover {
+    color: #ffffff !important;
+    background-position: left bottom !important;
+  }
+}
