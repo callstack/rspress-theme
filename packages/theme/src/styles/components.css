@@ -14,39 +14,3 @@ a.rp-edit-link::before {
   height: 24px;
   background: url("../assets/edit-box.svg") no-repeat center center / contain;
 }
-
-/* CODE BLOCKS */
-/* FIX */
-/* Code block actions */
-svg[class^="icon-wrap_"] > path,
-svg[class^="icon-wrapped_"] > path,
-svg[class^="icon-copy_"] > path {
-  fill: var(--rp-c-text-2);
-}
-
-/* inline code outside of headers */
-.rspress-doc :not(:is(pre, h1, h2, h3, h4, h5, h6)) > code {
-  font-size: 16px !important;
-  padding: 2px 4px !important;
-}
-
-/* inline code outside of headers */
-.rspress-doc :not(:is(pre, div)) > code {
-  border-radius: var(--rp-radius) !important;
-}
-
-/* code block titles */
-.rspress-code-title {
-  font-family: var(--rp-font-family-mono) !important;
-}
-
-/* TABLES */
-tr > th {
-  background-color: var(--rp-code-block-bg) !important;
-  font-weight: 500 !important;
-}
-
-/* Table - don't color even rows */
-tr.rp-border {
-  background-color: var(--rp-c-bg) !important;
-}
