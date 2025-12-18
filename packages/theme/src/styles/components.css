@@ -14,3 +14,21 @@ a.rp-edit-link::before {
   height: 24px;
   background: url("../assets/edit-box.svg") no-repeat center center / contain;
 }
+
+/* DOC HEADERS */
+/* header anchors (appear on hover) */
+.rp-header-anchor {
+  line-height: 1.2 !important;
+  margin-left: -1em !important;
+}
+
+/* doc page header */
+.rp-doc.rspress-doc > h1.rp-toc-include {
+  margin-bottom: 1.5rem !important;
+}
+
+/* doc section header */
+.rp-doc.rspress-doc > h2.rp-toc-include {
+  margin-bottom: 0 !important;
+  border: none !important;
+}

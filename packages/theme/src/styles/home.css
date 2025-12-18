@@ -1,39 +1,3 @@
-.home-hero-name-img {
-  width: 100%;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-div:has(> p.rspress-home-hero-text) {
-  align-items: stretch;
-}
-
-a:has(> span.home-hero-primary-action) {
-  background: var(--rp-c-brand) !important;
-}
-
-p.rspress-home-hero-text {
-  font-size: 1.35rem;
-}
-
-@media (min-width: 370px) {
-  p.rspress-home-hero-text {
-    font-size: 1.5rem;
-  }
-}
-
-@media (min-width: 640px) {
-  p.rspress-home-hero-text {
-    font-size: 2rem;
-  }
-}
-
-@media (min-width: 768px) {
-  p.rspress-home-hero-text {
-    font-size: 3rem;
-  }
-}
-
 /* Home page footer */
 footer {
   border: none !important;

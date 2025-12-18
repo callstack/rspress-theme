@@ -34,18 +34,6 @@ h6 {
   letter-spacing: -0.04em !important;
 }
 
-/* FIX */
-.rp-doc .rspress-doc > h1.rp-toc-include {
-  margin-bottom: 1.5rem !important;
-}
-
-/* FIX */
-h2.rspress-doc-outline {
-  margin-top: 2rem !important;
-  margin-bottom: 0 !important;
-  border: none !important;
-}
-
 /* inline code in headers */
 h1 > code,
 h2 > code,
@@ -56,10 +44,4 @@ h6 > code {
   font-family: unset !important;
   background-color: unset !important;
   padding: unset !important;
-}
-
-/* header anchors (appear on hover) */
-.rp-header-anchor {
-  line-height: 1.2 !important;
-  margin-left: -1em !important;
 }
