@@ -20,14 +20,17 @@ export function OutlineCTA({
   href = OUTLINE_CTA_LINK,
 }: OutlineCTAProps) {
   return (
-    <div className={styles.container}>
-      <div>
-        <div className={styles.headline}>{headline}</div>
-        <div className={styles.description}>{description}</div>
+    <>
+      <div className="rp-outline__divider" />
+      <div className={styles.container}>
+        <div>
+          <div className={styles.headline}>{headline}</div>
+          <div className={styles.description}>{description}</div>
+        </div>
+        <Button external href={href}>
+          {buttonText}
+        </Button>
       </div>
-      <Button external href={href}>
-        {buttonText}
-      </Button>
-    </div>
+    </>
   );
 }

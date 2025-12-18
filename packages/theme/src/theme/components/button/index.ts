@@ -33,46 +33,28 @@ export function Button(props: ButtonProps): React.ReactNode {
     type = 'a';
   }
 
-  return React.createElement('div', { className: dark ? 'dark' : undefined }, [
-    React.createElement(
-      type,
-      {
-        key: 'button-1',
-        href,
-        className: `dark:rp-hidden rp-block ${styles.button} ${styles[theme]} ${className}`,
-      },
-      [
-        children,
-        React.createElement(
-          theme === 'brand' ? IconCorner : IconArrowBarRight,
-          {
-            key: 'button-icon-1',
-            className: `${styles['button-icon']}`,
-            'aria-hidden': true,
-            focusable: false,
-          }
-        ),
-      ]
-    ),
-    React.createElement(
-      type,
-      {
-        key: 'button-2',
-        href,
-        className: `rp-hidden dark:rp-block ${styles.button} ${styles[theme]} ${className}`,
-      },
-      [
-        children,
-        React.createElement(
-          theme === 'brand' ? IconCorner : IconArrowBarRight,
-          {
-            key: 'button-icon-2',
-            className: `${styles['button-icon']}`,
-            'aria-hidden': true,
-            focusable: false,
-          }
-        ),
-      ]
-    ),
-  ]);
+  const Icon = theme === 'brand' ? IconCorner : IconArrowBarRight;
+
+  const button = React.createElement(
+    type,
+    {
+      href,
+      className: `${styles.button} ${styles[theme]} ${className}`,
+    },
+    [
+      children,
+      React.createElement(Icon, {
+        key: 'button-icon',
+        className: styles['button-icon'],
+        'aria-hidden': true,
+        focusable: false,
+      }),
+    ]
+  );
+
+  if (dark) {
+    return React.createElement('div', { className: 'dark' }, button);
+  }
+
+  return button;
 }

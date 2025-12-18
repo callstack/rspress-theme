@@ -1,0 +1,98 @@
+/* Home page footer */
+footer {
+  border: none !important;
+  bottom: 30px !important;
+}
+
+.rp-home-background {
+  filter: unset !important;
+  right: 0;
+  mask-image: radial-gradient(
+    ellipse 150vw 150vh at 100% -5%,
+    rgb(0, 0, 0) -5%,
+    transparent 40%
+  );
+  mask-size: 100% 100%;
+  mask-repeat: no-repeat;
+}
+
+div#__rspress_root > .rp-home-background {
+  bottom: 0px !important;
+}
+
+/* only show bottom image on non-touch devices, because it looks bad the other way around */
+@media (any-pointer: fine) {
+  /* Home page background grid only on top */
+  div#__rspress_root > .rp-home-background::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -100;
+    background-image: url("../assets/hero-bg-shape.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-size: contain, contain;
+    background-position: center var(--rp-nav-height), center center;
+  }
+
+  /* Home page top noise with opacity control */
+  div#__rspress_root > .rp-home-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -100;
+    background-image: url("../assets/noise.svg");
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center var(--rp-nav-height), center center;
+    mask-image: radial-gradient(
+      ellipse 150vw 150vh at 100% -5%,
+      rgb(0, 0, 0) -5%,
+      transparent 40%
+    );
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+  }
+
+  .dark div#__rspress_root > .rp-home-background::after {
+    opacity: 0.1;
+  }
+
+  /* FIX */
+  /* Home page bottom noise */
+  div#__rspress_root:not(:has(div[class^="rp-doc"])) {
+    background-image: url("../assets/footer.webp");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: bottom;
+    position: relative;
+    padding-bottom: 12vw;
+  }
+
+  /* FIX */
+  .dark div#__rspress_root:not(:has(div[class^="rp-doc"])) {
+    background-image: url("../assets/footer-dark.png");
+  }
+
+  /* Home page bottom name + gradients */
+  div#__rspress_root:not(:has(div[class^="rp-doc"]))::after {
+    content: "";
+    position: absolute;
+
+    aspect-ratio: 1440 / 286;
+    opacity: 0.3;
+    pointer-events: none;
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    inset: auto 0% -2px;
+
+    background-image: url("../assets/callstack.svg");
+    background-repeat: no-repeat, repeat, no-repeat, no-repeat;
+    background-size: min(90rem, 95%) auto, auto, contain, contain;
+    background-position: center calc(100% + 12px), bottom, bottom, bottom;
+  }
+
+  footer {
+    bottom: 180px !important;
+  }
+}

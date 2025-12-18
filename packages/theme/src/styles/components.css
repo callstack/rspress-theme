@@ -1,0 +1,53 @@
+/* EDIT ON GITHUB */
+a.rp-edit-link {
+  color: var(--rp-c-text-2);
+  position: relative;
+  padding-left: 32px;
+}
+
+a.rp-edit-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 24px;
+  height: 24px;
+  background: url("../assets/edit-box.svg") no-repeat center center / contain;
+}
+
+/* DOC HEADERS */
+/* header anchors (appear on hover) */
+.rp-header-anchor {
+  line-height: 1.2 !important;
+  margin-left: -1em !important;
+}
+
+/* doc page header */
+.rp-doc.rspress-doc > h1.rp-toc-include {
+  margin-bottom: 1.5rem !important;
+}
+
+/* doc section header */
+.rp-doc.rspress-doc > h2.rp-toc-include {
+  margin-bottom: 0 !important;
+  border: none !important;
+}
+
+/* 404 page */
+.rp-not-found {
+  min-height: 100vh !important;
+}
+
+.rp-not-found__error-code {
+  font-family: var(--rp-font-family) !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  color: var(--rp-c-text-1) !important;
+}
+
+.rp-not-found__title {
+  font-family: var(--rp-font-family) !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  color: var(--rp-c-text-2) !important;
+}
