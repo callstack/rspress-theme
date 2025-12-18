@@ -1,0 +1,35 @@
+/* links */
+[class*="link_"]:hover {
+  color: var(--rp-c-brand) !important;
+}
+
+/* code links */
+[class*="link_"]:hover > code {
+  color: var(--rp-c-brand) !important;
+}
+
+/* code links in rspress-doc */
+.rspress-doc a > code {
+  color: var(--rp-c-text-1) !important;
+  text-decoration: underline !important;
+}
+
+/* inline links */
+/* FIX */
+div[class*="inline-link_"] {
+  text-decoration: underline !important;
+}
+
+/* regular links in paragraphs have underline */
+.dark p > [class*="link_"] {
+  border-bottom: 3px solid var(--rp-c-brand);
+}
+
+p > [class*="link_"] {
+  border-bottom: 1px solid var(--rp-c-brand);
+}
+
+/* remove arrow from links */
+[class*="link_"]:not([target="_blank"]):after {
+  content: none !important;
+}

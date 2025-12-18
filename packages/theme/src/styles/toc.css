@@ -1,0 +1,48 @@
+/* Table of Contents */
+aside.rp-doc-layout__outline {
+  border-left: 1px solid var(--rp-c-divider-light) !important;
+  padding: 16px 0 16px 0 !important;
+}
+
+/* Contents - header */
+.rp-outline__title,
+aside.rp-doc-layout__outline > div.rp-outline {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  color: var(--rp-c-text-1) !important;
+  border-left: none !important;
+}
+
+.rp-toc-item {
+  margin-top: 8px !important;
+}
+
+.rp-progress-circle {
+  display: none !important;
+}
+
+/* use specific selector to avoid being stripped when compiling */
+li > a.aside-link:hover {
+  background-color: var(--ck-foreground-primary) !important;
+}
+
+/* replace margin-left with padding-left for proper hover higlight */
+li > a.aside-link[style*="margin-left: 12px"] {
+  margin-left: 0 !important;
+  padding-left: 12px;
+}
+
+/* Content - active link */
+.aside-link.aside-active {
+  color: var(--rp-c-text-1) !important;
+  background-color: transparent !important;
+}
+
+/* Content - active indicator */
+li:has(> a.aside-link.aside-active) {
+  background-color: transparent !important;
+  border-left: 1px solid var(--rp-c-text-1) !important;
+  border-radius: 0 !important;
+  transition: none !important;
+}
