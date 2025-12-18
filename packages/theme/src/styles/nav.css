@@ -215,3 +215,42 @@ div.rspress-nav-appearance > div,
     background-position: left bottom !important;
   }
 }
+
+.rp-sidebar-menu {
+  margin-left: -6px !important;
+}
+
+.rp-sidebar-menu__left > img {
+  display: none !important;
+}
+
+.rp-sidebar-menu__left::before {
+  content: "";
+  background-image: url("../assets/menu.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 16px;
+  height: 16px;
+}
+
+.rp-sidebar-menu__right::after {
+  content: "";
+  background-image: url("../assets/notes.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 16px;
+  height: 16px;
+}
+
+.rp-sidebar-menu__left,
+.rp-sidebar-menu__right {
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  color: var(--rp-c-text-1) !important;
+}
+
+.rp-nav__title > a > span {
+  font-weight: 500 !important;
+}
