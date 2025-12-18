@@ -234,16 +234,6 @@ div.rspress-nav-appearance > div,
   height: 16px;
 }
 
-.rp-sidebar-menu__right::after {
-  content: "";
-  background-image: url("../assets/notes.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  width: 16px;
-  height: 16px;
-}
-
 .rp-sidebar-menu__left,
 .rp-sidebar-menu__right {
   font-weight: 500 !important;
