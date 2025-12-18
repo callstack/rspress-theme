@@ -32,3 +32,22 @@ a.rp-edit-link::before {
   margin-bottom: 0 !important;
   border: none !important;
 }
+
+/* 404 page */
+.rp-not-found {
+  min-height: 100vh !important;
+}
+
+.rp-not-found__error-code {
+  font-family: var(--rp-font-family) !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  color: var(--rp-c-text-1) !important;
+}
+
+.rp-not-found__title {
+  font-family: var(--rp-font-family) !important;
+  font-weight: 500 !important;
+  line-height: 1.2 !important;
+  color: var(--rp-c-text-2) !important;
+}
