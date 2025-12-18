@@ -1,45 +1,73 @@
 /* Overview page */
-.overview-index {
+.rp-doc-layout__overview {
   padding-top: var(--rp-content-padding-y) !important;
 }
 
-.overview-index div > h2 {
-  border-top: none !important;
-  margin-bottom: 16px !important;
+.rp-doc-layout__overview > div > h2::before {
+  content: none !important;
 }
 
-.overview-index div:has(input#api-filter) {
-  gap: 0 !important;
+.rp-doc-layout__overview > div > h2.rp-toc-include {
+  display: none !important;
 }
 
 /* Overview page - no results */
-.overview-index div {
-  border-top: none !important;
+.rp-overview__empty {
+  background-color: transparent !important;
   color: var(--rp-c-text-1) !important;
   font-family: var(--rp-font-family) !important;
   font-weight: 400 !important;
   font-size: 16px !important;
 }
 
-/* Overview page - group */
-div[class^="overview-group_"] {
-  background-color: var(--ck-foreground-primary) !important;
-  transition: none !important;
+.rp-overview-search {
+  gap: 0 !important;
 }
 
-/* Overview page - group header */
-div[class^="overview-group_"] h3 > a {
-  font-size: 16px !important;
+.rp-overview-group {
+  margin-top: 8px !important;
 }
 
-/* Overview page - link */
-div[class^="overview-group_"] a {
-  color: var(--rp-c-text-1) !important;
+.rp-overview-group__item {
+  position: relative;
+  border: 1px dashed var(--ck-border-primary) !important;
+  border-radius: var(--rp-radius-small) !important;
+  transition: border-color 0.3s cubic-bezier(0.65, 0.05, 0.36, 1);
 }
 
-/* Overview page - link hover */
-div[class^="overview-group_"] a:hover {
-  color: var(--rp-c-brand) !important;
+.rp-overview-group__item__title,
+.rp-overview-group__item__title:hover {
+  background-color: transparent !important;
+  font-weight: 500 !important;
+  border-bottom: 1px dashed var(--ck-border-primary) !important;
+}
+
+@media (min-width: 1281px) {
+  .rp-overview-group__item__title,
+  .rp-overview-group__item__title:hover {
+    border-bottom: none !important;
+    border-right: 1px dashed var(--ck-border-primary) !important;
+  }
+}
+
+.rp-overview-group__item__title > svg {
+  display: none !important;
+}
+
+.rp-overview-group__item__title::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: url("../assets/gradient-light.avif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.dark .rp-overview-group__item__title::before {
+  background-image: url("../assets/gradient-dark.avif");
+  opacity: 0.5;
 }
 
 /* Overview page - search */
@@ -78,7 +106,25 @@ input#api-filter::-webkit-search-cancel-button {
   cursor: pointer;
 }
 
-/* Fixes positioning of ck name on 404 page */
-div#__rspress_root > section {
-  min-height: 100vh;
+.rp-overview-group__item:hover .rp-overview-group__item__title {
+  border-color: var(--ck-accent) !important;
+  background-color: transparent !important;
+}
+
+.rp-overview-group__item:hover {
+  border-color: var(--ck-accent) !important;
+}
+
+.rp-overview-group__item:hover .rp-overview-group__item__title {
+  color: var(--rp-c-brand);
+  background-color: unset !important;
+}
+
+/* disable title background color on hover */
+div.rp-overview-group__item:hover .rp-overview-group__item__title {
+  background-color: transparent !important;
+}
+
+.rp-overview-group__item__content__item__link:hover {
+  background-color: transparent !important;
 }
