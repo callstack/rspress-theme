@@ -1,12 +1,3 @@
-export const OUTLINE_TITLE = 'Contents';
-
-export const SEARCH_NO_RESULTS_TEXT =
-  'No results found, try something different than';
-
-export const SEARCH_SUGGESTED_QUERY_TEXT = '';
-
-export const OVERVIEW_FILTER_NAME_TEXT = '';
-
 export const OUTLINE_CTA_BUTTON_TEXT = "Let's talk";
 export const OUTLINE_CTA_DESCRIPTION =
   'We support teams building scalable apps with React and React Native.';

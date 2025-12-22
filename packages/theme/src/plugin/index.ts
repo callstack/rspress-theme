@@ -50,7 +50,7 @@ function getThemeAliases(
   const ckThemeExportsPath = path.join(dirname, 'theme');
 
   const { resolve } = createRequire(import.meta.url);
-  const rspressThemeDefaultPath = resolve('@rspress/theme-default', {
+  const rspressThemeDefaultPath = resolve('@rspress/core/theme-original', {
     paths: [resolve('@rspress/core/package.json')],
   });
 
@@ -147,35 +147,11 @@ function getBuilderConfig(options: PluginCallstackThemeOptions): BuilderConfig {
         delete alias['@theme-assets'];
         Object.assign(alias, { '@theme-assets': themeAssetsAlias });
 
-        // add '@theme', '@default-theme' & 'rspress/theme' aliases
-        // @ts-ignore
         const themeAliases = getThemeAliases(alias['@theme']);
         Object.assign(alias, themeAliases);
       },
     },
   };
-}
-
-function addThemeOverrides(themeConfig: UserConfig['themeConfig'] = {}) {
-  if (!themeConfig.overview) {
-    themeConfig.overview = { filterNameText: consts.OVERVIEW_FILTER_NAME_TEXT };
-  } else if (!themeConfig.overview.filterNameText) {
-    themeConfig.overview.filterNameText = consts.OVERVIEW_FILTER_NAME_TEXT;
-  }
-
-  if (!themeConfig.outlineTitle) {
-    themeConfig.outlineTitle = consts.OUTLINE_TITLE;
-  }
-
-  if (!themeConfig.searchNoResultsText) {
-    themeConfig.searchNoResultsText = consts.SEARCH_NO_RESULTS_TEXT;
-  }
-
-  if (!themeConfig.searchSuggestedQueryText) {
-    themeConfig.searchSuggestedQueryText = consts.SEARCH_SUGGESTED_QUERY_TEXT;
-  }
-
-  return themeConfig;
 }
 
 function normalizeOptions(options: PluginCallstackThemeOptions) {
@@ -220,7 +196,6 @@ export function pluginCallstackTheme(
     builderConfig: getBuilderConfig(normalizedOptions),
     // add ck theme defaults if not present
     config: (config) => {
-      config.themeConfig = addThemeOverrides(config.themeConfig);
       return config;
     },
     // inject style overrides

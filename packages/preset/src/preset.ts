@@ -13,18 +13,22 @@ import { type PresetConfig, validatePresetOptions } from './options';
 const CALLSTACK_BASE_URL = 'https://www.callstack.com';
 const CALLSTACK_CONTACT_URL = 'https://www.callstack.com/contact';
 
+type SocialLinksProps = Parameters<typeof SocialLinksComponent>[0];
+type SocialLinks = NonNullable<SocialLinksProps['socialLinks']>;
 type SupportedSocialLinks = Exclude<
-  Parameters<typeof SocialLinksComponent>[0]['socialLinks'][number]['icon'],
+  SocialLinks[number]['icon'],
   { svg: string }
 >;
 type Socials = Partial<Record<SupportedSocialLinks, string>>;
-type SocialLinks = Parameters<typeof SocialLinksComponent>[0]['socialLinks'];
 
 const __filename = url.fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 function createSocialLinks(socials: Socials | undefined): SocialLinks {
-  return Object.entries(socials ?? {}).map(([key, value]) => ({
+  if (!socials) {
+    return [];
+  }
+  return Object.entries(socials).map(([key, value]) => ({
     icon: key as keyof Socials,
     mode: 'link',
     content: value,
@@ -139,7 +143,6 @@ const createPreset = (config: PresetConfig): UserConfig => {
       },
       editLink: {
         docRepoBaseUrl: docs.editUrl,
-        text: 'Edit this page on GitHub',
       },
       socialLinks: createSocialLinks(docs.socials),
     },
