@@ -1,3 +1,4 @@
+import { usePageData } from '@rspress/core/runtime';
 import { Button } from '../button';
 import styles from './index.module.scss';
 
@@ -19,9 +20,12 @@ export function OutlineCTA({
   headline = OUTLINE_CTA_HEADLINE,
   href = OUTLINE_CTA_LINK,
 }: OutlineCTAProps) {
+  const { page } = usePageData();
+  const hasOutline = page.toc && page.toc.length > 0;
+
   return (
     <>
-      <div className="rp-outline__divider" />
+      {hasOutline && <div className="rp-outline__divider" />}
       <div className={styles.container}>
         <div>
           <div className={styles.headline}>{headline}</div>
