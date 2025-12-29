@@ -41,10 +41,7 @@ export function HomeFeature() {
         }
 
         return (
-          <div
-            key={title}
-            className={`${getGridClass(feature)} rp-rounded hover:rp-var(--rp-c-brand)`}
-          >
+          <div key={title} className={`${getGridClass(feature)} rp-rounded`}>
             <div className={styles.featureCardContainer}>
               <article
                 key={title}

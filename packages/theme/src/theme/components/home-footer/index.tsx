@@ -1,4 +1,4 @@
-import { usePageData } from '@rspress/core/runtime';
+import { useDark, usePageData } from '@rspress/core/runtime';
 import { Link, SocialLinks } from '@theme';
 import CKLogoDark from '../../assets/ck-logo-dark.svg?react';
 import CKLogoLight from '../../assets/ck-logo-light.svg?react';
@@ -24,6 +24,7 @@ interface HomeFooterProps {
 
 function HomeFooter(props: HomeFooterProps) {
   const { siteData } = usePageData();
+  const isDark = useDark();
   const LinkComponent = props.LinkComponent ?? Link;
   const SocialLinksComponent = props.SocialLinksComponent ?? SocialLinks;
 
@@ -32,8 +33,7 @@ function HomeFooter(props: HomeFooterProps) {
       <div className={styles.row}>
         <LinkComponent href={HOME_FOOTER_LINK}>
           <div className={styles.logo}>
-            <CKLogoDark className="rp-hidden dark:rp-block" />
-            <CKLogoLight className="dark:rp-hidden" />
+            {isDark ? <CKLogoDark /> : <CKLogoLight />}
           </div>
         </LinkComponent>
         <span className={styles.message}>
