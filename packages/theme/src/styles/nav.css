@@ -42,11 +42,6 @@
   font-weight: 400 !important;
 }
 
-.rp-sidebar-item--group-item.rp-sidebar-item--active
-  .rp-sidebar-item__left:before {
-  left: 24px !important;
-}
-
 /* Section header text */
 .rp-sidebar-section-header__left > span {
   color: var(--rp-c-text-3) !important;
@@ -70,22 +65,6 @@
 /* Sidebar active item disable bg */
 .rp-sidebar-item--active {
   background-color: transparent !important;
-}
-
-/* Sidebar active item disable border */
-.rp-sidebar-item--active::before {
-  display: none !important;
-}
-
-/* Sidebar active item border right */
-.rp-sidebar-item--active:after {
-  content: "";
-  background-color: var(--rp-c-brand);
-  width: 1px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 /* Solid border after sections */
