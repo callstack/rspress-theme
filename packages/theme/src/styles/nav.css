@@ -3,20 +3,11 @@
   background-color: var(--rp-c-bg) !important;
   border-bottom: 1px solid var(--rp-c-divider-light) !important;
   color: var(--rp-c-text-1) !important;
-  padding: 8px 16px !important;
-}
-
-/* Scrollbar (nav & search) */
-.rp-scrollbar {
-  scrollbar-gutter: auto !important;
-  scrollbar-width: thin !important;
-  overflow: scroll !important;
 }
 
 /* Sidebar right border */
 .rp-doc-layout__sidebar {
   border-right: 1px solid var(--rp-c-divider-light) !important;
-  padding-top: 16px !important;
 }
 
 /* Nav items */

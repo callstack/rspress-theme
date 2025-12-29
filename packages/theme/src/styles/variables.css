@@ -68,10 +68,7 @@
 /* rspress sizing */
 :root {
   --rp-nav-height: 48px !important;
-  --rp-sidebar-width: 320px !important;
   --rp-sidebar-menu-height: 46px !important;
-  --rp-aside-width: 268px !important;
-  --rp-sidebar-padding: 0 !important;
   --rp-content-padding-x: 24px;
   --rp-content-padding-y: 64px;
   --rp-radius: 4px !important;
