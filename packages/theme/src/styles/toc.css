@@ -22,7 +22,7 @@ aside.rp-doc-layout__outline > div.rp-outline {
 }
 
 /* hide progress circle */
-.rp-progress-circle {
+svg.rp-progress-circle {
   display: none !important;
 }
 
