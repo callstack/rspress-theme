@@ -10,7 +10,6 @@ import {
   HomeHero,
   LinkCard,
   OutlineCTA,
-  PrevNextPage,
   SwitchAppearance,
   VersionBadge,
   // @ts-ignore
@@ -64,7 +63,6 @@ export {
   HomeHero,
   LinkCard,
   OutlineCTA,
-  PrevNextPage,
   SwitchAppearance,
   VersionBadge,
 };

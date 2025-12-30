@@ -9,6 +9,5 @@ export { HomeFooter } from './home-footer';
 export { HomeHero } from './home-hero';
 export { LinkCard } from './link-card';
 export { OutlineCTA } from './outline-cta';
-export { PrevNextPage } from './prev-next-page';
 export { SwitchAppearance } from './switch-appearance';
 export { VersionBadge } from './version-badge';
