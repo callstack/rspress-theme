@@ -74,6 +74,7 @@
   --rp-radius: 4px !important;
   --rp-radius-small: 2px !important;
   --rp-radius-large: 8px !important;
+  --rp-sidebar-width: 296px !important; /* make sidebar look even with header logo */
 }
 
 @media (max-width: 768px) {

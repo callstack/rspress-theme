@@ -20,6 +20,10 @@ const devConfig = defineConfig({
   root: path.join(__dirname, 'docs'),
   title: 'My Site',
   description: 'My Site Description',
+  logo: {
+    dark: '/logo-dark.png',
+    light: '/logo-light.png',
+  },
   themeConfig: {
     editLink: {
       docRepoBaseUrl: 'https://github.com/callstack/rspress-theme',

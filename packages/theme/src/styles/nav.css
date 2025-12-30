@@ -1,13 +1,12 @@
 /* Nav header */
 .rp-nav {
-  background-color: var(--rp-c-bg) !important;
-  border-bottom: 1px solid var(--rp-c-divider-light) !important;
   color: var(--rp-c-text-1) !important;
 }
 
-/* Sidebar right border */
 .rp-doc-layout__sidebar {
-  border-right: 1px solid var(--rp-c-divider-light) !important;
+  /* we want full width sidebar highlights on hover */
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
 /* Nav items */
