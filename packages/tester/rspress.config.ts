@@ -28,6 +28,7 @@ const devConfig = defineConfig({
     editLink: {
       docRepoBaseUrl: 'https://github.com/callstack/rspress-theme',
     },
+    enableScrollToTop: false,
     socialLinks: [
       {
         icon: 'github',

@@ -1,4 +1,4 @@
-import { usePageData } from '@rspress/core/runtime';
+import { usePageData, useSite } from '@rspress/core/runtime';
 import { Button } from '../button';
 import styles from './index.module.scss';
 
@@ -21,11 +21,15 @@ export function OutlineCTA({
   href = OUTLINE_CTA_LINK,
 }: OutlineCTAProps) {
   const { page } = usePageData();
+  const { site } = useSite();
+
+  const isScrollToTopEnabled = site.themeConfig?.enableScrollToTop ?? true;
   const hasOutline = page.toc && page.toc.length > 0;
+  const showDivider = isScrollToTopEnabled && hasOutline;
 
   return (
     <>
-      {hasOutline && <div className="rp-outline__divider" />}
+      {showDivider && <div className="rp-outline__divider" />}
       <div className={styles.container}>
         <div>
           <div className={styles.headline}>{headline}</div>
