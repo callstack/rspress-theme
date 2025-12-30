@@ -222,7 +222,7 @@ Prev next page
 */
 
 :root {
-  --rp-prev-next-page-gap: 1rem;
+  --rp-prev-next-page-gap: 12px;
 }
 
 .rp-prev-next-page {
@@ -264,6 +264,7 @@ Prev next page
 .rp-prev-next-page__item__desc {
   position: absolute;
   top: 10px;
+  left: var(--rp-prev-next-page-gap);
 }
 
 .rp-prev-next-page__next .rp-prev-next-page__item__desc {
