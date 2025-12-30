@@ -242,8 +242,8 @@ Prev next page
 }
 
 .rp-prev-next-page__item:hover {
-  background-color: transparent !important;
-  opacity: 1 !important;
+  background-color: initial !important;
+  opacity: initial !important;
 }
 
 .rp-prev-next-page__icon {
