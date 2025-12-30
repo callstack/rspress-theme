@@ -11,7 +11,7 @@
     "preview": "rspress preview"
   },
   "dependencies": {
-    "@rspress/core": "^2.0.0-rc.3",
+    "@rspress/core": "^2.0.0-rc.2",
     "@callstack/rspress-preset": "workspace:*",
     "@callstack/rspress-theme": "workspace:*"
   },
