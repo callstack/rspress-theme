@@ -55,6 +55,8 @@ const prodConfig = withCallstackPreset(
     context: path.join(__dirname),
     docs: {
       title: 'My Site',
+      logoDark: '/logo-dark.png',
+      logoLight: '/logo-light.png',
       description: 'My Site Description',
       editUrl: 'https://github.com/callstack/rspress-theme',
       rootDir: 'docs',
