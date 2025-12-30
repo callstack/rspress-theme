@@ -7,7 +7,7 @@
   /* we want full width sidebar highlights on hover */
   padding-left: 0 !important;
   padding-right: 0 !important;
-  overflow: visible !important;
+  scrollbar-width: thin;
 }
 
 /* Nav items */
