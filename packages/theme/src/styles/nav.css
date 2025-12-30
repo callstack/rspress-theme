@@ -243,7 +243,8 @@ Prev next page
 }
 
 .rp-prev-next-page__item:hover {
-  border-color: var(--rp-c-brand) !important;
+  background-color: transparent !important;
+  opacity: 1 !important;
 }
 
 .rp-prev-next-page__icon {
