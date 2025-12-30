@@ -1,5 +1,6 @@
-import { ThemeContext, flushSync, useSite } from '@rspress/core/runtime';
+import { ThemeContext, useSite } from '@rspress/core/runtime';
 import { type MouseEvent, useContext } from 'react';
+import { flushSync } from 'react-dom';
 import IconMoon from '../../assets/moon.svg?react';
 import IconSun from '../../assets/sun.svg?react';
 import './index.module.scss';
@@ -83,21 +84,12 @@ export function SwitchAppearance({ onClick }: { onClick?: () => void }) {
     }
   };
 
+  const Icon = theme === 'dark' ? IconSun : IconMoon;
+
   return (
-    <div onClick={handleClick} className="md:rp-mr-2 rspress-nav-appearance">
-      <div className="rp-p-1 rp-border rp-border-solid rp-border-gray-300 rp-text-gray-400 rp-cursor-pointer rp-rounded-md hover:rp-border-gray-600 hover:rp-text-gray-600 dark:hover:rp-border-gray-200 dark:hover:rp-text-gray-200 rp-transition-all rp-duration-300 rp-w-7 rp-h-7">
-        <IconMoon
-          className="dark:rp-hidden"
-          width="18"
-          height="18"
-          fill="currentColor"
-        />
-        <IconSun
-          className="rp-hidden dark:rp-block"
-          width="18"
-          height="18"
-          fill="currentColor"
-        />
+    <div onClick={handleClick} className="rspress-nav-appearance">
+      <div className="rp-p-1 rp-border rp-border-solid rp-border-gray-300 rp-text-gray-400 rp-cursor-pointer rp-rounded-md rp-transition-all rp-duration-300 rp-w-7 rp-h-7">
+        <Icon width="18" height="18" fill="currentColor" />
       </div>
     </div>
   );

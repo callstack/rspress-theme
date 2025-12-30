@@ -1,9 +1,10 @@
 import {
   isExternalUrl,
   normalizeHrefInRuntime,
+  useFrontmatter,
   withBase,
 } from '@rspress/core/runtime';
-import type { Feature, FrontMatterMeta } from '../../types';
+import type { Feature } from '../../types';
 import { renderHtmlOrText } from '../../utils';
 import styles from './index.module.scss';
 
@@ -24,17 +25,12 @@ const getGridClass = ({ span }: Feature): string => {
   }
 };
 
-export function HomeFeature({
-  frontmatter,
-}: {
-  frontmatter: FrontMatterMeta;
-  routePath: string;
-}) {
-  const features = frontmatter?.features;
+export function HomeFeature() {
+  const { frontmatter } = useFrontmatter();
 
   return (
-    <div className="rp-overflow-hidden rp-m-auto rp-flex rp-flex-wrap rp-max-w-6xl">
-      {features?.map((feature) => {
+    <div className={styles.container}>
+      {frontmatter.features?.map((feature) => {
         const { icon, title, details, link: rawLink } = feature;
 
         let link = rawLink;
@@ -45,10 +41,7 @@ export function HomeFeature({
         }
 
         return (
-          <div
-            key={title}
-            className={`${getGridClass(feature)} rp-rounded hover:rp-var(--rp-c-brand)`}
-          >
+          <div key={title} className={`${getGridClass(feature)} rp-rounded`}>
             <div className={styles.featureCardContainer}>
               <article
                 key={title}
@@ -61,7 +54,7 @@ export function HomeFeature({
                 }}
               >
                 {icon ? (
-                  <div className="rp-flex rp-items-center rp-justify-center">
+                  <div className={styles.featureIconContainer}>
                     <div
                       className={styles.featureIcon}
                       {...renderHtmlOrText(icon)}

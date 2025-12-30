@@ -1,0 +1,33 @@
+@font-face {
+  font-family: "Fira Code";
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url("./fonts/FiraCode-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Fira Code";
+  font-style: normal;
+  font-weight: 500;
+  font-display: block;
+  src: url("./fonts/FiraCode-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Alliance No. 2";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("https://assets.callstack.com/alliance-no-2-regular.woff2")
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Alliance No. 2";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("https://assets.callstack.com/alliance-no-2-medium.woff2")
+    format("woff2");
+}

@@ -38,6 +38,15 @@
   }
 }
 
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  overflow: hidden;
+  max-width: 72rem;
+}
+
 .featureCardContainer {
   height: 100%;
   padding: 8px;
@@ -99,6 +108,12 @@
   justify-content: center;
   margin-bottom: 0;
   color: var(--rp-c-brand);
+}
+
+.featureIconContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .featureTitle {

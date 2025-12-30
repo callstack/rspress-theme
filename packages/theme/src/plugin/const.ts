@@ -3,9 +3,9 @@ export const OUTLINE_TITLE = 'Contents';
 export const SEARCH_NO_RESULTS_TEXT =
   'No results found, try something different than';
 
-export const SEARCH_SUGGESTED_QUERY_TEXT = '';
+export const SEARCH_SUGGESTED_QUERY_TEXT = ' ';
 
-export const OVERVIEW_FILTER_NAME_TEXT = '';
+export const OVERVIEW_FILTER_NAME_TEXT = ' ';
 
 export const OUTLINE_CTA_BUTTON_TEXT = "Let's talk";
 export const OUTLINE_CTA_DESCRIPTION =
@@ -27,3 +27,5 @@ export const HOME_BANNER_BUTTON_TEXT = "Let's talk";
 export const HOME_BANNER_LINK = 'https://www.callstack.com/contact';
 
 export const HOME_FOOTER_LINK = 'https://callstack.com';
+
+export const EDIT_LINK_TEXT = 'Edit this page on GitHub';

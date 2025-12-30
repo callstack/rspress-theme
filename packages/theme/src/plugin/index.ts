@@ -1,4 +1,3 @@
-import fs from 'node:fs';
 import { createRequire } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -33,24 +32,13 @@ function excludeFalse<T>(value: T): value is Exclude<T, false> {
   return value !== false;
 }
 
-function getThemeAssets() {
-  const assetsDirPath = path.join(dirname, '../assets');
-  const contents = fs.readdirSync(assetsDirPath);
-  return contents
-    .map(path.parse)
-    .map(({ base, name }) => [
-      `@theme-assets/${name}`,
-      path.join(assetsDirPath, base),
-    ]);
-}
-
 function getThemeAliases(
   existingThemeAlias: AliasEntry
 ): Record<string, string | string[]> {
   const ckThemeExportsPath = path.join(dirname, 'theme');
 
   const { resolve } = createRequire(import.meta.url);
-  const rspressThemeDefaultPath = resolve('@rspress/theme-default', {
+  const rspressCoreThemePath = resolve('@rspress/core/theme', {
     paths: [resolve('@rspress/core/package.json')],
   });
 
@@ -58,7 +46,7 @@ function getThemeAliases(
 
   // Handle @theme alias
   if (Array.isArray(existingThemeAlias)) {
-    const index = existingThemeAlias.indexOf(rspressThemeDefaultPath);
+    const index = existingThemeAlias.indexOf(rspressCoreThemePath);
     if (index !== -1) {
       aliases['@theme'] = existingThemeAlias.filter(excludeFalse).slice();
       aliases['@theme'].splice(index, 0, ckThemeExportsPath);
@@ -74,29 +62,13 @@ function getThemeAliases(
   }
 
   // Add alias for @default-theme to avoid circular dependency
-  aliases['@default-theme'] = rspressThemeDefaultPath;
+  aliases['@default-theme'] = rspressCoreThemePath;
   // Alias rspress/theme to our theme to keep the theme override pattern from Rspress docs
   aliases['@rspress/core/theme'] = ckThemeExportsPath;
-
-  return aliases;
-}
-
-function getThemeAssetAlias(
-  existingAssetAlias: AliasEntry
-): Record<string, string | string[]> {
-  const assetOverrides = getThemeAssets();
-  const aliases: Record<string, string | string[]> = {};
-
-  for (const [assetAlias, assetPath] of assetOverrides) {
-    if (Array.isArray(existingAssetAlias)) {
-      aliases[assetAlias] = existingAssetAlias.filter(excludeFalse);
-      aliases[assetAlias].push(assetPath);
-    } else if (existingAssetAlias) {
-      aliases[assetAlias] = [existingAssetAlias, assetPath];
-    } else {
-      aliases[assetAlias] = assetPath;
-    }
-  }
+  // Alias @theme-original and @rspress/core/theme-original to always override
+  // the original theme
+  aliases['@theme-original'] = ckThemeExportsPath;
+  aliases['@rspress/core/theme-original'] = ckThemeExportsPath;
 
   return aliases;
 }
@@ -137,16 +109,6 @@ function getBuilderConfig(options: PluginCallstackThemeOptions): BuilderConfig {
     },
     resolve: {
       alias: (alias) => {
-        // add '@theme-assets' aliases but keep the custom ones from user
-        const assetAliases = getThemeAssetAlias(alias['@theme-assets']);
-        Object.assign(alias, assetAliases);
-
-        // remove & add existing @theme-assets alias to keep specific aliases on top
-        const themeAssetsAlias = alias['@theme-assets'];
-        // biome-ignore lint/performance/noDelete: change property order
-        delete alias['@theme-assets'];
-        Object.assign(alias, { '@theme-assets': themeAssetsAlias });
-
         // add '@theme', '@default-theme' & 'rspress/theme' aliases
         // @ts-ignore
         const themeAliases = getThemeAliases(alias['@theme']);
@@ -156,26 +118,49 @@ function getBuilderConfig(options: PluginCallstackThemeOptions): BuilderConfig {
   };
 }
 
-function addThemeOverrides(themeConfig: UserConfig['themeConfig'] = {}) {
-  if (!themeConfig.overview) {
-    themeConfig.overview = { filterNameText: consts.OVERVIEW_FILTER_NAME_TEXT };
-  } else if (!themeConfig.overview.filterNameText) {
-    themeConfig.overview.filterNameText = consts.OVERVIEW_FILTER_NAME_TEXT;
+function getI18nSourceOverrides(
+  existingI18nSource: UserConfig['i18nSource'] = {}
+): UserConfig['i18nSource'] {
+  const i18nSource: UserConfig['i18nSource'] = {
+    ...existingI18nSource,
+  };
+
+  if (!i18nSource['overview.filterNameText']) {
+    i18nSource['overview.filterNameText'] = {
+      en: consts.OVERVIEW_FILTER_NAME_TEXT,
+      zh: consts.OVERVIEW_FILTER_NAME_TEXT,
+    };
   }
 
-  if (!themeConfig.outlineTitle) {
-    themeConfig.outlineTitle = consts.OUTLINE_TITLE;
+  if (!i18nSource.outlineTitle) {
+    i18nSource.outlineTitle = {
+      en: consts.OUTLINE_TITLE,
+      zh: consts.OUTLINE_TITLE,
+    };
   }
 
-  if (!themeConfig.searchNoResultsText) {
-    themeConfig.searchNoResultsText = consts.SEARCH_NO_RESULTS_TEXT;
+  if (!i18nSource.searchNoResultsText) {
+    i18nSource.searchNoResultsText = {
+      en: consts.SEARCH_NO_RESULTS_TEXT,
+      zh: consts.SEARCH_NO_RESULTS_TEXT,
+    };
   }
 
-  if (!themeConfig.searchSuggestedQueryText) {
-    themeConfig.searchSuggestedQueryText = consts.SEARCH_SUGGESTED_QUERY_TEXT;
+  if (!i18nSource.searchSuggestedQueryText) {
+    i18nSource.searchSuggestedQueryText = {
+      en: consts.SEARCH_SUGGESTED_QUERY_TEXT,
+      zh: consts.SEARCH_SUGGESTED_QUERY_TEXT,
+    };
   }
 
-  return themeConfig;
+  if (!i18nSource.editLinkText) {
+    i18nSource.editLinkText = {
+      en: consts.EDIT_LINK_TEXT,
+      zh: consts.EDIT_LINK_TEXT,
+    };
+  }
+
+  return i18nSource;
 }
 
 function normalizeOptions(options: PluginCallstackThemeOptions) {
@@ -218,9 +203,8 @@ export function pluginCallstackTheme(
     name: 'plugin-callstack-theme',
     // replace default theme & theme assets
     builderConfig: getBuilderConfig(normalizedOptions),
-    // add ck theme defaults if not present
     config: (config) => {
-      config.themeConfig = addThemeOverrides(config.themeConfig);
+      config.i18nSource = getI18nSourceOverrides(config.i18nSource);
       return config;
     },
     // inject style overrides

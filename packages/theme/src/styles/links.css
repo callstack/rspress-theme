@@ -1,0 +1,25 @@
+/* links */
+.rp-link:hover {
+  color: var(--rp-c-brand);
+}
+
+/* code links */
+.rp-link:hover > code {
+  color: var(--rp-c-brand) !important;
+}
+
+/* code links in rp-doc */
+.rp-doc a > code {
+  color: var(--rp-c-text-1) !important;
+  text-decoration: underline !important;
+}
+
+/* regular links in paragraphs have underline */
+p > .rp-link {
+  border-bottom: 1px solid var(--rp-c-text-1);
+}
+
+/* remove arrow from links */
+.rp-link:after {
+  content: none !important;
+}

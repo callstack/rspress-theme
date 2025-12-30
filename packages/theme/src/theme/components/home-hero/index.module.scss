@@ -1,6 +1,7 @@
 .container {
   margin: 0 auto;
   width: calc(100% - 8 * 2px);
+  max-width: 72rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -131,4 +132,20 @@
   .heroActions {
     gap: 12px;
   }
+}
+
+.heroImageLight {
+  display: block;
+}
+
+.heroImageDark {
+  display: none;
+}
+
+:global(.dark) .heroImageDark {
+  display: block;
+}
+
+:global(.dark) .heroImageLight {
+  display: none;
 }

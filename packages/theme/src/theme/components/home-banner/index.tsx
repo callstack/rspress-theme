@@ -21,7 +21,7 @@ export function HomeBanner({
   href = HOME_BANNER_LINK,
 }: HomeBannerProps) {
   return (
-    <div className="rp-max-w-6xl rp-m-auto">
+    <div className={styles.wrapper}>
       <div className={styles.container}>
         <div className={styles.background}>
           <div className={styles.gradient} />

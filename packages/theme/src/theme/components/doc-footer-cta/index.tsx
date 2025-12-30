@@ -26,7 +26,7 @@ export function DocFooterCTA({
   }
 
   return (
-    <div className={`rp-max-w-6xl ${styles.container}`}>
+    <div className={styles.container}>
       <img
         className={styles.logo}
         src={abstractAtom}

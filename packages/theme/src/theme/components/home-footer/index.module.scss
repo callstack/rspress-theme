@@ -2,6 +2,7 @@
   width: 100%;
   margin: 0 auto;
   padding: 0 8px;
+  max-width: 72rem;
 }
 
 .row {
@@ -25,4 +26,20 @@
   line-height: 1.5;
   text-align: center;
   margin: 0 8px;
+}
+
+.logoDark {
+  display: none;
+}
+
+:global(.dark) .logoDark {
+  display: block;
+}
+
+.logoLight {
+  display: block;
+}
+
+:global(.dark) .logoLight {
+  display: none;
 }
