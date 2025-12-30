@@ -27,3 +27,19 @@
   text-align: center;
   margin: 0 8px;
 }
+
+.logoDark {
+  display: none;
+}
+
+:global(.dark) .logoDark {
+  display: block;
+}
+
+.logoLight {
+  display: block;
+}
+
+:global(.dark) .logoLight {
+  display: none;
+}

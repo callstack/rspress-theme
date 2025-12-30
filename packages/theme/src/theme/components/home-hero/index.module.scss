@@ -133,3 +133,19 @@
     gap: 12px;
   }
 }
+
+.heroImageLight {
+  display: block;
+}
+
+.heroImageDark {
+  display: none;
+}
+
+:global(.dark) .heroImageDark {
+  display: block;
+}
+
+:global(.dark) .heroImageLight {
+  display: none;
+}
