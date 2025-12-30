@@ -1,6 +1,6 @@
 /* links */
 .rp-link:hover {
-  color: var(--rp-c-brand) !important;
+  color: var(--rp-c-brand);
 }
 
 /* code links */
