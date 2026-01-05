@@ -51,3 +51,9 @@ a.rp-edit-link::before {
   line-height: 1.2 !important;
   color: var(--rp-c-text-2) !important;
 }
+
+.rp-doc code {
+  padding: 0.1em 0.2em !important;
+  font-size: 1em !important;
+  border-radius: 4px !important;
+}
