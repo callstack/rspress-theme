@@ -52,7 +52,7 @@ function addUTMParameters(
   const urlObj = new URL(url);
   urlObj.searchParams.set('utm_campaign', 'open_source');
   urlObj.searchParams.set('utm_source', siteTitle);
-  urlObj.searchParams.set('utm_medium', 'documentation');
+  urlObj.searchParams.set('utm_medium', 'referral');
   urlObj.searchParams.set('utm_content', location);
   return urlObj.toString();
 }
