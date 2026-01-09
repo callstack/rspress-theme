@@ -28,38 +28,42 @@ interface PluginCallstackThemeOptions {
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
-function excludeFalse<T>(value: T): value is Exclude<T, false> {
-  return value !== false;
-}
-
 function getThemeAliases(
   existingThemeAlias: AliasEntry
 ): Record<string, string | string[]> {
   const ckThemeExportsPath = path.join(dirname, 'theme');
 
   const { resolve } = createRequire(import.meta.url);
-  const rspressCoreThemePath = resolve('@rspress/core/theme', {
+  const rspressCoreThemeEntry = resolve('@rspress/core/theme', {
     paths: [resolve('@rspress/core/package.json')],
   });
+  const rspressCoreThemePath = path.dirname(rspressCoreThemeEntry);
 
   const aliases: Record<string, string | string[]> = {};
 
   // Handle @theme alias
-  if (Array.isArray(existingThemeAlias)) {
-    const index = existingThemeAlias.indexOf(rspressCoreThemePath);
-    if (index !== -1) {
-      aliases['@theme'] = existingThemeAlias.filter(excludeFalse).slice();
-      aliases['@theme'].splice(index, 0, ckThemeExportsPath);
-    } else {
-      // Add CK theme path to existing array
-      aliases['@theme'] = existingThemeAlias
-        .filter(excludeFalse)
-        .concat(ckThemeExportsPath);
-    }
-  } else {
-    // Replace single string with CK theme path
-    aliases['@theme'] = ckThemeExportsPath;
+  // Order matters here: project theme -> CK theme -> Rspress default theme.
+  const existingThemeAliasList = Array.isArray(existingThemeAlias)
+    ? existingThemeAlias
+    : typeof existingThemeAlias === 'string'
+      ? [existingThemeAlias]
+      : [];
+
+  const themeAliasCandidates = existingThemeAliasList
+    .filter((value): value is string => typeof value === 'string')
+    // Ensure we don't duplicate/mis-order our theme if this runs multiple times.
+    .filter((value) => value !== ckThemeExportsPath);
+
+  // Ensure the Rspress default theme is always the final fallback.
+  if (!themeAliasCandidates.includes(rspressCoreThemePath)) {
+    themeAliasCandidates.push(rspressCoreThemePath);
   }
+
+  // Inject CK theme after the project theme but before the Rspress theme.
+  const rspressThemeIndex = themeAliasCandidates.indexOf(rspressCoreThemePath);
+  themeAliasCandidates.splice(rspressThemeIndex, 0, ckThemeExportsPath);
+
+  aliases['@theme'] = themeAliasCandidates;
 
   // Add alias for @default-theme to avoid circular dependency
   aliases['@default-theme'] = rspressCoreThemePath;
