@@ -165,11 +165,6 @@ const createPreset = (config: PresetConfig): UserConfig => {
     plugins: [
       pluginCallstackTheme(theme),
       pluginSitemap({ siteUrl: docs.rootUrl }),
-      // pluginLlms({
-      //   exclude: ({ page }) => {
-      //     return page.routePath.includes('404');
-      //   },
-      // }),
     ],
   });
 };
