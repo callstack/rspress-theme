@@ -4,8 +4,9 @@
  * @license MIT
  */
 import { useI18n } from '@rspress/core/runtime';
-import { IconCopy, IconSuccess } from '@theme';
 import { useCallback, useRef, useState } from 'react';
+import IconCheck from '../../assets/check.svg?react';
+import IconCopy from '../../assets/copy.svg?react';
 import './index.scss';
 import './LlmsCopyButton.scss';
 import { useMdUrl } from './useMdUrl';
@@ -85,7 +86,7 @@ export function LlmsCopyButton(props: LlmsCopyButtonProps) {
       onClick={onClick ?? handleClick}
     >
       <div className="rp-llms-copy-button__icon-wrapper">
-        <IconSuccess className="rp-llms-copy-button__icon-success" />
+        <IconCheck className="rp-llms-copy-button__icon-success" />
         <IconCopy className="rp-llms-copy-button__icon-copy" />
       </div>
       <span>{t('copyMarkdownText')}</span>

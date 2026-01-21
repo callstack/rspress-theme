@@ -4,8 +4,10 @@
  * @license MIT
  */
 import { useI18n, useSite } from '@rspress/core/runtime';
-import { IconDown } from '@theme';
 import { useEffect, useMemo, useRef, useState } from 'react';
+import IconArrowDown from '../../../assets/arrow-down.svg?react';
+import IconLink from '../../assets/link.svg?react';
+import IconUpload from '../../assets/upload.svg?react';
 import './index.scss';
 import './LlmsViewOptions.scss';
 import { useMdUrl } from './useMdUrl';
@@ -46,40 +48,6 @@ export interface LlmsViewOptionsProps
    */
   text?: string;
 }
-
-const IconExternalLink = () => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="16"
-      height="16"
-      viewBox="0 0 16 16"
-      fill="none"
-    >
-      <path
-        d="M9.33301 2H13.9997V6.66667"
-        stroke="currentColor"
-        strokeWidth="1.33333"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M14 9.82457V13C14 13.5523 13.5523 14 13 14H3C2.44772 14 2 13.5523 2 13V3C2 2.44772 2.44772 2 3 2H6"
-        stroke="currentColor"
-        strokeWidth="1.33333"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M8.59961 7.39996L13.6996 2.29996"
-        stroke="currentColor"
-        strokeWidth="1.33333"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-};
 
 const DEFAULT_OPTIONS: Option[] = ['markdownLink', 'chatgpt', 'claude'];
 
@@ -128,25 +96,7 @@ export function LlmsViewOptions({
     return {
       markdownLink: {
         title: t('copyMarkdownLinkText'),
-        icon: (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            width="24"
-            height="24"
-          >
-            <g
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-            >
-              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-            </g>
-          </svg>
-        ),
+        icon: <IconLink />,
         onClick: () => {
           navigator.clipboard.writeText(fullMarkdownUrl);
         },
@@ -193,13 +143,14 @@ export function LlmsViewOptions({
   return (
     <>
       <button
+        type="button"
         ref={dropdownRef}
         onClick={toggleDropdown}
         className={`rp-llms-button rp-llms-view-options__trigger ${
           isOpen ? 'rp-llms-view-options__trigger--active' : ''
         }`}
       >
-        <IconDown
+        <IconArrowDown
           className={`rp-llms-view-options__arrow ${isOpen ? 'rp-llms-view-options__arrow--rotated' : ''}`}
         />
         {isOpen && (
@@ -232,7 +183,7 @@ export function LlmsViewOptions({
                     </span>
                     <span>{displayItem.title}</span>
                     <span className="rp-llms-view-options__external-icon">
-                      <IconExternalLink />
+                      <IconUpload />
                     </span>
                   </a>
                 );
