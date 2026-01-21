@@ -136,6 +136,7 @@ const createPreset = (config: PresetConfig): UserConfig => {
     themeConfig: {
       enableContentAnimation: true,
       enableScrollToTop: false,
+      llmsUI: true,
       footer: {
         message: `Copyright © ${new Date().getFullYear()} Callstack`,
       },
