@@ -5,7 +5,6 @@ import { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
 import { defineConfig, mergeDocConfig } from '@rspress/core';
 import type { UserConfig } from '@rspress/core';
 import type { SocialLinks as SocialLinksComponent } from '@rspress/core/theme';
-import { pluginLlms } from '@rspress/plugin-llms';
 import { pluginSitemap } from '@rspress/plugin-sitemap';
 import { pluginOpenGraph } from 'rsbuild-plugin-open-graph';
 import { type PresetConfig, validatePresetOptions } from './options';
@@ -105,6 +104,7 @@ const createPreset = (config: PresetConfig): UserConfig => {
     title: docs.title,
     description: docs.description,
     icon: docs.icon,
+    llms: true,
     globalStyles: getGlobalStyles(context),
     globalUIComponents: enableVercel
       ? [
@@ -136,7 +136,7 @@ const createPreset = (config: PresetConfig): UserConfig => {
     themeConfig: {
       enableContentAnimation: true,
       enableScrollToTop: false,
-      llmsUI: true,
+      llmsUI: false,
       footer: {
         message: `Copyright © ${new Date().getFullYear()} Callstack`,
       },
@@ -165,11 +165,11 @@ const createPreset = (config: PresetConfig): UserConfig => {
     plugins: [
       pluginCallstackTheme(theme),
       pluginSitemap({ siteUrl: docs.rootUrl }),
-      pluginLlms({
-        exclude: ({ page }) => {
-          return page.routePath.includes('404');
-        },
-      }),
+      // pluginLlms({
+      //   exclude: ({ page }) => {
+      //     return page.routePath.includes('404');
+      //   },
+      // }),
     ],
   });
 };
