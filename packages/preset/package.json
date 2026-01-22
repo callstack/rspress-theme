@@ -14,7 +14,11 @@
     },
     "./package.json": "./package.json"
   },
-  "files": ["dist", "README.md", "vendor"],
+  "files": [
+    "dist",
+    "README.md",
+    "vendor"
+  ],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

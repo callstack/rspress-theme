@@ -143,7 +143,7 @@ img#logo {
 
 /* remove arrow from mobile nav menu links */
 .rp-nav-screen-menu-item.rp-link[target="_blank"]
-  .rp-nav-screen-menu-item__left:after {
+.rp-nav-screen-menu-item__left:after {
   content: none !important;
 }
 
@@ -164,22 +164,24 @@ button.rp-nav-hamburger > img {
 }
 
 /* Social links icon */
-div.rspress-nav-appearance > div,
+.rspress-nav-appearance > div,
 .rp-social-links__icon > div {
   color: var(--rp-c-text-1) !important;
-  background: linear-gradient(
+  background:
+    linear-gradient(
       to right,
       var(--rp-c-brand) 50%,
       var(--rp-c-divider-light) 50%
     )
     right bottom / 200% 100% !important;
-  transition: background-position 0.45s cubic-bezier(0.625, 0.05, 0, 1), color
-    0.45s cubic-bezier(0.625, 0.05, 0, 1), transform 0.45s
-    cubic-bezier(0.625, 0.05, 0, 1) !important;
+  transition:
+    background-position 0.45s cubic-bezier(0.625, 0.05, 0, 1),
+    color 0.45s cubic-bezier(0.625, 0.05, 0, 1),
+    transform 0.45s cubic-bezier(0.625, 0.05, 0, 1) !important;
 }
 
 @media (pointer: fine) {
-  div.rspress-nav-appearance > div:hover,
+  .rspress-nav-appearance > div:hover,
   .rp-social-links__icon > div:hover {
     color: #ffffff !important;
     background-position: left bottom !important;

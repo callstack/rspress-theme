@@ -55,6 +55,8 @@ We prefix our commit messages with one of the following to signify the kind of c
 - **refactor**: A code change that neither fixes a bug nor adds a feature
 - **test**: Adding missing tests or correcting existing tests
 
+**Note:** Commit messages are automatically validated using [commitlint](https://commitlint.js.org/). If your commit message doesn't follow the convention, the commit will be rejected. The format should be: `<type>: <description>` (e.g., `feat: add new theme component`).
+
 ## Sending a pull request
 
 When you're sending a pull request:
