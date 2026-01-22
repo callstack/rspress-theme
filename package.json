@@ -6,6 +6,10 @@
   "packageManager": "pnpm@9.12.2",
   "scripts": {
     "build": "pnpm -F !./packages/tester build",
+    "build:all": "pnpm --filter ./packages/theme build && pnpm --filter ./packages/preset build && pnpm --filter ./packages/tester build",
+    "dev": "pnpm --filter ./packages/tester dev",
+    "dev:tester": "pnpm --filter ./packages/tester dev",
+    "preview": "pnpm --filter ./packages/tester preview",
     "lint": "biome check --write",
     "typecheck": "pnpm -r typecheck"
   },
