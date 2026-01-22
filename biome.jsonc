@@ -36,7 +36,8 @@
       },
       "complexity": {
         "noBannedTypes": "off",
-        "noForEach": "off"
+        "noForEach": "off",
+        "noImportantStyles": "off"
       },
       "correctness": {
         "noUnusedImports": "error",
