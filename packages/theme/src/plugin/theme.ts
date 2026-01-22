@@ -67,6 +67,8 @@ export {
   VersionBadge,
 };
 
+// @ts-ignore
+export * from '@default-theme';
 export { default as IconAlert } from '../assets/alert.svg';
 export { default as IconArrowDown } from '../assets/arrow-down.svg';
 export { default as IconArrowRight } from '../assets/arrow-right.svg';
@@ -86,6 +88,3 @@ export { default as IconSearch } from '../assets/search.svg';
 export { default as IconSmallMenu } from '../assets/small-menu.svg';
 export { default as IconSun } from '../assets/sun.svg';
 export { default as IconWarningBox } from '../assets/warning-box.svg';
-
-// @ts-ignore
-export * from '@default-theme';

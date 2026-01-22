@@ -53,8 +53,8 @@
     transparent 15%,
     transparent 100%
   );
-  --rp-home-background-bg: var(--ck-bg-radial-1), var(--ck-bg-radial-2),
-    var(--ck-bg-radial-3);
+  --rp-home-background-bg:
+    var(--ck-bg-radial-1), var(--ck-bg-radial-2), var(--ck-bg-radial-3);
 }
 
 /* rspress fonts */

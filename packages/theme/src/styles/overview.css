@@ -72,8 +72,8 @@
 
 /* Overview page - search */
 input#api-filter {
-  background: var(--rp-c-bg) url("../assets/search.svg") no-repeat 12px center /
-    16px 16px;
+  background:
+    var(--rp-c-bg) url("../assets/search.svg") no-repeat 12px center / 16px 16px;
   border: 1px solid var(--ck-border-primary);
   color: var(--rp-c-text-2);
   border-radius: var(--rp-radius-small);

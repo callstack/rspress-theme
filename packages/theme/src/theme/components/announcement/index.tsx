@@ -35,12 +35,13 @@ function AnnouncementComponent({
   localStorageKey,
   display = true,
 }: AnnouncementProps) {
-  if (!display) {
-    return null;
-  }
   const [disable, setDisable] = useState(
     window.localStorage.getItem(localStorageKey) ?? false
   );
+
+  if (!display) {
+    return null;
+  }
 
   if (disable) {
     return null;
