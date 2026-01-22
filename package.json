@@ -11,8 +11,7 @@
     "dev:tester": "pnpm --filter ./packages/tester dev",
     "preview": "pnpm --filter ./packages/tester preview",
     "lint": "biome check --write",
-    "typecheck": "pnpm -r typecheck",
-    "lint-staged": "lint-staged"
+    "typecheck": "pnpm -r typecheck"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.11",
