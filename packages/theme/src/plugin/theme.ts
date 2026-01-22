@@ -9,9 +9,6 @@ import {
   HomeFooter,
   HomeHero,
   LinkCard,
-  LlmsContainer,
-  LlmsCopyButton,
-  LlmsViewOptions,
   OutlineCTA,
   SwitchAppearance,
   VersionBadge,
@@ -65,9 +62,6 @@ export {
   HomeFooter,
   HomeHero,
   LinkCard,
-  LlmsContainer,
-  LlmsCopyButton,
-  LlmsViewOptions,
   OutlineCTA,
   SwitchAppearance,
   VersionBadge,
@@ -92,6 +86,9 @@ export { default as IconSearch } from '../assets/search.svg';
 export { default as IconSmallMenu } from '../assets/small-menu.svg';
 export { default as IconSun } from '../assets/sun.svg';
 export { default as IconWarningBox } from '../assets/warning-box.svg';
+// export { default as IconCopy } from '../assets/copy.svg';
+// export { default as IconSuccess } from '../assets/check.svg';
+// export { default as IconExternalLink } from '../assets/upload.svg';
 
 // @ts-ignore
 export * from '@default-theme';

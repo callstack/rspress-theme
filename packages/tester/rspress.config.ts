@@ -30,7 +30,6 @@ const devConfig = defineConfig({
       docRepoBaseUrl: 'https://github.com/callstack/rspress-theme',
     },
     enableScrollToTop: false,
-    llmsUI: false,
     socialLinks: [
       {
         icon: 'github',
