@@ -15,6 +15,7 @@ const pluginConfig: LibConfig = {
     externals: ['@callstack/rspress-theme', '@default-theme', 'react'],
     target: 'node',
   },
+  plugins: [pluginReact(), pluginSvgr()],
 };
 
 const themeConfig: LibConfig = {

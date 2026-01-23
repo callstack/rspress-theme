@@ -19,6 +19,7 @@ const themeOptions = {
 const devConfig = defineConfig({
   root: path.join(__dirname, 'docs'),
   title: 'My Site',
+  llms: true,
   description: 'My Site Description',
   logo: {
     dark: '/logo-dark.png',
