@@ -20,9 +20,6 @@ importers:
       '@callstack/rspress-theme':
         specifier: workspace:*
         version: link:../theme
-      '@rspress/plugin-llms':
-        specifier: 2.0.0-rc.7
-        version: 2.0.0-rc.7(@rspress/core@2.0.0-rc.7(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0))
       '@rspress/plugin-sitemap':
         specifier: 2.0.0-rc.7
         version: 2.0.0-rc.7(@rspress/core@2.0.0-rc.7(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0))
@@ -763,12 +760,6 @@ packages:
     resolution: {integrity: sha512-Vs+6olQt9Ow6fy+YAzwVLLAqBD6mi2c05RMt15a1yUR3U+O+fs1e1EZSP+9AGLU31IaGveOr2Yh8k4fabwIdPA==}
     engines: {node: '>=20.9.0'}
     hasBin: true
-
-  '@rspress/plugin-llms@2.0.0-rc.7':
-    resolution: {integrity: sha512-wKmNI1HBsyV8LE+3Oi8tTNgmkJ+eupHQF20mOfVVOL+kF7ibtX8SNOYH92zOXY7UN6MFDteYkmcXViL4AB+jGw==}
-    engines: {node: '>=20.9.0'}
-    peerDependencies:
-      '@rspress/core': ^2.0.0-rc.7
 
   '@rspress/plugin-sitemap@2.0.0-rc.7':
     resolution: {integrity: sha512-gPhmnqR7PdaGEOTXF6ozgxkB4LomDkUf8wdfYV9CsyRQFhr0icMGWIrnB54/lsbYFECoxLIPoDLQoejlHXAFoA==}
@@ -3300,17 +3291,6 @@ snapshots:
       - core-js
       - supports-color
       - webpack-hot-middleware
-
-  '@rspress/plugin-llms@2.0.0-rc.7(@rspress/core@2.0.0-rc.7(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0))':
-    dependencies:
-      '@rspress/core': 2.0.0-rc.7(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0)
-      remark-mdx: 3.1.1
-      remark-parse: 11.0.0
-      remark-stringify: 11.0.0
-      unified: 11.0.5
-      unist-util-visit: 5.0.0
-    transitivePeerDependencies:
-      - supports-color
 
   '@rspress/plugin-sitemap@2.0.0-rc.7(@rspress/core@2.0.0-rc.7(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0))':
     dependencies:
