@@ -67,28 +67,30 @@ export {
   VersionBadge,
 };
 
-export { default as IconAlert } from '../assets/alert.svg';
-export { default as IconArrowDown } from '../assets/arrow-down.svg';
-export { default as IconArrowRight } from '../assets/arrow-right.svg';
-export { default as IconCallstack } from '../assets/callstack.svg';
-export { default as IconCheckDouble } from '../assets/check-double.svg';
-export { default as IconClose } from '../assets/close.svg';
-export { default as IconDetails } from '../assets/details.svg';
-export { default as IconEditBox } from '../assets/edit-box.svg';
-export { default as IconEmpty } from '../assets/empty.svg';
-export { default as IconHeroBgShape } from '../assets/hero-bg-shape.svg';
-export { default as IconInfoBox } from '../assets/info-box.svg';
-export { default as IconMenu } from '../assets/menu.svg';
-export { default as IconMoon } from '../assets/moon.svg';
-export { default as IconNoise } from '../assets/noise.svg';
-export { default as IconNotes } from '../assets/notes.svg';
-export { default as IconSearch } from '../assets/search.svg';
-export { default as IconSmallMenu } from '../assets/small-menu.svg';
-export { default as IconSun } from '../assets/sun.svg';
-export { default as IconWarningBox } from '../assets/warning-box.svg';
-// export { default as IconCopy } from '../assets/copy.svg';
-// export { default as IconSuccess } from '../assets/check.svg';
-// export { default as IconExternalLink } from '../assets/upload.svg';
+export { default as IconAlert } from '../assets/alert.svg?react';
+export { default as IconArrowDown } from '../assets/arrow-down.svg?react';
+export { default as IconArrowRight } from '../assets/arrow-right.svg?react';
+export { default as IconCallstack } from '../assets/callstack.svg?react';
+export { default as IconCheckDouble } from '../assets/check-double.svg?react';
+export { default as IconClose } from '../assets/close.svg?react';
+export { default as IconDetails } from '../assets/details.svg?react';
+export { default as IconEditBox } from '../assets/edit-box.svg?react';
+export { default as IconEmpty } from '../assets/empty.svg?react';
+export { default as IconHeroBgShape } from '../assets/hero-bg-shape.svg?react';
+export { default as IconInfoBox } from '../assets/info-box.svg?react';
+export { default as IconMenu } from '../assets/menu.svg?react';
+export { default as IconMoon } from '../assets/moon.svg?react';
+export { default as IconNoise } from '../assets/noise.svg?react';
+export { default as IconNotes } from '../assets/notes.svg?react';
+export { default as IconSearch } from '../assets/search.svg?react';
+export { default as IconSmallMenu } from '../assets/small-menu.svg?react';
+export { default as IconSun } from '../assets/sun.svg?react';
+export { default as IconWarningBox } from '../assets/warning-box.svg?react';
+export { default as IconDown } from '../assets/arrow-down.svg?react';
+export { default as IconCopy } from '../assets/copy.svg?react';
+export { default as IconSuccess } from '../assets/check.svg?react';
+export { default as IconExternalLink } from '../assets/upload.svg?react';
+export { default as IconLink } from '../assets/link.svg?react';
 
 // @ts-ignore
 export * from '@default-theme';

@@ -94,3 +94,9 @@ a.rp-edit-link::before {
   border-radius: var(--rp-radius) !important;
   border: 1px solid var(--ck-border-secondary) !important;
 }
+
+.rp-llms-view-options__external-icon {
+  justify-content: center;
+  align-items: center;
+  display: inline-flex;
+}
