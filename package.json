@@ -1,6 +1,7 @@
 {
   "name": "callstack-rspress-theme",
   "private": true,
+  "type": "module",
   "author": "Jakub Romańczyk <jakub.romanczyk@callstack.com>",
   "license": "MIT",
   "packageManager": "pnpm@9.12.2",
