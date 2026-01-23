@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "@callstack/rspress-theme": "workspace:*",
-    "@rspress/plugin-llms": "^2.0.0-rc.7",
+    "@rspress/plugin-llms": "2.0.0-rc.7",
     "@rspress/plugin-sitemap": "2.0.0-rc.7",
     "@vercel/analytics": "^1.5.0",
     "rsbuild-plugin-open-graph": "^1.0.2",

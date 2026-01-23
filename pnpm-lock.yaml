@@ -21,7 +21,7 @@ importers:
         specifier: workspace:*
         version: link:../theme
       '@rspress/plugin-llms':
-        specifier: ^2.0.0-rc.7
+        specifier: 2.0.0-rc.7
         version: 2.0.0-rc.7(@rspress/core@2.0.0-rc.7(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0))
       '@rspress/plugin-sitemap':
         specifier: 2.0.0-rc.7
