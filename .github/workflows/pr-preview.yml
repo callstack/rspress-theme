@@ -47,6 +47,6 @@ jobs:
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
         with:
-          source-dir: ./packages/tester/dist/
+          source-dir: ./packages/tester/doc_build/
           preview-branch: gh-pages
           qr-code: true
