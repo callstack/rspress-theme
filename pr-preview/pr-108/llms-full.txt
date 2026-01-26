@@ -1,0 +1,579 @@
+---
+url: /nav/file.md
+---
+
+# 
+
+
+
+
+---
+url: /nav/index.md
+---
+
+# Overview
+
+
+
+
+---
+url: /nav/section-a/deep-nest/deep-nest-1.md
+---
+
+# Deep Nest 1
+
+This is the first level of deep nesting.
+
+
+
+---
+url: /nav/section-a/deep-nest/deep-nest.md
+---
+
+# Deep Nest MDX
+
+This is a deeply nested MDX file.
+
+*MDX content here
+*
+
+
+---
+url: /nav/section-a/deep-nest/level-3/deep-nest-2.md
+---
+
+# Deep Nest 2
+
+This is the second level of deep nesting.
+
+
+
+---
+url: /nav/section-a/deep-nest/level-3/deep-nest.md
+---
+
+# Deep Nest MDX
+
+This is a deeply nested MDX file.
+
+*MDX content here
+*
+
+
+---
+url: /nav/section-a/overview.md
+---
+
+# Overview
+
+## Section A Intro
+
+### [Section A Intro](/nav/section-a/section-a-intro.md)
+## Deep Nest
+
+### [Deep Nest 1](/nav/section-a/deep-nest/deep-nest-1.md)
+
+### [Level 3](/nav/section-a/deep-nest/level-3/deep-nest-2.md)
+
+### [Deep Nest MDX](/nav/section-a/deep-nest/deep-nest.md)
+## Section A Summary
+
+### [Section A Summary](/nav/section-a/section-a-summary.md)
+
+
+
+---
+url: /nav/section-a/section-a-intro.md
+---
+
+# Section A Intro
+
+This is the introduction to Section A.
+
+
+
+---
+url: /nav/section-a/section-a-summary.md
+---
+
+# Section A Summary
+
+This is the summary for Section A.
+
+
+
+---
+url: /nav/section-b/section-b-mdx.md
+---
+
+# Section B (MDX)
+
+This is Section B, written in MDX.
+
+**MDX content here
+**
+
+
+---
+url: /nav/section-b/sub-b1/sub-b1-item1.md
+---
+
+# Sub B1 Item 1
+
+This is the first item in Sub B1.
+
+
+
+---
+url: /nav/section-b/sub-b1/sub-b1-item2-mdx.md
+---
+
+# Sub B1 Item 2 (MDX)
+
+This is the second item in Sub B1, written in MDX.
+
+`MDX content here
+`
+
+
+---
+url: /test/extra.md
+---
+
+# Hello World!
+
+Before diving deep into Re.Pack and introducing it into project, it's important to understand when and why to use Re.Pack and how does it compare with alternatives.
+
+## What `@callstack/repack` actually is?
+
+React Native environment and Browser environment have differences. React Native needs to run additional JS setup/init code so that it's usable at all. There's a great discrepancy between available APIs. In React Native we also have platform specific files — e.g.: .ios.js, .android.js and so on.
+
+Putting all the above together, makes webpack unable to produce bundle at all due to build errors and then the bundle produced by webpack is unusable by default.
+
+Therefore, we need to make changes to webpack configuration and change how and what webpack puts into the final bundle. All these necessary changes are encapsulated inside Re.Pack in form of webpack plugins.
+
+So to answer the question:
+
+:::info Re.Pack is what makes webpack and webpack-produced bundle usable in React Native application.
+:::
+
+## Tabs
+
+
+**first tab**
+
+npm
+
+
+**second tab**
+
+```bash title="codeblock"
+npm install rspress -D
+```
+
+
+## Package Manager Tabs
+
+
+```sh [npm]
+npm install rspress -D
+```
+
+```sh [yarn]
+yarn add rspress -D
+```
+
+```sh [pnpm]
+pnpm add rspress -D
+```
+
+```sh [bun]
+bun add rspress -D
+```
+
+```sh [deno]
+deno add npm:rspress -D
+```
+
+## Example Table
+
+Here is a simple markdown table:
+
+| Name  | Age | City          |
+| ----- | --- | ------------- |
+| Alice | 24  | New York      |
+| Bob   | 29  | San Francisco |
+| Carol | 32  | Chicago       |
+
+## Inline Code Block
+
+`npm install rspress -D`
+
+## Code Block
+
+```
+npm install rspress -D
+```
+
+## Code Block with Highlight
+
+```ts title=codeblock.ts {1,3}
+const a = 1;
+const b = 2;
+const c = 3;
+const d = 4;
+```
+
+## Container cases
+
+:::info
+
+The command is started through the React Native Community CLI's `start` command, which is overridden [inside `react-native.config.js`](/index.md) to spawn Re.Pack's dev server.
+
+:::
+
+:::warning This plugin is primarily intended for Rspack users.
+
+The main purpose of this plugin is to limit the **build performance impact** of the `react-native-reanimated` babel plugin.
+If you're using webpack with `babel-loader`, you probably don't need this plugin. Instead, you should follow the [official Reanimated documentation](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/#step-2-add-reanimateds-babel-plugin) and add the Reanimated Babel plugin directly to your `babel.config.js`:
+
+```js
+module.exports = {
+  presets: ["module:@react-native/babel-preset"],
+  plugins: ["react-native-reanimated/plugin"],
+};
+```
+
+:::
+
+:::danger Platform-Specific Output
+By default, extracted asset files are copied to `assets/` directory for iOS and `drawable-*` directories (e.g. `drawable-mdpi`, `drawable-hdpi`, etc.) for Android which matches Metro's asset handling behavior.
+
+1. [Inlining assets as base64 strings](/test/guide.md)
+2. [Converting to remote assets](/test/guide.md)
+3. [Adding SVG support](/test/guide.md)
+
+:::
+
+:::tip Guides related to AssetsLoader
+Looking to do more with your assets? Check out the guides on:
+
+- [Inlining assets as base64 strings](/test/guide.md)
+- [Converting to remote assets](/test/guide.md)
+- [Adding SVG support](/test/guide.md)
+
+:::
+
+:::details
+This loader uses `flow-remove-types` under the hood. You can learn more about it [here](https://github.com/facebook/flow/tree/main/packages/flow-remove-types).
+:::
+
+## LinkCards
+
+[React Native](/)I'm using React Native, either bare (RN CLI) or with Expo and want to display a licenses screen in my app.
+[Node.js CLI](/)I'm building a Node.js app or a non-React-Native project and want to generate license reports for my dependencies.
+[Programmatic API](/)I want to use the core functionalities but adjust the presentation of the license report, or process the data in a different way.
+## Cards
+
+React NativeI'm using React Native, either bare (RN CLI) or with Expo and want to display a licenses screen in my app.
+Node.js CLII'm building a Node.js app or a non-React-Native project and want to generate license reports for my dependencies.
+Programmatic APII want to use the core functionalities but adjust the presentation of the license report, or process the data in a different way.
+## Badges
+
+
+
+tip
+info
+warning
+danger
+note
+## Custom Badges
+
+
+
+![](https://lf3-static.bytednsdoc.com/obj/eden-cn/uhbfnupenuhf/rspress/rspress-logo.png)Rspress
+
+
+
+---
+url: /test/guide.md
+---
+
+# Markdown & MDX
+
+Rspress supports not only Markdown but also [MDX](https://mdxjs.com/), a powerful way to develop content. You can link to a section, such as [Use Component](#use-component).
+
+## Markdown
+
+MDX is a superset of Markdown, which means you can write Markdown files as usual. For example:
+
+```md
+# Hello World
+```
+
+## Use Component
+
+When you want to use React components in Markdown files, you should name your files with `.mdx` extension. For example:
+
+```mdx
+// docs/index.mdx
+import { CustomComponent } from './custom';
+
+# Hello World
+
+<CustomComponent />
+```
+
+## Front Matter
+
+You can add Front Matter at the beginning of your Markdown file, which is a YAML-formatted object that defines some metadata. For example:
+
+```yaml
+---
+title: Hello World
+---
+```
+
+> Note: By default, Rspress uses h1 headings as html headings.
+
+You can also access properties defined in Front Matter in the body, for example:
+
+```markdown
+---
+title: Hello World
+---
+
+# {frontmatter.title}
+```
+
+The previously defined properties will be passed to the component as `frontmatter` properties. So the final output will be:
+
+```html
+<h1>Hello World</h1>
+```
+
+## Custom Container
+
+You can use the `:::` syntax to create custom containers and support custom titles. For example:
+
+**Input:**
+
+```markdown
+:::note
+This is a `block` of type `note`
+:::
+
+:::tip
+This is a `block` of type `tip`
+:::
+
+:::info
+This is a `block` of type `info`
+:::
+
+:::warning
+This is a `block` of type `warning`
+:::
+
+:::danger
+This is a `block` of type `danger`
+:::
+
+::: details
+This is a `block` of type `details`
+:::
+
+:::tip Custom Title
+This is a `block` of `Custom Title`
+:::
+
+:::tip{title="Custom Title"}
+This is a `block` of `Custom Title`
+:::
+```
+
+**Output:**
+
+:::note
+This is a `block` of type `note`
+:::
+
+:::tip
+This is a `block` of type `tip`
+:::
+
+:::info
+This is a `block` of type `info`
+:::
+
+:::warning
+This is a `block` of type `warning`
+:::
+
+:::danger
+This is a `block` of type `danger`
+:::
+
+::: details
+This is a `block` of type `details`
+:::
+
+:::tip Custom Title
+This is a `block` of `Custom Title`
+:::
+
+:::tip\{title="Custom Title"}
+This is a `block` of `Custom Title`
+:::
+
+## Code Block
+
+### Basic Usage
+
+You can use the \`\`\` syntax to create code blocks and support custom titles. For example:
+
+**Input:**
+
+````md
+```js
+console.log('Hello World');
+```
+
+```js title="hello.js"
+console.log('Hello World');
+```
+````
+
+**Output:**
+
+```js
+console.log('Hello World');
+```
+
+```js title="hello.js"
+console.log('Hello World');
+```
+
+### Show Line Numbers
+
+If you want to display line numbers, you can enable the `showLineNumbers` option in the config file:
+
+```ts title="rspress.config.ts"
+export default {
+  // ...
+  markdown: {
+    showLineNumbers: true,
+  },
+};
+```
+
+### Wrap Code
+
+If you want to wrap long code line by default, you can enable the `defaultWrapCode` option in the config file:
+
+```ts title="rspress.config.ts"
+export default {
+  // ...
+  markdown: {
+    defaultWrapCode: true,
+  },
+};
+```
+
+### Line Highlighting
+
+You can also apply line highlighting and code block title at the same time, for example:
+
+**Input:**
+
+````md
+```js title="hello.js" {1,3-5}
+console.log('Hello World');
+
+const a = 1;
+
+console.log(a);
+
+const b = 2;
+
+console.log(b);
+```
+````
+
+**Ouput:**
+
+```js title="hello.js" {1,3-5}
+console.log('Hello World');
+
+const a = 1;
+
+console.log(a);
+
+const b = 2;
+
+console.log(b);
+```
+
+## Rustify MDX compiler
+
+You can enable Rustify MDX compiler by following config:
+
+
+
+---
+url: /test/index.md
+---
+
+# Overview
+
+## Guide
+
+### [Guide](/test/guide.md)
+
+- [Markdown](/test/guide.md#markdown)
+- [Use Component](/test/guide.md#use-component)
+- [Front Matter](/test/guide.md#front-matter)
+- [Custom Container](/test/guide.md#custom-container)
+- [Code Block](/test/guide.md#code-block)
+- [Rustify MDX compiler](/test/guide.md#rustify-mdx-compiler)
+## Extra
+
+### [Extra](/test/extra.md)
+
+- [What `@callstack/repack` actually is?](/test/extra.md#what-callstackrepack-actually-is)
+- [Tabs](/test/extra.md#tabs)
+- [Package Manager Tabs](/test/extra.md#package-manager-tabs)
+- [Example Table](/test/extra.md#example-table)
+- [Inline Code Block](/test/extra.md#inline-code-block)
+- [Code Block](/test/extra.md#code-block)
+- [Code Block with Highlight](/test/extra.md#code-block-with-highlight)
+- [Container cases](/test/extra.md#container-cases)
+- [LinkCards](/test/extra.md#linkcards)
+- [Cards](/test/extra.md#cards)
+- [Badges](/test/extra.md#badges)
+- [Custom Badges](/test/extra.md#custom-badges)
+
+
+
+---
+url: /index.md
+---
+
+# Modern build tool for React Native
+
+Something something bundler
+
+> Re.Pack brings Rspack and webpack ecosystem to mobile React Native apps.
+
+[Quick Start](/guide/) | [GitHub](https://github.com/web-infra-dev/rspress)
+
+## Features
+
+- <img src="/layout-columns.svg" /> **Blazing fast build speed**: The core compilation module is based on the Rust front-end toolchain, providing a more ultimate development experience.
+- <img src="/sliders-2.svg" /> **Support for MDX content writing**: MDX is a powerful way to write content, allowing you to use React components in Markdown.
+- <img src="/repeat.svg" /> **Built-in full-text search**: Automatically generates a full-text search index for you during construction, providing out-of-the-box full-text search capabilities.
+- <img src="/layout-distribute-vertical.svg" /> **Simpler I18n solution**: With the built-in I18n solution, you can easily provide multi-language support for documents or components.
+- <img src="/server.svg" /> **Static site generation**: In production, it automatically builds into static HTML files, which can be easily deployed anywhere.
+- <img src="/trending-down.svg" /> **Providing multiple custom capabilities**: Through its extension mechanism, you can easily extend theme UI and build process.
+
+

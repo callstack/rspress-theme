@@ -1,0 +1,6 @@
+# Sub B1 Item 2 (MDX)
+
+This is the second item in Sub B1, written in MDX.
+
+`MDX content here
+`
