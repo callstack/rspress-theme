@@ -51,4 +51,3 @@ jobs:
           source-dir: ./packages/tester/doc_build/
           preview-branch: gh-pages
           qr-code: true
-          wait-for-pages-deployment: true
