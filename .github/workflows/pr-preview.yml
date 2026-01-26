@@ -35,6 +35,10 @@ jobs:
         if: github.event.action != 'closed'
         run: pnpm install --frozen-lockfile
 
+      - name: Build project packages
+        if: github.event.action != 'closed'
+        run: pnpm run build
+
       - name: Build tester package
         if: github.event.action != 'closed'
         working-directory: packages/tester
