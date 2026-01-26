@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -43,7 +45,21 @@ jobs:
       - name: Build tester package
         if: github.event.action != 'closed'
         working-directory: packages/tester
+        env:
+          NODE_ENV: production
         run: pnpm run build
+
+      - name: Verify build output
+        if: github.event.action != 'closed'
+        run: |
+          if [ ! -d "packages/tester/doc_build" ]; then
+            echo "Error: Build output directory not found!"
+            echo "Contents of packages/tester:"
+            ls -la packages/tester/
+            exit 1
+          fi
+          echo "Build output found:"
+          ls -la packages/tester/doc_build/ | head -20
 
       - name: Deploy preview
         uses: rossjrw/pr-preview-action@v1
@@ -51,3 +67,4 @@ jobs:
           source-dir: ./packages/tester/doc_build/
           preview-branch: gh-pages
           qr-code: true
+          wait-for-pages-deployment: true
