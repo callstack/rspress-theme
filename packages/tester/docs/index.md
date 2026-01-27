@@ -20,20 +20,20 @@ hero:
 features:
   - title: Blazing fast build speed
     details: The core compilation module is based on the Rust front-end toolchain, providing a more ultimate development experience.
-    icon: <img src="/layout-columns.svg" />
+    icon: /layout-columns.svg
   - title: Support for MDX content writing
     details: MDX is a powerful way to write content, allowing you to use React components in Markdown.
-    icon: <img src="/sliders-2.svg" />
+    icon: /sliders-2.svg
   - title: Built-in full-text search
     details: Automatically generates a full-text search index for you during construction, providing out-of-the-box full-text search capabilities.
-    icon: <img src="/repeat.svg" />
+    icon: /repeat.svg
   - title: Simpler I18n solution
     details: With the built-in I18n solution, you can easily provide multi-language support for documents or components.
-    icon: <img src="/layout-distribute-vertical.svg" />
+    icon: /layout-distribute-vertical.svg
   - title: Static site generation
     details: In production, it automatically builds into static HTML files, which can be easily deployed anywhere.
-    icon: <img src="/server.svg" />
+    icon: /server.svg
   - title: Providing multiple custom capabilities
     details: Through its extension mechanism, you can easily extend theme UI and build process.
-    icon: <img src="/trending-down.svg" />
+    icon: /trending-down.svg
 ---

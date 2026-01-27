@@ -1,6 +1,7 @@
 import {
   isExternalUrl,
   normalizeHrefInRuntime,
+  normalizeImagePath,
   useFrontmatter,
   withBase,
 } from '@rspress/core/runtime';
@@ -55,9 +56,10 @@ export function HomeFeature() {
               >
                 {icon ? (
                   <div className={styles.featureIconContainer}>
-                    <div
+                    <img
                       className={styles.featureIcon}
-                      {...renderHtmlOrText(icon)}
+                      src={normalizeImagePath(icon)}
+                      alt={title}
                     />
                   </div>
                 ) : null}
