@@ -1,5 +1,5 @@
 ---
-url: /nav/file.md
+url: /rspress-theme/pr-preview/pr-108/nav/file.md
 ---
 
 # 
@@ -8,7 +8,7 @@ url: /nav/file.md
 
 
 ---
-url: /nav/index.md
+url: /rspress-theme/pr-preview/pr-108/nav/index.md
 ---
 
 # Overview
@@ -17,7 +17,7 @@ url: /nav/index.md
 
 
 ---
-url: /nav/section-a/deep-nest/deep-nest-1.md
+url: /rspress-theme/pr-preview/pr-108/nav/section-a/deep-nest/deep-nest-1.md
 ---
 
 # Deep Nest 1
@@ -27,7 +27,7 @@ This is the first level of deep nesting.
 
 
 ---
-url: /nav/section-a/deep-nest/deep-nest.md
+url: /rspress-theme/pr-preview/pr-108/nav/section-a/deep-nest/deep-nest.md
 ---
 
 # Deep Nest MDX
@@ -39,7 +39,7 @@ This is a deeply nested MDX file.
 
 
 ---
-url: /nav/section-a/deep-nest/level-3/deep-nest-2.md
+url: /rspress-theme/pr-preview/pr-108/nav/section-a/deep-nest/level-3/deep-nest-2.md
 ---
 
 # Deep Nest 2
@@ -49,7 +49,7 @@ This is the second level of deep nesting.
 
 
 ---
-url: /nav/section-a/deep-nest/level-3/deep-nest.md
+url: /rspress-theme/pr-preview/pr-108/nav/section-a/deep-nest/level-3/deep-nest.md
 ---
 
 # Deep Nest MDX
@@ -61,29 +61,29 @@ This is a deeply nested MDX file.
 
 
 ---
-url: /nav/section-a/overview.md
+url: /rspress-theme/pr-preview/pr-108/nav/section-a/overview.md
 ---
 
 # Overview
 
 ## Section A Intro
 
-### [Section A Intro](/nav/section-a/section-a-intro.md)
+### [Section A Intro](/rspress-theme/pr-preview/pr-108/nav/section-a/section-a-intro.md)
 ## Deep Nest
 
-### [Deep Nest 1](/nav/section-a/deep-nest/deep-nest-1.md)
+### [Deep Nest 1](/rspress-theme/pr-preview/pr-108/nav/section-a/deep-nest/deep-nest-1.md)
 
-### [Level 3](/nav/section-a/deep-nest/level-3/deep-nest-2.md)
+### [Level 3](/rspress-theme/pr-preview/pr-108/nav/section-a/deep-nest/level-3/deep-nest-2.md)
 
-### [Deep Nest MDX](/nav/section-a/deep-nest/deep-nest.md)
+### [Deep Nest MDX](/rspress-theme/pr-preview/pr-108/nav/section-a/deep-nest/deep-nest.md)
 ## Section A Summary
 
-### [Section A Summary](/nav/section-a/section-a-summary.md)
+### [Section A Summary](/rspress-theme/pr-preview/pr-108/nav/section-a/section-a-summary.md)
 
 
 
 ---
-url: /nav/section-a/section-a-intro.md
+url: /rspress-theme/pr-preview/pr-108/nav/section-a/section-a-intro.md
 ---
 
 # Section A Intro
@@ -93,7 +93,7 @@ This is the introduction to Section A.
 
 
 ---
-url: /nav/section-a/section-a-summary.md
+url: /rspress-theme/pr-preview/pr-108/nav/section-a/section-a-summary.md
 ---
 
 # Section A Summary
@@ -103,7 +103,7 @@ This is the summary for Section A.
 
 
 ---
-url: /nav/section-b/section-b-mdx.md
+url: /rspress-theme/pr-preview/pr-108/nav/section-b/section-b-mdx.md
 ---
 
 # Section B (MDX)
@@ -115,7 +115,7 @@ This is Section B, written in MDX.
 
 
 ---
-url: /nav/section-b/sub-b1/sub-b1-item1.md
+url: /rspress-theme/pr-preview/pr-108/nav/section-b/sub-b1/sub-b1-item1.md
 ---
 
 # Sub B1 Item 1
@@ -125,7 +125,7 @@ This is the first item in Sub B1.
 
 
 ---
-url: /nav/section-b/sub-b1/sub-b1-item2-mdx.md
+url: /rspress-theme/pr-preview/pr-108/nav/section-b/sub-b1/sub-b1-item2-mdx.md
 ---
 
 # Sub B1 Item 2 (MDX)
@@ -137,7 +137,7 @@ This is the second item in Sub B1, written in MDX.
 
 
 ---
-url: /test/extra.md
+url: /rspress-theme/pr-preview/pr-108/test/extra.md
 ---
 
 # Hello World!
@@ -228,7 +228,7 @@ const d = 4;
 
 :::info
 
-The command is started through the React Native Community CLI's `start` command, which is overridden [inside `react-native.config.js`](/index.md) to spawn Re.Pack's dev server.
+The command is started through the React Native Community CLI's `start` command, which is overridden [inside `react-native.config.js`](/rspress-theme/pr-preview/pr-108/index.md) to spawn Re.Pack's dev server.
 
 :::
 
@@ -249,18 +249,18 @@ module.exports = {
 :::danger Platform-Specific Output
 By default, extracted asset files are copied to `assets/` directory for iOS and `drawable-*` directories (e.g. `drawable-mdpi`, `drawable-hdpi`, etc.) for Android which matches Metro's asset handling behavior.
 
-1. [Inlining assets as base64 strings](/test/guide.md)
-2. [Converting to remote assets](/test/guide.md)
-3. [Adding SVG support](/test/guide.md)
+1. [Inlining assets as base64 strings](/rspress-theme/pr-preview/pr-108/test/guide.md)
+2. [Converting to remote assets](/rspress-theme/pr-preview/pr-108/test/guide.md)
+3. [Adding SVG support](/rspress-theme/pr-preview/pr-108/test/guide.md)
 
 :::
 
 :::tip Guides related to AssetsLoader
 Looking to do more with your assets? Check out the guides on:
 
-- [Inlining assets as base64 strings](/test/guide.md)
-- [Converting to remote assets](/test/guide.md)
-- [Adding SVG support](/test/guide.md)
+- [Inlining assets as base64 strings](/rspress-theme/pr-preview/pr-108/test/guide.md)
+- [Converting to remote assets](/rspress-theme/pr-preview/pr-108/test/guide.md)
+- [Adding SVG support](/rspress-theme/pr-preview/pr-108/test/guide.md)
 
 :::
 
@@ -296,7 +296,7 @@ note
 
 
 ---
-url: /test/guide.md
+url: /rspress-theme/pr-preview/pr-108/test/guide.md
 ---
 
 # Markdown & MDX
@@ -521,42 +521,42 @@ You can enable Rustify MDX compiler by following config:
 
 
 ---
-url: /test/index.md
+url: /rspress-theme/pr-preview/pr-108/test/index.md
 ---
 
 # Overview
 
 ## Guide
 
-### [Guide](/test/guide.md)
+### [Guide](/rspress-theme/pr-preview/pr-108/test/guide.md)
 
-- [Markdown](/test/guide.md#markdown)
-- [Use Component](/test/guide.md#use-component)
-- [Front Matter](/test/guide.md#front-matter)
-- [Custom Container](/test/guide.md#custom-container)
-- [Code Block](/test/guide.md#code-block)
-- [Rustify MDX compiler](/test/guide.md#rustify-mdx-compiler)
+- [Markdown](/rspress-theme/pr-preview/pr-108/test/guide.md#markdown)
+- [Use Component](/rspress-theme/pr-preview/pr-108/test/guide.md#use-component)
+- [Front Matter](/rspress-theme/pr-preview/pr-108/test/guide.md#front-matter)
+- [Custom Container](/rspress-theme/pr-preview/pr-108/test/guide.md#custom-container)
+- [Code Block](/rspress-theme/pr-preview/pr-108/test/guide.md#code-block)
+- [Rustify MDX compiler](/rspress-theme/pr-preview/pr-108/test/guide.md#rustify-mdx-compiler)
 ## Extra
 
-### [Extra](/test/extra.md)
+### [Extra](/rspress-theme/pr-preview/pr-108/test/extra.md)
 
-- [What `@callstack/repack` actually is?](/test/extra.md#what-callstackrepack-actually-is)
-- [Tabs](/test/extra.md#tabs)
-- [Package Manager Tabs](/test/extra.md#package-manager-tabs)
-- [Example Table](/test/extra.md#example-table)
-- [Inline Code Block](/test/extra.md#inline-code-block)
-- [Code Block](/test/extra.md#code-block)
-- [Code Block with Highlight](/test/extra.md#code-block-with-highlight)
-- [Container cases](/test/extra.md#container-cases)
-- [LinkCards](/test/extra.md#linkcards)
-- [Cards](/test/extra.md#cards)
-- [Badges](/test/extra.md#badges)
-- [Custom Badges](/test/extra.md#custom-badges)
+- [What `@callstack/repack` actually is?](/rspress-theme/pr-preview/pr-108/test/extra.md#what-callstackrepack-actually-is)
+- [Tabs](/rspress-theme/pr-preview/pr-108/test/extra.md#tabs)
+- [Package Manager Tabs](/rspress-theme/pr-preview/pr-108/test/extra.md#package-manager-tabs)
+- [Example Table](/rspress-theme/pr-preview/pr-108/test/extra.md#example-table)
+- [Inline Code Block](/rspress-theme/pr-preview/pr-108/test/extra.md#inline-code-block)
+- [Code Block](/rspress-theme/pr-preview/pr-108/test/extra.md#code-block)
+- [Code Block with Highlight](/rspress-theme/pr-preview/pr-108/test/extra.md#code-block-with-highlight)
+- [Container cases](/rspress-theme/pr-preview/pr-108/test/extra.md#container-cases)
+- [LinkCards](/rspress-theme/pr-preview/pr-108/test/extra.md#linkcards)
+- [Cards](/rspress-theme/pr-preview/pr-108/test/extra.md#cards)
+- [Badges](/rspress-theme/pr-preview/pr-108/test/extra.md#badges)
+- [Custom Badges](/rspress-theme/pr-preview/pr-108/test/extra.md#custom-badges)
 
 
 
 ---
-url: /index.md
+url: /rspress-theme/pr-preview/pr-108/index.md
 ---
 
 # Modern build tool for React Native

@@ -86,7 +86,7 @@ const d = 4;
 
 :::info
 
-The command is started through the React Native Community CLI's `start` command, which is overridden [inside `react-native.config.js`](/index.md) to spawn Re.Pack's dev server.
+The command is started through the React Native Community CLI's `start` command, which is overridden [inside `react-native.config.js`](/rspress-theme/pr-preview/pr-108/index.md) to spawn Re.Pack's dev server.
 
 :::
 
@@ -107,18 +107,18 @@ module.exports = {
 :::danger Platform-Specific Output
 By default, extracted asset files are copied to `assets/` directory for iOS and `drawable-*` directories (e.g. `drawable-mdpi`, `drawable-hdpi`, etc.) for Android which matches Metro's asset handling behavior.
 
-1. [Inlining assets as base64 strings](/test/guide.md)
-2. [Converting to remote assets](/test/guide.md)
-3. [Adding SVG support](/test/guide.md)
+1. [Inlining assets as base64 strings](/rspress-theme/pr-preview/pr-108/test/guide.md)
+2. [Converting to remote assets](/rspress-theme/pr-preview/pr-108/test/guide.md)
+3. [Adding SVG support](/rspress-theme/pr-preview/pr-108/test/guide.md)
 
 :::
 
 :::tip Guides related to AssetsLoader
 Looking to do more with your assets? Check out the guides on:
 
-- [Inlining assets as base64 strings](/test/guide.md)
-- [Converting to remote assets](/test/guide.md)
-- [Adding SVG support](/test/guide.md)
+- [Inlining assets as base64 strings](/rspress-theme/pr-preview/pr-108/test/guide.md)
+- [Converting to remote assets](/rspress-theme/pr-preview/pr-108/test/guide.md)
+- [Adding SVG support](/rspress-theme/pr-preview/pr-108/test/guide.md)
 
 :::
 
