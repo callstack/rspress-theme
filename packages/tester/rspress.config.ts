@@ -74,9 +74,6 @@ const prodConfig = withCallstackPreset(
   {
     base: process.env.RSPRESS_BASE || '/',
     builderConfig: {
-      output: {
-        assetPrefix: process.env.RSPRESS_BASE || '/',
-      },
       performance: {
         buildCache: false,
       },
