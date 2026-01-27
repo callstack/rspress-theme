@@ -8,9 +8,9 @@ Something something bundler
 
 ## Features
 
-- <img src="/layout-columns.svg" /> **Blazing fast build speed**: The core compilation module is based on the Rust front-end toolchain, providing a more ultimate development experience.
-- <img src="/sliders-2.svg" /> **Support for MDX content writing**: MDX is a powerful way to write content, allowing you to use React components in Markdown.
-- <img src="/repeat.svg" /> **Built-in full-text search**: Automatically generates a full-text search index for you during construction, providing out-of-the-box full-text search capabilities.
-- <img src="/layout-distribute-vertical.svg" /> **Simpler I18n solution**: With the built-in I18n solution, you can easily provide multi-language support for documents or components.
-- <img src="/server.svg" /> **Static site generation**: In production, it automatically builds into static HTML files, which can be easily deployed anywhere.
-- <img src="/trending-down.svg" /> **Providing multiple custom capabilities**: Through its extension mechanism, you can easily extend theme UI and build process.
+- /layout-columns.svg **Blazing fast build speed**: The core compilation module is based on the Rust front-end toolchain, providing a more ultimate development experience.
+- /sliders-2.svg **Support for MDX content writing**: MDX is a powerful way to write content, allowing you to use React components in Markdown.
+- /repeat.svg **Built-in full-text search**: Automatically generates a full-text search index for you during construction, providing out-of-the-box full-text search capabilities.
+- /layout-distribute-vertical.svg **Simpler I18n solution**: With the built-in I18n solution, you can easily provide multi-language support for documents or components.
+- /server.svg **Static site generation**: In production, it automatically builds into static HTML files, which can be easily deployed anywhere.
+- /trending-down.svg **Providing multiple custom capabilities**: Through its extension mechanism, you can easily extend theme UI and build process.
