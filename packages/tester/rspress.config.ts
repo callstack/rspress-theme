@@ -17,6 +17,7 @@ const themeOptions = {
 };
 
 const devConfig = defineConfig({
+  icon: '/icon.svg',
   root: path.join(__dirname, 'docs'),
   title: 'My Site',
   llms: true,
