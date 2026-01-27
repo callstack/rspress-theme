@@ -50,34 +50,7 @@ jobs:
           RSPRESS_BASE: /rspress-theme/pr-preview/pr-${{ github.event.number }}/
         run: pnpm run build
 
-      - name: Verify build output
-        if: github.event.action != 'closed'
-        run: |
-          if [ ! -d "packages/tester/doc_build" ]; then
-            echo "Error: Build output directory not found!"
-            echo "Contents of packages/tester:"
-            ls -la packages/tester/
-            exit 1
-          fi
-          echo "Build output found:"
-          ls -la packages/tester/doc_build/ | head -20
-          echo ""
-          echo "Checking for index.html:"
-          if [ -f "packages/tester/doc_build/index.html" ]; then
-            echo "✓ index.html exists"
-          else
-            echo "✗ index.html not found"
-            echo "Files in doc_build:"
-            find packages/tester/doc_build -type f | head -10
-          fi
-          echo ""
-          echo "Full path:"
-          pwd
-          echo "Absolute path to source:"
-          realpath packages/tester/doc_build
-
       - name: Deploy preview
-        if: github.event.action != 'closed'
         uses: rossjrw/pr-preview-action@v1
         with:
           source-dir: packages/tester/doc_build
