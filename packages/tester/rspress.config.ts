@@ -72,6 +72,7 @@ const prodConfig = withCallstackPreset(
     theme: themeOptions,
   },
   {
+    base: process.env.RSPRESS_BASE || '/',
     builderConfig: {
       performance: {
         buildCache: false,
