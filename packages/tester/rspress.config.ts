@@ -57,6 +57,7 @@ const prodConfig = withCallstackPreset(
   {
     context: path.join(__dirname),
     docs: {
+      icon: '/icon.svg',
       title: 'My Site',
       logoDark: '/logo-dark.png',
       logoLight: '/logo-light.png',
