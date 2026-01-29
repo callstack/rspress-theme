@@ -1,0 +1,44 @@
+name: Deploy
+on:
+    push:
+        branches:
+            - main
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Checkout
+            uses: actions/checkout@v4
+            with:
+              persist-credentials: true
+    
+          - name: Setup pnpm
+            uses: pnpm/action-setup@v4
+            with:
+              version: 9.12.2
+    
+          - name: Setup Node.js
+            uses: actions/setup-node@v4
+            with:
+              node-version-file: .nvmrc
+              cache: 'pnpm'
+    
+          - name: Install dependencies
+            run: pnpm install --frozen-lockfile
+    
+          - name: Build project packages
+            run: pnpm run build
+    
+          - name: Build tester package
+            working-directory: packages/tester
+            env:
+              NODE_ENV: production
+            run: pnpm run build
+
+          - name: Deploy
+            uses: JamesIves/github-pages-deploy-action@v4
+            with:
+              folder: packages/tester/doc_build
+              branch: gh-pages
+              clean-exclude: pr-preview
+              force: false
