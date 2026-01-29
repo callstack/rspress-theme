@@ -1,0 +1,152 @@
+# Hello World!
+
+Before diving deep into Re.Pack and introducing it into project, it's important to understand when and why to use Re.Pack and how does it compare with alternatives.
+
+## What `@callstack/repack` actually is?
+
+React Native environment and Browser environment have differences. React Native needs to run additional JS setup/init code so that it's usable at all. There's a great discrepancy between available APIs. In React Native we also have platform specific files — e.g.: .ios.js, .android.js and so on.
+
+Putting all the above together, makes webpack unable to produce bundle at all due to build errors and then the bundle produced by webpack is unusable by default.
+
+Therefore, we need to make changes to webpack configuration and change how and what webpack puts into the final bundle. All these necessary changes are encapsulated inside Re.Pack in form of webpack plugins.
+
+So to answer the question:
+
+:::info Re.Pack is what makes webpack and webpack-produced bundle usable in React Native application.
+:::
+
+## Tabs
+
+
+**first tab**
+
+npm
+
+
+**second tab**
+
+```bash title="codeblock"
+npm install rspress -D
+```
+
+
+## Package Manager Tabs
+
+
+```sh [npm]
+npm install rspress -D
+```
+
+```sh [yarn]
+yarn add rspress -D
+```
+
+```sh [pnpm]
+pnpm add rspress -D
+```
+
+```sh [bun]
+bun add rspress -D
+```
+
+```sh [deno]
+deno add npm:rspress -D
+```
+
+## Example Table
+
+Here is a simple markdown table:
+
+| Name  | Age | City          |
+| ----- | --- | ------------- |
+| Alice | 24  | New York      |
+| Bob   | 29  | San Francisco |
+| Carol | 32  | Chicago       |
+
+## Inline Code Block
+
+`npm install rspress -D`
+
+## Code Block
+
+```
+npm install rspress -D
+```
+
+## Code Block with Highlight
+
+```ts title=codeblock.ts {1,3}
+const a = 1;
+const b = 2;
+const c = 3;
+const d = 4;
+```
+
+## Container cases
+
+:::info
+
+The command is started through the React Native Community CLI's `start` command, which is overridden [inside `react-native.config.js`](/index.md) to spawn Re.Pack's dev server.
+
+:::
+
+:::warning This plugin is primarily intended for Rspack users.
+
+The main purpose of this plugin is to limit the **build performance impact** of the `react-native-reanimated` babel plugin.
+If you're using webpack with `babel-loader`, you probably don't need this plugin. Instead, you should follow the [official Reanimated documentation](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/#step-2-add-reanimateds-babel-plugin) and add the Reanimated Babel plugin directly to your `babel.config.js`:
+
+```js
+module.exports = {
+  presets: ["module:@react-native/babel-preset"],
+  plugins: ["react-native-reanimated/plugin"],
+};
+```
+
+:::
+
+:::danger Platform-Specific Output
+By default, extracted asset files are copied to `assets/` directory for iOS and `drawable-*` directories (e.g. `drawable-mdpi`, `drawable-hdpi`, etc.) for Android which matches Metro's asset handling behavior.
+
+1. [Inlining assets as base64 strings](/test/guide.md)
+2. [Converting to remote assets](/test/guide.md)
+3. [Adding SVG support](/test/guide.md)
+
+:::
+
+:::tip Guides related to AssetsLoader
+Looking to do more with your assets? Check out the guides on:
+
+- [Inlining assets as base64 strings](/test/guide.md)
+- [Converting to remote assets](/test/guide.md)
+- [Adding SVG support](/test/guide.md)
+
+:::
+
+:::details
+This loader uses `flow-remove-types` under the hood. You can learn more about it [here](https://github.com/facebook/flow/tree/main/packages/flow-remove-types).
+:::
+
+## LinkCards
+
+[React Native](/)I'm using React Native, either bare (RN CLI) or with Expo and want to display a licenses screen in my app.
+[Node.js CLI](/)I'm building a Node.js app or a non-React-Native project and want to generate license reports for my dependencies.
+[Programmatic API](/)I want to use the core functionalities but adjust the presentation of the license report, or process the data in a different way.
+## Cards
+
+React NativeI'm using React Native, either bare (RN CLI) or with Expo and want to display a licenses screen in my app.
+Node.js CLII'm building a Node.js app or a non-React-Native project and want to generate license reports for my dependencies.
+Programmatic APII want to use the core functionalities but adjust the presentation of the license report, or process the data in a different way.
+## Badges
+
+
+
+tip
+info
+warning
+danger
+note
+## Custom Badges
+
+
+
+![](https://lf3-static.bytednsdoc.com/obj/eden-cn/uhbfnupenuhf/rspress/rspress-logo.png)Rspress
