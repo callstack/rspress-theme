@@ -33,6 +33,7 @@ jobs:
             working-directory: packages/tester
             env:
               NODE_ENV: production
+              RSPRESS_BASE: /${{ github.event.repository.name }}/
             run: pnpm run build
 
           - name: Deploy
