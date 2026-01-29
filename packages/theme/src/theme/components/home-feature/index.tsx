@@ -1,3 +1,4 @@
+import { SvgWrapper } from '@rspress/core/dist/theme/components/SvgWrapper/index.js';
 import {
   isExternalUrl,
   normalizeHrefInRuntime,
@@ -55,10 +56,7 @@ export function HomeFeature() {
               >
                 {icon ? (
                   <div className={styles.featureIconContainer}>
-                    <div
-                      className={styles.featureIcon}
-                      {...renderHtmlOrText(icon)}
-                    />
+                    <SvgWrapper icon={icon} />
                   </div>
                 ) : null}
                 <h2
