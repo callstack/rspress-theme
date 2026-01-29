@@ -2,6 +2,7 @@ import { SvgWrapper } from '@rspress/core/dist/theme/components/SvgWrapper/index
 import {
   isExternalUrl,
   normalizeHrefInRuntime,
+  normalizeImagePath,
   useFrontmatter,
   withBase,
 } from '@rspress/core/runtime';
@@ -56,7 +57,7 @@ export function HomeFeature() {
               >
                 {icon ? (
                   <div className={styles.featureIconContainer}>
-                    <SvgWrapper icon={icon} />
+                    <SvgWrapper icon={normalizeImagePath(icon)} />
                   </div>
                 ) : null}
                 <h2

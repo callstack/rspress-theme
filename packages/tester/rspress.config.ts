@@ -17,6 +17,7 @@ const themeOptions = {
 };
 
 const devConfig = defineConfig({
+  icon: '/icon.svg',
   root: path.join(__dirname, 'docs'),
   title: 'My Site',
   llms: true,
@@ -56,6 +57,7 @@ const prodConfig = withCallstackPreset(
   {
     context: path.join(__dirname),
     docs: {
+      icon: '/icon.svg',
       title: 'My Site',
       logoDark: '/logo-dark.png',
       logoLight: '/logo-light.png',
@@ -72,6 +74,7 @@ const prodConfig = withCallstackPreset(
     theme: themeOptions,
   },
   {
+    base: process.env.RSPRESS_BASE || '/',
     builderConfig: {
       performance: {
         buildCache: false,
