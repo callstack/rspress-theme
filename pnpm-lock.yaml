@@ -21,8 +21,8 @@ importers:
         specifier: workspace:*
         version: link:../theme
       '@rspress/plugin-sitemap':
-        specifier: 2.0.0-rc.7
-        version: 2.0.0-rc.7(@rspress/core@2.0.0-rc.7(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0))
+        specifier: 2.0.0-rc.8
+        version: 2.0.0-rc.8(@rspress/core@2.0.0-rc.8(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0))
       '@vercel/analytics':
         specifier: ^1.5.0
         version: 1.5.0(react@19.2.3)
@@ -40,8 +40,8 @@ importers:
         specifier: ^0.10.5
         version: 0.10.5(@microsoft/api-extractor@7.52.8(@types/node@22.7.7))(typescript@5.9.3)
       '@rspress/core':
-        specifier: 2.0.0-rc.7
-        version: 2.0.0-rc.7(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0)
+        specifier: 2.0.0-rc.8
+        version: 2.0.0-rc.8(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0)
       '@types/node':
         specifier: ^22
         version: 22.7.7
@@ -58,8 +58,8 @@ importers:
         specifier: workspace:*
         version: link:../theme
       '@rspress/core':
-        specifier: ^2.0.0-rc.7
-        version: 2.0.0-rc.7(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0)
+        specifier: ^2.0.0-rc.8
+        version: 2.0.0-rc.8(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0)
     devDependencies:
       '@types/node':
         specifier: ^22
@@ -89,8 +89,8 @@ importers:
         specifier: ^0.10.5
         version: 0.10.5(@microsoft/api-extractor@7.52.8(@types/node@22.7.7))(typescript@5.9.3)
       '@rspress/core':
-        specifier: ^2.0.0-rc.7
-        version: 2.0.0-rc.7(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0)
+        specifier: ^2.0.0-rc.8
+        version: 2.0.0-rc.8(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0)
       '@types/node':
         specifier: ^22
         version: 22.7.7
@@ -755,19 +755,19 @@ packages:
       webpack-hot-middleware:
         optional: true
 
-  '@rspress/core@2.0.0-rc.7':
-    resolution: {integrity: sha512-Vs+6olQt9Ow6fy+YAzwVLLAqBD6mi2c05RMt15a1yUR3U+O+fs1e1EZSP+9AGLU31IaGveOr2Yh8k4fabwIdPA==}
+  '@rspress/core@2.0.0-rc.8':
+    resolution: {integrity: sha512-kNn+e7AALs+zrNereSBfW7tzKa8lqQLeaFl8JHyIv3cVDmiXDqQCMEbvKahWPD6py+N3eiq8vuXhzvZEEjoOiQ==}
     engines: {node: '>=20.9.0'}
     hasBin: true
 
-  '@rspress/plugin-sitemap@2.0.0-rc.7':
-    resolution: {integrity: sha512-gPhmnqR7PdaGEOTXF6ozgxkB4LomDkUf8wdfYV9CsyRQFhr0icMGWIrnB54/lsbYFECoxLIPoDLQoejlHXAFoA==}
+  '@rspress/plugin-sitemap@2.0.0-rc.8':
+    resolution: {integrity: sha512-QGe9LBlWKlEw5I8rdD4oz6CNFvLZ4iMJnnQH1g7uc/0NtMt0zTKDNgCjgON38+QRgYEY9ApjzStWT4Kj19TorQ==}
     engines: {node: '>=20.9.0'}
     peerDependencies:
-      '@rspress/core': ^2.0.0-rc.7
+      '@rspress/core': ^2.0.0-rc.8
 
-  '@rspress/shared@2.0.0-rc.7':
-    resolution: {integrity: sha512-sGN2DOHm8PrKQEX7RKfIZzybKeY/X8z4bBcKMedIQdcQwo1AqRhzYmi9G7BdlD9tRsEMN9zVecAyGhK5fsKHvw==}
+  '@rspress/shared@2.0.0-rc.8':
+    resolution: {integrity: sha512-pt1rmy+O1yeSJXyE6tEBoMf4nr8rd8bJjnjoL+4xYcqKhue/HS2lSDwzM3NwROA1n4BQZFpj5udcyNFmuTjCAA==}
 
   '@rushstack/node-core-library@5.13.1':
     resolution: {integrity: sha512-5yXhzPFGEkVc9Fu92wsNJ9jlvdwz4RNb2bMso+/+TH0nMm1jDDDsOIf4l8GAkPxGuwPw5DH24RliWVfSPhlW/Q==}
@@ -3244,13 +3244,13 @@ snapshots:
       html-entities: 2.6.0
       react-refresh: 0.18.0
 
-  '@rspress/core@2.0.0-rc.7(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0)':
+  '@rspress/core@2.0.0-rc.8(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0)':
     dependencies:
       '@mdx-js/mdx': 3.1.1
       '@mdx-js/react': 3.1.1(@types/react@19.2.9)(react@19.2.3)
       '@rsbuild/core': 2.0.0-alpha.2(@module-federation/runtime-tools@0.22.0)(core-js@3.47.0)
       '@rsbuild/plugin-react': 1.4.3(@rsbuild/core@2.0.0-alpha.2(@module-federation/runtime-tools@0.22.0)(core-js@3.47.0))
-      '@rspress/shared': 2.0.0-rc.7(@module-federation/runtime-tools@0.22.0)(core-js@3.47.0)
+      '@rspress/shared': 2.0.0-rc.8(@module-federation/runtime-tools@0.22.0)(core-js@3.47.0)
       '@shikijs/rehype': 3.21.0
       '@types/unist': 3.0.3
       '@unhead/react': 2.1.2(react@19.2.3)
@@ -3295,11 +3295,11 @@ snapshots:
       - supports-color
       - webpack-hot-middleware
 
-  '@rspress/plugin-sitemap@2.0.0-rc.7(@rspress/core@2.0.0-rc.7(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0))':
+  '@rspress/plugin-sitemap@2.0.0-rc.8(@rspress/core@2.0.0-rc.8(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0))':
     dependencies:
-      '@rspress/core': 2.0.0-rc.7(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0)
+      '@rspress/core': 2.0.0-rc.8(@module-federation/runtime-tools@0.22.0)(@types/react@19.2.9)(core-js@3.47.0)
 
-  '@rspress/shared@2.0.0-rc.7(@module-federation/runtime-tools@0.22.0)(core-js@3.47.0)':
+  '@rspress/shared@2.0.0-rc.8(@module-federation/runtime-tools@0.22.0)(core-js@3.47.0)':
     dependencies:
       '@rsbuild/core': 2.0.0-alpha.2(@module-federation/runtime-tools@0.22.0)(core-js@3.47.0)
       '@shikijs/rehype': 3.21.0
