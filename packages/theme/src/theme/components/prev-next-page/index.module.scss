@@ -1,7 +1,6 @@
 .container {
   display: flex;
   gap: 12px;
-  padding-top: 24px;
 
   @media (max-width: 480px) {
     flex-direction: column;
@@ -21,17 +20,61 @@
   border-radius: var(--rp-radius-small);
   padding: 12px;
   text-decoration: none;
+  background: linear-gradient(
+      to right,
+      var(--ck-foreground-primary) 50%,
+      transparent 50%
+    )
+    right bottom / 200% 100%;
+  transition: background-position 0.45s cubic-bezier(0.625, 0.05, 0, 1);
 }
 
 .pagerLink:hover,
 .pagerLink:focus {
   border-color: var(--ck-accent);
-  background-color: var(--ck-foreground-primary);
+  background-position: left bottom;
 }
 
 .pagerLink:hover .title,
 .pagerLink:focus .title {
   color: var(--ck-accent);
+}
+
+.pagerLink:hover .iconBox,
+.pagerLink:focus .iconBox {
+  background-color: var(--ck-accent);
+}
+
+.pagerLink:hover .icon,
+.pagerLink:focus .icon {
+  color: #ffffff;
+}
+
+.iconBox {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: var(--rp-c-divider-light);
+  border-radius: var(--rp-radius-small);
+  overflow: hidden;
+  transition: background-color 0.45s cubic-bezier(0.625, 0.05, 0, 1);
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  transition: color 0.45s cubic-bezier(0.625, 0.05, 0, 1);
+}
+
+@media (pointer: fine) {
+  .pagerLink:hover .icon {
+    animation:
+      slide-out 0.2s cubic-bezier(0.625, 0.05, 0, 1),
+      slide-in 0.25s cubic-bezier(0.625, 0.05, 0, 1) 0.2s;
+  }
 }
 
 .next .textWrap {
@@ -50,6 +93,7 @@
   line-height: 1;
   color: var(--rp-c-text-2);
   letter-spacing: -0.24px;
+  transition: color 0.45s cubic-bezier(0.625, 0.05, 0, 1);
 }
 
 .title {
@@ -57,24 +101,23 @@
   line-height: 1.5;
   color: var(--rp-c-text-1);
   letter-spacing: -0.32px;
+  transition: color 0.45s cubic-bezier(0.625, 0.05, 0, 1);
 }
 
-.iconBox {
-  display: flex;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center;
-  width: 40px;
-  height: 40px;
-  background-color: var(--rp-c-divider-light);
-  border-radius: var(--rp-radius-small);
+@keyframes slide-out {
+  from {
+    transform: translateX(0%);
+  }
+  to {
+    transform: translateX(150%);
+  }
 }
 
-.icon {
-  width: 16px;
-  height: 16px;
-}
-
-.iconPrev {
-  transform: rotate(180deg) scaleY(-1);
+@keyframes slide-in {
+  from {
+    transform: translateX(-150%);
+  }
+  to {
+    transform: translateX(0%);
+  }
 }
