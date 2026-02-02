@@ -17,17 +17,26 @@ export function PrevNextPage() {
           </span>
           <span className={styles.textWrap}>
             <span className={styles.desc}>{t('prevPageText')}</span>
-            <span className={styles.title} {...renderInlineMarkdown(prevPage.text)} />
+            <span
+              className={styles.title}
+              {...renderInlineMarkdown(prevPage.text)}
+            />
           </span>
         </Link>
       ) : (
         <div className={styles.placeholder} />
       )}
       {nextPage ? (
-        <Link href={nextPage.link} className={`${styles.pagerLink} ${styles.next}`}>
+        <Link
+          href={nextPage.link}
+          className={`${styles.pagerLink} ${styles.next}`}
+        >
           <span className={styles.textWrap}>
             <span className={styles.desc}>{t('nextPageText')}</span>
-            <span className={styles.title} {...renderInlineMarkdown(nextPage.text)} />
+            <span
+              className={styles.title}
+              {...renderInlineMarkdown(nextPage.text)}
+            />
           </span>
           <span className={styles.iconBox}>
             <IconArrowBarRight className={styles.icon} />
