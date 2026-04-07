@@ -5,6 +5,7 @@
   "description": "Rspress doc site for testing the theme",
   "author": "Jakub Romańczyk <jakub.romanczyk@callstack.com>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev": "rspress dev",
     "build": "rspress build",

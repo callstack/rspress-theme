@@ -154,7 +154,7 @@ const createPreset = (config: PresetConfig): UserConfig => {
           description: docs.description,
           twitter: docs.socials?.X
             ? {
-                site: extractXHandle(docs.socials?.X),
+                site: extractXHandle(docs.socials?.X as string),
                 card: 'summary_large_image',
               }
             : undefined,
