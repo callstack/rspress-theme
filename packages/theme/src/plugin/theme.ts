@@ -14,7 +14,7 @@ import {
   SwitchAppearance,
   VersionBadge,
   // biome-ignore lint/suspicious/noTsIgnore: this is needed
-  // @ts-ignore-next-line
+  // @ts-ignore
 } from '@callstack/rspress-theme';
 import {
   HomeLayout as DefaultHomeLayout,

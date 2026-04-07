@@ -52,7 +52,7 @@ export const presetOptionsSchema = z.object({
       .url({ message: 'must be a valid URL' })
       .describe('Absolute public site origin (e.g. https://example.com)'),
     socials: z
-      .record(z.union([z.url(), z.string()]), z.string())
+      .record(z.string(), z.url())
       .optional()
       .describe('Map of social icon name to profile URL'),
   }),
