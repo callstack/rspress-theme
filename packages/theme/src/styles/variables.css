@@ -103,7 +103,6 @@
   --rp-c-text-2: var(--ck-text-secondary) !important;
   --rp-c-text-3: var(--ck-text-tertiary) !important;
   --rp-c-text-4: var(--ck-text-tertiary) !important;
-  --rp-c-text-code: var(--ck-accent) !important;
   /* rspress brand colors */
   --rp-c-brand: var(--ck-accent) !important;
   --rp-c-brand-light: var(--ck-accent) !important;
@@ -129,7 +128,7 @@
   --rp-code-title-bg: rgba(233, 231, 238, 1) !important;
   --rp-code-block-bg: rgba(249, 248, 253, 1) !important;
   /* rspress inline code colors */
-  /* --rp-c-text-code: var(--rp-c-text-1) !important; */
+  --rp-c-text-code: var(--rp-c-text-1) !important;
   --rp-c-text-code-bg: var(--ck-border-secondary) !important;
   /* rspress link colors */
   --rp-c-link: var(--rp-c-text-1) !important;
