@@ -1,6 +1,6 @@
 {
   "name": "@callstack/rspress-theme",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Callstack theme for Rspress docs",
   "author": "Jakub Romańczyk <jakub.romanczyk@callstack.com>",
   "license": "MIT",
