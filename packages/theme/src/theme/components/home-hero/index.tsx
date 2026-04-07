@@ -19,7 +19,6 @@ const DEFAULT_HERO = {
 } satisfies Hero;
 
 interface HomeHeroProps {
-  routePath: string;
   beforeHeroActions?: React.ReactNode;
   afterHeroActions?: React.ReactNode;
 }
