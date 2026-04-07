@@ -28,7 +28,7 @@ importers:
         version: 2.0.1(react@19.2.4)
       rsbuild-plugin-open-graph:
         specifier: ^1.1.2
-        version: 1.1.2(@rsbuild/core@2.0.0-beta.11(core-js@3.47.0))
+        version: 1.1.2(@rsbuild/core@2.0.0-rc.0(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(core-js@3.47.0))
       zod:
         specifier: ^4.3.6
         version: 4.3.6
@@ -5083,9 +5083,9 @@ snapshots:
       '@microsoft/api-extractor': 7.58.1(@types/node@25.5.2)
       typescript: 6.0.2
 
-  rsbuild-plugin-open-graph@1.1.2(@rsbuild/core@2.0.0-beta.11(core-js@3.47.0)):
+  rsbuild-plugin-open-graph@1.1.2(@rsbuild/core@2.0.0-rc.0(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(core-js@3.47.0)):
     optionalDependencies:
-      '@rsbuild/core': 2.0.0-beta.11(core-js@3.47.0)
+      '@rsbuild/core': 2.0.0-rc.0(@emnapi/core@1.9.2)(@emnapi/runtime@1.9.2)(core-js@3.47.0)
 
   run-parallel@1.2.0:
     dependencies:

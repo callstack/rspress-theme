@@ -48,6 +48,9 @@
       "style": {
         "noNonNullAssertion": "off",
         "noDescendingSpecificity": "off"
+      },
+      "suspicious": {
+        "noDeprecatedImports": "on"
       }
     }
   },
