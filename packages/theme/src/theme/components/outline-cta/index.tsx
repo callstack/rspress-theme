@@ -1,4 +1,4 @@
-import { usePageData, useSite } from '@rspress/core/runtime';
+import { usePage, useSite } from '@rspress/core/runtime';
 import { Button } from '../button';
 import styles from './index.module.scss';
 
@@ -20,7 +20,7 @@ export function OutlineCTA({
   headline = OUTLINE_CTA_HEADLINE,
   href = OUTLINE_CTA_LINK,
 }: OutlineCTAProps) {
-  const { page } = usePageData();
+  const { page } = usePage();
   const { site } = useSite();
 
   const isScrollToTopEnabled = site.themeConfig?.enableScrollToTop ?? true;

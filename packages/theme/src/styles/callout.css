@@ -73,8 +73,8 @@
 /* container custom icon */
 .rp-callout--tip .rp-callout__title::before {
   content: "";
-  background: url("../assets/check-double.svg") no-repeat center center /
-    contain;
+  background:
+    url("../assets/check-double.svg") no-repeat center center / contain;
   background-color: transparent !important;
 }
 .rp-callout--info .rp-callout__title::before {
@@ -84,7 +84,8 @@
 }
 .rp-callout--warning .rp-callout__title::before {
   content: "";
-  background: url("../assets/warning-box.svg") no-repeat center center / contain;
+  background:
+    url("../assets/warning-box.svg") no-repeat center center / contain;
   background-color: transparent !important;
 }
 .rp-callout--danger .rp-callout__title::before {
@@ -117,7 +118,8 @@ details[open] > summary.rp-callout__title::after {
   left: 95%;
   width: 24px;
   height: 24px;
-  background: url("../assets/arrow-right.svg") no-repeat center center / contain;
+  background:
+    url("../assets/arrow-right.svg") no-repeat center center / contain;
 }
 
 details:not([open]) > summary.rp-callout__title::after {

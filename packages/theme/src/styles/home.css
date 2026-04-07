@@ -31,7 +31,9 @@ div#__rspress_root > .rp-home-background {
     background-image: url("../assets/hero-bg-shape.svg");
     background-repeat: no-repeat, no-repeat;
     background-size: contain, contain;
-    background-position: center var(--rp-nav-height), center center;
+    background-position:
+      center var(--rp-nav-height),
+      center center;
   }
 
   /* Home page top noise with opacity control */
@@ -43,7 +45,9 @@ div#__rspress_root > .rp-home-background {
     background-image: url("../assets/noise.svg");
     background-repeat: repeat;
     background-size: cover;
-    background-position: center var(--rp-nav-height), center center;
+    background-position:
+      center var(--rp-nav-height),
+      center center;
     mask-image: radial-gradient(
       ellipse 150vw 150vh at 100% -5%,
       rgb(0, 0, 0) -5%,
@@ -88,8 +92,16 @@ div#__rspress_root > .rp-home-background {
 
     background-image: url("../assets/callstack.svg");
     background-repeat: no-repeat, repeat, no-repeat, no-repeat;
-    background-size: min(90rem, 95%) auto, auto, contain, contain;
-    background-position: center calc(100% + 12px), bottom, bottom, bottom;
+    background-size:
+      min(90rem, 95%) auto,
+      auto,
+      contain,
+      contain;
+    background-position:
+      center calc(100% + 12px),
+      bottom,
+      bottom,
+      bottom;
   }
 
   footer {

@@ -114,7 +114,6 @@ function getBuilderConfig(options: PluginCallstackThemeOptions): BuilderConfig {
     resolve: {
       alias: (alias) => {
         // add '@theme', '@default-theme' & 'rspress/theme' aliases
-        // @ts-ignore
         const themeAliases = getThemeAliases(alias['@theme']);
         Object.assign(alias, themeAliases);
       },

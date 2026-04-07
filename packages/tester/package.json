@@ -5,18 +5,19 @@
   "description": "Rspress doc site for testing the theme",
   "author": "Jakub Romańczyk <jakub.romanczyk@callstack.com>",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "dev": "rspress dev",
     "build": "rspress build",
     "preview": "rspress preview"
   },
   "dependencies": {
-    "@rspress/core": "^2.0.0",
     "@callstack/rspress-preset": "workspace:*",
-    "@callstack/rspress-theme": "workspace:*"
+    "@callstack/rspress-theme": "workspace:*",
+    "@rspress/core": "^2.0.8"
   },
   "devDependencies": {
-    "@types/node": "^22",
-    "@types/react": "^19.2.0"
+    "@types/node": "^25.5.2",
+    "@types/react": "^19.2.14"
   }
 }

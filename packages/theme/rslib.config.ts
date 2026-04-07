@@ -2,7 +2,7 @@ import { pluginImageCompress } from '@rsbuild/plugin-image-compress';
 import { pluginReact } from '@rsbuild/plugin-react';
 import { pluginSass } from '@rsbuild/plugin-sass';
 import { pluginSvgr } from '@rsbuild/plugin-svgr';
-import { type LibConfig, defineConfig } from '@rslib/core';
+import { defineConfig, type LibConfig } from '@rslib/core';
 
 const pluginConfig: LibConfig = {
   syntax: 'es2021',

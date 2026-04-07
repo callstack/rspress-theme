@@ -1,6 +1,6 @@
 {
   "name": "@callstack/rspress-preset",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Callstack preset for Rspress docs",
   "author": "Jakub Romańczyk <jakub.romanczyk@callstack.com>",
   "license": "MIT",
@@ -14,7 +14,11 @@
     },
     "./package.json": "./package.json"
   },
-  "files": ["dist", "README.md", "vendor"],
+  "files": [
+    "dist",
+    "README.md",
+    "vendor"
+  ],
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"
@@ -42,19 +46,19 @@
   },
   "dependencies": {
     "@callstack/rspress-theme": "workspace:*",
-    "@rspress/plugin-sitemap": "^2.0.0",
-    "@vercel/analytics": "^1.5.0",
-    "rsbuild-plugin-open-graph": "^1.0.2",
-    "zod": "^3.23.8"
+    "@rspress/plugin-sitemap": "^2.0.8",
+    "@vercel/analytics": "^2.0.1",
+    "rsbuild-plugin-open-graph": "^1.1.2",
+    "zod": "^4.3.6"
   },
   "peerDependencies": {
-    "@rspress/core": "^2.0.0"
+    "@rspress/core": "^2.0.8"
   },
   "devDependencies": {
-    "@microsoft/api-extractor": "^7.52.8",
-    "@rslib/core": "^0.10.5",
-    "@rspress/core": "^2.0.0",
-    "@types/node": "^22",
-    "typescript": "^5.9.3"
+    "@microsoft/api-extractor": "^7.58.1",
+    "@rslib/core": "^0.20.3",
+    "@rspress/core": "^2.0.8",
+    "@types/node": "^25.5.2",
+    "typescript": "^6.0.2"
   }
 }

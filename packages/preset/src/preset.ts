@@ -2,8 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import url from 'node:url';
 import { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
-import { defineConfig, mergeDocConfig } from '@rspress/core';
 import type { UserConfig } from '@rspress/core';
+import { defineConfig, mergeDocConfig } from '@rspress/core';
 import type { SocialLinks as SocialLinksComponent } from '@rspress/core/theme';
 import { pluginSitemap } from '@rspress/plugin-sitemap';
 import { pluginOpenGraph } from 'rsbuild-plugin-open-graph';
@@ -154,7 +154,7 @@ const createPreset = (config: PresetConfig): UserConfig => {
           description: docs.description,
           twitter: docs.socials?.X
             ? {
-                site: extractXHandle(docs.socials?.X),
+                site: extractXHandle(docs.socials?.X as string),
                 card: 'summary_large_image',
               }
             : undefined,
