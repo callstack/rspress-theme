@@ -14,5 +14,6 @@
     "module": "preserve",
     "moduleResolution": "bundler"
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["**/dist"]
 }

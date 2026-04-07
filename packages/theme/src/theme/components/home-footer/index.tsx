@@ -45,5 +45,5 @@ function HomeFooter(props: HomeFooterProps) {
   );
 }
 
-export { HomeFooter };
 export type { HomeFooterProps };
+export { HomeFooter };

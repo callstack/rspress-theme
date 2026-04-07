@@ -53,8 +53,8 @@
     transparent 15%,
     transparent 100%
   );
-  --rp-home-background-bg: var(--ck-bg-radial-1), var(--ck-bg-radial-2),
-    var(--ck-bg-radial-3);
+  --rp-home-background-bg:
+    var(--ck-bg-radial-1), var(--ck-bg-radial-2), var(--ck-bg-radial-3);
 }
 
 /* rspress fonts */
@@ -129,7 +129,7 @@
   --rp-code-title-bg: rgba(233, 231, 238, 1) !important;
   --rp-code-block-bg: rgba(249, 248, 253, 1) !important;
   /* rspress inline code colors */
-  --rp-c-text-code: var(--rp-c-text-1) !important;
+  /* --rp-c-text-code: var(--rp-c-text-1) !important; */
   --rp-c-text-code-bg: var(--ck-border-secondary) !important;
   /* rspress link colors */
   --rp-c-link: var(--rp-c-text-1) !important;
