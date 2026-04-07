@@ -10,7 +10,7 @@
     "typecheck": "pnpm -r typecheck"
   },
   "devDependencies": {
-    "@biomejs/biome": "^1.9.4",
-    "@changesets/cli": "^2.27.10"
+    "@biomejs/biome": "^2.4.10",
+    "@changesets/cli": "^2.30.0"
   }
 }
