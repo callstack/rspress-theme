@@ -2,7 +2,7 @@ import path from 'node:path';
 import { styleText } from 'node:util';
 import type { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
 import type { AnalyticsProps } from '@vercel/analytics';
-import { type ZodIssue, z } from 'zod';
+import { z } from 'zod';
 
 const nonEmptyString = z
   .string()
@@ -83,7 +83,7 @@ export function validatePresetOptions(options: unknown): PresetConfig {
   const result = presetOptionsSchema.safeParse(options);
   if (!result.success) {
     const bullets = result.error.issues
-      .map((issue: ZodIssue) => {
+      .map((issue) => {
         const pathSegments = issue.path;
         const pathLabel =
           pathSegments.length > 0 ? pathSegments.join('.') : 'root';
