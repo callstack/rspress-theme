@@ -28,7 +28,7 @@ const devConfig = defineConfig({
   },
   themeConfig: {
     editLink: {
-      docRepoBaseUrl: 'https://github.com/callstack/rspress-theme',
+      docRepoBaseUrl: 'https://github.com/callstack/rspress-theme?edit=1',
     },
     enableScrollToTop: false,
     socialLinks: [
@@ -41,7 +41,7 @@ const devConfig = defineConfig({
       {
         icon: 'discord',
         mode: 'link',
-        content: 'https://github.com/callstack/rspress-theme',
+        content: 'https://discordapp.com/invite/zwR2Cdh',
       },
     ],
   },
@@ -68,7 +68,7 @@ const prodConfig = withCallstackPreset(
       socials: {
         github: 'https://github.com/callstack/rspress-theme',
         X: 'https://x.com/repack_rn',
-        discord: 'https://github.com/callstack/rspress-theme',
+        discord: 'https://discordapp.com/invite/zwR2Cdh',
       },
     },
     theme: themeOptions,
