@@ -1,6 +1,8 @@
 # Callstack Rspress Theme
 
-See the [package README](./packages/theme/README.md) for more details.
+See the appropriate README file for integration instructions:
+- *(recommended)* for a mostly automated setup with sensible defaults, use the [Callstack Rspress preset](./packages/preset/README.md), which has an escape hatch to configure the low-level theme
+- for a manual, low-level integration, use the [Callstack Rspress theme](./packages/theme/README.md)
 
 ## Deployment and PR Previews
 
