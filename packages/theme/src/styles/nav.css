@@ -7,7 +7,7 @@
   /* we want full width sidebar highlights on hover */
   padding-left: 0 !important;
   padding-right: 0 !important;
-  scrollbar-width: thin;
+  scrollbar-width: none;
 }
 
 /* Nav items */
@@ -24,6 +24,11 @@
   margin-top: 0 !important;
 }
 
+.rp-sidebar-item:not(:last-child),
+.rp-sidebar-item--active:not(:last-child) {
+  margin-bottom: 8px !important;
+}
+
 .rp-sidebar-item:hover {
   background-color: var(--ck-foreground-primary) !important;
 }
@@ -31,6 +36,18 @@
 .rp-sidebar-item--active {
   color: var(--rp-c-brand) !important;
   font-weight: 400 !important;
+  position: relative !important;
+}
+
+.rp-sidebar-item--active::after {
+  content: "";
+  background-color: var(--rp-c-brand);
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
 }
 
 /* Section header text */

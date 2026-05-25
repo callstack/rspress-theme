@@ -127,6 +127,7 @@
   /* rspress code colors */
   --rp-code-title-bg: rgba(233, 231, 238, 1) !important;
   --rp-code-block-bg: rgba(249, 248, 253, 1) !important;
+  --rp-code-block-border: none !important;
   /* rspress inline code colors */
   --rp-c-text-code: var(--rp-c-text-1) !important;
   --rp-c-text-code-bg: var(--ck-border-secondary) !important;
@@ -174,6 +175,7 @@
   /* rspress code colors */
   --rp-code-title-bg: rgba(54, 53, 57, 1) !important;
   --rp-code-block-bg: rgba(43, 42, 47, 1) !important;
+  --rp-code-block-border: none !important;
   /* rspress inline code colors */
   --rp-c-text-code-bg: var(--ck-border-primary) !important;
 }

@@ -30,23 +30,23 @@
 }
 
 .pagerLink:hover,
-.pagerLink:focus {
+.pagerLink:focus-visible {
   border-color: var(--ck-accent);
   background-position: left bottom;
 }
 
 .pagerLink:hover .title,
-.pagerLink:focus .title {
+.pagerLink:focus-visible .title {
   color: var(--ck-accent);
 }
 
 .pagerLink:hover .iconBox,
-.pagerLink:focus .iconBox {
+.pagerLink:focus-visible .iconBox {
   background-color: var(--ck-accent);
 }
 
 .pagerLink:hover .icon,
-.pagerLink:focus .icon {
+.pagerLink:focus-visible .icon {
   color: #ffffff;
 }
 
