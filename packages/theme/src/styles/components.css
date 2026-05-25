@@ -22,6 +22,10 @@ a.rp-edit-link::before {
   margin-left: -1em !important;
 }
 
+.rp-header-anchor:hover {
+  border-bottom: none !important;
+}
+
 /* doc page header */
 .rp-doc.rspress-doc > h1.rp-toc-include {
   margin-bottom: 1.5rem !important;
@@ -52,6 +56,10 @@ a.rp-edit-link::before {
   color: var(--rp-c-text-2) !important;
 }
 
+.rp-outline__action-row.rp-edit-link {
+  display: none !important;
+}
+
 .rp-doc p > code {
   padding: 0.1em 0.2em;
   font-size: 1em !important;
@@ -59,7 +67,7 @@ a.rp-edit-link::before {
 }
 
 .rp-code-button-group {
-  top: 8px !important;
+  top: 14px !important;
   right: 8px !important;
 }
 
