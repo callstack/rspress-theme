@@ -24,11 +24,6 @@
   margin-top: 0 !important;
 }
 
-.rp-sidebar-item:not(:last-child),
-.rp-sidebar-item--active:not(:last-child) {
-  margin-bottom: 8px !important;
-}
-
 .rp-sidebar-item:hover {
   background-color: var(--ck-foreground-primary) !important;
 }
