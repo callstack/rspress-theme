@@ -1,4 +1,4 @@
-import { usePageData } from '@rspress/core/runtime';
+import { useSite } from '@rspress/core/runtime';
 import { Link, SocialLinks } from '@theme';
 import CKLogoDark from '../../assets/ck-logo-dark.svg?react';
 import CKLogoLight from '../../assets/ck-logo-light.svg?react';
@@ -23,7 +23,7 @@ interface HomeFooterProps {
 }
 
 function HomeFooter(props: HomeFooterProps) {
-  const { siteData } = usePageData();
+  const { site: siteData } = useSite();
   const LinkComponent = props.LinkComponent ?? Link;
   const SocialLinksComponent = props.SocialLinksComponent ?? SocialLinks;
 
@@ -45,5 +45,5 @@ function HomeFooter(props: HomeFooterProps) {
   );
 }
 
-export { HomeFooter };
 export type { HomeFooterProps };
+export { HomeFooter };

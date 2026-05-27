@@ -87,14 +87,16 @@ export function SwitchAppearance({ onClick }: { onClick?: () => void }) {
   const Icon = theme === 'dark' ? IconSun : IconMoon;
 
   return (
-    <button
-      type="button"
+    // biome-ignore lint/a11y/useSemanticElements: this component is a nested button in mobile nav, which would cause a hydration error
+    <div
+      role="button"
+      tabIndex={0}
       onClick={handleClick}
       className="rspress-nav-appearance"
     >
       <div className="rp-p-1 rp-border rp-border-solid rp-border-gray-300 rp-text-gray-400 rp-cursor-pointer rp-rounded-md rp-transition-all rp-duration-300 rp-w-7 rp-h-7">
         <Icon width="18" height="18" fill="currentColor" />
       </div>
-    </button>
+    </div>
   );
 }

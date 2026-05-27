@@ -2,7 +2,7 @@ import path from 'node:path';
 import { styleText } from 'node:util';
 import type { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
 import type { AnalyticsProps } from '@vercel/analytics';
-import { type ZodIssue, z } from 'zod';
+import { z } from 'zod';
 
 const nonEmptyString = z
   .string()
@@ -52,13 +52,13 @@ export const presetOptionsSchema = z.object({
       .url({ message: 'must be a valid URL' })
       .describe('Absolute public site origin (e.g. https://example.com)'),
     socials: z
-      .record(z.string().url())
+      .record(z.string(), z.url())
       .optional()
       .describe('Map of social icon name to profile URL'),
   }),
   theme: z.unknown().optional(),
   vercelAnalytics: z
-    .union([z.boolean(), z.record(z.unknown())])
+    .union([z.boolean(), z.record(z.string(), z.unknown())])
     .optional()
     .describe(
       'Enable/disable Vercel Analytics or pass its config (overrides auto-detect)'
@@ -83,7 +83,7 @@ export function validatePresetOptions(options: unknown): PresetConfig {
   const result = presetOptionsSchema.safeParse(options);
   if (!result.success) {
     const bullets = result.error.issues
-      .map((issue: ZodIssue) => {
+      .map((issue) => {
         const pathSegments = issue.path;
         const pathLabel =
           pathSegments.length > 0 ? pathSegments.join('.') : 'root';
@@ -96,7 +96,7 @@ export function validatePresetOptions(options: unknown): PresetConfig {
             const shape = objectSchema.shape;
             current = shape[String(segment)] as z.ZodTypeAny;
           } else if (current instanceof z.ZodRecord) {
-            current = current._def.valueType;
+            current = current.def.valueType as z.ZodTypeAny;
           } else {
             break;
           }

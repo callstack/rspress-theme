@@ -5,7 +5,6 @@ import { pluginCallstackTheme } from '@callstack/rspress-theme/plugin';
 import type { UserConfig } from '@rspress/core';
 import { defineConfig, mergeDocConfig } from '@rspress/core';
 import type { SocialLinks as SocialLinksComponent } from '@rspress/core/theme';
-import { pluginLlms } from '@rspress/plugin-llms';
 import { pluginSitemap } from '@rspress/plugin-sitemap';
 import { pluginOpenGraph } from 'rsbuild-plugin-open-graph';
 import { type PresetConfig, validatePresetOptions } from './options';
@@ -105,6 +104,7 @@ const createPreset = (config: PresetConfig): UserConfig => {
     title: docs.title,
     description: docs.description,
     icon: docs.icon,
+    llms: true,
     globalStyles: getGlobalStyles(context),
     globalUIComponents: enableVercel
       ? [
@@ -154,7 +154,7 @@ const createPreset = (config: PresetConfig): UserConfig => {
           description: docs.description,
           twitter: docs.socials?.X
             ? {
-                site: extractXHandle(docs.socials?.X),
+                site: extractXHandle(docs.socials?.X as string),
                 card: 'summary_large_image',
               }
             : undefined,
@@ -164,11 +164,6 @@ const createPreset = (config: PresetConfig): UserConfig => {
     plugins: [
       pluginCallstackTheme(theme),
       pluginSitemap({ siteUrl: docs.rootUrl }),
-      pluginLlms({
-        exclude: ({ page }) => {
-          return page.routePath.includes('404');
-        },
-      }),
     ],
   });
 };

@@ -92,5 +92,5 @@ function normalizeSrcsetAndSizes(
   return r || undefined;
 }
 
-export { HomeHero };
 export type { HomeHeroProps };
+export { HomeHero };

@@ -19,7 +19,7 @@ p > .rp-link {
   border-bottom: 1px solid var(--rp-c-text-1);
 }
 
-/* remove arrow from links */
-.rp-link:after {
+/* remove arrow from links except external ones */
+.rp-link:not(.rp-sidebar-item--active):not([target="_blank"]):after {
   content: none !important;
 }

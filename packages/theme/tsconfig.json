@@ -2,7 +2,6 @@
   "compilerOptions": {
     "rootDir": "./src",
     "outDir": "./dist",
-    "baseUrl": "./",
     "target": "ES2021",
     "allowJs": true,
     "strict": true,
@@ -15,5 +14,6 @@
     "module": "preserve",
     "moduleResolution": "bundler"
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": ["**/dist"]
 }

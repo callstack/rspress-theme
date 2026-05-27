@@ -1,4 +1,4 @@
-import { usePageData } from '@rspress/core/runtime';
+import { usePage } from '@rspress/core/runtime';
 import { Badge } from '@theme';
 import styles from './index.module.scss';
 
@@ -7,7 +7,7 @@ interface VersionBadgeProps {
 }
 
 export function VersionBadge({ version }: VersionBadgeProps) {
-  const pageData = usePageData();
+  const pageData = usePage();
 
   // hide on overview pages
   if (pageData.page.frontmatter.overview) {

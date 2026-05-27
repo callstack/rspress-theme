@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.4.10/schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
@@ -7,14 +7,8 @@
     "useIgnoreFile": true
   },
   "files": {
-    "ignoreUnknown": false
-  },
-  "assist": {
-    "actions": {
-      "source": {
-        "organizeImports": "on"
-      }
-    }
+    "ignoreUnknown": false,
+    "includes": ["**", "!!packages/preset/vendor/*"]
   },
   "formatter": {
     "enabled": true,
@@ -25,7 +19,15 @@
     "lineEnding": "lf",
     "lineWidth": 80,
     "attributePosition": "auto",
-    "bracketSpacing": true
+    "bracketSpacing": true,
+    "includes": ["**", "!!pnpm-lock.yaml"]
+  },
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    }
   },
   "linter": {
     "enabled": true,
@@ -44,7 +46,11 @@
         "noUnusedVariables": "error"
       },
       "style": {
-        "noNonNullAssertion": "off"
+        "noNonNullAssertion": "off",
+        "noDescendingSpecificity": "off"
+      },
+      "suspicious": {
+        "noDeprecatedImports": "on"
       }
     }
   },
@@ -57,15 +63,14 @@
       "arrowParentheses": "always",
       "bracketSameLine": false,
       "quoteStyle": "single",
+      "attributePosition": "auto",
       "bracketSpacing": true
     }
   },
   "overrides": [
     {
       "includes": ["**/static/styles.css"],
-      "formatter": {
-        "lineWidth": 120
-      }
+      "formatter": { "lineWidth": 120 }
     }
   ]
 }
