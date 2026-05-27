@@ -3,7 +3,7 @@
   "private": true,
   "author": "Jakub Romańczyk <jakub.romanczyk@callstack.com>",
   "license": "MIT",
-  "packageManager": "pnpm@9.12.2",
+  "packageManager": "pnpm@11.3.0",
   "scripts": {
     "build": "pnpm -F !./packages/tester build",
     "lint": "biome check --write",
