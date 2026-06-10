@@ -7,10 +7,18 @@
   "scripts": {
     "build": "pnpm -F !./packages/tester build",
     "lint": "biome check --write",
-    "typecheck": "pnpm -r typecheck"
+    "typecheck": "pnpm -r typecheck",
+    "prepare": "husky"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.10",
-    "@changesets/cli": "^2.30.0"
+    "@changesets/cli": "^2.30.0",
+    "@commitlint/cli": "^20.3.1",
+    "@commitlint/config-conventional": "^20.3.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7"
+  },
+  "lint-staged": {
+    "*": "biome check --write --no-errors-on-unmatched"
   }
 }

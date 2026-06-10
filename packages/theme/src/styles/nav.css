@@ -176,7 +176,7 @@ button.rp-nav-hamburger > img {
 }
 
 /* Social links icon */
-div.rspress-nav-appearance > div,
+.rspress-nav-appearance > div,
 .rp-social-links__icon > div {
   color: var(--rp-c-text-1) !important;
   background:
@@ -193,7 +193,7 @@ div.rspress-nav-appearance > div,
 }
 
 @media (pointer: fine) {
-  div.rspress-nav-appearance > div:hover,
+  .rspress-nav-appearance > div:hover,
   .rp-social-links__icon > div:hover {
     color: #ffffff !important;
     background-position: left bottom !important;
