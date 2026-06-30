@@ -204,7 +204,8 @@ button.rp-nav-hamburger > img {
   margin-left: -6px !important;
 }
 
-.rp-sidebar-menu__left > img {
+.rp-sidebar-menu__left > img,
+.rp-sidebar-menu__left > svg {
   display: none !important;
 }
 
