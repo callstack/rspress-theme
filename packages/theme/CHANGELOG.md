@@ -1,5 +1,11 @@
 # @callstack/rspress-theme
 
+## 0.6.7
+
+### Patch Changes
+
+- [#127](https://github.com/callstack/rspress-theme/pull/127) [`c146773`](https://github.com/callstack/rspress-theme/commit/c146773662be4bd8b17dcb545b03e9d96503a5e4) Thanks [@artus9033](https://github.com/artus9033)! - fix: hide duplicate mobile sidebar menu icon
+
 ## 0.6.6 (2026-05-27)
 
 - Published release.
