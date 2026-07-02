@@ -1,6 +1,11 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@3.0.4/schema.json",
-  "changelog": false,
+  "changelog": [
+    "@changesets/changelog-github",
+    {
+      "repo": "callstack/rspress-theme"
+    }
+  ],
   "commit": false,
   "fixed": [["@callstack/rspress-preset", "@callstack/rspress-theme"]],
   "linked": [],
