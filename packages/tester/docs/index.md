@@ -8,10 +8,10 @@ hero:
   actions:
     - theme: brand
       text: Quick Start
-      link: /guide/
+      link: /test/guide
     - theme: alt
       text: GitHub
-      link: https://github.com/web-infra-dev/rspress
+      link: https://github.com/callstack/rspress-theme
   image:
     src:
       light: /logo-light.png
