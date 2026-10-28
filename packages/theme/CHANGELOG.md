@@ -1,5 +1,11 @@
 # @callstack/rspress-theme
 
+## 0.6.8
+
+### Patch Changes
+
+- [`1c19e8b`](https://github.com/callstack/rspress-theme/commit/1c19e8b932f7f8b1a7a5b1b7fe726be087f92d86) Thanks [@artus9033](https://github.com/artus9033)! - Fix published packages missing the `dist` directory (broken 0.6.7 release)
+
 ## 0.6.7
 
 ### Patch Changes
