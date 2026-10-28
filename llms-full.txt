@@ -565,7 +565,7 @@ Something something bundler
 
 > Re.Pack brings Rspack and webpack ecosystem to mobile React Native apps.
 
-[Quick Start](/guide/) | [GitHub](https://github.com/web-infra-dev/rspress)
+[Quick Start](/test/guide) | [GitHub](https://github.com/callstack/rspress-theme)
 
 ## Features
 
